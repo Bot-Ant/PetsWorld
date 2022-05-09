@@ -1,0 +1,63 @@
+@charset "ISO-8859-1";
+<!--Style of the header-->
+header {
+    padding: 0;
+    color: var(--contrast-color-1);
+    background: var(--neutral-color-1);
+}
+
+<!--Style of the top bar inside the header--> 
+.topbar {
+    display: flex;
+}
+
+<!--Style of the logo inside the header-->
+.logo {
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+<!--Style of the search bar inside the header-->
+.searchbar {
+    width: 100%;
+    padding: 5px;
+    margin: 40px 20px 40px 20px;
+    text-align: center;
+    color: var(--contrast-color-1);
+    background-color: var(--neutral-color-2);
+    border-radius: 25px;
+}
+  
+.fakeicon {
+    margin: 20px;
+    padding: 15px;
+    color: var(--neutral-color-2);
+    background-color: var(--accent-color);
+    border-radius: 60px;
+}
+
+.icon {
+    margin: 20px;
+    width: 100%;
+}
+    
+/* Style of the navigation bar */
+.navbar {
+    display: flex;
+    background-color: var(--main-color);
+}
+    
+/* Style of the navigation bar links */
+.navbar a {
+    color: var(--contrast-color-1);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+    
+/* Change style of the navbar on hover */
+.navbar a:hover {
+    color: var(--contrast-color-1);
+    background-color: var(--neutral-color-2);
+}
