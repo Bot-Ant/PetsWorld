@@ -5,6 +5,10 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>PetsWorld</title>
+		<link rel="stylesheet" href="/static/styles/page.css">
+        <link rel="stylesheet" href="/static/styles/header.css">
+        <link rel="stylesheet" href="/static/styles/footer.css">
+        <link rel="stylesheet" href="/static/styles/light.css">
 	</head>
 <body>
 	<header>
