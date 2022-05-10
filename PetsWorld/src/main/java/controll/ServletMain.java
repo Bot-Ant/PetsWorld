@@ -50,7 +50,7 @@ public class ServletMain extends HttpServlet {
 	            break;
 	        }
 	        case "Registrazione" : {//stesso ma con registrazione
-	            address="registrazione.jsp";
+	            address="dynamic/registrazione.jsp";
 	            
 	            break;
 	        }
