@@ -3,8 +3,7 @@
 .form {
 	margin: 20px 30% 20px 30%;
 	padding: 5%;
-	border-style: solid;
-	border-color: var(--main-color);
+	border: 5px solid #63b441ff;
 }
 /**/
 .fields {

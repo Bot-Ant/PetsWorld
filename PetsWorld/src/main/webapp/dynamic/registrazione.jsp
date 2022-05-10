@@ -3,9 +3,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <title>Registrazione</title>
+    <link rel="stylesheet" href="static/styles/light.css">
     <link rel="stylesheet" href="static/styles/user.css">
 </head>
 <body>
+	<header>
+		<!-- Navigation bar menu-->
+		<%@include file="/static/html/headerbarra.html"%>
+	</header>
     <form action="ServletReg" method="post">
         <div class="form">
         	<h1>Crea il tuo account</h1>
