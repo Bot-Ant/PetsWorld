@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+/**/
+.form {
+	margin: 20px 30% 20px 30%;
+	padding: 5%;
+	border-style: solid;
+	border-color: var(--main-color);
+}
+/**/
+.fields {
+	text-align: left;
+}
+/**/
+.field {
+	margin-top: 15px;
+	text-align: left;
+}
+
+.form ul {
+	text-align: center;
+	list-style: none;
+}
+
+.form ul li {
+	margin-top: 15px;
+	text-align: left;
+}
