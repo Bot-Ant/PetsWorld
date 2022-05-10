@@ -1,8 +1,9 @@
 @charset "ISO-8859-1";
-/* Style the body */
+/* Sets margin and padding to 0 to reset the status in any browser */
 body {
     font-family: sans-serif;
     margin: 0;
+    padding:0;
 }
 
 /* Column container */
