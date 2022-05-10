@@ -1,6 +1,7 @@
 package controll;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,18 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 
+import model.beans.Utente;
+import model.daoImplementation.UtenteImp;
+import model.daoInterface.UtenteDao;
+
 /**
  * Servlet implementation class ServletMain
  */
-@WebServlet("/ServletMain")
-public class ServletMain extends HttpServlet {
+@WebServlet("/ServletLogin")
+public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected DataSource source;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletMain() {
+    public ServletLogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,35 +45,26 @@ public class ServletMain extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String operazione= request.getParameter("operazione");
-	  
-	    String address;
-	    switch(operazione){
-	    
-	        case "Login": { //nel caso in cui sia submittato il tasto login dalla form, rimanda alla servlet apposita
-	            address="/ServletLogin";
-	            break;
-	        }
-	        case "Registrazione" : {//stesso ma con registrazione
-	            address="registrazione.jsp";
-	            
-	            break;
-	        }
-	        case "Carrello": {//stesso ma con carrello.
-	            address="carrello.jsp";
-	            break;
-	        }
-	        case"Logout": {// nel caso in cui si sia premuto il tasto logout dopo esser loggati
-	            address = "index.jsp";
-	            break;
-	        }
-	        
-	        default:
-	            throw new IllegalStateException("Unexpected value: " + operazione);
-	    }
-	    
-	    
-	    RequestDispatcher requestDispatcher= request.getRequestDispatcher(address);
-	    requestDispatcher.include(request,response);
-	    }
+		String Username = request.getParameter("username");
+        String Password = request.getParameter("password");
+        
+        Utente accountdaloggare = new Utente();
+        UtenteDao<SQLException> dao= new UtenteImp(source);
+        
+        accountdaloggare.setEmail(Username);
+        accountdaloggare.setPassword(Password);
+      
+        try {
+        	boolean idUser=dao.Accountcheck(Username, Password);
+        	if(idUser == false) {
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/invalidLogin.jsp");
+        		requestDispatcher.forward(request, response);
+        	}else {
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/userLogged.jsp");
+        		requestDispatcher.forward(request, response);
+        	}
+        }catch(SQLException throwables) {
+        	throwables.printStackTrace();
+        }
+	}
 }

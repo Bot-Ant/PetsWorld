@@ -42,7 +42,7 @@ package model;
 	            p.setUrl("jdbc:mysql://localhost:3306/petsword?serverTimezone=" + TimeZone.getDefault().getID());
 	            p.setDriverClassName("com.mysql.cj.jdbc.Driver");
 	            p.setUsername("root");
-	            p.setPassword("Milan97@live");
+	            p.setPassword("studentiTSW");
 	            p.setMaxActive(100);
 	            p.setInitialSize(10);
 	            p.setMinIdle(10);
