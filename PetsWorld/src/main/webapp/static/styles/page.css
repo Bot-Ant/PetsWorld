@@ -1,9 +1,11 @@
 @charset "ISO-8859-1";
+@import "light.css";
 /* Sets margin and padding to 0 to reset the status in any browser */
 body {
     font-family: sans-serif;
     margin: 0;
     padding:0;
+    background-color: rgb(245, 245, 245);
 }
 
 /* Column container */

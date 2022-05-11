@@ -71,11 +71,23 @@ ul {
     justify-content: space-evenly;
     align-items: center;
     z-index: 9;
-  }
+}
   
 li {
     list-style-type: none;
     font-size: 2rem;
     padding: 14px 20px;
     color: var(--neutral-color-2);
-  }
+}
+
+#extended-header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.top-bar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
