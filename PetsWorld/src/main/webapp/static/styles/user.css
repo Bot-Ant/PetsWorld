@@ -1,10 +1,11 @@
 @charset "ISO-8859-1";
+@import url(light.css);
 /**/
 .form {
 	width: 500px;
 	margin: 10% 30% 10% 30%;
 	padding: 30px;
-	border: 5px solid #63b441ff;
+	border: 5px solid var(--accent-color);
 	background-color: rgb(252, 252, 252);
 }
 /**/

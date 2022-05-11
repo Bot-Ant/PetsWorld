@@ -1,5 +1,5 @@
 @charset "ISO-8859-1";
-<!--Color variables for the light theme-->
+/*Color variables for the light theme */
 :root {
     --main-color: #63b441ff;
     --accent-color: #ff8928ff;

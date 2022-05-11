@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<title>Accesso</title>
+	<link rel="stylesheet" href="static/styles/light.css">
+	<link rel="stylesheet" href="static/styles/page.css">    
+    <link rel="stylesheet" href="static/styles/user.css">
 </head>
 <body>
 	<header>

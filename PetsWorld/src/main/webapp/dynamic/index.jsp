@@ -1,4 +1,4 @@
--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -20,9 +20,9 @@
 		
 		<!--Search bar-->
 		<%@include file="/static/html/bar.html" %>
-		<nav>
-			<!--Navbar inside the header-->
-		</nav>
+		
+		<!-- Standard header -->
+		<%@include file="/dynamic/header.jsp" %>
 	</header>
 	<footer>
 		<!-- Page footer-->
