@@ -18,6 +18,7 @@
 	</header>
 	<footer>
 		<!-- Page footer-->
+		<%@include file="/dynamic/footer.jsp" %>
 	</footer>
 </body>
 </html>

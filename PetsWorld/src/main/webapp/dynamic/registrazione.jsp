@@ -44,7 +44,7 @@
         	<hr>
         	<div class="signin">
     			<p>
-    				Hai già un account?
+    				Hai un account?
         			<a href="login.jsp"><span style="color: green"> Accedi</span></a>
         		</p>
     		</div>
