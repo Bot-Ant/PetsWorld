@@ -18,23 +18,27 @@
 			<ul>
 				<li>
 					<label class="field" for="nome"><b>Nome</b></label>
-            		<input type="text" required name="nome" placeholder="" id="nome">
+            		<input type="text" required name="nome" placeholder="Nome" id="nome">
             	</li>
 				<li>
 					<label class="field" for="cognome"><b>Cognome</b></label>
-               		<input type="text" required name="cognome" placeholder="" id="cognome">
+               		<input type="text" required name="cognome" placeholder="Cognome" id="cognome">
 				</li>
 				<li>
 					<label class="field" for="email"> <b>Email</b></label>
-                	<input type="email" required name="email" placeholder="" id="email">
+                	<input type="email" required name="email" placeholder="Email" id="email">
 				</li>
 				<li>
 					<label class="field" for="password"><b>Password</b></label>
-                	<input type="password" required name="password" placeholder="" id="password">
+                	<input type="password" required name="password" placeholder="Password" id="password">
+				</li>
+				<li>
+					<label class="field" for="codiceFiscale"><b>Codice Fiscale</b></label>
+               		<input type="text" required name="codiceFiscale" placeholder="Codice Fiscale" id="codiceFiscale">
 				</li>
 				<li>
 					<label  for="cellulare"><b>Cellulare</b></label>
-                	<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="" name="cellulare" id="cellulare">
+                	<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="cellulare" required name="cellulare" id="cellulare">
 				</li>
 			</ul>
             <p>
