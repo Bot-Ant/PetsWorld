@@ -46,7 +46,7 @@ public class ServletMain extends HttpServlet {
 	    switch(operazione){
 	    
 	        case "Login": { //nel caso in cui sia submittato il tasto login dalla form, rimanda alla servlet apposita
-	            address="/ServletLogin";
+	            address="dynamic/login.jsp";
 	            break;
 	        }
 	        case "Registrazione" : {//stesso ma con registrazione
