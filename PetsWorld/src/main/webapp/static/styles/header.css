@@ -1,32 +1,98 @@
 @charset "ISO-8859-1";
-<!--Style of the header-->
+/*Style of the header*/
 header {
     padding: 0;
     color: var(--contrast-color-1);
     background: var(--neutral-color-1);
 }
 
-<!--Style of the top bar inside the header--> 
-.topbar {
+/*Style of the top bar inside the header*/
+.top-bar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     display: flex;
 }
 
-<!--Style of the logo inside the header-->
+.bottom-bar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/*Style of the logo inside the header*/
 .logo {
-    margin: 20px;
-    padding: 15px;
+    margin: 15px;
+    height: 70px;
     text-align: center;
 }
 
-<!--Style of the search bar inside the header-->
-.searchbar {
-    width: 100%;
-    padding: 5px;
-    margin: 40px 20px 40px 20px;
-    text-align: center;
-    color: var(--contrast-color-1);
+/*Style of the search bar inside the header*/
+.search-bar {
+    width: auto;
+    display: flex;
+    margin: 10px 20px 10px 20px;
+    /*padding: 5px;
+    */
+    /*color: var(--contrast-color-1);
     background-color: var(--neutral-color-2);
-    border-radius: 25px;
+    border-radius: 25px;*/
+}
+
+.search-bar input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 10px 0px 10px 10px;
+	display: inline-block;
+	border: 0px solid #ccc;
+	border-radius: 0px;
+	box-sizing: border-box;
+	background-color: var(--neutral-color-1);
+	
+}
+
+.search-bar input:focus {
+	outline: none;
+	caret-color: var(--main-color);
+	border-bottom: 1px solid var(--main-color);
+}
+
+.search-bar button[name="bottonecerca"] {
+	background-color: var(--main-color);
+	color: white;
+	padding: 12px 0px 12px 0px;
+	margin: 10px 10px 10px 0px;
+	border: none;
+	border-radius: 0px;
+	cursor: pointer;
+}
+.search-bar button[name="bottonecerca"] {
+	width: 100%;
+}
+
+.search-bar button[name="bottonecerca"]:hover {
+	background-color: var(--accent-color);
+}
+
+.header-buttons {
+    width: auto;
+    display: flex;
+    float: right;
+    text-align: center;
+}
+
+.header-buttons button {
+    background-color: var(--main-color);
+	color: white;
+	padding: 14px 20px;
+	margin: 10px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.header-buttons button:hover {
+	background-color: var(--accent-color);
 }
   
 .fakeicon {
@@ -41,41 +107,50 @@ header {
     margin: 20px;
     width: 100%;
 }
-    
-/* Style of the navigation bar */
-.navbar {
-    display: flex;
-    background-color: var(--main-color);
-}
-    
-/* Style of the navigation bar links */
-.navbar a {
-    color: var(--contrast-color-1);
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-}
-    
-/* Change style of the navbar on hover */
-.navbar a:hover {
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-2);
+
+nav {
+    background-color: #63b441ff;
+    display: flex; 
 }
 
-ul {
-    width: 100%;
+nav .nav-center {
+    width: auto;
     height: 100%;
     margin: 0px auto;
     padding: 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 9;
-  }
-  
-li {
     list-style-type: none;
+    display: flex;
+}
+
+nav .nav-center a {
+    align-items: center;
     font-size: 2rem;
-    padding: 14px 20px;
-    color: var(--neutral-color-2);
-  }
+    text-decoration: none;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+}
+
+nav .nav-center a:hover {
+    color: #63b441ff;
+    background-color: rgb(252, 252, 252);
+}
+
+#extended-header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#form-header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+}
+
+#form-header .header-center {
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+}
