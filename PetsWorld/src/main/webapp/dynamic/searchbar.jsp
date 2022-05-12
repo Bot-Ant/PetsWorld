@@ -7,6 +7,11 @@
 	<title>PetsWorld</title>
 </head>
 <body>
-
+	<form action="SearchServlet" method="post">
+		<div class="search-bar">
+        	<input class="" type="text" name="nome" placeholder="Cerca prodotto...">
+        	<button class="" name="bottonecerca">Cerca</button>
+		</div>
+    </form>
 </body>
 </html>
