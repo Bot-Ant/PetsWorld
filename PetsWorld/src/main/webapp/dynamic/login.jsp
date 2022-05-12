@@ -13,10 +13,9 @@
 		<!-- Navigation bar menu-->
 		<%@include file="formHeader.jsp"%>
 	</header>
-    <form action="ServletReg" method="post">
+    <form action="ServletLogin" method="post">
         <div class="form">
         	<h1>Accedi al tuo account</h1>
-            <hr>
 			<ul>
 				<li>
 					<label class="field" for="email"> <b>Email</b></label><br>

@@ -24,7 +24,7 @@
 			</div>
 			<div class="header-buttons">
 				<button class="cart-button" type="submit" name="operazione" value="Carrello">Carrello</button>
-				<button class="user-button" type="submit" name="operazione" value="Registrazione">Account</button>
+				<button class="user-button" type="submit" name="operazione" value="Login">Login</button>
 			</div>
 		</div>
 		<!-- Elements in the bottom bar of the header -->
