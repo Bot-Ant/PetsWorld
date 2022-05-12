@@ -10,7 +10,7 @@ public class Prodotto implements Serializable{
 	private int IdProdotto;
 	private String nome;
 	private String tipo;
-	private int prezzo;
+	private double prezzo;
 	private String descrizione;
 	private String foto;
 	private double iva;
@@ -38,10 +38,10 @@ public class Prodotto implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public int getPrezzo() {
+	public double getPrezzo() {
 		return prezzo;
 	}
-	public void setPrezzo(int prezzo) {
+	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
 	public String getDescrizione() {

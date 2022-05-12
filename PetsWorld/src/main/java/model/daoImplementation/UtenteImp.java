@@ -26,7 +26,7 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 	@Override
 	public boolean Accountcheck (String email, String password) throws SQLException {
 		try(Connection connection = createConnection()){
-			QueryBuilder query = new QueryBuilder("utente", "clt");
+			QueryBuilder query = new QueryBuilder("utente", "clt"); 
 			query.select().where("email=?").andwhere("password=?");
 			try(PreparedStatement st = connection.prepareStatement(query.GeneratedQuery())){
 				st.setString(1, email);
