@@ -50,7 +50,7 @@ public class ServletMain extends HttpServlet {
 	            break;
 	        }
 	        case "Registrazione" : {//stesso ma con registrazione
-	            address="registrazione.jsp";
+	            address="dynamic/registrazione.jsp";
 	            
 	            break;
 	        }
@@ -59,7 +59,7 @@ public class ServletMain extends HttpServlet {
 	            break;
 	        }
 	        case"Logout": {// nel caso in cui si sia premuto il tasto logout dopo esser loggati
-	            address = "index.jsp";
+	            address = "dynamic/index.jsp";
 	            break;
 	        }
 	        

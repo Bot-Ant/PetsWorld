@@ -38,7 +38,7 @@
 
         <div class="signin">
            <p>Hai già un account?
-            <a href="index.jsp"><span style="color: dodgerblue"> Effettua il login! </span></a></p>
+            <a href="dynamic/index.jsp"><span style="color: dodgerblue"> Effettua il login! </span></a></p>
         </div>
 
 
