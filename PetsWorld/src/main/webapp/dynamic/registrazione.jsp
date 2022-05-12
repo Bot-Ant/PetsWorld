@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
     <title>Registrazione</title>
     <link rel="stylesheet" href="static/styles/light.css">
 	<link rel="stylesheet" href="static/styles/page.css">    
@@ -49,7 +49,7 @@
         	<div class="signin">
     			<p>
     				Hai un account?
-        			<a href="login.jsp"><span style="color: green"> Accedi</span></a>
+        			<a class="link" href="login.jsp"><span> Accedi</span></a>
         		</p>
     		</div>
         </div>

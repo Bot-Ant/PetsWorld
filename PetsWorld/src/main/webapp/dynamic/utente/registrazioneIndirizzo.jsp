@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-utf-8" pageEncoding="utf-8"%>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
     <title>Registrazione</title>
     <link rel="stylesheet" href="static/styles/light.css">
 	<link rel="stylesheet" href="static/styles/page.css">    
@@ -17,7 +17,7 @@
         	<h1>Crea il tuo account</h1>
 			<ul>
 				<li>
-					<label class="field" for="città"><b>Città</b></label>
+					<label class="field" for="cittÃ "><b>CittÃ </b></label>
             		<input type="text" required name="nome" placeholder="Nome" id="nome">
             	</li>
 				<li>
