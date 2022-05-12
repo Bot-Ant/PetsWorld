@@ -44,12 +44,12 @@
         	<hr>
         	<div class="signin">
     			<p>
-    				Hai gi‡ un account?
+    				Hai gi√† un account?
         			<a href="login.jsp"><span style="color: green"> Accedi</span></a>
         		</p>
     		</div>
         </div>
     </form>
-    
+
 </body>
 </html>
