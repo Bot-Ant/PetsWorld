@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1">
 	<title>Accesso</title>
 	<link rel="stylesheet" href="static/styles/light.css">
 	<link rel="stylesheet" href="static/styles/page.css">    
@@ -12,7 +11,7 @@
 <body>
 	<header>
 		<!-- Navigation bar menu-->
-		<%@include file="/static/html/headerbarra.html"%>
+		<%@include file="formHeader.jsp"%>
 	</header>
     <form action="ServletReg" method="post">
         <div class="form">

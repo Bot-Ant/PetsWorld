@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta charset="ISO-8859-1">
     <title>Registrazione</title>
     <link rel="stylesheet" href="static/styles/light.css">
 	<link rel="stylesheet" href="static/styles/page.css">    
@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<!-- Navigation bar menu-->
-		<%@include file="/static/html/headerbarra.html"%>
+		<%@include file="formHeader.jsp"%>
 	</header>
     <form action="ServletReg" method="post">
         <div class="form">
@@ -44,8 +44,8 @@
         	<hr>
         	<div class="signin">
     			<p>
-    				Hai giÃ  un account?
-        			<a href="dynamic/login.jsp"><span style="color: green"> Accedi</span></a>
+    				Hai già un account?
+        			<a href="login.jsp"><span style="color: green"> Accedi</span></a>
         		</p>
     		</div>
         </div>

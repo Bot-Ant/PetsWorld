@@ -8,18 +8,24 @@
 	<link rel="stylesheet" href="static/styles/light.css">
 	<link rel="stylesheet" href="static/styles/page.css">
     <link rel="stylesheet" href="static/styles/header.css">
+
 </head>
 <body>
+	<form action="ServletMain" method="post">
 	<!-- Extended version of the header, visible when the window is large -->
 	<div id="extended-header">
 		<!-- Elements in the top bar of the header -->
 		<div class="top-bar">
-			<ul>
-				<li><img class="logo" src="/static/images/petsworld.png" alt="logo"></li>
-				<li><%@include file="/dynamic/searchBar.jsp"%></li>
-				<li><button class="cart-button" type="submit" name="operazione" value="Carrello">Carrello</button></li>
-				<li><button class="user-button" type="submit" name="operazione" value="Registrazione">Account</button></li>
-			</ul>
+			<div>
+				<img class="logo" src="static/images/petsworld.png" alt="logo">
+			</div>
+			<div>
+				<%@include file="/dynamic/searchbar.jsp"%>
+			</div>
+			<div class="header-buttons">
+				<button class="cart-button" type="submit" name="operazione" value="Carrello">Carrello</button>
+				<button class="user-button" type="submit" name="operazione" value="Registrazione">Account</button>
+			</div>
 		</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
@@ -35,5 +41,6 @@
 			
 		</div>
 	</div>
+	</form>
 </body>
 </html>

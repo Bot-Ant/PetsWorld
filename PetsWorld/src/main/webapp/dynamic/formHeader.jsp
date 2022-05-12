@@ -10,8 +10,12 @@
     <link rel="stylesheet" href="static/styles/header.css">
 </head>
 <body>
+	<form action="ServletMain" method="post">
 	<div id="form-header">
-		<img class="logo" src="/static/images/petsworld.png" alt="logo">
+		<div class="header-center">
+			<img class="logo" src="static/images/petsworld.png" alt="logo">
+		</div>
 	</div>
+	</form>
 </body>
 </html>

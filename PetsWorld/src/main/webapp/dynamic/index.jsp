@@ -13,14 +13,6 @@
 	</head>
 <body>
 	<header>
-		<!-- Page header-->
-
-		<!-- Navigation bar menu-->
-		<%@include file="/static/html/headerbarra.html"%>
-		
-		<!--Search bar-->
-		<%@include file="/static/html/bar.html" %>
-		
 		<!-- Standard header -->
 		<%@include file="/dynamic/header.jsp" %>
 	</header>
