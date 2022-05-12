@@ -13,6 +13,7 @@ public class Cucciolo implements Serializable{
 	private String nome;
 	private String tipo;
 	private String razza;
+	private String foto;
 	
 	public int getIdCucciolo() {
 		return IdCucciolo;
@@ -44,10 +45,16 @@ public class Cucciolo implements Serializable{
 	public void setRazza(String razza) {
 		this.razza = razza;
 	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 	@Override
 	public String toString() {
 		return "Cucciolo [IdCucciolo=" + IdCucciolo + ", età=" + età + ", nome=" + nome + ", tipo=" + tipo + ", razza="
-				+ razza + "]";
+				+ razza + ", foto=" + foto + "]";
 	}
 	
 }
