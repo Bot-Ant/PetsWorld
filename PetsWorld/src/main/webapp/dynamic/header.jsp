@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="utf-8">
 	<title>PetsWorld</title>
 	<link rel="stylesheet" href="static/styles/light.css">
 	<link rel="stylesheet" href="static/styles/page.css">
@@ -19,7 +19,7 @@
 			<div>
 				<img class="logo" src="static/images/petsworld.png" alt="logo">
 			</div>
-			<div>
+			<div class="bar-center">
 				<%@include file="/dynamic/searchbar.jsp"%>
 			</div>
 			<div class="header-buttons">

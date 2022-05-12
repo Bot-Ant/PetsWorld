@@ -1,4 +1,4 @@
-@charset "ISO-8859-1";
+@charset "utf-8";
 @import "light.css";
 /* Sets margin and padding to 0 to reset the status in any browser */
 body {
@@ -82,6 +82,22 @@ body {
 
 .prod-text-container {
     padding: 10px;
+}
+
+.home-content {
+    
+}
+
+.banner {
+
+}
+
+.best-products {
+
+}
+
+.products-row {
+    
 }
 
 

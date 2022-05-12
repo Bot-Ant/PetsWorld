@@ -1,11 +1,14 @@
-@charset "ISO-8859-1";
-@import url(light.css);
+@charset "utf-8";
 /**/
+form {
+	display: flex;
+}
+
 .form {
 	width: 500px;
 	margin: 10% 30% 10% 30%;
 	padding: 30px;
-	border: 5px solid var(--main-color);
+	border: 3px solid var(--main-color);
 	background-color: var(--neutral-color-2);
 }
 /**/
@@ -63,4 +66,9 @@
 
 .form button[type=submit]:hover {
 	background-color: var(--accent-color);
+}
+
+a:link {
+	color: var(--main-color);
+	text-decoration: none;
 }
