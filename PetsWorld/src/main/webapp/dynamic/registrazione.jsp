@@ -12,50 +12,50 @@
 		<!-- Navigation bar menu-->
 		<%@include file="formHeader.jsp"%>
 	</header>
-    <form action="ServletReg" method="post">
-        <div class="form">
-        	<h1>Crea il tuo account</h1>
-			<ul>
-				<li>
-					<label class="field" for="nome"><b>Nome</b></label>
-            		<input type="text" required name="nome" placeholder="Nome" id="nome">
-            	</li>
-				<li>
-					<label class="field" for="cognome"><b>Cognome</b></label>
-               		<input type="text" required name="cognome" placeholder="Cognome" id="cognome">
-				</li>
-				<li>
-					<label class="field" for="email"> <b>Email</b></label>
-                	<input type="email" required name="email" placeholder="Email" id="email">
-				</li>
-				<li>
-					<label class="field" for="password"><b>Password</b></label>
-                	<input type="password" required name="password" placeholder="Password" id="password">
-				</li>
-				<li>
-					<label class="field" for="codiceFiscale"><b>Codice Fiscale</b></label>
-               		<input type="text" required name="codiceFiscale" placeholder="Codice Fiscale" id="codiceFiscale">
-				</li>
-				<li>
-					<label  for="cellulare"><b>Cellulare</b></label>
-                	<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="cellulare" required name="cellulare" id="cellulare">
-				</li>
-			</ul>
-            <p>
-        		Creando il tuo account accetti i nostri <a href="#"><span style="color: green">Termini e condizioni</span></a>.
-        	</p>
-        	<button type="submit" class="registerbtn" name="submit" value="ConfermaRegistrati">Registrati</button>
-        	<hr>
-        	<div class="signin">
-         
-    		</div>
-        </div>
-    </form>
-    <form action="ServletMain" method="post">
+    
+    <div class="form-content">
+		<div class="form-box">
+			<form action="ServletReg" method="post">
+				<h1>Crea il tuo account</h1>
+				<ul>
+					<li>
+						<label class="field" for="nome"><b>Nome</b></label>
+						<input type="text" required name="nome" placeholder="Nome" id="nome">
+					</li>
+					<li>
+						<label class="field" for="cognome"><b>Cognome</b></label>
+						   <input type="text" required name="cognome" placeholder="Cognome" id="cognome">
+					</li>
+					<li>
+						<label class="field" for="email"> <b>Email</b></label>
+						<input type="email" required name="email" placeholder="Email" id="email">
+					</li>
+					<li>
+						<label class="field" for="password"><b>Password</b></label>
+						<input type="password" required name="password" placeholder="Password" id="password">
+					</li>
+					<li>
+						<label class="field" for="codiceFiscale"><b>Codice Fiscale</b></label>
+						   <input type="text" required name="codiceFiscale" placeholder="Codice Fiscale" id="codiceFiscale">
+					</li>
+					<li>
+						<label  for="cellulare"><b>Cellulare</b></label>
+						<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="cellulare" required name="cellulare" id="cellulare">
+					</li>
+				</ul>
 				<p>
-    			    Hai un account?
-    			    <button class="link" type="submit" name="operazione" value="Login">Accedi</button>
-              		</p>
-      </form>
+					Creando il tuo account accetti i nostri <a class="link" href="#">Termini e condizioni</a>.
+				</p>
+				<button type="submit" class="registerbtn" name="submit" value="ConfermaRegistrati">Registrati</button>
+			</form>
+			<hr>
+			<form class="redirect" action="ServletMain" method="post">
+				<p>
+					Hai un account?
+					<button class="link" type="submit" name="operazione" value="Login">Accedi</button>
+				</p>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
