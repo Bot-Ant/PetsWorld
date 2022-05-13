@@ -1,87 +1,10 @@
 @charset "utf-8";
-@import "light.css";
 /* Sets margin and padding to 0 to reset the status in any browser */
 body {
     font-family: sans-serif;
     margin: 0;
     padding:0;
     background-color: rgb(245, 245, 245);
-}
-
-/* Column container */
-.row {  
-    display: flex;
-    flex-wrap: wrap;
-}
-  
-/* Create two columns that sits next to each other */
-/* Sidebar column */
-.side {
-    text-align: center;
-    flex: 10%;
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-1);
-    padding: 20px;
-}
-    
-/* Main column */
-.main {
-    flex: 60%;
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-1);
-    padding: 20px;
-}
-
-
-
-.product-box {
-    margin: 20px;
-    padding: 20px;
-    height:200px;
-    width: 200px;
-    text-align: center;
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-2);
-    border-radius: 25px;
-}
-
-.product-box:hover {
-    box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
-}
-
-.product-box img {
-    width:100%;
-    border-radius: 15px 15px 0px 0px;
-}
-
-.product-box-2 {
-    margin: 20px;
-    padding: 20px;
-    height:200px;
-    width: 200px;
-    text-align: center;
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-1);
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--contrast-color-3);
-}
-
-.product-box-2:hover {
-    box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
-}
-
-.product-box-2 img {
-    width:100%;
-    border-radius: 15px 15px 0px 0px;
-}
-  
-.container {
-    padding: 10px;
-}
-
-.prod-text-container {
-    padding: 10px;
 }
 
 .home-content {
@@ -134,7 +57,7 @@ body {
 
 
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 700px wide, make the elements stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
     .row, nav {   
         flex-direction: column;
