@@ -26,6 +26,7 @@
                 	<input type="password" required name="password" placeholder="Inserire Password" id="password">
 				</li>
 			</ul>
+			<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
         	<hr>
         	<div class="signin">
     			<p>

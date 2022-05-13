@@ -3,6 +3,7 @@ package model.Extractor;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model.ResultSetExtractor;
 import model.beans.Prodotto;
 
 public class prodottoExtractor implements ResultSetExtractor<Prodotto> {
