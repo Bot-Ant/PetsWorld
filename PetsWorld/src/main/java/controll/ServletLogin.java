@@ -45,22 +45,22 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String Username = request.getParameter("username");
+		String Email = request.getParameter("email");
         String Password = request.getParameter("password");
         
         Utente accountdaloggare = new Utente();
         UtenteDao<SQLException> dao= new UtenteImp(source);
         
-        accountdaloggare.setEmail(Username);
+        accountdaloggare.setEmail(Email);
         accountdaloggare.setPassword(Password);
       
         try {
-        	boolean idUser=dao.Accountcheck(Username, Password);
+        	boolean idUser=dao.Accountcheck(Email, Password);
         	if(idUser == false) {
         		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/invalidLogin.jsp");
         		requestDispatcher.forward(request, response);
         	}else {
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/userLogged.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/utente/userLogged.jsp");
         		requestDispatcher.forward(request, response);
         	}
         }catch(SQLException throwables) {

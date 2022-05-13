@@ -8,8 +8,9 @@ import java.sql.SQLException;
 import org.apache.tomcat.jdbc.pool.DataSource;
 
 import model.Manager;
-import model.QueryBuilder;
+import model.beans.Utente;
 import model.daoInterface.UtenteDao;
+import model.query.UtenteQuery;
 
 public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 	
@@ -26,9 +27,8 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 	@Override
 	public boolean Accountcheck (String email, String password) throws SQLException {
 		try(Connection connection = createConnection()){
-			QueryBuilder query = new QueryBuilder("utente", "clt"); 
-			query.select().where("email=?").andwhere("password=?");
-			try(PreparedStatement st = connection.prepareStatement(query.GeneratedQuery())){
+			String query = UtenteQuery.login();
+			try(PreparedStatement st = connection.prepareStatement(query)){
 				st.setString(1, email);
 				st.setString(2, password);
 				
@@ -42,5 +42,26 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 			}
 		}
 		
+	}
+
+	@Override
+	public boolean CreateAccount(Utente account) throws SQLException {
+		// TODO Auto-generated method stub
+		try(Connection connection = createConnection()){
+			String query = UtenteQuery.registrati();
+			try(PreparedStatement pst = connection.prepareStatement(query)){
+                /**------Mapping-------*/
+            	
+            	pst.setString(1, account.getNome());
+                pst.setString(2, account.getCognome());
+                pst.setString(3, account.getEmail());
+                pst.setString(4, account.getPassword());
+                pst.setString(5, account.getTelefono());
+                pst.setString(6, account.getCodiceFiscale());
+           
+               int rows= pst.executeUpdate();
+               return rows==1;
+            }
+        }
 	}
 }

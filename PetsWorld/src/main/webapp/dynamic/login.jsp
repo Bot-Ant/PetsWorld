@@ -28,13 +28,16 @@
 			</ul>
 			<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
         	<hr>
-        	<div class="signin">
-    			<p>
-    				Non hai ancora un account?
-        			<a class="link" href="dynamic/registrazione.jsp"><span> Registrati!</span></a>
-        		</p>
-    		</div>
+        	
         </div>
     </form>
+  <form action="ServletMain" method="post">
+  		<div class="signin">
+    			<p>
+    				Non hai ancora un account?
+    				<button type="submit" class="link"  name="operazione" value="Registrazione">Registrati</button>
+        		</p>
+    		</div>
+  </form>
 </body>
 </html>
