@@ -7,6 +7,9 @@
 <title>InvalidLogin</title>
 </head>
 <body>
-<h1>Non sei un nostro utente!!!</h1>
+	<header>
+        <%@include file="formHeader.jsp" %>
+    </header>
+    <h1 style="color: var(--accent-color); margin-top: 50px; text-align: center;">Non sei registrato</h1>
 </body>
 </html>

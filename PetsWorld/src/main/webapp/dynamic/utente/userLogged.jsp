@@ -6,6 +6,9 @@
 <title>UserLogged</title>
 </head>
 <body>
-<h1>Complimenti sei un nostro utente!!</h1>
+    <header>
+        <%@include file="../formHeader.jsp" %>
+    </header>
+    <h1 style="color: var(--main-color); margin-top: 50px; text-align: center;">Accesso effettuato correttamente</h1>
 </body>
 </html>
