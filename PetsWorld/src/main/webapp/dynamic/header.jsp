@@ -13,7 +13,7 @@
 <body>
 	<form action="ServletMain" method="post">
 	<!-- Extended version of the header, visible when the window is large -->
-	<div id="extended-header">
+	<div id="large-header">
 		<!-- Elements in the top bar of the header -->
 		<div class="top-bar">
 			<div>
@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	<!-- Condensed version of the header, visible when the window is small -->
-	<div id="condensed-header">
+	<div id="small-header">
 		<div class="top-bar">
 			
 		</div>

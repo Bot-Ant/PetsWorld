@@ -68,7 +68,7 @@ form {
 	background-color: var(--accent-color);
 }
 
-a:link {
+.form a:link {
 	color: var(--main-color);
 	text-decoration: none;
 }
