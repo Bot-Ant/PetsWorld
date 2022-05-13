@@ -1,39 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>footer</title>
-		<link rel="stylesheet" href="/static/styles/footer.css">
+		<link rel="stylesheet" href="static/styles/footer.css">
 	</head>
 <body>
-	<div class="footer">
-		<div class="footer-heading1">
-			<h1>CHI SIAMO</h1>
-			<h2><a href="#">Scopri di più</a>
-			<a href="#">Lavora con noi</a>
-			<a href="#">Contatti</a></h2>
+	<div id="large-footer">
+		<div class="footer-links">
+			<div class="footer-heading">
+				<h2>PETSWORLD</h2>
+				<a href="#">Scopri di piÃ¹</a>
+				<a href="#">Lavora con noi</a>
+				<a href="#">Contatti</a>
+			</div>
+			<div class="footer-heading">
+				<h2>CONTATTI</h2>
+				<p>Via Sansone 54 - 84084</p>
+				<p>Fisciano (SA)</p>
+				<p>+39 327 362 9020</p>
+				<a href="mailto:petsworld@gmail.com">petsworld@gmail.com</a>
+			</div>
+			<div class="footer-heading">
+				<h2>INFORMAZIONI</h2>
+				<a href="#">Assistenza</a>
+				<a href="#">Condizioni di vendita</a>
+				<a href="#">Pagamenti</a>
+				<a href="#">Spedizione</a>
+				<a href="#">Privacy Policy</a>
+				<a href="#">Cookie Policy</a>
+			</div>
+			<div class="footer-heading">
+				<h2>SEGUICI</h2>
+				<a href="#">facebook</a>
+				<a href="#">instagram</a>
+				<a href="#">twitter</a>
+				<a href="#">youtube</a>
+				<a href="#">linkedin</a>
+			</div>
 		</div>
-		<div class="footer-heading2">
-			<h1>CONTATTI</h1>
-			<h2>Via Fassolandia 8-12332</h2>
-			<h2>San Marzano sul Sarno(SA)</h2>
-			<h2>+39 3273629020</h2>
-			<h2>petsworld@gmail.com</h2>
+		<div class="footer-extras">
+			<div class="pay-methods">
+				<img src="static/images/payment_method_logo_visa.png" alt="visa-logo">
+				<img src="static/images/payment_method_logo_mastercard.png" alt="mastercard-logo">
+				<img src="static/images/payment_method_logo_paypal.png" alt="paypal-logo">
+			</div>
+			<div class="theme">
+				<button>Cambia Tema</button>
+			</div>
 		</div>
-		<div class="footer-heading3">
-			<h1>INFORMAZIONI</h1>
-			<h2><a href="#">Assistenza</a>
-			<a href="#">Privacy</a>
-			<a href="#">Metodi Pagamento</a></h2>
-		</div>
-		<div class="footer-heading4">
-			<h1>SEGUICI SU</h1>
-			<h2>immagine facebook, Petsworld
-			immagine instagram, Petsworld
-			immagine twitter, Petsworld</h2>
+		<div class="footer-copyright">
+			<p>Copyright PetsWorld SpA</p>
 		</div>
 	</div>
 
+	<div id="small-footer">
 
+	</div>
 
 </body>

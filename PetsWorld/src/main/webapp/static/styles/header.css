@@ -1,6 +1,7 @@
 @charset "utf-8";
 /*Style of the header*/
 header {
+    margin: 0;
     padding: 0;
     color: var(--contrast-color-1);
     background: var(--neutral-color-2);
@@ -140,7 +141,7 @@ nav .nav-center a:hover {
     background-color: rgb(252, 252, 252);
 }
 
-#extended-header {
+#large-header {
     margin: 0;
     padding: 0;
     width: 100%;

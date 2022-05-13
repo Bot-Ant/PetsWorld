@@ -47,8 +47,8 @@
         	<button type="submit" class="registerbtn" name="submit" value="ConfermaRegistrati">Registrati</button>
         	<hr>
         	<div class="signin">
-    			<p>
-    				Hai un account?
+            <p>
+    			    Hai già un account?
         			<a class="link" href="login.jsp"><span> Accedi</span></a>
         		</p>
     		</div>

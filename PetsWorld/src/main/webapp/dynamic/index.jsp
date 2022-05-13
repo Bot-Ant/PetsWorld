@@ -23,17 +23,26 @@
 		</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
-			<!-- Row of products selected -->
-			<div class="products-row">
+			<!-- Section of products selected -->
+			<div class="products-section">
 				<!-- Title of the section -->
 				<h2>Più venduti</h2>
 				<!-- Products to show in the row -->
+				<div class="products-row">
+
+				</div>
 			</div>
-			<div class="products-row">
+			<div class="products-section">
 				<h2>Novità</h2>
+				<div class="products-row">
+
+				</div>
 			</div>
-			<div class="products-row">
+			<div class="products-section">
 				<h2>Consigliati</h2>
+				<div class="products-row">
+
+				</div>
 			</div>
 		</div>
 	</div>

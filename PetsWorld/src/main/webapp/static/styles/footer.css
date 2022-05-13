@@ -1,8 +1,98 @@
 @charset "utf-8";
-<!--Style of the footer-->
+/*Style of the footer*/
 footer {
-    padding: 20px;
-    text-align: center;
-    color: var(--contrast-color-1);
+    margin: 0;
+    padding: 0;
+    color: var(--neutral-color-2);
     background: var(--main-color);
+}
+
+#large-footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p, footer a {
+    margin: 5px;
+    color: var(--neutral-color-2);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+.footer-links {
+    padding: 0;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-heading {
+    margin: 15px;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+}
+
+.footer-extras {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer-extras button {
+    margin: 20px;
+    padding: 10px;
+    border: 0;
+    color: var(--contrast-color-1);
+    background-color: var(--neutral-color-2);
+}
+
+.footer-extras button:hover {
+    color: var(--neutral-color-2);
+    background-color: var(--contrast-color-1);
+}
+
+.pay-methods {
+    width: auto;
+    display: flex;
+}
+
+.pay-methods img {
+    margin: 10px;
+    height: 25px;
+    
+}
+
+.theme {
+    width: auto;
+    display: flex;
+    margin-left: auto;
+}
+
+.footer-copyright {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-copyright h4 {
+    display: flex;
+    text-align: center;
 }
