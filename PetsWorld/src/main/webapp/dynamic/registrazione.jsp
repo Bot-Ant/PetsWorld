@@ -12,8 +12,9 @@
 		<!-- Navigation bar menu-->
 		<%@include file="formHeader.jsp"%>
 	</header>
-    <form action="ServletReg" method="post">
-        <div class="form">
+    
+    <div class="form">
+		<form action="ServletReg" method="post">
         	<h1>Crea il tuo account</h1>
 			<ul>
 				<li>
@@ -42,20 +43,21 @@
 				</li>
 			</ul>
             <p>
-        		Creando il tuo account accetti i nostri <a href="#"><span style="color: green">Termini e condizioni</span></a>.
+        		Creando il tuo account accetti i nostri <a class="link" href="#">Termini e condizioni</a>.
         	</p>
         	<button type="submit" class="registerbtn" name="submit" value="ConfermaRegistrati">Registrati</button>
         	<hr>
         	<div class="signin">
          
     		</div>
-        </div>
-    </form>
-    <form action="ServletMain" method="post">
+        </form>
+    
+    	<form action="ServletMain" method="post">
 				<p>
     			    Hai un account?
     			    <button class="link" type="submit" name="operazione" value="Login">Accedi</button>
-              		</p>
-      </form>
+              	</p>
+      	</form>
+	</div>
 </body>
 </html>

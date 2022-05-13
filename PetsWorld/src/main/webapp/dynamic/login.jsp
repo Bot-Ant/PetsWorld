@@ -13,8 +13,8 @@
 		<!-- Navigation bar menu-->
 		<%@include file="formHeader.jsp"%>
 	</header>
-    <form action="ServletLogin" method="post">
-        <div class="form">
+	<div class="form">
+    	<form action="ServletLogin" method="post">
         	<h1>Accedi al tuo account</h1>
 			<ul>
 				<li>
@@ -28,16 +28,15 @@
 			</ul>
 			<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
         	<hr>
-        	
-        </div>
-    </form>
-  <form action="ServletMain" method="post">
-  		<div class="signin">
-    			<p>
-    				Non hai ancora un account?
-    				<button type="submit" class="link"  name="operazione" value="Registrazione">Registrati</button>
-        		</p>
-    		</div>
-  </form>
+		</form>
+		<form action="ServletMain" method="post">
+			<div class="signin">
+				  <p>
+					  Non hai ancora un account?
+					  <button type="submit" class="link"  name="operazione" value="Registrazione">Registrati</button>
+				  </p>
+			</div>
+		</form>
+    </div>
 </body>
 </html>
