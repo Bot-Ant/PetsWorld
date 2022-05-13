@@ -1,15 +1,27 @@
 @charset "utf-8";
-/**/
-form {
-	display: flex;
+/*rinominare form-box*/
+.form-content{
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form {
+.form-box {
+	display: flex;
+	flex-direction: column;
 	width: 500px;
 	margin: 10% 30% 10% 30%;
 	padding: 30px;
 	border: 3px solid var(--main-color);
 	background-color: var(--neutral-color-2);
+}
+
+form {
+	margin: 0;
+	padding: 0;
 }
 /**/
 .fields {
@@ -22,22 +34,22 @@ form {
 	text-align: left;
 }
 
-.form ul {
+form ul {
 	padding: 0;
 	text-align: center;
 	list-style: none;
 }
 
-.form ul li {
+form ul li {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	text-align: left;
 }
 
-.form input, select {
+form input, select {
 	width: 100%;
-	padding: 12px 20px;
-	margin: 10px 10px;
+	padding: 15px 15px;
+	margin: 10px 0px;
 	display: inline-block;
 	border: 0px solid #ccc;
 	border-radius: 4px;
@@ -45,30 +57,57 @@ form {
 	background-color: var(--neutral-color-1);
 	
 }
-.form input:focus {
+
+form input:focus {
 	outline: none;
 	caret-color: var(--main-color);
 	border-bottom: 1px solid var(--main-color);
 }
 
-.form button[type=submit] {
+form > button[type=submit] {
 	background-color: var(--main-color);
 	color: white;
-	padding: 14px 20px;
-	margin: 10px 10px;
+	padding: 15px 15px;
+	margin: 10px 0px;
+	width: 100%;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
 }
-.form button[type=submit] {
-	width: 100%;
-}
 
-.form button[type=submit]:hover {
+form > button[type=submit]:hover {
 	background-color: var(--accent-color);
 }
 
-.form a:link {
-	color: var(--main-color);
+form a {
 	text-decoration: none;
+	color: var(--main-color);
+}
+form a:hover {
+	color: var(--accent-color);
+}
+
+p link {
+	color: var(--accent-color);
+	background-color: var(--accent-color);
+	text-decoration: none;
+}
+
+p button[type=submit] {
+	padding: 0;
+	margin: 0;
+	border: none;
+	cursor: pointer;
+	font-size: medium;
+	color: var(--main-color);
+	background-color: var(--neutral-color-2);
+}
+
+p button[type=submit]:hover {
+	color: var(--accent-color);
+}
+
+.form-box hr {
+	width: 100%;
+	color: var(--main-color);
 }
