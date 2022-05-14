@@ -10,11 +10,14 @@
 </head>
 <body>
 	<header>
-		<!-- Navigation bar menu-->
+		<!-- Compact header for Form pages -->
 		<%@include file="formHeader.jsp"%>
 	</header>
-	<div class="form-content">
+	<!-- Container section for forms-->
+	<div class="form-container">
+		<!-- Form rectangle that contains form elements-->
 		<div class="form-box">
+			<!-- Form section connected to a servlet-->
 			<form action="ServletLogin" method="post">
 				<h1>Accedi al tuo account</h1>
 				<ul>
@@ -29,7 +32,9 @@
 				</ul>
 				<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
 			</form>
+			<!-- Seperation line between form sections-->
 			<hr>
+			<!-- Form section connected to a servlet-->
 			<form action="ServletMain" method="post">
 				<p>
 					Non hai ancora un account?

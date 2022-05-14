@@ -9,12 +9,14 @@
 </head>
 <body>
 	<header>
-		<!-- Navigation bar menu-->
+		<!-- Compact header for Form pages -->
 		<%@include file="formHeader.jsp"%>
 	</header>
-    
-    <div class="form-content">
+    <!-- Container section for forms-->
+    <div class="form-container">
+		<!-- Form rectangle that contains form elements-->
 		<div class="form-box">
+			<!-- Form section connected to a servlet-->
 			<form action="ServletReg" method="post">
 				<h1>Crea il tuo account</h1>
 				<ul>
@@ -44,11 +46,13 @@
 					</li>
 				</ul>
 				<p>
-					Creando il tuo account accetti i nostri <a class="link" href="#">Termini e condizioni</a>.
+					Creando il tuo account accetti i nostri <a href="#">Termini e condizioni</a>.
 				</p>
 				<button type="submit" class="registerbtn" name="submit" value="ConfermaRegistrati">Registrati</button>
 			</form>
+			<!-- Seperation line between form sections-->
 			<hr>
+			<!-- Form section connected to a servlet-->
 			<form class="redirect" action="ServletMain" method="post">
 				<p>
 					Hai un account?
