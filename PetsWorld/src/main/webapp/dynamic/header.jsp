@@ -16,8 +16,8 @@
 	<div id="large-header">
 		<!-- Elements in the top bar of the header -->
 		<div class="top-bar">
-			<div>
-				<img class="logo" src="static/images/petsworld.png" alt="logo">
+			<div class="logo-box">
+				<input class="logo" type="image" src="static/images/petsworld.png" alt="logo" name="home">
 			</div>
 			<div class="bar-center">
 				<%@include file="/dynamic/searchbar.jsp"%>
