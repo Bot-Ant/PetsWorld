@@ -118,7 +118,7 @@ nav {
     display: flex; 
 }
 
-nav .nav-center {
+nav .nav-links {
     width: auto;
     height: 100%;
     margin: 0px auto;
@@ -127,7 +127,7 @@ nav .nav-center {
     display: flex;
 }
 
-nav .nav-center a {
+nav .nav-links a {
     align-items: center;
     font-size: 2rem;
     text-decoration: none;
@@ -136,9 +136,15 @@ nav .nav-center a {
     color: rgb(252, 252, 252);
 }
 
-nav .nav-center a:hover {
+nav .nav-links a:hover {
     color: #63b441ff;
     background-color: rgb(252, 252, 252);
+}
+
+nav .nav-links a span {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 #large-header {

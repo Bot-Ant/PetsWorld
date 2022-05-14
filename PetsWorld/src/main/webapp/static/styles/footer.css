@@ -3,8 +3,14 @@
 footer {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Mono', monospace;
     color: var(--neutral-color-2);
     background: var(--main-color);
+}
+
+footer h1, footer h2, footer h2, footer h4, footer h5, footer h6 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
 }
 
 #large-footer {
