@@ -1,6 +1,6 @@
 @charset "utf-8";
-/*rinominare form-box*/
-.form-content{
+/* Reset any graphic element and display the forms in a central column with flexbox */
+.form-container{
 	margin: 0;
     padding: 0;
     width: 100%;
@@ -8,44 +8,44 @@
     flex-direction: column;
     align-items: center;
 }
-
+/* Style a form rectangle with a static dimension */
 .form-box {
 	display: flex;
 	flex-direction: column;
 	width: 500px;
-	margin: 10% 30% 10% 30%;
+	margin: 70px 30% 70px 30%;
 	padding: 30px;
 	border: 3px solid var(--main-color);
 	background-color: var(--neutral-color-2);
 }
-
+/* Reset margin and padding for better centred content */
 form {
 	margin: 0;
 	padding: 0;
 }
-/**/
+/* Allign the text of the forms to the left */
 .fields {
 	text-align: left;
 }
-/**/
+/* Add a margin on top and bottom of the single field */
 .field {
 	margin-top: 15px;
 	margin-bottom: 15px;
-	text-align: left;
+	/*text-align: left;*/
 }
-
+/* Set the style of the list of fields without decoration */
 form ul {
 	padding: 0;
 	text-align: center;
 	list-style: none;
 }
-
+/* Add a margin for the list item containing a form field */
 form ul li {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	text-align: left;
 }
-
+/* Set the width to take all the space of the form and adds some padding and rounded corners */
 form input, select {
 	width: 100%;
 	padding: 15px 15px;
@@ -55,44 +55,38 @@ form input, select {
 	border-radius: 4px;
 	box-sizing: border-box;
 	background-color: var(--neutral-color-1);
-	
 }
-
+/* Change the input element style when selected*/
 form input:focus {
 	outline: none;
 	caret-color: var(--main-color);
 	border-bottom: 1px solid var(--main-color);
 }
-
+/* Style the buttons inside the form */
 form > button[type=submit] {
-	background-color: var(--main-color);
-	color: white;
 	padding: 15px 15px;
 	margin: 10px 0px;
 	width: 100%;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+	color: white;
+	background-color: var(--main-color);
 }
-
+/* Change the button color when the cursor is on it */
 form > button[type=submit]:hover {
 	background-color: var(--accent-color);
 }
-
+/* Set the style of a link inside a form without decoration */
 form a {
 	text-decoration: none;
 	color: var(--main-color);
 }
+/* Change the color of the link when the cursor is on it*/
 form a:hover {
 	color: var(--accent-color);
 }
-
-p link {
-	color: var(--accent-color);
-	background-color: var(--accent-color);
-	text-decoration: none;
-}
-
+/* Set the style of a button in a paragraph to look like a normal link */
 p button[type=submit] {
 	padding: 0;
 	margin: 0;
@@ -106,7 +100,7 @@ p button[type=submit] {
 p button[type=submit]:hover {
 	color: var(--accent-color);
 }
-
+/* Set the style of the form element separator to take all space avaliable */
 .form-box hr {
 	width: 100%;
 	color: var(--main-color);
