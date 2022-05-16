@@ -31,25 +31,35 @@
 				<h2>Più venduti</h2>
 				<!-- Products to show in the row -->
 				<div class="products-row">
-				<c:forEach items="${list}" var="prd">
-					<div class="product-box">
-						<div class="image-container">
-							<img src="static/images/${prd.foto}" alt="immagine prodotto">
+					<c:forEach items="${list}" var="prd">
+						<div class="product-box">
+							<div class="image-container">
+								<img src="static/images/${prd.foto}" alt="immagine prodotto">
+							</div>
+							<h3 class="name">${prd.nome}</h3>
+							<div class="text-container">
+								<h3 class="price">€ ${prd.prezzo}</h3>
+								<button class="add-to-cart">Aggiungi</button>
+							</div>
 						</div>
-			
-						<h3 class="name">${prd.nome}</h3>
-						<div class="text-container">
-							<h3 class="price">€ ${prd.prezzo}</h3>
-							<button class="add-to-cart">Aggiungi</button>
-						</div>
-					</div>
 					</c:forEach>
-					</div>
+				</div>
 			</div>
 			<div class="products-section">
 				<h2>Novità</h2>
 				<div class="products-row">
+					<div class="product-box">
+						<div class="image-container">
 
+						</div>
+						<h3 class="name"></h3>
+						<div class="text-container">
+							<div class="price">
+
+							</div>
+							<button></button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="products-section">
