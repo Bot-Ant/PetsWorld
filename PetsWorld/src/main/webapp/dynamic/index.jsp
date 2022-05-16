@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,45 +31,20 @@
 				<h2>Più venduti</h2>
 				<!-- Products to show in the row -->
 				<div class="products-row">
+				<c:forEach items="${list}" var="prd">
 					<div class="product-box">
 						<div class="image-container">
-							<img src="static/images/dog-house.png" alt="immagine prodotto">
+							<img src="static/images/${prd.foto}" alt="immagine prodotto">
 						</div>
-						<h3 class="name">Nome prodotto</h3>
+			
+						<h3 class="name">${prd.nome}</h3>
 						<div class="text-container">
-							<h3 class="price">€24,90</h3>
+							<h3 class="price">€ ${prd.prezzo}</h3>
 							<button class="add-to-cart">Aggiungi</button>
 						</div>
 					</div>
-					<div class="product-box">
-						<div class="image-container">
-							<img src="static/images/dog-house.png" alt="immagine prodotto">
-						</div>
-						<h3 class="name">Nome prodotto ma più lungo</h3>
-						<div class="text-container">
-							<h3 class="price">€121,90</h3>
-							<button class="add-to-cart">Aggiungi</button>
-						</div>
+					</c:forEach>
 					</div>
-					<div class="product-box">
-						<div class="image-container">
-							<img src="static/images/dog-house.png" alt="immagine prodotto">
-						</div>
-						<div class="text-container">
-							<h3 class="price">€69,90</h3>
-							<button class="add-to-cart">Aggiungi</button>
-						</div>
-					</div>
-					<div class="product-box">
-						<div class="image-container">
-							<img src="static/images/dog-house.png" alt="immagine prodotto">
-						</div>
-						<div class="text-container">
-							<h3 class="price">€44,90</h3>
-							<button class="add-to-cart">Aggiungi</button>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="products-section">
 				<h2>Novità</h2>
