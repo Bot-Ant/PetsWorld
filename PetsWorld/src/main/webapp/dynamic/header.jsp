@@ -29,7 +29,7 @@
 		</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
-			<%@include file="/static/html/navbar.html"%>
+			<%@include file="/dynamic/navbar.jsp"%>
 		</div>
 	</div>
 	<!-- Condensed version of the header, visible when the window is small -->

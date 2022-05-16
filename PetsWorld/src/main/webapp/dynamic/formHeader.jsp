@@ -13,10 +13,7 @@
 	
 	<div id="form-header">
 		<div class="logo-box">
-			<img src="static/images/petsworld.png" alt="Workplace" usemap="#workmap" width="400" height="379">
-			<map name="workmap">
-  			<area shape="rect" coords="34,44,270,350" alt="" href="dynamic/index.jsp">
-  			</map>
+			<img src="static/images/petsworld.png">
 		</div>
 	</div>
 </body>
