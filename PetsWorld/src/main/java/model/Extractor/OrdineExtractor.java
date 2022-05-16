@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.Ordine;
 
-public class ordineExtractor implements ResultSetExtractor<Ordine> {
+public class OrdineExtractor implements ResultSetExtractor<Ordine> {
 
     public Ordine extract(ResultSet resultSet) throws SQLException{
         Ordine ordine=new Ordine();

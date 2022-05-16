@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.Donazione;
 
-public class donazioneExtractor implements ResultSetExtractor<Donazione> {
+public class DonazioneExtractor implements ResultSetExtractor<Donazione> {
 
     public Donazione extract(ResultSet resultSet) throws SQLException{
     	Donazione donazione=new Donazione();

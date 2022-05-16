@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.ProdottoAcquistato;
 
-public class prodottoAcquistatoExtractor implements ResultSetExtractor<ProdottoAcquistato> {
+public class ProdottoAcquistatoExtractor implements ResultSetExtractor<ProdottoAcquistato> {
 
     public ProdottoAcquistato extract(ResultSet resultSet) throws SQLException{
     	ProdottoAcquistato prodottoAcquistato=new ProdottoAcquistato();

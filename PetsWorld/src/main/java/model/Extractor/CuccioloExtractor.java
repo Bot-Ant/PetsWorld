@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.Cucciolo;
 
-public class cuccioloExtractor implements ResultSetExtractor<Cucciolo> {
+public class CuccioloExtractor implements ResultSetExtractor<Cucciolo> {
 
     public Cucciolo extract(ResultSet resultSet) throws SQLException{
     	Cucciolo cucciolo=new Cucciolo();

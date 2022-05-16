@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.Indirizzo;
 
-public class indirizzoExtractor implements ResultSetExtractor<Indirizzo> {
+public class IndirizzoExtractor implements ResultSetExtractor<Indirizzo> {
 
     public Indirizzo extract(ResultSet resultSet) throws SQLException{
     	Indirizzo indirizzo=new Indirizzo();

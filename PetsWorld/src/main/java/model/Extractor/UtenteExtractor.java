@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.Utente;
 
-public class utenteExtractor implements ResultSetExtractor<Utente> {
+public class UtenteExtractor implements ResultSetExtractor<Utente> {
 
     public Utente extract(ResultSet resultSet) throws SQLException{
         Utente utente=new Utente();

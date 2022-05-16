@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.MetodoPagamento;
 
-public class metodoPagamentoExtractor implements ResultSetExtractor<MetodoPagamento> {
+public class MetodoPagamentoExtractor implements ResultSetExtractor<MetodoPagamento> {
 
     public MetodoPagamento extract(ResultSet resultSet) throws SQLException{
     	MetodoPagamento MetodoPagamento=new MetodoPagamento();

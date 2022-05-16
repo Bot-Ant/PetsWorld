@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.ResultSetExtractor;
 import model.beans.Banner;
 
-public class bannerExtractor implements ResultSetExtractor<Banner> {
+public class BannerExtractor implements ResultSetExtractor<Banner> {
 
     public Banner extract(ResultSet resultSet) throws SQLException{
         Banner banner=new Banner();
