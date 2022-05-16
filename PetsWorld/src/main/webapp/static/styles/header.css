@@ -124,23 +124,25 @@ nav .nav-links {
     padding: 0px;
     list-style-type: none;
     display: flex;
+    flex-direction: row;
 }
 
-nav .nav-links a {
+nav .nav-links button {
+    margin: 0;
+    padding: 15px 20px;
     align-items: center;
     font-size: 2rem;
     text-decoration: none;
-    padding: 15px 20px;
-    text-decoration: none;
+    border-radius: 0;
     color: rgb(252, 252, 252);
 }
 
-nav .nav-links a:hover {
+nav .nav-links button:hover {
     color: #63b441ff;
     background-color: rgb(252, 252, 252);
 }
 
-nav .nav-links a span {
+nav .nav-links button span {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
