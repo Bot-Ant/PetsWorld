@@ -18,6 +18,7 @@ public class ProdottoExtractor implements ResultSetExtractor<Prodotto> {
     	prodotto.setDescrizione(resultSet.getString("prd.descrizione"));
     	prodotto.setFoto(resultSet.getString("prd.foto"));
     	prodotto.setIva(resultSet.getDouble("prd.iva"));
+    	prodotto.setAnimale(resultSet.getString("prd.animale"));
     	prodotto.setDataScadenza(resultSet.getString("prd.dataScadenza"));
     	prodotto.setDimensione(resultSet.getString("prd.dimensione"));
     	prodotto.setColore(resultSet.getString("prd.colore"));

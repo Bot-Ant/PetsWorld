@@ -15,4 +15,10 @@ public class ProdottoQuery {
 		builder.select();
 		return builder.GeneratedQuery();
 	}
+	
+	public static String cerca() {
+		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
+		builder.select().where("prd.animale = ?");
+		return builder.GeneratedQuery();
+	}
 }

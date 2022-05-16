@@ -19,6 +19,7 @@ public class Prodotto implements Serializable{
 	private String colore;
 	private double peso;
 	private int quantità;
+	private String animale;
 	
 	public int getIdProdotto() {
 		return IdProdotto;
@@ -99,5 +100,12 @@ public class Prodotto implements Serializable{
 				+ ", dimensione=" + dimensione + ", colore=" + colore + ", peso=" + peso + ", quantità=" + quantità
 				+ "]";
 	}
+	public String getAnimale() {
+		return animale;
+	}
+	public void setAnimale(String animale) {
+		this.animale = animale;
+	}
+	
 	
 }

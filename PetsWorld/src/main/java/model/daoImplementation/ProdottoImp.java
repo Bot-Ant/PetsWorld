@@ -34,7 +34,7 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 			String query = ProdottoQuery.lista();
 			 
 				try(PreparedStatement ps = connection.prepareStatement(query)){
-					System.out.println(query);
+			
                 ResultSet rs = ps.executeQuery();
                 ProdottoExtractor  prd = new ProdottoExtractor();
                 List<Prodotto> listaProdotti = new ArrayList<>();
@@ -42,11 +42,29 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
                 while (rs.next()) {
                 	listaProdotti.add(prd.extract(rs));
                 }
-                System.out.println(listaProdotti);
+               
                 return listaProdotti;
             }
         }
     }
-	
 
+	@Override
+	public List<Prodotto> ListaProdotti(Prodotto animale) throws SQLException {
+		try (Connection connection = createConnection()) {
+			String query = ProdottoQuery.cerca();
+			 
+				try(PreparedStatement ps = connection.prepareStatement(query)){
+			
+                ResultSet rs = ps.executeQuery();
+                ProdottoExtractor  prd = new ProdottoExtractor();
+                List<Prodotto> listaProdotti = new ArrayList<>();
+                
+                while (rs.next()) {
+                	listaProdotti.add(prd.extract(rs));
+                }
+               
+                return listaProdotti;
+            }
+	}
+}
 }

@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="static/styles/header.css">
 </head>
 <body>
-	<form action="ServletMain" method="post">
+	
 	<div id="form-header">
 		<div class="logo-box">
-			<input class="logo" type="image" src="static/images/petsworld.png" alt="logo" name="home">
+			<img src="static/images/petsworld.png" alt="Workplace" usemap="#workmap" width="400" height="379">
+			<map name="workmap">
+  			<area shape="rect" coords="34,44,270,350" alt="" href="dynamic/index.jsp">
+  			</map>
 		</div>
 	</div>
-	</form>
 </body>
 </html>

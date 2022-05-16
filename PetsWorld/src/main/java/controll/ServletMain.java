@@ -45,6 +45,13 @@ public class ServletMain extends HttpServlet {
 	    String address;
 	    switch(operazione){
 	    
+	    
+	         
+	    	case"Home": {// nel caso in cui si sia premuto il tasto logout dopo esser loggati
+            address = "dynamic/index.jsp";
+            break;
+	    	}
+	    	
 	        case "Login": { //nel caso in cui sia submittato il tasto login dalla form, rimanda alla jsp apposita
 	            address="dynamic/login.jsp";
 	            break;
