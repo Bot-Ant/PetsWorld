@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="static/styles/header.css">
         <link rel="stylesheet" href="static/styles/footer.css">
         <link rel="stylesheet" href="static/styles/user.css">
+		<link rel="stylesheet" href="static/styles/catalog.css">
 	</head>
 <body>
 	<header>
@@ -29,7 +30,44 @@
 				<h2>Più venduti</h2>
 				<!-- Products to show in the row -->
 				<div class="products-row">
-
+					<div class="product-box">
+						<div class="image-container">
+							<img src="static/images/dog-house.png" alt="immagine prodotto">
+						</div>
+						<h3 class="name">Nome prodotto</h3>
+						<div class="text-container">
+							<h3 class="price">€24,90</h3>
+							<button class="add-to-cart">Aggiungi</button>
+						</div>
+					</div>
+					<div class="product-box">
+						<div class="image-container">
+							<img src="static/images/dog-house.png" alt="immagine prodotto">
+						</div>
+						<h3 class="name">Nome prodotto ma più lungo</h3>
+						<div class="text-container">
+							<h3 class="price">€121,90</h3>
+							<button class="add-to-cart">Aggiungi</button>
+						</div>
+					</div>
+					<div class="product-box">
+						<div class="image-container">
+							<img src="static/images/dog-house.png" alt="immagine prodotto">
+						</div>
+						<div class="text-container">
+							<h3 class="price">€69,90</h3>
+							<button class="add-to-cart">Aggiungi</button>
+						</div>
+					</div>
+					<div class="product-box">
+						<div class="image-container">
+							<img src="static/images/dog-house.png" alt="immagine prodotto">
+						</div>
+						<div class="text-container">
+							<h3 class="price">€44,90</h3>
+							<button class="add-to-cart">Aggiungi</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="products-section">

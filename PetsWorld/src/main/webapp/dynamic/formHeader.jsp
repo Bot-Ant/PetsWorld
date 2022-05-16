@@ -12,8 +12,8 @@
 <body>
 	<form action="ServletMain" method="post">
 	<div id="form-header">
-		<div class="header-center">
-			<img class="logo" src="static/images/petsworld.png" alt="logo">
+		<div class="logo-box">
+			<input class="logo" type="image" src="static/images/petsworld.png" alt="logo" name="home">
 		</div>
 	</div>
 	</form>
