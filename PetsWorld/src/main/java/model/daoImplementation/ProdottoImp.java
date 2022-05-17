@@ -12,6 +12,8 @@ import model.Manager;
 import model.beans.Prodotto;
 import model.daoInterface.ProdottoDao;
 import model.query.ProdottoQuery;
+import model.search.Condition;
+import model.search.Operatore;
 import model.Extractor.ProdottoExtractor;
 
 public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
@@ -48,23 +50,30 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
         }
     }
 
-	@Override
-	public List<Prodotto> ListaProdotti(Prodotto animale) throws SQLException {
-		try (Connection connection = createConnection()) {
-			String query = ProdottoQuery.cerca();
-			 
-				try(PreparedStatement ps = connection.prepareStatement(query)){
-			
-                ResultSet rs = ps.executeQuery();
-                ProdottoExtractor  prd = new ProdottoExtractor();
-                List<Prodotto> listaProdotti = new ArrayList<>();
-                
-                while (rs.next()) {
-                	listaProdotti.add(prd.extract(rs));
-                }
-               
-                return listaProdotti;
-            }
-	}
-}
+	
+	public List<Prodotto> ListaProdotti(List<Condition> conditions) throws SQLException {
+			try (Connection connection = createConnection()) {
+				String query = ProdottoQuery.cerca(conditions);
+				
+				try (PreparedStatement ps = connection.prepareStatement(query)) {
+				
+					
+					for(int i=0; i < conditions.size(); i++) {
+							
+							ps.setObject(i+1,  conditions.get(i).getValue() );
+							
+					}
+	                ResultSet rs = ps.executeQuery();
+	                List<Prodotto> listaProdotti = new ArrayList<>();
+	                
+	                while (rs.next()) {
+	                	ProdottoExtractor extractor = new ProdottoExtractor();
+	                    listaProdotti.add(extractor.extract(rs));
+	                    
+	                }
+	               
+	                return listaProdotti;
+				}
+			}
+		}
 }

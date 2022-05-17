@@ -29,7 +29,7 @@
 				<h1>Titolo della pagina</h1>
 			</div>
 			<div class="catalog-products">
-				<c:forEach items="${list}" var="prd">
+				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
 						<div class="image-container">
 							<img src="static/images/${prd.foto}">
