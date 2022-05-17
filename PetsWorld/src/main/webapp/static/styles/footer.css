@@ -53,30 +53,28 @@ footer a:hover {
     text-align: left;
 }
 
+.social-links {
+    margin: auto;
+    width: 100%;
+    display: flex;
+}
+
+.social-icon {
+    height: 25px;
+    width: 25px;
+}
+
 .footer-extras {
     margin: 0;
     padding: 0;
     width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-}
-
-.footer-extras button {
-    margin: 20px;
-    padding: 10px;
-    border: 0;
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-2);
-}
-
-.footer-extras button:hover {
-    color: var(--neutral-color-2);
-    background-color: var(--contrast-color-1);
 }
 
 .pay-methods {
     width: auto;
+    margin-right: auto;
     display: flex;
 }
 
@@ -87,10 +85,87 @@ footer a:hover {
 }
 
 .theme {
-    width: auto;
-    display: flex;
-    margin-left: auto;
+  width: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
+.theme h4 {
+  margin: 10px;
+}
+
+/* Theme switch style*/
+ /* switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--main-color);
+  /*background-color: white;*/
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--light);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--accent-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: var(--main-color);
+  /*background-color: yellow;*/
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+/* End of Theme switch style*/
 
 .footer-copyright {
     margin: 0;
