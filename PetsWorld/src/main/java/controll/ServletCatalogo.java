@@ -2,6 +2,7 @@ package controll;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +16,8 @@ import org.apache.tomcat.jdbc.pool.DataSource;
 import model.beans.Prodotto;
 import model.daoImplementation.ProdottoImp;
 import model.daoInterface.ProdottoDao;
+import model.search.Condition;
+import model.search.ProductSearch;
 
 /**
  * Servlet implementation class ServletCatalogo
@@ -44,56 +47,26 @@ public class ServletCatalogo extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String operazione= request.getParameter("operazione");
+		
+		String nome = request.getParameter("animale");
+		
+		
+		ProdottoDao<SQLException> dao = new ProdottoImp(source);
+
+		List<Condition> conditions = new ProductSearch().buildSearch(request);
 		  
-	    String address;
-	    switch(operazione){
-	    
-	    case"cane": {
-	    	String Animale = request.getParameter("operatore");
-	    	Prodotto prd = new Prodotto();
-	    	ProdottoDao <SQLException> dao = new ProdottoImp(source);
-	    	
-	    	prd.setAnimale(Animale);
-	    		 try {
-	    	           dao.ListaProdotti(prd);
-	    	        } catch (SQLException throwables) {
-	    	            throwables.printStackTrace();
-	    	        }
-	   
-            address = "dynamic/catalogo.jsp";
-            break;
-	    	}
-	    
-	    	
-	        case "gatto": {
-	            address="dynamic/login.jsp";
-	            break;
-	        }
-	        
-	        case "pesci" : {
-	            address="dynamic/registrazione.jsp";
-	            
-	            break;
-	        }
-	        case "volatili": {
-	            address="carrello.jsp";
-	            break;
-	        }
-	        case"piccoliAnimali": {
-	            address = "dynamic/index.jsp";
-	            break;
-	        }
-	        
-	        default:
-	            throw new IllegalStateException("Unexpected value: " + operazione);
-	    }
-	    
-	    
-	    RequestDispatcher requestDispatcher= request.getRequestDispatcher(address);
-	    requestDispatcher.include(request,response);
-	    }
-	    
+		try {
+			List<Prodotto> search = dao.ListaProdotti(conditions);
+			this.getServletContext().setAttribute("prodotto",search);
+			request.setAttribute("animale", nome);
+	        request.getRequestDispatcher("dynamic/catalogo.jsp").forward(request,response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
+	    
+}
 
 

@@ -118,4 +118,5 @@ import model.search.Condition;
 			query.append(searchJoiner);
 			return this;
 		}
+		
 }

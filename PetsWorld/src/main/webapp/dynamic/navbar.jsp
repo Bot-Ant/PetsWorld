@@ -10,14 +10,16 @@
 </head>
 <body>
 	<nav>
-		<form class="nav-links" action="ServletCatalogo" method="post">
-			<button class="links" type="submit" name="operazione" value="cane"><span>Cane</span></button>
-			<button class="links" type="submit" name="operazione" value="gatto"><span>Gatto</span></button>
+
+		<div class="nav-links">
+		<form action="ServletCatalogo" method="post">
+			<button class="links" type="submit" name="animale" value="cane"><span>Cane</span></button>
+			<button class="links" type="submit" name="animale" value="gatto"><span>Gatto</span></button>
 			<button class="links" type="submit" name="operazione" value="pesci"><span>Pesci</span></button>
 			<button class="links" type="submit" name="operazione" value="volatili"><span>Volatili</span></button>
 			<button class="links" type="submit" name="operazione" value="piccoliAnimali"><span>Piccoli Animali</span></button>
-		</form>
-
+			</form>
+		</div>
 	</nav>
 </body>
 </html>
