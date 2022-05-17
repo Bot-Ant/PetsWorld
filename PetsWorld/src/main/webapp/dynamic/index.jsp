@@ -52,12 +52,10 @@
 						<div class="image-container">
 
 						</div>
-						<h3 class="name"></h3>
+						<h3 class="name">Template prodotto</h3>
 						<div class="text-container">
-							<div class="price">
-
-							</div>
-							<button></button>
+							<div class="price">€99.99</div>
+							<button>Aggiungi</button>
 						</div>
 					</div>
 				</div>
