@@ -23,6 +23,7 @@
 				<%@include file="/dynamic/searchbar.jsp"%>
 			</div>
 			<div class="header-buttons">
+				<button class="cart-button" type="submit" name="operazione" value="Catalogo">Catalogo</button>
 				<button class="cart-button" type="submit" name="operazione" value="Carrello">Carrello</button>
 				<button class="user-button" type="submit" name="operazione" value="Login">Login</button>
 			</div>

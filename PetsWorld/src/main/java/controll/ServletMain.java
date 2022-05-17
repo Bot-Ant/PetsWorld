@@ -63,7 +63,11 @@ public class ServletMain extends HttpServlet {
 	            break;
 	        }
 	        case "Carrello": {//stesso ma con carrello.
-	            address="carrello.jsp";
+	            address="dynamic/carrello.jsp";
+	            break;
+	        }
+			case "Catalogo": {
+	            address="dynamic/catalogo.jsp";
 	            break;
 	        }
 	        case"Logout": {// nel caso in cui si sia premuto il tasto logout dopo esser loggati
