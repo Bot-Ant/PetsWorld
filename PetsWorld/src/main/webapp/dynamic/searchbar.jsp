@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +6,9 @@
 	<title>PetsWorld</title>
 </head>
 <body>
-	<form action="SearchServlet" method="post">
-		<div class="search-bar">
-        	<input class="" type="text" name="nome" placeholder="Cerca prodotto">
-        	<button class="" name="bottonecerca">Cerca</button>
-		</div>
+	<form class="search-bar" action="SearchServlet" method="post">
+        <input class="" type="text" name="nome" placeholder="Cerca prodotto">
+        <button class="" name="bottonecerca">Cerca</button>
     </form>
 </body>
 </html>

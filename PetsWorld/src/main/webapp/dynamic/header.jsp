@@ -11,7 +11,6 @@
 
 </head>
 <body>
-	<form action="ServletMain" method="post">
 	<!-- Extended version of the header, visible when the window is large -->
 	<div id="large-header">
 		<!-- Elements in the top bar of the header -->
@@ -22,11 +21,11 @@
 			<div class="bar-center">
 				<%@include file="/dynamic/searchbar.jsp"%>
 			</div>
-			<div class="header-buttons">
-				<button class="cart-button" type="submit" name="operazione" value="Catalogo">Catalogo</button>
+			<form class="header-buttons" action="ServletMain" method="post">
+				<button class="catalog-button" type="submit" name="operazione" value="Catalogo">Catalogo</button>
 				<button class="cart-button" type="submit" name="operazione" value="Carrello">Carrello</button>
 				<button class="user-button" type="submit" name="operazione" value="Login">Login</button>
-			</div>
+			</form>
 		</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
@@ -42,6 +41,5 @@
 			
 		</div>
 	</div>
-	</form>
 </body>
 </html>
