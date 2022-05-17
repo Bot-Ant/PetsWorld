@@ -18,7 +18,7 @@
 		<!-- Form rectangle that contains form elements-->
 		<div class="form-box">
 			<!-- Form section connected to a servlet-->
-			<form action="ServletLogin" method="post">
+			<form class="form-section" action="ServletLogin" method="post">
 				<h1>Accedi al tuo account</h1>
 				<ul>
 					<li>
@@ -35,7 +35,7 @@
 			<!-- Seperation line between form sections-->
 			<hr>
 			<!-- Form section connected to a servlet-->
-			<form action="ServletMain" method="post">
+			<form class="form-section" action="ServletMain" method="post">
 				<p>
 					Non hai ancora un account?
 					<button type="submit" class="link"  name="operazione" value="Registrazione">Registrati</button>

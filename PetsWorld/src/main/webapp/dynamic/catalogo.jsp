@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +25,11 @@
 			</p>
 		</div>
 		<div class="catalog-main-panel">
-			<div class="catolog-top">
-				<h1>Titolo della pagina</h1>
+			<div class="catalog-top">
+				<h1>Titolo della pagina del carrello</h1>
+				<p>
+					Informazioni sulla categoria di prodotto che si sta cercando sul sito web.
+				</p>
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
@@ -42,7 +45,6 @@
 							<button>Aggiungi</button>
 						</div>
 					</div>
-                    
                 </c:forEach>
 			</div>
 		</div>

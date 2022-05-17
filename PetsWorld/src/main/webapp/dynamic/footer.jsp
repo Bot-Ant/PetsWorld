@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -50,7 +49,7 @@
 				<img src="static/images/payment_method_logo_paypal.png" alt="paypal-logo">
 			</div>
 			<div class="theme">
-				<h4>Tema</h4>
+				<h4>Tema: </h4>
 				<label class="switch">
 					<input type="checkbox" checked="checked">
 					<span class="slider round"></span>
