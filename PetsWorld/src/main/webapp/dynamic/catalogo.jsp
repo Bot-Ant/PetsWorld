@@ -1,13 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="utf-8">
 	<title>Catalogo</title>
+	<link rel="stylesheet" href="static/styles/light.css">
+	<link rel="stylesheet" href="static/styles/page.css">
+    <link rel="stylesheet" href="static/styles/header.css">
+    <link rel="stylesheet" href="static/styles/footer.css">
+    <link rel="stylesheet" href="static/styles/user.css">
+	<link rel="stylesheet" href="static/styles/catalog.css">
 </head>
 <body>
+	<header>
+		<!-- Standard header -->
+		<%@include file="/dynamic/header.jsp" %>
+	</header>
 	<div class="catalog-content">
 		<div class="filters-panel">
 			<p>
@@ -37,5 +47,9 @@
 			</div>
 		</div>
 	</div>
+	<footer>
+		<!-- Page footer-->
+		<%@include file="/dynamic/footer.jsp" %>
+	</footer>
 </body>
 </html>
