@@ -19,7 +19,7 @@
 	background-color: var(--neutral-color-2);
 }
 /* Reset margin and padding for better centred content */
-form {
+.form-section {
 	margin: 0;
 	padding: 0;
 }
@@ -34,19 +34,19 @@ form {
 	/*text-align: left;*/
 }
 /* Set the style of the list of fields without decoration */
-form ul {
+.form-section ul {
 	padding: 0;
 	text-align: center;
 	list-style: none;
 }
 /* Add a margin for the list item containing a form field */
-form ul li {
+.form-section ul li {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	text-align: left;
 }
 /* Set the width to take all the space of the form and adds some padding and rounded corners */
-form input, select {
+.form-section input, select {
 	width: 100%;
 	padding: 15px 15px;
 	margin: 10px 0px;
@@ -57,13 +57,13 @@ form input, select {
 	background-color: var(--neutral-color-1);
 }
 /* Change the input element style when selected*/
-form input:focus {
+.form-section input:focus {
 	outline: none;
 	caret-color: var(--main-color);
 	border-bottom: 1px solid var(--main-color);
 }
 /* Style the buttons inside the form */
-form > button[type=submit] {
+.form-section > button[type=submit] {
 	padding: 15px 15px;
 	margin: 10px 0px;
 	width: 100%;
@@ -74,16 +74,16 @@ form > button[type=submit] {
 	background-color: var(--main-color);
 }
 /* Change the button color when the cursor is on it */
-form > button[type=submit]:hover {
+.form-section > button[type=submit]:hover {
 	background-color: var(--accent-color);
 }
 /* Set the style of a link inside a form without decoration */
-form a {
+.form-section a {
 	text-decoration: none;
 	color: var(--main-color);
 }
 /* Change the color of the link when the cursor is on it*/
-form a:hover {
+.form-section a:hover {
 	color: var(--accent-color);
 }
 /* Set the style of a button in a paragraph to look like a normal link */

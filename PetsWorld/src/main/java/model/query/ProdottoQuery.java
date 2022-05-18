@@ -1,6 +1,9 @@
 package model.query;
 
+import java.util.List;
+
 import model.QueryBuilder;
+import model.search.*;
 
 public class ProdottoQuery {
 
@@ -16,9 +19,12 @@ public class ProdottoQuery {
 		return builder.GeneratedQuery();
 	}
 	
-	public static String cerca() {
+	public static String cerca(List<Condition> conditionList) {
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
-		builder.select().where("prd.animale = ?");
+		builder.select();
+		if(!conditionList.isEmpty()) {
+			builder.where().search(conditionList);
+		}
 		return builder.GeneratedQuery();
 	}
 }

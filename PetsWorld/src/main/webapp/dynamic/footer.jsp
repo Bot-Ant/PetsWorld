@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -34,11 +33,13 @@
 			</div>
 			<div class="footer-heading">
 				<h2>SEGUICI</h2>
-				<a href="#">facebook</a>
-				<a href="#">instagram</a>
-				<a href="#">twitter</a>
-				<a href="#">youtube</a>
-				<a href="#">linkedin</a>
+				<div class="social-links">
+					<a href="#"><img class="social-icon" src="static/images/facebook-logo.png" alt="facebook logo"></a>
+					<a href="#"><img class="social-icon" src="static/images/instagram-logo.png" alt="instagram logo"></a>
+					<a href="#"><img class="social-icon" src="static/images/twitter-logo.png" alt="twitter logo"></a>
+					<a href="#"><img class="social-icon" src="static/images/youtube-logo.png" alt="youtube logo"></a>
+					<a href="#"><img class="social-icon" src="static/images/linkedin-logo.png" alt="linkedin logo"></a>
+				</div>
 			</div>
 		</div>
 		<div class="footer-extras">
@@ -48,7 +49,11 @@
 				<img src="static/images/payment_method_logo_paypal.png" alt="paypal-logo">
 			</div>
 			<div class="theme">
-				<button>Cambia Tema</button>
+				<h4>Tema: </h4>
+				<label class="switch">
+					<input type="checkbox" checked="checked">
+					<span class="slider round"></span>
+				  </label>
 			</div>
 		</div>
 		<div class="footer-copyright">
