@@ -42,7 +42,6 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
                 while (rs.next()) {
                 	listaProdotti.add(prd.extract(rs));
                 }
-               
                 return listaProdotti;
             }
         }
