@@ -33,7 +33,7 @@ footer p, footer a {
 }
 
 footer a:hover {
-    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 .footer-links {
