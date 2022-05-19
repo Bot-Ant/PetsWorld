@@ -21,8 +21,8 @@ public class Carrello implements Serializable{
 		return prezzoTotale;
 	}
 
-	public void setPrezzoTotale(float prezzo) {
-		this.prezzoTotale += prezzo;
+	public void setPrezzoTotale(double d) {
+		this.prezzoTotale += d;
 	}
 	
 	public void setPrezzoTotaleRimozione(float prezzo) {
