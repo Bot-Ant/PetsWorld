@@ -50,7 +50,7 @@
 				<div class="products-row">
 					<div class="product-box">
 						<div class="image-container">
-
+							<img src="static/images/cucciaPerCani.png" alt="immagine prodotto">
 						</div>
 						<h3 class="name">Template prodotto</h3>
 						<div class="text-container">
