@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 
+import model.beans.Carrello;
 import model.beans.Utente;
 import model.daoImplementation.UtenteImp;
 import model.daoInterface.UtenteDao;
@@ -66,5 +68,22 @@ public class ServletLogin extends HttpServlet {
         }catch(SQLException throwables) {
         	throwables.printStackTrace();
         }
+        
+        if(accountdaloggare.isRuolo()==1)
+		{
+			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
+			sessione.setAttribute("utente", accountdaloggare);
+			sessione.setAttribute("carrello", new Carrello());
+			getServletContext().getRequestDispatcher(response.encodeURL("dynamic/utente/index.jsp")).forward(request, response); //rimandiamo l'output alla parte view (jsp)			
+			return;
+		}
+		
+		if(accountdaloggare.isRuolo()==0)
+		{
+			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
+			sessione.setAttribute("Admin", accountdaloggare);
+			getServletContext().getRequestDispatcher(response.encodeURL("dynamic/admin/paginaAdmin.jsp")).forward(request, response); //rimandiamo l'output alla parte view (jsp)			
+			return;
+		}
 	}
 }

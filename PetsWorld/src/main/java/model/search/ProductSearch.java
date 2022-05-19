@@ -19,6 +19,11 @@ public class ProductSearch implements SearchBuilder {
 			if(value != null && !value.isBlank()) {
 				switch(param) {
 				
+				case "nome" :{
+					conditions.add(new Condition ("nome", Operatore.MATCH, value));
+				
+					break;
+				}
 				case "animale" :{
 					conditions.add(new Condition ("animale", Operatore.MATCH, value));
 				
