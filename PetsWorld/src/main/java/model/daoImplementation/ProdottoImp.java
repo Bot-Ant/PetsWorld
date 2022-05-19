@@ -13,7 +13,6 @@ import model.beans.Prodotto;
 import model.daoInterface.ProdottoDao;
 import model.query.ProdottoQuery;
 import model.search.Condition;
-import model.search.Operatore;
 import model.Extractor.ProdottoExtractor;
 
 public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
