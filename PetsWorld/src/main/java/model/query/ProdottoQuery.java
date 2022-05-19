@@ -27,4 +27,10 @@ public class ProdottoQuery {
 		}
 		return builder.GeneratedQuery();
 	}
+	
+	public static String cerca_nome(String nome) {
+		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
+		builder.select().where("nome="+nome);
+		return builder.GeneratedQuery();
+	}
 }

@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
-import model.Manager;
+
 import model.beans.Prodotto;
+import model.Manager;
 import model.daoInterface.ProdottoDao;
 import model.query.ProdottoQuery;
 import model.search.Condition;
@@ -43,7 +44,6 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
                 while (rs.next()) {
                 	listaProdotti.add(prd.extract(rs));
                 }
-               
                 return listaProdotti;
             }
         }
@@ -75,4 +75,21 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 				}
 			}
 		}
+
+	public Prodotto doRetrieveByKey(String nome) throws SQLException {
+		try (Connection connection = createConnection()){ 
+			String query = ProdottoQuery.cerca_nome(nome);
+			
+			try (PreparedStatement ps = connection.prepareStatement(query)) {
+				
+				ResultSet rs = ps.executeQuery();
+                ProdottoExtractor  prd = new ProdottoExtractor();
+                Prodotto prodotto= new Prodotto();
+                while (rs.next()) {
+                	prodotto=prd.extract(rs);
+                }
+                return prodotto;
+			}	
+		}
+	}
 }
