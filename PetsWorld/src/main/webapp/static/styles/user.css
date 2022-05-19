@@ -105,3 +105,28 @@ p button[type=submit]:hover {
 	width: 100%;
 	color: var(--main-color);
 }
+
+.login-message-container {
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-message-container h1 {
+	color: var(--main-color); 
+	margin-top: 50px; 
+	text-align: center;
+}
+
+.login-message-container button {
+	padding: 0;
+	margin: 0;
+	border: none;
+	cursor: pointer;
+	font-size: medium;
+	color: var(--main-color);
+	background-color: var(--neutral-color-2);
+}
