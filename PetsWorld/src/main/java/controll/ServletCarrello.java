@@ -37,7 +37,7 @@ public class ServletCarrello extends HttpServlet {
 		}
 		
 		Prodotto prodotto = new Prodotto ();
-		ProdottoDao<SQLException> prodottoImp= new ProdottoImp(source);
+		ProdottoDao<SQLException> prodottoImp= new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		
 		try {
 			prodotto = prodottoImp.doRetrieveByKey(nome);
