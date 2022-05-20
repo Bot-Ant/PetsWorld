@@ -16,6 +16,7 @@
     <header>
         <%@include file="../formHeader.jsp" %>
     </header>
+
     <div class="login-message-container">
         <h1>Accesso effettuato correttamente</h1>
         <form class="access" action="ServletMain" method="post">
