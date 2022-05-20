@@ -9,6 +9,6 @@
     <header>
         <%@include file="../formHeader.jsp" %>
     </header>
-    <h1 style="color: var(--main-color); margin-top: 50px; text-align: center;">Accesso effettuato correttamente</h1>
+    <h1 style="color: var(--main-color); margin-top: 50px; text-align: center;">Accesso effettuato correttamente</h1>    
 </body>
 </html>

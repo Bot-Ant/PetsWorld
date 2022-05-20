@@ -61,29 +61,27 @@ public class ServletLogin extends HttpServlet {
         	if(idUser == false) {
         		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/invalidLogin.jsp");
         		requestDispatcher.forward(request, response);
-        	}else {
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/utente/userLogged.jsp");
-        		requestDispatcher.forward(request, response);
         	}
+        	else if(accountdaloggare.isRuolo()==0)
+    		{
+    			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
+    			sessione.setAttribute("utente", accountdaloggare);
+    			sessione.setAttribute("carrello", new Carrello());
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/index.jsp");
+        		requestDispatcher.forward(request, response);
+    			return;
+    		}
+    		
+    		if(accountdaloggare.isRuolo()==1)
+    		{
+    			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
+    			sessione.setAttribute("Admin", accountdaloggare);
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/admin/paginaAdmin.jsp");
+        		requestDispatcher.forward(request, response);
+    			return;
+    		}
         }catch(SQLException throwables) {
         	throwables.printStackTrace();
         }
-        
-        if(accountdaloggare.isRuolo()==1)
-		{
-			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
-			sessione.setAttribute("utente", accountdaloggare);
-			sessione.setAttribute("carrello", new Carrello());
-			getServletContext().getRequestDispatcher(response.encodeURL("dynamic/utente/index.jsp")).forward(request, response); //rimandiamo l'output alla parte view (jsp)			
-			return;
-		}
-		
-		if(accountdaloggare.isRuolo()==0)
-		{
-			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
-			sessione.setAttribute("Admin", accountdaloggare);
-			getServletContext().getRequestDispatcher(response.encodeURL("dynamic/admin/paginaAdmin.jsp")).forward(request, response); //rimandiamo l'output alla parte view (jsp)			
-			return;
-		}
 	}
 }
