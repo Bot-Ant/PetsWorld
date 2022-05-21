@@ -64,4 +64,22 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
             }
         }
 	}
+	
+	public int Admincheck (String email, String password) throws SQLException {
+		int ruolo = 0;
+		try(Connection connection = createConnection()){
+			String query = UtenteQuery.ruolo();
+			try(PreparedStatement st = connection.prepareStatement(query)){
+				st.setString(1, email);
+				st.setString(2, password);
+				
+				ResultSet rs = st.executeQuery();
+				 if(rs.next()==true) {
+					 ruolo=rs.getInt("ruolo");
+				 }
+			}
+		}
+		return ruolo;
+	}
+
 }

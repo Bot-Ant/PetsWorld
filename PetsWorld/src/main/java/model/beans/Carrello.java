@@ -52,7 +52,7 @@ public class Carrello implements Serializable{
 	{
 		int count=0;
 		for(int i=0; i<prodotti.size();i++)
-			count += prodotti.get(i).getQuantità();
+			count += prodotti.get(i).getQuantitÃ ();
 		return count;
 	}	
 }

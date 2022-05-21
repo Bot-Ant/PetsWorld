@@ -14,7 +14,7 @@ public class ProdottoExtractor implements ResultSetExtractor<Prodotto> {
     	prodotto.setNome(resultSet.getString("prd.nome"));
     	prodotto.setTipo(resultSet.getString("prd.tipo"));
     	prodotto.setPrezzo(resultSet.getDouble("prd.prezzo"));
-    	prodotto.setQuantit‡(resultSet.getInt("prd.quantita"));
+    	prodotto.setQuantit√†(resultSet.getInt("prd.quantita"));
     	prodotto.setDescrizione(resultSet.getString("prd.descrizione"));
     	prodotto.setFoto(resultSet.getString("prd.foto"));
     	prodotto.setIva(resultSet.getDouble("prd.iva"));

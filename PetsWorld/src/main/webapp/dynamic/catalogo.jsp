@@ -43,8 +43,8 @@
 								${prd.prezzo}
 							</div>
 							<form class="aggiunta-prodotto" action="ServletCarrello" method="get">
-								<button class="aggiungi-prodotto" type="submit" name="nome" value="${prd.nome}">Aggiungi</button>
-						</form>
+								<button class="aggiungi-prodotto" type="submit" name="id" value="${prd.idProdotto}">Aggiungi</button>
+							</form>
 						</div>
 					</div>
                 </c:forEach>

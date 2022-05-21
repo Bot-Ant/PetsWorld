@@ -5,9 +5,17 @@
 <head>
 <meta charset="utf-8">
 <title>Carrello</title>
+<style>
+		div 
+		{
+			width:100%;
+			margin:0;
+			padding:0;
+		}
+</style>
 </head>
 <body>
-			<%@include file="/dynamic/header.jsp"%>
+		<%@include file="/dynamic/header.jsp"%>
 <%
 	HttpSession sessione = request.getSession(false);
 	if (sessione != null) 
@@ -20,13 +28,16 @@
 			{
 				//codice se carrello ha elementi
 				ArrayList <Prodotto> prodotti = carrello.getProdotti();
-				int i=0;
-				for (; i<prodotti.size(); i++)
-				{
 				%>
 				 
 				<div class="immagine" >
 				<table class="tabellaProdCarrello">
+				
+				<%int i=0;
+				for (; i<prodotti.size(); i++)
+				{
+				%>
+				
 				
 <tr id = "<%=prodotti.get(i).getIdProdotto()%>sezioneProdotto">
 <td>
@@ -35,13 +46,16 @@
 <div  style="text-align:center">	
 <div>	
 <%
-		prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantità());}
+		prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantità());
 %>
-<img class="immagineCarrello" src="Elementi/<%=prodotti.get(i).getNome()%>.jpg" alt="<%=prodotti.get(i).getNome()%>">				 
+<img class="immagineCarrello" src="static/images/<%=prodotti.get(i).getNome()%>.jpg" alt="<%=prodotti.get(i).getNome()%>">				 
+<br> 
  Nome:<h2><%=prodotti.get(i).getNome()%></h2>
 <br> 
  Importo:<b><%=prodotti.get(i).getPrezzo()%> &euro;</b><br>
-
+	<% 
+				}
+				%>
 </div>	
 </div>	
 </div>	
@@ -73,7 +87,7 @@ Numero di prodotti: <b id ="totale"><%=carrello.getQuantita()%></b><br>
 		}
 	}
 %>
-				<%@include file="/dynamic/footer.jsp"%>
+		<%@include file="/dynamic/footer.jsp"%>
 	
 </body>
 </html>

@@ -28,9 +28,9 @@ public class ProdottoQuery {
 		return builder.GeneratedQuery();
 	}
 	
-	public static String cerca_nome(String nome) {
+	public static String cerca_nome() {
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
-		builder.select().where("nome="+nome);
+		builder.select().where("prd.idprodotto=?");
 		return builder.GeneratedQuery();
 	}
 }

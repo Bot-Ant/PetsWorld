@@ -8,5 +8,8 @@ public interface UtenteDao <s extends Exception> {
 
 	boolean Accountcheck(String email, String password) throws SQLException;
 	
-	  boolean CreateAccount(Utente account) throws SQLException;
+	boolean CreateAccount(Utente account) throws SQLException;
+		
+	int Admincheck (String email, String password) throws SQLException;
+
 }

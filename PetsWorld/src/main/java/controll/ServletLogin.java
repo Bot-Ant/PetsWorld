@@ -62,7 +62,9 @@ public class ServletLogin extends HttpServlet {
         		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/invalidLogin.jsp");
         		requestDispatcher.forward(request, response);
         	}
-        	else if(accountdaloggare.isRuolo()==0)
+        	
+        	int ruolo=dao.Admincheck(Email, Password);
+        	if(ruolo==1) //in questo caso è un utente
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);
@@ -72,7 +74,7 @@ public class ServletLogin extends HttpServlet {
     			return;
     		}
     		
-    		if(accountdaloggare.isRuolo()==1)
+        	else //in questo caso è admin
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("Admin", accountdaloggare);

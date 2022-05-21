@@ -11,7 +11,7 @@ public class CuccioloExtractor implements ResultSetExtractor<Cucciolo> {
     public Cucciolo extract(ResultSet resultSet) throws SQLException{
     	Cucciolo cucciolo=new Cucciolo();
     	cucciolo.setIdCucciolo(resultSet.getInt("cucciolo.IdCucciolo"));
-    	cucciolo.setEt‡(resultSet.getInt("cucciolo.eta"));
+    	cucciolo.setEt√†(resultSet.getInt("cucciolo.eta"));
     	cucciolo.setNome(resultSet.getString("cucciolo.nome"));
     	cucciolo.setTipo(resultSet.getString("cucciolo.tipo"));
     	cucciolo.setRazza(resultSet.getString("cucciolo.razza"));

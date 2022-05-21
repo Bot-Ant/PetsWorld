@@ -9,7 +9,7 @@ public class Indirizzo implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String email;
-	private String citt‡;
+	private String citt√†;
 	private String nome_strada;
 	private String civico;
 	private String CAP;
@@ -21,11 +21,11 @@ public class Indirizzo implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCitt‡() {
-		return citt‡;
+	public String getCitt√†() {
+		return citt√†;
 	}
-	public void setCitt‡(String citt‡) {
-		this.citt‡ = citt‡;
+	public void setCitt√†(String citt√†) {
+		this.citt√† = citt√†;
 	}
 	public String getNome_strada() {
 		return nome_strada;
@@ -53,7 +53,7 @@ public class Indirizzo implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Indirizzo [email=" + email + ", citt‡=" + citt‡ + ", nome_strada=" + nome_strada + ", civico=" + civico
+		return "Indirizzo [email=" + email + ", citt√†=" + citt√† + ", nome_strada=" + nome_strada + ", civico=" + civico
 				+ ", CAP=" + CAP + ", provincia=" + provincia + "]";
 	}
 	

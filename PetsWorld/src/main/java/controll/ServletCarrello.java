@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
-import org.apache.tomcat.jdbc.pool.*;
 
 import model.beans.Prodotto;
 import model.beans.Carrello;
@@ -28,7 +28,8 @@ public class ServletCarrello extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nome = request.getParameter("nome");
+		String id = request.getParameter("id");
+		int ID = Integer.parseInt(id);
 		Carrello carrello = new Carrello();
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null)
@@ -40,7 +41,7 @@ public class ServletCarrello extends HttpServlet {
 		ProdottoDao<SQLException> prodottoImp= new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		
 		try {
-			prodotto = prodottoImp.doRetrieveByKey(nome);
+			prodotto = prodottoImp.doRetrieveByKey(ID);
 		} catch (SQLException e) {
 			System.out.println("Errore ricerca prodotto nel db");
 			e.printStackTrace();
@@ -52,8 +53,8 @@ public class ServletCarrello extends HttpServlet {
 		{
 			if(prodotto.getIdProdotto() == prodotti.get(i).getIdProdotto())
 			{
-					int quantita=prodotti.get(i).getQuantit‡() + 1;
-					prodotti.get(i).setQuantit‡(quantita);
+					int quantita=prodotti.get(i).getQuantit√†() + 1;
+					prodotti.get(i).setQuantit√†(quantita);
 					carrello.setProdotti(prodotti);
 					break;
 				}
@@ -61,10 +62,12 @@ public class ServletCarrello extends HttpServlet {
 		
 		if(i >= prodotti.size())
 		{
-			prodotto.setQuantit‡(1);
+			prodotto.setQuantit√†(1);
 			carrello.addProdotto(prodotto);
 		}
 		carrello.setPrezzoTotale(prodotto.getPrezzo());		
+	    RequestDispatcher requestDispatcher= request.getRequestDispatcher("dynamic/catalogo.jsp");
+	    requestDispatcher.include(request,response);
 }
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
