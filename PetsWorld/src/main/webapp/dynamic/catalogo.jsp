@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="static/styles/footer.css">
     <link rel="stylesheet" href="static/styles/user.css">
 	<link rel="stylesheet" href="static/styles/catalog.css">
+	<link rel="stylesheet" href="static/styles/order.css">
 </head>
 <body>
 	<header>
@@ -26,7 +27,7 @@
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-				<h1>Titolo della pagina del carrello</h1>
+				<h1>Prodotti per [Nome Animale]</h1>
 				<p>
 					Informazioni sulla categoria di prodotto che si sta cercando sul sito web.
 				</p>
@@ -39,12 +40,10 @@
 						</div>
 						<h3 class="name">${prd.nome}</h3>
 						<div class="text-container">
-							<div class="price">
-								${prd.prezzo}
-							</div>
-							<form class="aggiunta-prodotto" action="ServletCarrello" method="get">
-								<button class="aggiungi-prodotto" type="submit" name="nome" value="${prd.nome}">Aggiungi</button>
-						</form>
+							<h3 class="price">€${prd.prezzo}</h3>
+							<form class="add-to-cart" action="ServletCarrello" method="get">
+								<button type="submit" name="nome" value="${prd.nome}">Aggiungi</button>
+						  </form>
 						</div>
 					</div>
                 </c:forEach>

@@ -13,7 +13,7 @@ public class ProdottoAcquistatoExtractor implements ResultSetExtractor<ProdottoA
     	prodottoAcquistato.setIdProdottoAcquistato(resultSet.getInt("prodottoacquistato.idProdottoAcquistato"));
     	prodottoAcquistato.setNome(resultSet.getString("prodottoacquistato.nome"));
     	prodottoAcquistato.setTipo(resultSet.getString("prodottoacquistato.tipo"));
-    	prodottoAcquistato.setQuantità(resultSet.getInt("prodottoacquistato.quantita"));
+    	prodottoAcquistato.setQuantita(resultSet.getInt("prodottoacquistato.quantita"));
     	prodottoAcquistato.setFoto(resultSet.getString("prodottoacquistato.foto"));
     	prodottoAcquistato.setPrezzo(resultSet.getDouble("prodottoacquistato.prezzo"));
     	prodottoAcquistato.setIva(resultSet.getDouble("prodottoacquistato.iva"));

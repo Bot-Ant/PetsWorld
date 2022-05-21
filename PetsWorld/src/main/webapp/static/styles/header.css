@@ -105,7 +105,7 @@ header {
 }
 
 .header-buttons button:hover {
-	background-color: var(--accent-color);
+	background-color: var(--main-color-light);
 }
 
 .icon {
@@ -114,7 +114,7 @@ header {
 }
 
 nav {
-    background-color: #63b441ff;
+    background-color: var(--main-color);
     display: flex; 
 }
 
@@ -141,8 +141,7 @@ nav .nav-links button {
 }
 
 nav .nav-links button:hover {
-    color: var(--main-color);
-    background-color: var(--neutral-color-2);
+    background-color: var(--main-color-light);
 }
 
 nav .nav-links button span {
