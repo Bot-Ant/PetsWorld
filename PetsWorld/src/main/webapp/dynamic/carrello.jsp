@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Insert title here</title>
-</head>
+  <meta charset="utf-8">
+  <title>Carrello</title>
+  </head>
 <body>
-		<%@include file="/dynamic/header.jsp" %>
-
+  <%@include file="/dynamic/header.jsp"%>
 <%
 	HttpSession sessione = request.getSession(false);
 	if (sessione != null) 
@@ -35,9 +34,7 @@
 
 <div  style="text-align:center">	
 <div>	
-<%
-		prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());}
-%>
+  <% prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());} %>
 <img class="immagineCarrello" src="Elementi/<%=prodotti.get(i).getNome()%>.jpg" alt="<%=prodotti.get(i).getNome()%>">				 
  Nome:<h2><%=prodotti.get(i).getNome()%></h2>
 <br> 
@@ -74,7 +71,7 @@ Numero di prodotti: <b id ="totale"><%=carrello.getQuantita()%></b><br>
 		}
 	}
 %>
+				<%@include file="/dynamic/footer.jsp"%>
 	
-		<%@include file="/dynamic/footer.jsp" %>
 </body>
 </html>
