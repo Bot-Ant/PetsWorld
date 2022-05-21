@@ -10,7 +10,7 @@ public class ProdottoAcquistato implements Serializable{
 	private int IdProdottoAcquistato;
 	private String nome;
 	private String tipo;
-	private int quantità;
+	private int quantita;
 	private String foto;
 	private double prezzo;
 	private double iva;
@@ -37,11 +37,11 @@ public class ProdottoAcquistato implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public int getQuantità() {
-		return quantità;
+	public int getQuantita() {
+		return quantita;
 	}
-	public void setQuantità(int quantità) {
-		this.quantità = quantità;
+	public void setQuantita(int quantita) {
+		this.quantita = quantita;
 	}
 	public String getFoto() {
 		return foto;
@@ -88,7 +88,7 @@ public class ProdottoAcquistato implements Serializable{
 	@Override
 	public String toString() {
 		return "ProdottoAcquistato [IdProdottoAcquistato=" + IdProdottoAcquistato + ", nome=" + nome + ", tipo=" + tipo
-				+ ", quantità=" + quantità + ", foto=" + foto + ", prezzo=" + prezzo + ", iva=" + iva + ", peso=" + peso
+				+ ", quantita=" + quantita + ", foto=" + foto + ", prezzo=" + prezzo + ", iva=" + iva + ", peso=" + peso
 				+ ", dataScadenza=" + dataScadenza + ", dimensione=" + dimensione + ", colore=" + colore + "]";
 	}
 	

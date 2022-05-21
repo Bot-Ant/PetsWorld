@@ -52,8 +52,8 @@ public class ServletCarrello extends HttpServlet {
 		{
 			if(prodotto.getIdProdotto() == prodotti.get(i).getIdProdotto())
 			{
-					int quantita=prodotti.get(i).getQuantità() + 1;
-					prodotti.get(i).setQuantità(quantita);
+					int quantita=prodotti.get(i).getQuantita() + 1;
+					prodotti.get(i).setQuantita(quantita);
 					carrello.setProdotti(prodotti);
 					break;
 				}
@@ -61,7 +61,7 @@ public class ServletCarrello extends HttpServlet {
 		
 		if(i >= prodotti.size())
 		{
-			prodotto.setQuantità(1);
+			prodotto.setQuantita(1);
 			carrello.addProdotto(prodotto);
 		}
 		carrello.setPrezzoTotale(prodotto.getPrezzo());		
