@@ -46,7 +46,7 @@
 <div  style="text-align:center">	
 <div>	
 <%
-		prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantità());
+		prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());
 %>
 <img class="immagineCarrello" src="static/images/<%=prodotti.get(i).getNome()%>.jpg" alt="<%=prodotti.get(i).getNome()%>">				 
 <br> 

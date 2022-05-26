@@ -11,7 +11,7 @@ public class IndirizzoExtractor implements ResultSetExtractor<Indirizzo> {
     public Indirizzo extract(ResultSet resultSet) throws SQLException{
     	Indirizzo indirizzo=new Indirizzo();
     	indirizzo.setEmail(resultSet.getString("indirizzo.email"));
-    	indirizzo.setCittà(resultSet.getString("indirizzo.citta"));
+    	indirizzo.setCitta(resultSet.getString("indirizzo.citta"));
     	indirizzo.setNome_strada(resultSet.getString("indirizzo.nome_strada"));
     	indirizzo.setCivico(resultSet.getString("indirizzo.civico"));
     	indirizzo.setCAP(resultSet.getString("indirizzo.CAP"));

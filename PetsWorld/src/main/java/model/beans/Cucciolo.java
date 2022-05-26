@@ -9,7 +9,7 @@ public class Cucciolo implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private int IdCucciolo;
-	private int età;
+	private int eta;
 	private String nome;
 	private String tipo;
 	private String razza;
@@ -21,11 +21,11 @@ public class Cucciolo implements Serializable{
 	public void setIdCucciolo(int idCucciolo) {
 		IdCucciolo = idCucciolo;
 	}
-	public int getEtà() {
-		return età;
+	public int getEta() {
+		return eta;
 	}
-	public void setEtà(int età) {
-		this.età = età;
+	public void setEta(int eta) {
+		this.eta = eta;
 	}
 	public String getNome() {
 		return nome;
@@ -53,7 +53,7 @@ public class Cucciolo implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Cucciolo [IdCucciolo=" + IdCucciolo + ", età=" + età + ", nome=" + nome + ", tipo=" + tipo + ", razza="
+		return "Cucciolo [IdCucciolo=" + IdCucciolo + ", eta=" + eta + ", nome=" + nome + ", tipo=" + tipo + ", razza="
 				+ razza + ", foto=" + foto + "]";
 	}
 	

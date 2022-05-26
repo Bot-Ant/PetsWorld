@@ -18,7 +18,7 @@ public class Prodotto implements Serializable{
 	private String dimensione;
 	private String colore;
 	private double peso;
-	private int quantità;
+	private int quantita;
 	private String animale;
 	
 	public int getIdProdotto() {
@@ -87,17 +87,17 @@ public class Prodotto implements Serializable{
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	public int getQuantità() {
-		return quantità;
+	public int getQuantita() {
+		return quantita;
 	}
-	public void setQuantità(int quantità) {
-		this.quantità = quantità;
+	public void setQuantita(int quantita) {
+		this.quantita = quantita;
 	}
 	@Override
 	public String toString() {
 		return "Prodotto [IdProdotto=" + IdProdotto + ", nome=" + nome + ", tipo=" + tipo + ", prezzo=" + prezzo
 				+ ", descrizione=" + descrizione + ", foto=" + foto + ", iva=" + iva + ", dataScadenza=" + dataScadenza
-				+ ", dimensione=" + dimensione + ", colore=" + colore + ", peso=" + peso + ", quantità=" + quantità
+				+ ", dimensione=" + dimensione + ", colore=" + colore + ", peso=" + peso + ", quantita=" + quantita
 				+ "]";
 	}
 	public String getAnimale() {
