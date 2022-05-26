@@ -4,13 +4,25 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    display: flex;
+    
     color: var(--contrast-color-1);
     background-color: var(--neutral-color-1);
 }
 
 .cart-content h1 {
     margin: 20px 0 20px 0;
+}
+
+#empty {
+    padding: 100px 0 250px 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#full {
+    display: flex;
+
 }
 
 .cart-panel {
