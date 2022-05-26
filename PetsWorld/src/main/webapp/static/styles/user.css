@@ -130,3 +130,13 @@ p button[type=submit]:hover {
 	color: var(--main-color);
 	background-color: var(--neutral-color-2);
 }
+
+.user-content {
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.user-content .user-nav {
+	width: 400px;
+}
