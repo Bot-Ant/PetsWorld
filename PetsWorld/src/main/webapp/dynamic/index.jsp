@@ -41,6 +41,9 @@
 							<div class="text-container">
 								<h3 class="price">€${prd.prezzo}</h3>
 								<button class="add-to-cart">Aggiungi</button>
+                <form class="add-to-cart" action="ServletCarrello" method="get">
+									<button type="submit" name="id" value="${prd.idProdotto}">Aggiungi</button>
+								</form>
 							</div>
 						</div>
 					</c:forEach>

@@ -20,4 +20,10 @@ public class UtenteQuery {
 		builder.insert("nome","cognome","email","password","telefono","codiceFiscale");		
 		return builder.GeneratedQuery();
 	}
+	
+	public static String ruolo() {
+		QueryBuilder builder = new QueryBuilder (UTENTE_QUERY, UTENTE_ALIAS);
+		builder.select().where("email=?").andwhere("password=?");		
+		return builder.GeneratedQuery();
+	}
 }

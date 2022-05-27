@@ -76,13 +76,14 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 			}
 		}
 
-	public Prodotto doRetrieveByKey(String nome) throws SQLException {
+	public Prodotto doRetrieveByKey(int ID) throws SQLException {
 		try (Connection connection = createConnection()){ 
-			String query = ProdottoQuery.cerca_nome(nome);
+			String query = ProdottoQuery.cerca_nome();
 			
 			try (PreparedStatement ps = connection.prepareStatement(query)) {
 				
-				ResultSet rs = ps.executeQuery();
+				ps.setInt(1, ID);
+				ResultSet rs = ps.executeQuery(); //errore nella query, non si prende il prodotto 
                 ProdottoExtractor  prd = new ProdottoExtractor();
                 Prodotto prodotto= new Prodotto();
                 while (rs.next()) {
