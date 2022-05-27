@@ -40,11 +40,11 @@
 			<div class="footer-heading">
 				<h2>SEGUICI</h2>
 				<div class="social-links">
-					<a href="#"><img class="social-icon" src="static/images/facebook-logo.png" alt="facebook logo"></a>
-					<a href="#"><img class="social-icon" src="static/images/instagram-logo.png" alt="instagram logo"></a>
-					<a href="#"><img class="social-icon" src="static/images/twitter-logo.png" alt="twitter logo"></a>
-					<a href="#"><img class="social-icon" src="static/images/youtube-logo.png" alt="youtube logo"></a>
-					<a href="#"><img class="social-icon" src="static/images/linkedin-logo.png" alt="linkedin logo"></a>
+					<a href="#"><img class="social-icon" src="../static/images/facebook-logo.png" alt="facebook logo"></a>
+					<a href="#"><img class="social-icon" src="../static/images/instagram-logo.png" alt="instagram logo"></a>
+					<a href="#"><img class="social-icon" src="../static/images/twitter-logo.png" alt="twitter logo"></a>
+					<a href="#"><img class="social-icon" src="../static/images/youtube-logo.png" alt="youtube logo"></a>
+					<a href="#"><img class="social-icon" src="../static/images/linkedin-logo.png" alt="linkedin logo"></a>
 				</div>
 			</div>
 		</div>

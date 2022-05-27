@@ -94,17 +94,18 @@ header {
     text-align: center;
 }
 
-.header-buttons button {
+.header-buttons a {
     margin: 10px 10px;
     padding: 14px 20px;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+    text-decoration: none;
     color: white;
     background-color: var(--main-color);
 }
 
-.header-buttons button:hover {
+.header-buttons a:hover {
 	background-color: var(--main-color-light);
 }
 

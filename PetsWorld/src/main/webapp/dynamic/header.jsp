@@ -26,11 +26,11 @@
 			<div class="bar-center">
 				<%@include file="./searchbar.jsp"%>
 			</div>
-			<form class="header-buttons" action="ServletMain" method="post">
-				<button class="catalog-button" type="submit" name="operazione" value="Catalogo">Catalogo</button>
-				<button class="cart-button" type="submit" name="operazione" value="Carrello">Carrello</button>
-				<button class="user-button" type="submit" name="operazione" value="Login">Login</button>
-			</form>
+			<div class="header-buttons">
+				<a href="./catalogo.jsp">Catalogo</a>
+				<a href="./cart.jsp">Carrello</a>
+				<a href="./login.jsp">Login</a>
+			</div>
 		</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
