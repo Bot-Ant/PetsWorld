@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8" import="java.util.*, model.beans.* , java.lang.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,14 +12,45 @@
 		<!-- Standard header -->
 		<%@include file="/dynamic/header.jsp" %>
 	</header>
+	
+	<%
+	HttpSession sessione = request.getSession(false);
+	if (sessione != null) 
+	{	
+		double prezzoTot=0;
+		Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
+		if(carrello != null)
+		{
+			if(carrello.getQuantita() == 0)
+			{
+				//codice se carrello non ha elementi
+			%>
+				
+				<h1 align="center"> Nessun elemento presente all'interno del carrello </h1>
+				
+			<%
+			}
+			else
+			{
+				//codice se carrello ha elementi
+				ArrayList <Prodotto> prodotti = carrello.getProdotti();
+			%>
+				
 	<div class="cart-content">
 		<div class="cart-panel">
 			<div class="cart-box">
 				<h1>Carrello</h1>
+				
+				<%
+				int i=0;
+				for (; i<prodotti.size(); i++)
+				{
+				%>
+				
 				<div class="product-line">
-					<img src="static/images/cucciaPerCani.jpg" alt="Immagine prodotto">
+					<img src="static/images/<%=prodotti.get(i).getNome()%>.jpg" alt="<%=prodotti.get(i).getNome()%>">				 
 					<div class="product-name">
-						<h2>Nome del prodotto</h2>
+						<h2><%=prodotti.get(i).getNome()%></h2>
 						<p>
 							Prodotto nel carrello
 						</p>
@@ -32,51 +64,14 @@
 								<button class="right">+</button>
 							</div>
 						</form>
-						<h3 class="product-price">€24.99</h3>
+						<h3 class="product-price"><%=prodotti.get(i).getPrezzo()%></h3>
+						<% prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());%>
 					</div>
 				</div>
 				<hr>
-				<div class="product-line">
-					<img src="static/images/cucciaPerCani.jpg" alt="Immagine prodotto">
-					<div class="product-name">
-						<h2>Nome del prodotto</h2>
-						<p>
-							Prodotto nel carrello
-						</p>
-					</div>
-					<div class="product-values">
-						<form class="product-modifiers">
-							<button>Del</button>
-							<div class="product-quantities">
-								<button class="left">-</button>
-								<input type="text">
-								<button class="right">+</button>
-							</div>
-						</form>
-						<h3 class="product-price">€24.99</h3>
-					</div>
-				</div>
-				<hr>
-				<div class="product-line">
-					<img src="static/images/cucciaPerCani.jpg" alt="Immagine prodotto">
-					<div class="product-name">
-						<h2>Nome del prodotto</h2>
-						<p>
-							Prodotto nel carrello
-						</p>
-					</div>
-					<div class="product-values">
-						<form class="product-modifiers">
-							<button>Del</button>
-							<div class="product-quantities">
-								<button class="left">-</button>
-								<input type="text">
-								<button class="right">+</button>
-							</div>
-						</form>
-						<h3 class="product-price">€24.99</h3>
-					</div>
-				</div>
+				<%
+				} 
+				%>
 			</div>
 		</div>
 		<div class="price-panel">
@@ -87,7 +82,7 @@
 						Subtotale
 					</p>
 					<p class="price">
-						€xx.xx
+						<%=prezzoTot%> &euro;
 					</p>
 				</div>
 				<div class="single-voice">
@@ -110,12 +105,17 @@
 						</p>
 					</div>
 				</span>
-				<form action="">
+				<form method = "GET" action = "<%=response.encodeURL("./datiCartaAcquisto.jsp")%>">
 					<button>Procedi all'ordine</button>
 				</form>
 			</div>
 		</div>
 	</div>
+			<%
+						}
+					}
+				}
+			%>
 	<footer>
 		<!-- Page footer-->
 		<%@include file="/dynamic/footer.jsp" %>
