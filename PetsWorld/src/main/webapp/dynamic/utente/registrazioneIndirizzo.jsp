@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<!-- Navigation bar menu-->
-		<%@include file="/dynamic/formHeader.jsp"%>
+		<jsp:include page="../formHeader.jsp"/>
 	</header>
     <form action="ServletReg" method="post">
         <div class="form">

@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <title>UserLogged</title>
-    <link rel="stylesheet" href="static/styles/light.css">
-	<link rel="stylesheet" href="static/styles/page.css">
-    <link rel="stylesheet" href="static/styles/header.css">
-    <link rel="stylesheet" href="static/styles/footer.css">
-    <link rel="stylesheet" href="static/styles/user.css">
-	<link rel="stylesheet" href="static/styles/catalog.css">
-	<link rel="stylesheet" href="static/styles/order.css">
+    <link rel="stylesheet" href="../static/styles/light.css">
+	<link rel="stylesheet" href="../static/styles/page.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/user.css">
+	<link rel="stylesheet" href="../static/styles/catalog.css">
+	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
     <header>
-        <%@include file="../formHeader.jsp" %>
+        <jsp:include page="./formHeader.jsp"/>
     </header>
 
     <div class="login-message-container">
@@ -23,6 +23,5 @@
             <button class="redirect" type="submit" name="operazione" value="Home">Torna alla Home</button>
         </form>
     </div>
-    
 </body>
 </html>

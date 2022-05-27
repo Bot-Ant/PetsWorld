@@ -64,7 +64,7 @@ public class ServletLogin extends HttpServlet {
         	}
         	
         	int ruolo=dao.Admincheck(Email, Password);
-        	if(ruolo==1) //in questo caso è un utente
+        	if(ruolo==1) //in questo caso Ã¨ un utente
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);
@@ -74,11 +74,11 @@ public class ServletLogin extends HttpServlet {
     			return;
     		}
     		
-        	else //in questo caso è admin
+        	else //in questo caso Ã¨ admin
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("Admin", accountdaloggare);
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/admin/paginaAdmin.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/adminHome.jsp");
         		requestDispatcher.forward(request, response);
     			return;
     		}

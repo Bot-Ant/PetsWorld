@@ -4,12 +4,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>Carrello</title>
-	<link rel="stylesheet" href="static/styles/order.css">
+	<link rel="stylesheet" href="../static/styles/light.css">
+	<link rel="stylesheet" href="../static/styles/page.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/user.css">
+	<link rel="stylesheet" href="../static/styles/catalog.css">
+	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
 	<header>
 		<!-- Standard header -->
-		<%@include file="/dynamic/header.jsp" %>
+		<jsp:include page="./header.jsp"/>
 	</header>
 	<div class="cart-content">
 		<div id="empty">
@@ -126,7 +132,7 @@
 	</div>
 	<footer>
 		<!-- Page footer-->
-		<%@include file="/dynamic/footer.jsp" %>
+		<jsp:include page="./footer.jsp"/>
 	</footer>
 </body>
 </html>

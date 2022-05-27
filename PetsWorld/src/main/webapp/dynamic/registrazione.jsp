@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Registrazione</title>
-    <link rel="stylesheet" href="static/styles/light.css">
-	<link rel="stylesheet" href="static/styles/page.css">    
-    <link rel="stylesheet" href="static/styles/user.css">
+    <link rel="stylesheet" href="../static/styles/light.css">
+	<link rel="stylesheet" href="../static/styles/page.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/user.css">
+	<link rel="stylesheet" href="../static/styles/catalog.css">
+	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
 	<header>
 		<!-- Compact header for Form pages -->
-		<%@include file="formHeader.jsp"%>
+		<jsp:include page="./formHeader.jsp"/>
 	</header>
     <!-- Container section for forms-->
     <div class="form-container">

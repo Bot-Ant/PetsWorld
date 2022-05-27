@@ -4,11 +4,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pagina utente</title>
+	<link rel="stylesheet" href="../static/styles/light.css">
+	<link rel="stylesheet" href="../static/styles/page.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/user.css">
+	<link rel="stylesheet" href="../static/styles/catalog.css">
+	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
 	<header>
 		<!-- Standard header -->
-		<%@include file="/dynamic/header.jsp" %>
+		<jsp:include page="./header.jsp"/>
 	</header>
 	<div class="user-content">
 		<div class="user-nav">
@@ -41,7 +48,7 @@
 	</div>
 	<footer>
 		<!-- Page footer-->
-		<%@include file="/dynamic/footer.jsp" %>
+		<jsp:include page="./header.jsp"/>
 	</footer>
 </body>
 </html>
