@@ -41,9 +41,9 @@
 						<h3 class="name">${prd.nome}</h3>
 						<div class="text-container">
 							<h3 class="price">€${prd.prezzo}</h3>
-							<form class="add-to-cart" action="ServletCarrello" method="get">
-								<button type="submit" name="nome" value="${prd.nome}">Aggiungi</button>
-						  </form>
+              <form class="add-to-cart" action="ServletCarrello" method="get">
+								<button type="submit" name="id" value="${prd.idProdotto}">Aggiungi</button>
+							</form>
 						</div>
 					</div>
                 </c:forEach>
