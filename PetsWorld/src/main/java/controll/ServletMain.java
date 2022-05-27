@@ -63,7 +63,7 @@ public class ServletMain extends HttpServlet {
 	            break;
 	        }
 	        case "Carrello": {//stesso ma con carrello.
-	            address="dynamic/carrello.jsp";
+	            address="dynamic/cart.jsp";
 	            break;
 	        }
 			case "Catalogo": {
