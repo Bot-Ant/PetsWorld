@@ -21,10 +21,9 @@
             		<input type="text" required name="nome" placeholder="Nome" id="nome">
             	</li>
 				<li>
-					
-    		</div>
-        
+				</li>
+			</ul>	
+    	</div>
     </form>
-
 </body>
 </html>

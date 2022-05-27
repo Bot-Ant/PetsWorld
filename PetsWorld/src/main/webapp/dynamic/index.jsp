@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="static/styles/footer.css">
         <link rel="stylesheet" href="static/styles/user.css">
 		<link rel="stylesheet" href="static/styles/catalog.css">
+		<link rel="stylesheet" href="static/styles/order.css">
 	</head>
 <body>
 	<header>
@@ -38,10 +39,11 @@
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
-								<h3 class="price">€ ${prd.prezzo}</h3>
-								<form class="aggiunta-prodotto" action="ServletCarrello" method="get">
-									<button class="aggiungi-prodotto" type="submit" name="id" value="${prd.idProdotto}">Aggiungi</button>
-								</form>							
+								<h3 class="price">€${prd.prezzo}</h3>
+								<button class="add-to-cart">Aggiungi</button>
+                <form class="add-to-cart" action="ServletCarrello" method="get">
+									<button type="submit" name="id" value="${prd.idProdotto}">Aggiungi</button>
+								</form>
 							</div>
 						</div>
 					</c:forEach>
@@ -50,16 +52,7 @@
 			<div class="products-section">
 				<h2>Novità</h2>
 				<div class="products-row">
-					<div class="product-box">
-						<div class="image-container">
-							<img src="static/images/cucciaPerCani.png" alt="immagine prodotto">
-						</div>
-						<h3 class="name">Template prodotto</h3>
-						<div class="text-container">
-							<div class="price">€99.99</div>
-							<button>Aggiungi</button>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			<div class="products-section">
