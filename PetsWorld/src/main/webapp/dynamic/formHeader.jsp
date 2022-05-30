@@ -5,9 +5,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>PetsWorld</title>
-	<link rel="stylesheet" href="static/styles/light.css">
-	<link rel="stylesheet" href="static/styles/page.css">
-    <link rel="stylesheet" href="static/styles/header.css">
+	<link rel="stylesheet" href="../static/styles/light.css">
+	<link rel="stylesheet" href="../static/styles/page.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/user.css">
+	<link rel="stylesheet" href="../static/styles/catalog.css">
+	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
 	

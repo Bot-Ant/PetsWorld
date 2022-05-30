@@ -59,9 +59,13 @@ footer a:hover {
     display: flex;
 }
 
-.social-icon {
-    height: 25px;
-    width: 25px;
+.social-links a {
+    margin: 10px 10px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+    text-decoration: none;
+    color: var(--neutral-color-2);
 }
 
 .footer-extras {
