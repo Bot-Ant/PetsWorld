@@ -51,17 +51,32 @@
     margin: 4px;
 }
 
-.product-box .text-container button {
+.product-box .text-container .add-to-cart {
+    margin: 0;
+    padding: 0;
     margin-left: auto;
-    border: 0px;
-    color: var(--neutral-color-1);
-    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+}
+.add-to-cart button {
+    margin: 0;
+    padding: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--neutral-color-2);
 }
 
-.product-box .text-container button:hover {
-    cursor: pointer;
-    color: var(--neutral-color-1);
-    background-color: var(--accent-color);
+.add-to-cart i {
+    border: 0px;
+    color: var(--accent-color);
+    background-color: var(--neutral-color-2);
+}
+
+.add-to-cart i:hover {
+    color: var(--accent-color-dark);
 }
 
 /*main section of the catalog page*/
