@@ -40,19 +40,19 @@
 			<div class="footer-heading">
 				<h2>SEGUICI</h2>
 				<div class="social-links">
-					<a href="#"><img class="social-icon" src="../static/images/facebook-logo.png" alt="facebook logo"></a>
-					<a href="#"><img class="social-icon" src="../static/images/instagram-logo.png" alt="instagram logo"></a>
-					<a href="#"><img class="social-icon" src="../static/images/twitter-logo.png" alt="twitter logo"></a>
-					<a href="#"><img class="social-icon" src="../static/images/youtube-logo.png" alt="youtube logo"></a>
-					<a href="#"><img class="social-icon" src="../static/images/linkedin-logo.png" alt="linkedin logo"></a>
+					<a href="#"><i class="fa-brands fa-facebook fa-xl"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+					<a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+					<a href="#"><i class="fa-brands fa-youtube fa-xl"></i></a>
+					<a href="#"><i class="fa-brands fa-linkedin fa-xl"></i></a>
 				</div>
 			</div>
 		</div>
 		<div class="footer-extras">
 			<div class="pay-methods">
-				<img src="static/images/payment_method_logo_visa.png" alt="visa-logo">
-				<img src="static/images/payment_method_logo_mastercard.png" alt="mastercard-logo">
-				<img src="static/images/payment_method_logo_paypal.png" alt="paypal-logo">
+				<img src="../static/images/payment_method_logo_visa.png" alt="visa-logo">
+				<img src="../static/images/payment_method_logo_mastercard.png" alt="mastercard-logo">
+				<img src="../static/images/payment_method_logo_paypal.png" alt="paypal-logo">
 			</div>
 			<div class="theme">
 				<h4>Tema: </h4>

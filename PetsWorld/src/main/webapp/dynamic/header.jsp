@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../static/styles/user.css">
 	<link rel="stylesheet" href="../static/styles/catalog.css">
 	<link rel="stylesheet" href="../static/styles/order.css">
+	<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -28,8 +29,8 @@
 			</div>
 			<div class="header-buttons">
 				<a href="./catalogo.jsp">Catalogo</a>
-				<a href="./cart.jsp">Carrello</a>
-				<a href="./login.jsp">Login</a>
+				<a href="./cart.jsp"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+				<a href="./login.jsp">Login <i class="fa-solid fa-user fa-xl"></i></a>
 			</div>
 		</div>
 		<!-- Elements in the bottom bar of the header -->
