@@ -48,30 +48,30 @@ public class ServletMain extends HttpServlet {
 	    
 	         
 	    	case"Home": {// nel caso in cui si sia premuto il tasto logout dopo esser loggati
-            address = "dynamic/index.jsp";
+            address = "./index.jsp";
             break;
 	    	}
 	    	
 	        case "Login": { //nel caso in cui sia submittato il tasto login dalla form, rimanda alla jsp apposita
-	            address="dynamic/login.jsp";
+	            address="./login.jsp";
 	            break;
 	        }
 	        
 	        case "Registrazione" : {//stesso ma con registrazione
-	            address="dynamic/registrazione.jsp";
+	            address="./registrazione.jsp";
 	            
 	            break;
 	        }
 	        case "Carrello": {//stesso ma con carrello.
-	            address="dynamic/cart.jsp";
+	            address="./cart.jsp";
 	            break;
 	        }
 			case "Catalogo": {
-	            address="dynamic/catalogo.jsp";
+	            address="./catalogo.jsp";
 	            break;
 	        }
 	        case"Logout": {// nel caso in cui si sia premuto il tasto logout dopo esser loggati
-	            address = "dynamic/index.jsp";
+	            address = "./index.jsp";
 	            break;
 	        }
 	        

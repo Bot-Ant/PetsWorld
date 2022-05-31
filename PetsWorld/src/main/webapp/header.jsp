@@ -4,13 +4,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Header</title>
-	<link rel="stylesheet" href="../static/styles/light.css">
-	<link rel="stylesheet" href="../static/styles/page.css">
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/footer.css">
-    <link rel="stylesheet" href="../static/styles/user.css">
-	<link rel="stylesheet" href="../static/styles/catalog.css">
-	<link rel="stylesheet" href="../static/styles/order.css">
+	<link rel="stylesheet" href="./static/styles/light.css">
+	<link rel="stylesheet" href="./static/styles/page.css">
+    <link rel="stylesheet" href="./static/styles/header.css">
+    <link rel="stylesheet" href="./static/styles/footer.css">
+    <link rel="stylesheet" href="./static/styles/user.css">
+	<link rel="stylesheet" href="./static/styles/catalog.css">
+	<link rel="stylesheet" href="./static/styles/order.css">
 	<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
 
 </head>
@@ -21,11 +21,11 @@
 		<div class="top-bar">
 			<div class="logo-box">
 				<a href="index.jsp">
-					<img class="logo" src="../static/images/petsworld-logo.svg" alt="logo" name="home">
+					<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
 				</a>
 			</div>
 			<div class="bar-center">
-				<%@include file="./searchbar.jsp"%>
+				<jsp:include page="./searchbar.jsp"/>
 			</div>
 			<div class="header-buttons">
 				<a href="./catalogo.jsp">Catalogo</a>
@@ -35,7 +35,7 @@
 		</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
-			<%@include file="/dynamic/navbar.jsp"%>
+			<jsp:include page="./navbar.jsp"/>
 		</div>
 	</div>
 	<!-- Condensed version of the header, visible when the window is small -->

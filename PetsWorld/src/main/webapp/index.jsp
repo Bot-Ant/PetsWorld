@@ -35,7 +35,7 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="../static/images/${prd.foto}" alt="immagine prodotto">
+								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">

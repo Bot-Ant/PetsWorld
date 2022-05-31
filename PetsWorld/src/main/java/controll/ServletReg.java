@@ -65,7 +65,7 @@ public class ServletReg extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.getRequestDispatcher("dynamic/index.jsp").forward(request,response);
+        request.getRequestDispatcher("./index.jsp").forward(request,response);
     }
 
 	}

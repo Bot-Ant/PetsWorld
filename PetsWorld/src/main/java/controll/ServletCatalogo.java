@@ -58,7 +58,7 @@ public class ServletCatalogo extends HttpServlet {
 			List<Prodotto> search = dao.ListaProdotti(conditions);
 			this.getServletContext().setAttribute("prodotto",search);
 			request.setAttribute("animale", nome);
-	        request.getRequestDispatcher("dynamic/catalogo.jsp").forward(request,response);
+	        request.getRequestDispatcher("./catalogo.jsp").forward(request,response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -59,7 +59,7 @@ public class ServletLogin extends HttpServlet {
         try {
         	boolean idUser=dao.Accountcheck(Email, Password);
         	if(idUser == false) {
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/invalidLogin.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./invalidLogin.jsp");
         		requestDispatcher.forward(request, response);
         	}
         	
@@ -69,7 +69,7 @@ public class ServletLogin extends HttpServlet {
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);
     			sessione.setAttribute("carrello", new Carrello());
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/index.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./index.jsp");
         		requestDispatcher.forward(request, response);
     			return;
     		}
@@ -78,7 +78,7 @@ public class ServletLogin extends HttpServlet {
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("Admin", accountdaloggare);
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("dynamic/adminHome.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./adminHome.jsp");
         		requestDispatcher.forward(request, response);
     			return;
     		}

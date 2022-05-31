@@ -6,13 +6,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Catalogo</title>
-	<link rel="stylesheet" href="../static/styles/light.css">
-	<link rel="stylesheet" href="../static/styles/page.css">
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/footer.css">
-    <link rel="stylesheet" href="../static/styles/user.css">
-	<link rel="stylesheet" href="../static/styles/catalog.css">
-	<link rel="stylesheet" href="../static/styles/order.css">
+	<link rel="stylesheet" href="./static/styles/light.css">
+	<link rel="stylesheet" href="./static/styles/page.css">
+    <link rel="stylesheet" href="./static/styles/header.css">
+    <link rel="stylesheet" href="./static/styles/footer.css">
+    <link rel="stylesheet" href="./static/styles/user.css">
+	<link rel="stylesheet" href="./static/styles/catalog.css">
+	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
 	<header>
@@ -36,7 +36,7 @@
 				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
 						<div class="image-container">
-							<img src="static/images/${prd.foto}">
+							<img src="./static/images/${prd.foto}">
 						</div>
 						<h3 class="name">${prd.nome}</h3>
 						<div class="text-container">
