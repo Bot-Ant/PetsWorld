@@ -15,7 +15,7 @@
 
 #empty {
     padding: 100px 0 250px 0;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }

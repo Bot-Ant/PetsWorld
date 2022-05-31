@@ -22,7 +22,9 @@
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null) 
 		{	
-			double prezzoTot=0;
+			double subtotale = 0;
+			double costoTotale = 0;
+			double costoSpedizione = 15;
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
 			if(carrello != null)
 			{
@@ -69,12 +71,14 @@
 									<button class="right">+</button>
 								</div>
 							</form>
-							<h3 class="product-price"><%=prodotti.get(i).getPrezzo()%></h3>
-							<% prezzoTot = prezzoTot + (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());%>
+							<h3 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h3>
+							<% subtotale += (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());%>
 						</div>
 					</div>
+					<% if (i + 1 < prodotti.size()) { %>
 					<hr>
 					<%
+						}
 					} 
 					%>
 				</div>
@@ -87,17 +91,21 @@
 							Subtotale
 						</p>
 						<p class="price">
-							<%=prezzoTot%> &euro;
+							€<%=subtotale%>
 						</p>
 					</div>
+					<% if (subtotale >= 50) {
+						costoSpedizione = 0;
+					}%>
 					<div class="single-voice">
 						<p>
 							Spese di spedizione
 						</p>
 						<p class="price">
-							€xx.xx
+							€<%=costoSpedizione%>
 						</p>
 					</div>
+					<% costoTotale = subtotale + costoSpedizione;%>
 					<span>
 						<div class="single-voice">
 							<p>
@@ -106,7 +114,7 @@
 								<span class="small">(iva inclusa)</span>
 							</p>
 							<p class="price">
-								€xx.xx
+								€<%=costoTotale%>
 							</p>
 						</div>
 					</span>
@@ -121,6 +129,7 @@
 				}
 			}
 		%>
+	</div>
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>

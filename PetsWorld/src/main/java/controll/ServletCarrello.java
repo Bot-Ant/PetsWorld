@@ -66,7 +66,7 @@ public class ServletCarrello extends HttpServlet {
 			carrello.addProdotto(prodotto);
 		}
 		carrello.setPrezzoTotale(prodotto.getPrezzo());		
-	    RequestDispatcher requestDispatcher= request.getRequestDispatcher("./catalogo.jsp");
+	    RequestDispatcher requestDispatcher= request.getRequestDispatcher("./cart.jsp");
 	    requestDispatcher.include(request,response);
 }
 	
