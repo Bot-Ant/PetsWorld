@@ -4,13 +4,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>footer</title>
-		<link rel="stylesheet" href="../static/styles/light.css">
-		<link rel="stylesheet" href="../static/styles/page.css">
-    	<link rel="stylesheet" href="../static/styles/header.css">
-    	<link rel="stylesheet" href="../static/styles/footer.css">
-    	<link rel="stylesheet" href="../static/styles/user.css">
-		<link rel="stylesheet" href="../static/styles/catalog.css">
-		<link rel="stylesheet" href="../static/styles/order.css">
+		<link rel="stylesheet" href="./static/styles/light.css">
+		<link rel="stylesheet" href="./static/styles/page.css">
+    	<link rel="stylesheet" href="./static/styles/header.css">
+    	<link rel="stylesheet" href="./static/styles/footer.css">
+    	<link rel="stylesheet" href="./static/styles/user.css">
+		<link rel="stylesheet" href="./static/styles/catalog.css">
+		<link rel="stylesheet" href="./static/styles/order.css">
 	</head>
 <body>
 	<div id="large-footer">
@@ -50,9 +50,9 @@
 		</div>
 		<div class="footer-extras">
 			<div class="pay-methods">
-				<img src="../static/images/payment_method_logo_visa.png" alt="visa-logo">
-				<img src="../static/images/payment_method_logo_mastercard.png" alt="mastercard-logo">
-				<img src="../static/images/payment_method_logo_paypal.png" alt="paypal-logo">
+				<img src="./static/images/payment_method_logo_visa.png" alt="visa-logo">
+				<img src="./static/images/payment_method_logo_mastercard.png" alt="mastercard-logo">
+				<img src="./static/images/payment_method_logo_paypal.png" alt="paypal-logo">
 			</div>
 			<div class="theme">
 				<h4>Tema: </h4>
