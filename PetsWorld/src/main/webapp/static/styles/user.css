@@ -78,26 +78,12 @@
 	background-color: var(--accent-color);
 }
 /* Set the style of a link inside a form without decoration */
-.form-section a {
+p a {
 	text-decoration: none;
 	color: var(--main-color);
 }
 /* Change the color of the link when the cursor is on it*/
-.form-section a:hover {
-	color: var(--accent-color);
-}
-/* Set the style of a button in a paragraph to look like a normal link */
-p button[type=submit] {
-	padding: 0;
-	margin: 0;
-	border: none;
-	cursor: pointer;
-	font-size: medium;
-	color: var(--main-color);
-	background-color: var(--neutral-color-2);
-}
-
-p button[type=submit]:hover {
+p a:hover {
 	color: var(--accent-color);
 }
 /* Set the style of the form element separator to take all space avaliable */

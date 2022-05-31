@@ -57,12 +57,10 @@
 			<!-- Seperation line between form sections-->
 			<hr>
 			<!-- Form section connected to a servlet-->
-			<form class="form-section" class="redirect" action="ServletMain" method="post">
-				<p>
-					Hai un account?
-					<button class="link" type="submit" name="operazione" value="Login">Accedi</button>
-				</p>
-			</form>
+			<p>
+				Non hai ancora un account?
+				<a href="./login.jsp">Accedi</a>
+			</p>
 		</div>
 	</div>
 </body>

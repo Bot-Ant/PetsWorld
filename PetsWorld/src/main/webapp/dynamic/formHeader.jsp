@@ -13,11 +13,12 @@
 	<link rel="stylesheet" href="../static/styles/catalog.css">
 	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
-<body>
-	
+<body>	
 	<div id="form-header">
 		<div class="logo-box">
-			<img src="static/images/petsworld.png">
+			<a href="index.jsp">
+				<img class="logo" src="../static/images/petsworld-logo.svg" alt="logo" name="home">
+			</a>
 		</div>
 	</div>
 </body>

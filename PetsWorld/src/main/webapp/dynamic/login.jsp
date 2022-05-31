@@ -36,15 +36,13 @@
 				</ul>
 				<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
 			</form>
-			<!-- Seperation line between form sections-->
+			<!-- Seperation line between sections-->
 			<hr>
-			<!-- Form section connected to a servlet-->
-			<form class="form-section" action="ServletMain" method="post">
-				<p>
-					Non hai ancora un account?
-					<button type="submit" class="link"  name="operazione" value="Registrazione">Registrati</button>
-				</p>
-			</form>
+			<!-- Section with link to login page -->
+			<p>
+				Non hai ancora un account?
+				<a href="./registrazione.jsp">Registrati</a>
+			</p>
 		</div>
 	</div>
 </body>
