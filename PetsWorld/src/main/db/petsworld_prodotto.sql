@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: petsword
+-- Host: 127.0.0.1    Database: petsworld
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -16,30 +16,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `indirizzo`
+-- Table structure for table `prodotto`
 --
 
-DROP TABLE IF EXISTS `indirizzo`;
+DROP TABLE IF EXISTS `prodotto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `indirizzo` (
-  `email` varchar(45) NOT NULL,
-  `citta` varchar(45) DEFAULT NULL,
-  `nome_strada` varchar(45) DEFAULT NULL,
-  `civico` varchar(5) DEFAULT NULL,
-  `CAP` varchar(5) DEFAULT NULL,
-  `provincia` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `prodotto` (
+  `idprodotto` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `tipo` varchar(45) NOT NULL,
+  `prezzo` decimal(10,0) NOT NULL,
+  `quantita` int NOT NULL,
+  `descrizione` varchar(500) NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `iva` int NOT NULL,
+  `animale` varchar(45) NOT NULL,
+  `peso` double DEFAULT NULL,
+  `dataScadenza` varchar(25) DEFAULT NULL,
+  `dimensione` varchar(25) DEFAULT NULL,
+  `colore` varchar(25) DEFAULT NULL,
+  `IdRecensione_fk2` int DEFAULT NULL,
+  PRIMARY KEY (`idprodotto`),
+  KEY `recensione2` (`IdRecensione_fk2`),
+  CONSTRAINT `recensione2` FOREIGN KEY (`IdRecensione_fk2`) REFERENCES `recensione` (`idrecensione`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `indirizzo`
+-- Dumping data for table `prodotto`
 --
 
-LOCK TABLES `indirizzo` WRITE;
-/*!40000 ALTER TABLE `indirizzo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `indirizzo` ENABLE KEYS */;
+LOCK TABLES `prodotto` WRITE;
+/*!40000 ALTER TABLE `prodotto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `prodotto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-19 12:30:25
+-- Dump completed on 2022-05-31 17:56:40

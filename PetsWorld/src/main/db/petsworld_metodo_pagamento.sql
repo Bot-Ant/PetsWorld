@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: petsword
+-- Host: 127.0.0.1    Database: petsworld
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -23,13 +23,14 @@ DROP TABLE IF EXISTS `metodo_pagamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `metodo_pagamento` (
-  `email` varchar(45) NOT NULL,
-  `tipo` varchar(45) NOT NULL,
-  `numero` varchar(45) NOT NULL,
-  `proprietario` varchar(45) NOT NULL,
-  `dataScadenza` varchar(45) NOT NULL,
-  `codice` varchar(45) NOT NULL,
-  PRIMARY KEY (`email`)
+  `IDutente` int NOT NULL,
+  `tipo` varchar(45) DEFAULT NULL,
+  `numero` varchar(45) DEFAULT NULL,
+  `proprietario` varchar(45) DEFAULT NULL,
+  `dataScadenza` varchar(45) DEFAULT NULL,
+  `codice` varchar(45) DEFAULT NULL,
+  KEY `pagamento_idx` (`IDutente`),
+  CONSTRAINT `pagamento` FOREIGN KEY (`IDutente`) REFERENCES `utente` (`idUtente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-19 12:30:26
+-- Dump completed on 2022-05-31 17:56:40

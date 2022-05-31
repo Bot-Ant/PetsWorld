@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: petsword
+-- Host: 127.0.0.1    Database: petsworld
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -16,36 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `prodottoacquistato`
+-- Table structure for table `cucciolo`
 --
 
-DROP TABLE IF EXISTS `prodottoacquistato`;
+DROP TABLE IF EXISTS `cucciolo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `prodottoacquistato` (
-  `idProdottoAcquistato` int NOT NULL,
-  ` nome` varchar(25) NOT NULL,
-  `tipo` varchar(25) NOT NULL,
-  `quantita` int NOT NULL,
-  `foto` varchar(50) NOT NULL,
-  `prezzo` double NOT NULL,
-  `iva` double NOT NULL,
-  `animale` varchar(45) NOT NULL,
-  `peso` double DEFAULT NULL,
-  `dataScandenza` varchar(25) DEFAULT NULL,
-  `dimensione` varchar(15) DEFAULT NULL,
-  `colore` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`idProdottoAcquistato`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `cucciolo` (
+  `IdCucciolo` int NOT NULL AUTO_INCREMENT,
+  `eta` int NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `tipo` varchar(20) NOT NULL,
+  `razza` varchar(20) NOT NULL,
+  `foto` varchar(45) NOT NULL,
+  PRIMARY KEY (`IdCucciolo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `prodottoacquistato`
+-- Dumping data for table `cucciolo`
 --
 
-LOCK TABLES `prodottoacquistato` WRITE;
-/*!40000 ALTER TABLE `prodottoacquistato` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prodottoacquistato` ENABLE KEYS */;
+LOCK TABLES `cucciolo` WRITE;
+/*!40000 ALTER TABLE `cucciolo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cucciolo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-19 12:30:24
+-- Dump completed on 2022-05-31 17:56:41

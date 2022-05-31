@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: petsword
+-- Host: 127.0.0.1    Database: petsworld
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -16,33 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ordine`
+-- Table structure for table `indirizzo`
 --
 
-DROP TABLE IF EXISTS `ordine`;
+DROP TABLE IF EXISTS `indirizzo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ordine` (
-  `idordine` int NOT NULL,
-  `dataOrdine` varchar(10) NOT NULL,
-  `statusOrdine` varchar(15) NOT NULL,
-  `totale` double NOT NULL,
-  `Pagamento` varchar(15) NOT NULL,
-  `indirizzo` varchar(25) NOT NULL,
-  `IdProdottoAcquisto_fk` int DEFAULT NULL,
-  PRIMARY KEY (`idordine`),
-  KEY `prodotto_acquistato_idx` (`IdProdottoAcquisto_fk`),
-  CONSTRAINT `prodotto_acquistato` FOREIGN KEY (`IdProdottoAcquisto_fk`) REFERENCES `prodottoacquistato` (`idProdottoAcquistato`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `indirizzo` (
+  `IDutente_fk` int NOT NULL,
+  `citta` varchar(45) DEFAULT NULL,
+  `nome_strada` varchar(45) DEFAULT NULL,
+  `civico` varchar(5) DEFAULT NULL,
+  `CAP` varchar(5) DEFAULT NULL,
+  `provincia` varchar(45) DEFAULT NULL,
+  KEY `indirizzo_idx` (`IDutente_fk`),
+  CONSTRAINT `indirizzo` FOREIGN KEY (`IDutente_fk`) REFERENCES `utente` (`idUtente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ordine`
+-- Dumping data for table `indirizzo`
 --
 
-LOCK TABLES `ordine` WRITE;
-/*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
+LOCK TABLES `indirizzo` WRITE;
+/*!40000 ALTER TABLE `indirizzo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `indirizzo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-19 12:30:26
+-- Dump completed on 2022-05-31 17:56:41
