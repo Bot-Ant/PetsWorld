@@ -1,12 +1,12 @@
 @charset "utf-8";
 /*Color variables for the light theme */
 :root {
-    --main-color: rgb(100, 180, 65);
-    --main-color-light: rgb(147, 194, 127);
-    --main-color-dark: rgb(86, 150, 59);
-    --accent-color: rgb(255, 137, 40);
-    --accent-color-light: rgb(249, 149, 67);
-    --accent-color-dark: rgb(220, 120, 39);
+    --main-color: rgb(9, 168, 49);
+    --main-color-light: rgb(46, 177, 78);
+    --main-color-dark: rgb(7, 139, 40);
+    --accent-color: rgb(255, 117, 35);
+    --accent-color-light: rgb(255, 138, 71);
+    --accent-color-dark: rgb(220, 99, 30);
     --neutral-color-1: rgb(232, 232, 232);
     --neutral-color-2: rgb(252, 252, 252);
     --contrast-color-1: rgb(15, 15, 15);

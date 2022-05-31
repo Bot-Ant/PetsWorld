@@ -21,7 +21,7 @@
 		<div class="top-bar">
 			<div class="logo-box">
 				<a href="index.jsp">
-					<img class="logo" src="../static/images/petsworld-logo.png" alt="logo" name="home">
+					<img class="logo" src="../static/images/petsworld-logo.svg" alt="logo" name="home">
 				</a>
 			</div>
 			<div class="bar-center">
