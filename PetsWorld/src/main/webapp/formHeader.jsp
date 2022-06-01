@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./static/styles/user.css">
 	<link rel="stylesheet" href="./static/styles/catalog.css">
 	<link rel="stylesheet" href="./static/styles/order.css">
+	<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<div id="form-header">

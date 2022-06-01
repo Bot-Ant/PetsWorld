@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="./static/styles/catalog.css">
 	<link rel="stylesheet" href="./static/styles/order.css">
 	<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
 	<!-- Extended version of the header, visible when the window is large -->
@@ -28,7 +27,6 @@
 				<jsp:include page="./searchbar.jsp"/>
 			</div>
 			<div class="header-buttons">
-				<a href="./catalogo.jsp">Catalogo</a>
 				<a href="./cart.jsp"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
 				<a href="./login.jsp">Login <i class="fa-solid fa-user fa-xl"></i></a>
 			</div>
