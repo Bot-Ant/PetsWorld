@@ -49,11 +49,11 @@
 			</div>
 		</div>
 		<div class="footer-extras">
-			<div class="pay-methods">
+			<a class="pay-methods" href="#">
 				<img src="./static/images/payment_method_logo_visa.png" alt="visa-logo">
 				<img src="./static/images/payment_method_logo_mastercard.png" alt="mastercard-logo">
 				<img src="./static/images/payment_method_logo_paypal.png" alt="paypal-logo">
-			</div>
+			</a>
 			<div class="theme">
 				<h4>Tema: </h4>
 				<label class="switch">

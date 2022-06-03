@@ -40,7 +40,7 @@
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
-								<h3 class="price">€${prd.prezzo}</h3>
+								<h2 class="price">€${prd.prezzo}</h2>
                 				<form class="add-to-cart" action="ServletCarrello" method="get">
 									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 								</form>
