@@ -22,7 +22,7 @@
 	<div class="home-content">
 		<!-- Banner with news and sales -->
 		<div class="banner">
-
+	
 		</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
@@ -39,9 +39,9 @@
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
-								<h3 class="price">€${prd.prezzo}</h3>
+								<h2 class="price">€${prd.prezzo}</h2>
                 				<form class="add-to-cart" action="ServletCarrello" method="get">
-									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
+									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</form>
 							</div>
 						</div>
@@ -58,7 +58,7 @@
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
-								<h3 class="price">€${prd.prezzo}</h3>
+								<h2 class="price">€${prd.prezzo}</h2>
                 				<form class="add-to-cart" action="ServletCarrello" method="get">
 									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 								</form>
@@ -77,7 +77,7 @@
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
-								<h3 class="price">€${prd.prezzo}</h3>
+								<h2 class="price">€${prd.prezzo}</h2>
                 				<form class="add-to-cart" action="ServletCarrello" method="get">
 									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 								</form>

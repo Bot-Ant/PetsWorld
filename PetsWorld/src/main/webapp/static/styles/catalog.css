@@ -5,7 +5,7 @@
     padding: 10px;
     height: 250px;
     width: 200px;
-    border-radius: 15px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--contrast-color-3);
@@ -40,6 +40,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 45px;
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -49,6 +50,7 @@
 .product-box .text-container .price {
     align-self: center;
     margin: 4px;
+    font-size: 2em;
 }
 
 .product-box .text-container .add-to-cart {
@@ -61,8 +63,8 @@
 .add-to-cart button {
     margin: 0;
     padding: 0;
-    height: 32px;
-    width: 32px;
+    height: 45px;
+    width: 45px;
     border-radius: 15px;
     cursor: pointer;
     border: none;

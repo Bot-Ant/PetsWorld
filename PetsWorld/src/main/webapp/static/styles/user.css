@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--neutral-color-2);
 }
 /* Style a form rectangle with a static dimension */
 .form-box {
@@ -15,8 +16,10 @@
 	width: 500px;
 	margin: 70px 30% 70px 30%;
 	padding: 30px;
+	border-radius: 15px;
 	border: 3px solid var(--main-color);
 	background-color: var(--neutral-color-2);
+	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
 }
 /* Reset margin and padding for better centred content */
 .form-section {
