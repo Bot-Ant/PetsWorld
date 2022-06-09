@@ -7,12 +7,12 @@
 </head>
 <body>
 	<nav>
-		<form class="nav-links" action="" method="post">
-			<button class="links" type="submit" name="sezione" value="prodotti"><span>Prodotti</span></button>
-			<button class="links" type="submit" name="sezione" value="banner"><span>Banner</span></button>
-			<button class="links" type="submit" name="sezione" value="dipendenti"><span>Dipendenti</span></button>
-			<button class="links" type="submit" name="sezione" value="cuccioli"><span>Cuccioli</span></button>
-		</form>
+		<div class="nav-links">
+			<a class="link"><span>Prodotti</span></a>
+			<a class="link"><span>Banner</span></a>
+			<a class="link"><span>Dipendenti</span></a>
+			<a class="link"><span>Cuccioli</span></a>
+		</div>
 	</nav>
 </body>
 </html>

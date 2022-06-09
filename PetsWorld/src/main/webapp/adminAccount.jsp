@@ -12,6 +12,9 @@
 	</header>
 	<div class="admin-content">
 		<h1>Benvenuto nella tua sezione da admin</h1>
+		<p>
+			è bello rivederti al lavoro
+		</p>
 	</div>
 </body>
 </html>

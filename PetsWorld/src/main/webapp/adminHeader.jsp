@@ -24,9 +24,7 @@
 					<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
 				</a>
 			</div>
-			<div class="bar-center">
-				<jsp:include page="./adminNavbar.jsp"/>
-			</div>
+			<jsp:include page="./adminNavbar.jsp"/>
 			<div class="header-buttons">
 				<a href="./adminAccount.jsp">Account <i class="fa-solid fa-user fa-xl"></i></a>
 			</div>

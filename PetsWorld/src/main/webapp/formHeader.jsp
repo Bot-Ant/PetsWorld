@@ -17,7 +17,7 @@
 	<div id="form-header">
 		<div class="logo-box">
 			<a href="index.jsp">
-				<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
+				<img class="logo-large" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
 			</a>
 		</div>
 	</div>
