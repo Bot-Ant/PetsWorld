@@ -63,7 +63,7 @@ header {
 }
 
 .search-bar:hover {
-    border: 1px solid var(--main-color);
+    /* border: 1px solid var(--main-color); */
 }
 
 .search-bar input {
@@ -71,17 +71,19 @@ header {
 	padding: 12px 20px;
 	margin: 0px 0px 0px 0px;
 	display: inline-block;
-	border: 0px solid #ccc;
+	border: 0px solid var(--contrast-color-3);
+    background-color: var(--neutral-color-1);
 	border-radius: 10px;
 	box-sizing: border-box;
-	background-color: var(--neutral-color-1);
+	
 	
 }
 
 .search-bar input:focus {
 	outline: none;
 	caret-color: var(--main-color);
-	border: 1px solid var(--main-color);
+    background-color: var(--neutral-color-2);
+	border: 2px solid var(--main-color);
 }
 
 .search-bar button {

@@ -28,7 +28,7 @@
 			</div>
 			<div class="header-buttons">
 				<a href="./cart.jsp"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
-				<a href="./login.jsp">Login <i class="fa-solid fa-user fa-xl"></i></a>
+				<h3><a href="./login.jsp">Login <i class="fa-solid fa-user fa-xl"></i></a></h3>
 			</div>
 		</div>
 		<!-- Elements in the bottom bar of the header -->

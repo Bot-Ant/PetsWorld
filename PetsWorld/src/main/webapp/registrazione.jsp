@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
+	<script src="./static/scripts/page.js"></script>
+	<script>window.onload = downloadScripts();</script>
 	<header>
 		<!-- Compact header for Form pages -->
 		<jsp:include page="./formHeader.jsp"/>
@@ -26,27 +28,29 @@
 				<ul>
 					<li>
 						<label class="field" for="nome"><b>Nome</b></label>
-						<input type="text" required name="nome" placeholder="Nome" id="nome">
+						<input type="text" required name="nome" placeholder="" id="nome">
 					</li>
 					<li>
 						<label class="field" for="cognome"><b>Cognome</b></label>
-						   <input type="text" required name="cognome" placeholder="Cognome" id="cognome">
+						   <input type="text" required name="cognome" placeholder="" id="cognome">
 					</li>
 					<li>
 						<label class="field" for="email"> <b>Email</b></label>
-						<input type="email" required name="email" placeholder="Email" id="email">
+						<input type="email" required name="email" placeholder="" id="email" onkeyup="lowercase('email')" onblur="checkEmailValidity()">
+						<p id="email-validity"></p>
 					</li>
 					<li>
 						<label class="field" for="password"><b>Password</b></label>
-						<input type="password" required name="password" placeholder="Password" id="password">
+						<input type="password" required name="password" placeholder="" id="password" minlength="8" onblur="checkPasswordValidity()">
+						<p id="password-validity"></p>
 					</li>
 					<li>
 						<label class="field" for="codiceFiscale"><b>Codice Fiscale</b></label>
-						   <input type="text" required name="codiceFiscale" placeholder="Codice Fiscale" id="codiceFiscale">
+						   <input type="text" required name="codiceFiscale" placeholder="" id="codiceFiscale" onblur="uppercase('codiceFiscale')">
 					</li>
 					<li>
 						<label  for="cellulare"><b>Cellulare</b></label>
-						<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="cellulare" required name="cellulare" id="cellulare">
+						<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="111-1111111" required name="cellulare" id="cellulare">
 					</li>
 				</ul>
 				<p>
