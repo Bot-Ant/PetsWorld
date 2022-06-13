@@ -7,12 +7,13 @@
     --accent-color: rgb(255, 117, 35);
     --accent-color-light: rgb(255, 138, 71);
     --accent-color-dark: rgb(220, 99, 30);
-    --neutral-color-1: rgb(242, 242, 242);
+    --neutral-color-1: rgb(246, 246, 246);
     --neutral-color-2: rgb(252, 252, 252);
+    --neutral-color-3: rgb(236, 236, 236);
     --contrast-color-1: rgb(15, 15, 15);
     --contrast-color-2: rgb(20, 20, 20);
     --contrast-color-3: rgb(190, 190, 190);
-    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.1);
     --light: rgb(252, 252, 252);
     --dark: rgb(15, 15, 15);
 }

@@ -3,14 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Pagina utente</title>
-	<link rel="stylesheet" href="../static/styles/light.css">
-	<link rel="stylesheet" href="../static/styles/page.css">
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/footer.css">
-    <link rel="stylesheet" href="../static/styles/user.css">
-	<link rel="stylesheet" href="../static/styles/catalog.css">
-	<link rel="stylesheet" href="../static/styles/order.css">
+	<title>Dati personali</title>
 </head>
 <body>
 	<header>
@@ -19,10 +12,10 @@
 	</header>
 	<div class="user-content">
 		<div class="user-nav">
-			<a class="active" href="#">My petsworld</a>
+			<a href="./userAccount.jsp">My petsworld</a>
 			<h2>Gestione account</h2>
 			<a href="./userOrders.jsp">Ordini</a>
-			<a href="./userData.jsp">Dati personali</a>
+			<a class="active" href="#">Dati personali</a>
 			<a href="./userAddresses.jsp">Indirizzi</a>
 			<a href="./userPayMethods.jsp">Metodi di pagamento</a>
 			<h2>Gestione animali</h2>
@@ -31,18 +24,13 @@
 		</div>
 		<div class="data-panel">
 			<div class="welcome">
-				<h1>My petsworld</h1>
+				<h1>Dati personali</h1>
 				<p>
-					Ciao [nome utente], benvenuto nel tuo spazio personale.
+					Questi sono i tuoi dati personali.
 				</p>
 			</div>
-			<div class="extra">
-				<div class="donazioni">
-
-				</div>
-				<div class="adozioni">
-					
-				</div>
+			<div class="data-fields">
+				
 			</div>
 		</div>
 	</div>

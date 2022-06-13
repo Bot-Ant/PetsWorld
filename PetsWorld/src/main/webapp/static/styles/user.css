@@ -124,8 +124,31 @@ p a:hover {
 	margin: 0;
 	padding: 0;
 	display: flex;
+	background-color: var(--neutral-color-2);
 }
 
 .user-content .user-nav {
-	width: 400px;
+	margin: 20px;
+	padding: 20px;
+	width: 250px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	color: var(--contrast-color-1);
+	background-color: var(--neutral-color-2);
+	box-shadow: 0 4px 4px 0 var(--shadow-color), 0 4px 20px 0 var(--shadow-color);
+}
+
+.user-nav a {
+	margin: 10px 10px;
+	border: none;
+	cursor: pointer;
+    text-decoration: none;
+    color: var(--contrast-color-2);
+}
+
+.user-nav .active {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: var(--main-color);
 }

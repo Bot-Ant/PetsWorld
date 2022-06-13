@@ -34,19 +34,19 @@
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
-						<div class="product-box">
-							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-							</div>
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-                				<form class="add-to-cart" action="ServletCarrello" method="get">
-									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
-								</form>
-							</div>
+					<div class="product-box">
+						<div class="image-container">
+							<img src="./static/images/${prd.foto}" alt="immagine prodotto">
 						</div>
-					</c:forEach>
+						<h3 class="name">${prd.nome}</h3>
+						<div class="text-container">
+							<h2 class="price">€${prd.prezzo}</h2>
+                			<form class="add-to-cart" action="ServletCarrello" method="get">
+								<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+							</form>
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

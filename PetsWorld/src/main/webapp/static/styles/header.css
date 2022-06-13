@@ -82,7 +82,6 @@ header {
 .search-bar input:focus {
 	outline: none;
 	caret-color: var(--main-color);
-    background-color: var(--neutral-color-2);
 	border: 2px solid var(--main-color);
 }
 
