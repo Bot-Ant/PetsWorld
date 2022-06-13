@@ -1,4 +1,4 @@
-package controll;
+package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -65,7 +65,7 @@ public class ServletReg extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.getRequestDispatcher("./index.jsp").forward(request,response);
+        request.getRequestDispatcher("./login.jsp").forward(request,response);
     }
 
 	}

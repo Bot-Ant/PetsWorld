@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="./static/styles/user.css">
 	<link rel="stylesheet" href="./static/styles/catalog.css">
 	<link rel="stylesheet" href="./static/styles/order.css">
+	<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<div id="form-header">
 		<div class="logo-box">
 			<a href="index.jsp">
-				<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
+				<img class="logo-large" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
 			</a>
 		</div>
 	</div>

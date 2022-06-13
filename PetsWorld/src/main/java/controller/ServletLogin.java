@@ -1,4 +1,4 @@
-package controll;
+package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -78,7 +78,7 @@ public class ServletLogin extends HttpServlet {
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("Admin", accountdaloggare);
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./adminHome.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./adminAccount.jsp");
         		requestDispatcher.forward(request, response);
     			return;
     		}
