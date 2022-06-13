@@ -28,29 +28,33 @@
 				<ul>
 					<li>
 						<label class="field" for="nome"><b>Nome</b></label>
-						<input type="text" required name="nome" placeholder="" id="nome">
+						<input type="text" required name="nome" placeholder="" id="nome" onblur="nameValidity()">
+						<p id="name-validity"></p>
 					</li>
 					<li>
 						<label class="field" for="cognome"><b>Cognome</b></label>
-						   <input type="text" required name="cognome" placeholder="" id="cognome">
+						<input type="text" required name="cognome" placeholder="" id="cognome" onblur="surnameValidity()">
+						<p id="surname-validity"></p>
 					</li>
 					<li>
 						<label class="field" for="email"> <b>Email</b></label>
-						<input type="email" required name="email" placeholder="" id="email" onkeyup="lowercase('email')" onblur="checkEmailValidity()">
+						<input type="email" required name="email" placeholder="" id="email" onkeyup="lowercase('email')" onblur="emailValidity()">
 						<p id="email-validity"></p>
 					</li>
 					<li>
 						<label class="field" for="password"><b>Password</b></label>
-						<input type="password" required name="password" placeholder="" id="password" minlength="8" onblur="checkPasswordValidity()">
+						<input type="password" required name="password" placeholder="" id="password" minlength="8" onblur="passwordValidity()">
 						<p id="password-validity"></p>
 					</li>
 					<li>
 						<label class="field" for="codiceFiscale"><b>Codice Fiscale</b></label>
-						   <input type="text" required name="codiceFiscale" placeholder="" id="codiceFiscale" onblur="uppercase('codiceFiscale')">
+						<input type="text" required name="codiceFiscale" placeholder="" id="codiceFiscale" onkeyup="uppercase('codiceFiscale')" onblur="taxCodeValidity()" >
+						<p id="taxcode-validity"></p>
 					</li>
 					<li>
 						<label  for="cellulare"><b>Cellulare</b></label>
-						<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="111-1111111" required name="cellulare" id="cellulare">
+						<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="111-1111111" required name="cellulare" id="cellulare" onblur="phoneNumberValidity()" >
+						<p id="number-validity"></p>
 					</li>
 				</ul>
 				<p>
