@@ -14,6 +14,10 @@ h1, h2, h2, h4, h5, h6 {
     font-weight: 700;
 }
 
+hr {
+    margin: 20px 0;
+}
+
 .home-content {
     margin: 0;
     padding: 0;

@@ -14,7 +14,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 500px;
-	margin: 70px 30% 70px 30%;
+	margin: 50px 0;
 	padding: 30px;
 	border-radius: 15px;
 	border: 3px solid var(--main-color);
@@ -44,9 +44,15 @@
 }
 /* Add a margin for the list item containing a form field */
 .form-section ul li {
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	text-align: left;
+}
+
+.form-section ul li p {
+	margin-top: 0;
+	font-size: 0.8em;
+	color: var(--accent-color);
 }
 /* Set the width to take all the space of the form and adds some padding and rounded corners */
 .form-section input, select {
