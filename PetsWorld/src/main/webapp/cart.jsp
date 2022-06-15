@@ -64,8 +64,8 @@
 						</div>
 						<div class="product-values">
 							<form class="product-modifiers">
-								<button>Del</button>
 								<div class="product-quantities">
+									<button class="trash"><i class="fa-solid fa-trash fa-2x"></i></button>
 									<button class="left">-</button>
 									<input type="text">
 									<button class="right">+</button>

@@ -18,6 +18,5 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/tomcat-jdbc.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/gson-2.9.0.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/json-20220320.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/java-json.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
