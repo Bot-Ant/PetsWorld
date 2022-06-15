@@ -95,7 +95,7 @@
 .filters-panel {
     margin: 20px;
     padding: 20px;
-    height: auto;
+    height: min-content;
     width: 300px;
     border-radius: 10px;
     display: flex;

@@ -8,7 +8,7 @@
 <body>
 	<form class="search-bar" action="SearchServlet" method="post">
         <input class="" type="text" name="nome" placeholder="Cerca prodotto">
-        <button class="" name="bottonecerca"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="" name="bottonecerca"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
     </form>
 </body>
 </html>

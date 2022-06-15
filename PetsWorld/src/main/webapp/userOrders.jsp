@@ -3,14 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Pagina utente</title>
-	<link rel="stylesheet" href="../static/styles/light.css">
-	<link rel="stylesheet" href="../static/styles/page.css">
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/footer.css">
-    <link rel="stylesheet" href="../static/styles/user.css">
-	<link rel="stylesheet" href="../static/styles/catalog.css">
-	<link rel="stylesheet" href="../static/styles/order.css">
+	<title>Ordini</title>
 </head>
 <body>
 	<header>
@@ -19,9 +12,9 @@
 	</header>
 	<div class="user-content">
 		<div class="user-nav">
-			<a class="active" href="#">My petsworld</a>
+			<a href="./userAccount.jsp">My petsworld</a>
 			<h2>Gestione account</h2>
-			<a href="./userOrders.jsp">Ordini</a>
+			<a class="active" href="#">Ordini</a>
 			<a href="./userData.jsp">Dati personali</a>
 			<a href="./userAddresses.jsp">Indirizzi</a>
 			<a href="./userPayMethods.jsp">Metodi di pagamento</a>
@@ -31,17 +24,14 @@
 		</div>
 		<div class="data-panel">
 			<div class="welcome">
-				<h1>My petsworld</h1>
+				<h1>Ordini</h1>
 				<p>
-					Ciao [nome utente], benvenuto nel tuo spazio personale.
+					Da qui potrai vedere tutti i tuoi ordini e scaricarne le fatture.
 				</p>
 			</div>
-			<div class="extra">
-				<div class="donazioni">
+			<div class="orders-box">
+				<div class="order-line">
 
-				</div>
-				<div class="adozioni">
-					
 				</div>
 			</div>
 		</div>

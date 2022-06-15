@@ -70,7 +70,7 @@ public class ServletLogin extends HttpServlet {
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);
     			sessione.setAttribute("carrello", new Carrello());
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./index.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./userAccount.jsp");
         		requestDispatcher.forward(request, response);
     			return;
     		}

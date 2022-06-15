@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Header</title>
+	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
@@ -41,7 +42,7 @@
 			<div class="header-buttons">
 				<p>
 				<%String url2 = response.encodeURL("userAccount.jsp");%>	
-				<a href="<%=url2%>"><i class="fa-solid fa-user fa-xl"></i></a>
+        <h3><a href="<%=url2%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
 				</p>
 			<%
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
@@ -50,7 +51,7 @@
 			%>
 				<%String url3 = response.encodeURL("cart.jsp");%>	
 				<p class="sposta"><a href="LogoutServlet"><i class="fa fa-sign-out fa-xl"></i></a>
-				<p><a href="<%=url3%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></a></p>
+				<a href="<%=url3%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
 				<p id="quantita_carrello"><%=carrello.getQuantita() %></p>
 			</div>
 			<%
