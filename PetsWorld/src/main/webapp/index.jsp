@@ -29,9 +29,10 @@
 			<!-- Section of products selected -->
 			<div class="products-section">
 				<!-- Title of the section -->
-				<h2>Più venduti</h2>
+				<h1>I prodotti più venduti</h1>
 				<!-- Products to show in the row -->
 				<div class="products-row">
+					<button class="products-slider"><i class="fa-solid fa-circle-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
@@ -46,11 +47,13 @@
 							</div>
 						</div>
 					</c:forEach>
+					<button class="products-slider"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 			<div class="products-section">
-				<h2>Novità</h2>
+				<h1>Le novità PetsWorld</h1>
 				<div class="products-row">
+					<button class="products-slider"><i class="fa-solid fa-circle-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
@@ -60,16 +63,18 @@
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
                 				<form class="add-to-cart" action="ServletCarrello" method="get">
-									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
+									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</form>
 							</div>
 						</div>
 					</c:forEach>
+					<button class="products-slider"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 			<div class="products-section">
-				<h2>Consigliati</h2>
+				<h1>I prodotti più consigliati</h1>
 				<div class="products-row">
+					<button class="products-slider"><i class="fa-solid fa-circle-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
@@ -79,11 +84,12 @@
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
                 				<form class="add-to-cart" action="ServletCarrello" method="get">
-									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
+									<button type="submit" name="id" value="${prd.idProdotto}"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</form>
 							</div>
 						</div>
 					</c:forEach>
+					<button class="products-slider"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 		</div>
