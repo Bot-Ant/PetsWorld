@@ -27,10 +27,7 @@
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-				<h1>Prodotti per [Nome Animale]</h1>
-				<p>
-					Informazioni sulla categoria di prodotto che si sta cercando sul sito web.
-				</p>
+				<jsp:include page="./static/templates/catalogHeaderDog.html"/>
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
