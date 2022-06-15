@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import model.beans.Prodotto;
 import model.beans.Carrello;
 import model.daoImplementation.ProdottoImp;
@@ -66,12 +69,20 @@ public class ServletCarrello extends HttpServlet {
 			carrello.addProdotto(prodotto);
 		}
 		carrello.setPrezzoTotale(prodotto.getPrezzo());		
-	    RequestDispatcher requestDispatcher= request.getRequestDispatcher("./cart.jsp");
-	    requestDispatcher.include(request,response);
+		
+		response.setContentType("application/json");
+		JSONObject json = new JSONObject();
+		try {
+			json.put("number", carrello.getQuantita());
+		} catch (JSONException e) {
+			System.out.println("Eccezione numero elementi carrello");
+			e.printStackTrace();
+		}
+		
+		response.getWriter().print(json.toString());
 }
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
