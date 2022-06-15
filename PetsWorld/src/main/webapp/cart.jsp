@@ -55,7 +55,7 @@
 					{
 					%>
 					<div class="product-line">
-						<img src="./static/images/<%=prodotti.get(i).getNome()%>.jpg" alt="<%=prodotti.get(i).getNome()%>">				 
+						<img src="./static/images/<%=prodotti.get(i).getFoto()%>" alt="<%=prodotti.get(i).getFoto()%>">				 
 						<div class="product-name">
 							<h2><%=prodotti.get(i).getNome()%></h2>
 							<p>

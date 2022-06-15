@@ -49,6 +49,7 @@ public class ServletLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		String Email = request.getParameter("email");
         String Password = request.getParameter("password");
+        String Nome= request.getParameter("nome");
         
         Utente accountdaloggare = new Utente();
         UtenteDao<SQLException> dao= new UtenteImp(source);
