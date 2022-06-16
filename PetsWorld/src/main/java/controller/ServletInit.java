@@ -13,12 +13,13 @@ import java.util.List;
 import org.apache.tomcat.jdbc.pool.DataSource;
 
 import model.beans.*;
+import model.daoImplementation.BannerImp;
 import model.daoImplementation.ProdottoImp;
 /**
- * Servlet implementation class ServletSlider
+ * Servlet implementation class ServletInit
  */
-@WebServlet(name = "ServletSlider", value = "/ServletSlider" , loadOnStartup = 1 )
-public class ServletSlider extends HttpServlet {
+@WebServlet(name = "ServletInit", value = "/ServletInit" , loadOnStartup = 1 )
+public class ServletInit extends HttpServlet {
     /**
 	 * 
 	 */
@@ -29,11 +30,17 @@ public class ServletSlider extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         
+        List<Banner> banner = new ArrayList<>();
+        BannerImp sliderB = new BannerImp(source);
+        
         List<Prodotto> list = new ArrayList<>();
-        ProdottoImp slider = new ProdottoImp(source);
+        ProdottoImp slider = new ProdottoImp(source)
+        		;
         try {
             list = slider.SliderProdotto();
+            banner = sliderB.SliderBanner();
             this.getServletContext().setAttribute("list", list);
+            this.getServletContext().setAttribute("slider", slider);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
