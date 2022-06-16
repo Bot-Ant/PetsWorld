@@ -12,9 +12,9 @@ public class BannerExtractor implements ResultSetExtractor<Banner> {
     	
         Banner banner=new Banner();
         
-        banner.setIdBanner(resultSet.getInt("banner.idbanner"));
-        banner.setImmagine(resultSet.getString("banner.immagine"));
-        banner.setNome(resultSet.getString("banner.nome"));
+        banner.setIdBanner(resultSet.getInt("banfoto.idBanner"));
+        banner.setImmagine(resultSet.getString("banfoto.immagine"));
+        banner.setNome(resultSet.getString("banfoto.nome"));
         return banner;
     }
 }

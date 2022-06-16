@@ -1,0 +1,122 @@
+@charset "ISO-8859-1";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sliders{
+    height: 100% ;
+    width: 100%;
+    margin: auto;
+    border: 2px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+.pre-slide{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+
+
+
+}
+
+.slide-text{
+    font-family: Original Surfer, serif;
+    text-align: center;
+    width: 100%;
+    position:absolute;
+
+    top:50%;
+    left:25%;
+    padding: 8px 12px;
+    color: white;
+    font-size: 30px;
+    transform: translate(-50%,-50%);
+}
+
+
+
+#prevbtn{ /*Freccia scorrimento precedente*/
+    position: absolute;
+    top:45%;
+    z-index: 10;
+    left:2%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+}
+
+#nextbtn{ /*Freccia scorrimento successivo*/
+    position: absolute;
+    top: 45%;
+    width:auto;
+    z-index: 10;
+    right: 2%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+#nextbtn:hover,#prevbtn:hover{
+    background-color: black;
+
+
+}
+
+/* FADE ANIMATION ZONE WIP*/
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+
+
+#btnprev{ /*Freccia scorrimento precedente carte*/
+    position: absolute;
+    top:45%;
+    z-index: 10;
+    left:2%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+}
+
+#btnnext{ /*Freccia scorrimento successivo carte*/
+    position: absolute;
+    top: 45%;
+    width:auto;
+    z-index: 10;
+    right: 2%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+#btnnext:hover,#btnprev:hover {
+    background-color: black;
+}
+
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
