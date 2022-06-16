@@ -31,16 +31,16 @@ public class ServletInit extends HttpServlet {
         super.init();
         
         List<Banner> banner = new ArrayList<>();
-        BannerImp sliderB = new BannerImp(source);
+        BannerImp Banner = new BannerImp(source);
         
         List<Prodotto> list = new ArrayList<>();
-        ProdottoImp slider = new ProdottoImp(source)
-        		;
+        ProdottoImp slider = new ProdottoImp(source);
+        
         try {
             list = slider.SliderProdotto();
-            banner = sliderB.SliderBanner();
+            banner = Banner.SliderBanner();
             this.getServletContext().setAttribute("list", list);
-            this.getServletContext().setAttribute("slider", slider);
+            this.getServletContext().setAttribute("banner", banner);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

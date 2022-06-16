@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -46,40 +47,42 @@ public class ServletLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// TODO Auto-generated method stub
+		
+		
 		String Email = request.getParameter("email");
         String Password = request.getParameter("password");
-        String Nome= request.getParameter("nome");
         
         Utente accountdaloggare = new Utente();
         UtenteDao<SQLException> dao= new UtenteImp(source);
         
         accountdaloggare.setEmail(Email);
         accountdaloggare.setPassword(Password);
-      
+        
         try {
         	boolean idUser=dao.Accountcheck(Email, Password);
+        	int ruolo=dao.Admincheck(Email, Password);
         	if(idUser == false) {
         		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./invalidLogin.jsp");
         		requestDispatcher.forward(request, response);
         	}
         	
-        	int ruolo=dao.Admincheck(Email, Password);
-        	if(ruolo==1) //in questo caso è un utente
-    		{
+        	if(ruolo==0) //in questo caso è un utente
+        	{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);
     			sessione.setAttribute("carrello", new Carrello());
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./userAccount.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userAccount.jsp");
         		requestDispatcher.forward(request, response);
-    			return;
-    		}
+        	}
+    		
     		
         	else //in questo caso è admin
     		{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("Admin", accountdaloggare);
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./adminAccount.jsp");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminAccount.jsp");
         		requestDispatcher.forward(request, response);
     			return;
     		}

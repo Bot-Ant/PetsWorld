@@ -1,5 +1,5 @@
-const  newslide = document.querySelector('.pre-slide');
-const  slideimg = document.querySelectorAll('.pre-slide img')
+const  newslide = document.querySelector('.pre-botton');
+const  slideimg = document.querySelectorAll('.pre-botton img')
 
 
 //button

@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="./static/styles/user.css">
 	<link rel="stylesheet" href="./static/styles/catalog.css">
 	<link rel="stylesheet" href="./static/styles/order.css">
+	<link rel="stylesheet" href="./static/styles/banner.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+	<link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+	
 </head>
 <body>
 	<header>
@@ -21,9 +25,20 @@
 
 	<div class="home-content">
 		<!-- Banner with news and sales -->
-		<div class="banner">
-	
+		
+		 
+	<div class="banner">
+		<div class="botton">
+            <i class="fas fa-arrow-left" id="prevbtn"></i>
+            <i class="fas fa-arrow-right" id="nextbtn"></i>
+            	<div class="pre-botton">
+					<c:forEach items="${banner}" var="ban">
+					<img src="./static/images/${ban.immagine}" alt="immagine prodotto">
+					</c:forEach>
+				<script src="./static/scripts/jsbanner.js" ></script>
+				</div>
 		</div>
+	</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
 			<!-- Section of products selected -->

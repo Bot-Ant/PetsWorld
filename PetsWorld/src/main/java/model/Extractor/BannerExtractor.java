@@ -9,10 +9,12 @@ import model.beans.Banner;
 public class BannerExtractor implements ResultSetExtractor<Banner> {
 
     public Banner extract(ResultSet resultSet) throws SQLException{
+    	
         Banner banner=new Banner();
-        banner.setIdBanner(resultSet.getInt("banner.idBanner"));
-        banner.setImmagine(resultSet.getString("banner.immagine"));
-        banner.setNome(resultSet.getString("banner.nome"));
+        
+        banner.setIdBanner(resultSet.getInt("banfoto.idBanner"));
+        banner.setImmagine(resultSet.getString("banfoto.immagine"));
+        banner.setNome(resultSet.getString("banfoto.nome"));
         return banner;
     }
 }

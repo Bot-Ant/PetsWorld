@@ -23,7 +23,7 @@ public class UtenteQuery {
 	
 	public static String ruolo() {
 		QueryBuilder builder = new QueryBuilder (UTENTE_QUERY, UTENTE_ALIAS);
-		builder.select().where("email=?").andwhere("password=?");		
+		builder.select().where("email=?").andwhere("password=?");	
 		return builder.GeneratedQuery();
 	}
 }
