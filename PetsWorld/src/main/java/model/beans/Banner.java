@@ -8,15 +8,15 @@ public class Banner implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int IdBanner;
+	private int idBanner;
 	private String immagine;
 	private String nome;
 	
 	public int getIdBanner() {
-		return IdBanner;
+		return idBanner;
 	}
 	public void setIdBanner(int idBanner) {
-		IdBanner = idBanner;
+		this.idBanner = idBanner;
 	}
 	public String getImmagine() {
 		return immagine;
@@ -32,7 +32,7 @@ public class Banner implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Banner [IdBanner=" + IdBanner + ", immagine=" + immagine + ", nome=" + nome + "]";
+		return "Banner [IdBanner=" + idBanner + ", immagine=" + immagine + ", nome=" + nome + "]";
 	}
 	
 }

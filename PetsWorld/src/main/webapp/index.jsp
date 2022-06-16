@@ -22,7 +22,9 @@
 	<div class="home-content">
 		<!-- Banner with news and sales -->
 		<div class="banner">
-	
+		<c:forEach items="${banner}" var="ban">
+		<img src="./static/images/${ban.immagine}" alt="immagine prodotto">
+		</c:forEach>
 		</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
