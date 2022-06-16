@@ -43,23 +43,34 @@
 							}
 							else
 							{
-								String urlutente = response.encodeURL("userAccount.jsp");
-								String urlcarrello = response.encodeURL("cart.jsp");
+								if(utente.isRuolo() == 0) {
+									String urlutente = response.encodeURL("userAccount.jsp");
+									String urlcarrello = response.encodeURL("cart.jsp");
 
-								Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
-								if(carrello != null)
-								{
+									Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
+									if(carrello != null)
+									{
 				%>
 				<a href="<%=urlcarrello%>">
 					<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					<p id="quantita_carrello"><%=carrello.getQuantita() %></p>
 				</a>
 				<%
-								}
+									}
 				%>
 				<h3><a href="<%=urlutente%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
-				<a href="LogoutServlet"><i class="fa fa-sign-out fa-xl"></i></a>
 				<%	
+								}
+								else if(utente.isRuolo() == 1)
+								{
+									String urladmin = response.encodeURL("adminAccount.jsp");
+				%>
+				<h3><a href="<%=urladmin%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<%
+								}
+				%>
+				<a href="LogoutServlet"><i class="fa fa-sign-out fa-xl"></i></a>
+				<%
 							}
 						}
 				%>
