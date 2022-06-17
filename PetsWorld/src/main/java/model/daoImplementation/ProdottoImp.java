@@ -93,4 +93,22 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 			}	
 		}
 	}
+	
+	public int restituisciQuantita(int ID) throws SQLException {
+		try (Connection connection= createConnection()){
+			String query= ProdottoQuery.cerca_quantita();
+			
+			try (PreparedStatement ps= connection.prepareStatement(query)){
+				
+				ps.setInt(1, ID);
+				ResultSet rs= ps.executeQuery();
+				ProdottoExtractor prd= new ProdottoExtractor();
+				Prodotto prodotto= new Prodotto();
+				while(rs.next()) {
+					prodotto=prd.extract(rs);
+				}
+				return prodotto.getQuantita();
+			}
+		}
+	}
 }
