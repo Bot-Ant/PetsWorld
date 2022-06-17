@@ -41,10 +41,10 @@
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
 								<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>
-							<p id="${prd.idProdotto}_demo"></p>
+							<p id="${prd.idProdotto}_demo_1"></p>
 						</div>
 					</c:forEach>
 				</div>
@@ -61,10 +61,10 @@
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
 								<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
-								<p id="${prd.idProdotto}_demo"></p>
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 2)"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 								</div>
 							</div>
+							<p id="${prd.idProdotto}_demo_2"></p>
 						</div>
 					</c:forEach>
 				</div>
@@ -81,10 +81,10 @@
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
 								<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto},3)"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 								</div>
-								<p id="${prd.idProdotto}_demo"></p>
 							</div>
+							<p id="${prd.idProdotto}_demo_3"></p>
 						</div>
 					</c:forEach>
 				</div>
@@ -100,7 +100,7 @@
 		String url = response.encodeURL("ServletCarrello");
 	%>
 <script type="text/javascript">
-	function aggiungiAlCarrello(id)
+	function aggiungiAlCarrello(id, sezione)
 	{
 			    var url = '<%=url%>' + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto e sezione
 				//var url = 'ServletCarrello?id=' + encodeURIComponent(id);
@@ -115,7 +115,18 @@
 							var stringa=response.riferimento;
 							if(response.esaurimento==1)
 								{
-									document.getElementById(stringa).innerHTML = "Esaurimento scorte nel magazzino";
+									if(sezione==1)
+										{
+											document.getElementById(stringa+"_1").innerHTML = "Esaurimento scorte nel magazzino";
+										}
+									if(sezione==2)
+										{
+											document.getElementById(stringa+"_2").innerHTML = "Esaurimento scorte nel magazzino";
+										}
+									if(sezione==3)
+										{
+											document.getElementById(stringa+"_3").innerHTML = "Esaurimento scorte nel magazzino";
+										}
 								}
 						}
 					}
