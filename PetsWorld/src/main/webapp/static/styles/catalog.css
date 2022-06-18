@@ -3,8 +3,8 @@
 .product-box {
     margin: auto;
     padding: 10px;
-    height: 250px;
-    width: 200px;
+    height: 300px;
+    width: 250px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -79,6 +79,31 @@
 
 .add-to-cart i:hover {
     color: var(--accent-color-dark);
+}
+
+.product-box .text-container .add-to-cart-inactive {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.add-to-cart-inactive button {
+    margin: 0;
+    padding: 0;
+    height: 45px;
+    width: 45px;
+    border-radius: 15px;
+    cursor: none;
+    border: none;
+    background-color: var(--neutral-color-2);
+}
+
+.add-to-cart i {
+    border: 0px;
+    color: var(--accent-color-light);
+    background-color: var(--neutral-color-2);
 }
 
 /*main section of the catalog page*/
