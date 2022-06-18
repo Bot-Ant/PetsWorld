@@ -104,8 +104,8 @@ footer a:hover {
 }
 
 /* Theme switch style*/
- /* switch - the box around the slider */
- .switch {
+/* switch - the box around the slider */
+.switch {
   position: relative;
   display: inline-block;
   width: 60px;

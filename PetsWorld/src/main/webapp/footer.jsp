@@ -59,7 +59,7 @@
 				<label class="switch">
 					<input type="checkbox" checked="checked">
 					<span class="slider round"></span>
-				  </label>
+				</label>
 			</div>
 		</div>
 		<div class="footer-copyright">
