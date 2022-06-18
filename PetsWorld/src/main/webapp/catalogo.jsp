@@ -45,6 +45,7 @@
 								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 								</div>
 							</div>
+							<p id="${prd.idProdotto}_demo"></p>
 						</div>
 					</c:forEach>
 			</div>
@@ -68,6 +69,11 @@
 							{
 								var response = JSON.parse(xhr.responseText); //stringa che contiene la risposta da parte del server
 								document.getElementById("quantita_carrello").innerHTML = response.number;
+								var stringa=response.riferimento;
+								if(response.esaurimento==1)
+									{
+										document.getElementById(stringa).innerHTML = "Esaurimento scorte nel magazzino";
+									}
 							}
 						}
 					xhr.open("GET",url,true);
