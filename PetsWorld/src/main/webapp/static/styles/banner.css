@@ -1,4 +1,3 @@
-@charset "ISO-8859-1";
 *{
     padding: 0;
     margin: 0;
@@ -9,7 +8,8 @@
     height: 100% ;
     width: 100%;
     margin: auto;
-    border: 2px solid black;
+    border: 0 solid black;
+    border-radius: 15px;
     overflow: hidden;
     position: relative;
 }
@@ -20,9 +20,10 @@
     height: 100%;
     text-align: center;
     color: white;
+}
 
-
-
+.pre-botton img {
+    border-radius: 15px;
 }
 
 .botton-text{
@@ -47,7 +48,7 @@
     z-index: 10;
     left:2%;
     font-size: 30px;
-    color: white;
+    color: var(--neutral-color-1);
     cursor: pointer;
 
 }
@@ -59,14 +60,12 @@
     z-index: 10;
     right: 2%;
     font-size: 30px;
-    color: white;
+    color: var(--neutral-color-1);
     cursor: pointer;
-
-
 }
 
 #nextbtn:hover,#prevbtn:hover{
-    background-color: black;
+    color: var(--main-color);
 
 
 }
@@ -102,8 +101,6 @@
     font-size: 30px;
     color: white;
     cursor: pointer;
-
-
 }
 
 #btnnext:hover,#btnprev:hover {
