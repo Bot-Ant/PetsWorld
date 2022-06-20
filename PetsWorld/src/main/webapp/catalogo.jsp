@@ -27,27 +27,24 @@
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-				<h1>Prodotti per [Nome Animale]</h1>
-				<p>
-					Informazioni sulla categoria di prodotto che si sta cercando sul sito web.
-				</p>
+				<jsp:include page="./static/templates/catalogHeaderDog.html"/>
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
-						<div class="product-box">
-							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-							</div>
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
-								</div>
+					<div class="product-box">
+						<div class="image-container">
+							<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+						</div>
+						<h3 class="name">${prd.nome}</h3>
+						<div class="text-container">
+							<h2 class="price">€${prd.prezzo}</h2>
+              <div class="add-to-cart">
+						    <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 							</div>
 							<p id="${prd.idProdotto}_demo"></p>
 						</div>
-					</c:forEach>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

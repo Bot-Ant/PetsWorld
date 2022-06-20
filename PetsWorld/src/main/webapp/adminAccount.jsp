@@ -13,7 +13,7 @@
 	<div class="admin-content">
 		<h1>Benvenuto nella tua sezione da admin</h1>
 		<p>
-			è bello rivederti al lavoro
+			anche oggi domani ci 
 		</p>
 	</div>
 </body>

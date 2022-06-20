@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Header</title>
+	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
@@ -27,50 +28,54 @@
 			<div class="bar-center">
 				<jsp:include page="./searchbar.jsp"/>
 			</div>
-			
-			<%
-				Utente utente = new Utente();
-				HttpSession sessione = request.getSession(false);
-				   if (sessione != null)
-				   {
-						utente = (Utente) sessione.getAttribute("utente");
-						if(utente != null)
-						{
-			%>
-			
 			<div class="header-buttons">
-				<p>
-				<%String url2 = response.encodeURL("userAccount.jsp");%>	
-				<a href="<%=url2%>"><i class="fa-solid fa-user fa-xl"></i></a>
-				</p>
-			<%
-			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
-			if(carrello != null)
-			{ 
-			%>
-				<%String url3 = response.encodeURL("cart.jsp");%>	
-				<p class="sposta"><a href="LogoutServlet"><i class="fa fa-sign-out fa-xl"></i></a>
-				<p><a href="<%=url3%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></a></p>
-				<p id="quantita_carrello"><%=carrello.getQuantita() %></p>
-			</div>
-			<%
-			}
-						}
-	 					else 
-	 						{
-			 %>
-		<div Style="margin-right:8px">
-		 	<p class="logRec" align="right" >
-		 	<a  class="link" title="login" Style="text-decoration: none; transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"> LOGIN</a> |
-		 	<a  class="link" title="registrazione" Style="text-decoration: none; transition:0.5s" href="<%=response.encodeURL("registrazione.jsp")%>" >SIGNUP</a>
-			</p>
-		</div> 
-				
-		<%	
+				<%
+					Utente utente = new Utente();
+					HttpSession sessione = request.getSession(false);
+					   if (sessione != null)
+					   {
+							utente = (Utente) sessione.getAttribute("utente");
+							if(utente == null)
+							{
+				%>
+				<h3><a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>">Accedi <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<%			
 							}
-				}
-		%>
-		
+							else
+							{
+								if(utente.isRuolo() == 0) {
+									String urlutente = response.encodeURL("userAccount.jsp");
+									String urlcarrello = response.encodeURL("cart.jsp");
+
+									Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
+									if(carrello != null)
+									{
+				%>
+				<a href="<%=urlcarrello%>">
+					<i class="fa-solid fa-cart-shopping fa-xl"></i>
+					<p id="quantita_carrello"><%=carrello.getQuantita() %></p>
+				</a>
+				<%
+									}
+				%>
+				<h3><a href="<%=urlutente%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<%	
+								}
+								else if(utente.isRuolo() == 1)
+								{
+									String urladmin = response.encodeURL("adminAccount.jsp");
+				%>
+				<h3><a href="<%=urladmin%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<%
+								}
+				%>
+				<a href="LogoutServlet"><i class="fa fa-sign-out fa-xl"></i></a>
+				<%
+							}
+						}
+				%>
+			</div> 
+		</div>
 	</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">

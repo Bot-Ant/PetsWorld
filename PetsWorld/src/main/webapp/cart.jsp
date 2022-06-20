@@ -64,10 +64,10 @@
 						</div>
 						<div class="product-values">
 							<div class="product-modifiers">
-									<button onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')">Del</button>
 								<div class="product-quantities">
+                  <button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')">Del</button>
 									<button class="left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
-									<p id ="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
+									<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
 									<button class="right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
 								</div>
 							</div>

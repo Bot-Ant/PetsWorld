@@ -3,14 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Pagina utente</title>
-	<link rel="stylesheet" href="../static/styles/light.css">
-	<link rel="stylesheet" href="../static/styles/page.css">
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/footer.css">
-    <link rel="stylesheet" href="../static/styles/user.css">
-	<link rel="stylesheet" href="../static/styles/catalog.css">
-	<link rel="stylesheet" href="../static/styles/order.css">
+	<title>Metodi di pagamento</title>
 </head>
 <body>
 	<header>
@@ -19,29 +12,26 @@
 	</header>
 	<div class="user-content">
 		<div class="user-nav">
-			<a class="active" href="#">My petsworld</a>
+			<a href="./userAccount.jsp">My petsworld</a>
 			<h2>Gestione account</h2>
 			<a href="./userOrders.jsp">Ordini</a>
 			<a href="./userData.jsp">Dati personali</a>
 			<a href="./userAddresses.jsp">Indirizzi</a>
-			<a href="./userPayMethods.jsp">Metodi di pagamento</a>
+			<a class="active" href="#">Metodi di pagamento</a>
 			<h2>Gestione animali</h2>
 			<a href="#"> Animali adottati</a>
 			<a class="disconnect" href="#">Disconnettiti</a>
 		</div>
 		<div class="data-panel">
 			<div class="welcome">
-				<h1>My petsworld</h1>
+				<h1>Metodi di pagamento</h1>
 				<p>
-					Ciao [nome utente], benvenuto nel tuo spazio personale.
+					Questi sono tutti i metodi di pagamento che hai salvato.
 				</p>
 			</div>
-			<div class="extra">
-				<div class="donazioni">
+			<div class="pay-methods-box">
+				<div class="pay-methods-line">
 
-				</div>
-				<div class="adozioni">
-					
 				</div>
 			</div>
 		</div>
