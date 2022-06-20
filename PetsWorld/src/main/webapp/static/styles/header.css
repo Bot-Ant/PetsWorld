@@ -70,6 +70,7 @@ header {
     color: var(--main-color-dark);
     background-color: var(--neutral-color-2);
     box-shadow: inset 0px 0px 10px 0 var(--shadow-color);
+    border: 0;
 	border-radius: 10px;
 	box-sizing: border-box;
 }
