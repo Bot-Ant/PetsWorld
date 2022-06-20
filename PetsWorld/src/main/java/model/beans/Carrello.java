@@ -8,7 +8,7 @@ public class Carrello implements Serializable{
 
 	ArrayList<Prodotto> prodotti;
 	int quantita;
-	float prezzoTotale;
+	double prezzoTotale;
 	
 	public Carrello()
 	{
@@ -17,7 +17,7 @@ public class Carrello implements Serializable{
 		prezzoTotale = 0;
 	}
 	
-	public float getPrezzoTotale() {
+	public double getPrezzoTotale() {
 		return prezzoTotale;
 	}
 
@@ -25,7 +25,7 @@ public class Carrello implements Serializable{
 		this.prezzoTotale += d;
 	}
 	
-	public void setPrezzoTotaleRimozione(float prezzo) {
+	public void setPrezzoTotaleRimozione(double prezzo) {
 		this.prezzoTotale -= prezzo;
 	}
 	
