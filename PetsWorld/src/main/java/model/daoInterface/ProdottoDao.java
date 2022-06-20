@@ -13,4 +13,6 @@ public interface ProdottoDao<S extends Exception> {
 	List<Prodotto> ListaProdotti(List<Condition> conditions) throws SQLException;
 	
 	Prodotto doRetrieveByKey(int ID) throws SQLException;
+	
+	int restituisciQuantita(int ID) throws SQLException;
 }
