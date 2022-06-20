@@ -18,17 +18,39 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div class="user-content">
-		<div class="user-nav">
-			<a class="active" href="#">My petsworld</a>
-			<h2>Gestione account</h2>
-			<a href="./userOrders.jsp">Ordini</a>
-			<a href="./userData.jsp">Dati personali</a>
-			<a href="./userAddresses.jsp">Indirizzi</a>
-			<a href="./userPayMethods.jsp">Metodi di pagamento</a>
-			<h2>Gestione animali</h2>
-			<a href="#"> Animali adottati</a>
-			<a class="disconnect" href="#">Disconnettiti</a>
-		</div>
+		<ul class="user-nav">
+			<li class="link" id="active">
+				<i class="fa-solid fa-user"></i>
+				<a href="#">My petsworld</a>
+			</li>
+			<li><h2>Gestione account</h2></li>
+			<li class="link">
+				<i class="fa-solid fa-receipt"></i>
+				<a href="./userOrders.jsp">Ordini</a>
+			</li>
+			<li class="link">
+				<i class="fa-solid fa-id-card"></i>
+				<a href="./userData.jsp">Dati personali</a>
+			</li>
+			<li class="link">
+				<i class="fa-solid fa-map"></i>
+				<a href="./userAddresses.jsp">Indirizzi</a>
+			</li>
+			<li class="link">
+				<i class="fa-solid fa-credit-card"></i>
+				<a href="./userPayMethods.jsp">Metodi di pagamento</a>
+			</li>
+			<li><h2>Gestione animali</h2></li>
+			<li class="link">
+				<i class="fa-solid fa-paw"></i>
+				<a href="#"> Animali adottati</a>
+			</li>
+			<hr>
+			<li class="link">
+				<i class="fa-solid fa-arrow-right-from-bracket"></i>
+				<a class="disconnect" href="LogoutServlet">Disconnettiti</a>
+			</li>
+		</ul>
 		<div class="data-panel">
 			<div class="welcome">
 				<h1>My petsworld</h1>

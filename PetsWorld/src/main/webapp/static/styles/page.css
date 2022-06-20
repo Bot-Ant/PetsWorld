@@ -28,20 +28,22 @@ hr {
     background-color: var(--neutral-color-1);
 }
 
-.banner {
-    margin: 30px;
-    padding: 30px;
-    width: 70%;
+.banner-container {
+    margin-top: 65px;
+    margin-bottom: 85px;
+    padding: 0;
+    width: 1440px;
+    height: auto;
+    border-radius: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--main-color);
 }
 
 .best-products {
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;

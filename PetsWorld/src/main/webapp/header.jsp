@@ -51,26 +51,26 @@
 									if(carrello != null)
 									{
 				%>
-				<a href="<%=urlcarrello%>">
-					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"><%=carrello.getQuantita() %></p>
+				<a class="cart" href="<%=urlcarrello%>">
+					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></i>
 				</a>
+				<!-- <a class="cart" href="<%=urlcarrello%>">
+					<i class="fa-solid fa-cart-shopping fa-xl" id="cart-icon"></i>
+					<i class="fa-solid fa-circle fa-lg" id="quantita_carrello"><label id="count-value"><%=carrello.getQuantita()%></label></i>
+				</a> -->
 				<%
 									}
 				%>
-				<h3><a href="<%=urlutente%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<h3 class="active"><a href="<%=urlutente%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
 				<%	
 								}
 								else if(utente.isRuolo() == 1)
 								{
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
-				<h3><a href="<%=urladmin%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<h3 class="active"><a href="<%=urladmin%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
 				<%
 								}
-				%>
-				<a href="LogoutServlet"><i class="fa fa-sign-out fa-xl"></i></a>
-				<%
 							}
 						}
 				%>

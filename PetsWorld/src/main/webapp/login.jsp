@@ -27,11 +27,11 @@
 				<ul>
 					<li>
 						<label class="field" for="email"> <b>Email</b></label><br>
-						<input type="email" required name="email" placeholder="Inserire Email" id="email">
+						<input type="email" required name="email" placeholder="" id="email">
 					</li>
 					<li>
 						<label class="field" for="password"><b>Password</b></label><br>
-						<input type="password" required name="password" placeholder="Inserire Password" id="password">
+						<input type="password" required name="password" placeholder="" id="password">
 					</li>
 				</ul>
 				<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
