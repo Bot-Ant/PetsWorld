@@ -62,21 +62,17 @@ header {
     border-radius: 25px;*/
 }
 
-.search-bar:hover {
-    /* border: 1px solid var(--main-color); */
-}
-
 .search-bar input {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 0px 0px 0px 0px;
 	display: inline-block;
 	border: 0px solid var(--contrast-color-3);
-    background-color: var(--neutral-color-1);
+    color: var(--main-color-dark);
+    background-color: var(--neutral-color-2);
+    box-shadow: inset 0px 0px 7px 0 var(--shadow-color);
 	border-radius: 10px;
 	box-sizing: border-box;
-	
-	
 }
 
 .search-bar input:focus {
@@ -96,12 +92,11 @@ header {
 	border: none;
 	border-radius: 10px;
     color: var(--main-color);
-	background-color: var(--neutral-color-1);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .search-bar button:hover {
-	color: var(--neutral-color-2);
-    background-color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .header-buttons {

@@ -1,10 +1,10 @@
-*{
+.banner-container *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.botton{
+.banner{
     height: 100% ;
     width: 100%;
     margin: auto;
@@ -25,22 +25,6 @@
 .pre-botton img {
     border-radius: 15px;
 }
-
-.botton-text{
-    font-family: Original Surfer, serif;
-    text-align: center;
-    width: 100%;
-    position:absolute;
-
-    top:50%;
-    left:25%;
-    padding: 8px 12px;
-    color: white;
-    font-size: 30px;
-    transform: translate(-50%,-50%);
-}
-
-
 
 #prevbtn{ /*Freccia scorrimento precedente*/
     position: absolute;
@@ -66,8 +50,6 @@
 
 #nextbtn:hover,#prevbtn:hover{
     color: var(--main-color);
-
-
 }
 
 /* FADE ANIMATION ZONE WIP*/
@@ -78,34 +60,6 @@
     animation-duration: 1.5s;
 }
 
-
-
-
-#btnprev{ /*Freccia scorrimento precedente carte*/
-    position: absolute;
-    top:45%;
-    z-index: 10;
-    left:2%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-
-}
-
-#btnnext{ /*Freccia scorrimento successivo carte*/
-    position: absolute;
-    top: 45%;
-    width:auto;
-    z-index: 10;
-    right: 2%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-}
-
-#btnnext:hover,#btnprev:hover {
-    background-color: black;
-}
 
 
 @-webkit-keyframes fade {

@@ -55,7 +55,7 @@
 				<img src="./static/images/payment_method_logo_paypal.png" alt="paypal-logo">
 			</a>
 			<div class="theme">
-				<h4>Tema: </h4>
+				<h4>Colore Tema</h4>
 				<label class="switch">
 					<input type="checkbox" checked="checked">
 					<span class="slider round"></span>

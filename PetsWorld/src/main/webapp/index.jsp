@@ -25,18 +25,18 @@
 		<!-- Banner with news and sales -->
 		
 		 
-	<div class="banner">
-		<div class="botton">
-			<i class="fa-solid fa-chevron-left" id="prevbtn"></i>
-			<i class="fa-solid fa-chevron-right" id="nextbtn"></i>
-            <div class="pre-botton">
-				<c:forEach items="${banner}" var="ban">
-					<img src="./static/images/${ban.immagine}" alt="immagine banner">
-				</c:forEach>
-				<script src="./static/scripts/jsbanner.js" ></script>
+		<div class="banner-container">
+			<div class="banner">
+				<i class="fa-solid fa-chevron-left" id="prevbtn"></i>
+				<i class="fa-solid fa-chevron-right" id="nextbtn"></i>
+            	<div class="pre-botton">
+					<c:forEach items="${banner}" var="ban">
+						<img src="./static/images/${ban.immagine}" alt="immagine banner">
+					</c:forEach>
+					<script src="./static/scripts/banner.js" ></script>
+				</div>
 			</div>
 		</div>
-	</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
 			<!-- Section of products selected -->

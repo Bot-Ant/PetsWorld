@@ -28,7 +28,7 @@ hr {
     background-color: var(--neutral-color-1);
 }
 
-.banner {
+.banner-container {
     margin-top: 65px;
     margin-bottom: 85px;
     padding: 0;
