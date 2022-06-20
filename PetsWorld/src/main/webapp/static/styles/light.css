@@ -16,6 +16,7 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --light: rgb(252, 252, 252);
     --dark: rgb(15, 15, 15);
+    --transparent: rgba(0, 0, 0, 0);
 }
 
 /* :root {

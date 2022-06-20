@@ -67,10 +67,9 @@ header {
 	padding: 12px 20px;
 	margin: 0px 0px 0px 0px;
 	display: inline-block;
-	border: 0px solid var(--contrast-color-3);
     color: var(--main-color-dark);
     background-color: var(--neutral-color-2);
-    box-shadow: inset 0px 0px 7px 0 var(--shadow-color);
+    box-shadow: inset 0px 0px 10px 0 var(--shadow-color);
 	border-radius: 10px;
 	box-sizing: border-box;
 }
@@ -92,7 +91,7 @@ header {
 	border: none;
 	border-radius: 10px;
     color: var(--main-color);
-	background-color: rgba(0, 0, 0, 0);
+	background-color: var(--transparent);
 }
 
 .search-bar button:hover {

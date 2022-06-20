@@ -68,13 +68,13 @@
     border-radius: 15px;
     cursor: pointer;
     border: none;
-    background-color: var(--neutral-color-2);
+    background-color: var(--transparent);
 }
 
 .add-to-cart i {
     border: 0px;
     color: var(--accent-color);
-    background-color: var(--neutral-color-2);
+    background-color: var(--transparent);
 }
 
 .add-to-cart i:hover {

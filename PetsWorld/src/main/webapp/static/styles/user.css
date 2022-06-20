@@ -63,7 +63,8 @@
 	border: 0px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
-	background-color: var(--neutral-color-1);
+	background-color: var(--neutral-color-2);
+	box-shadow: inset 0px 0px 20px 0 var(--shadow-color);
 }
 /* Change the input element style when selected*/
 .form-section input:focus {
