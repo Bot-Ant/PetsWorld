@@ -205,7 +205,7 @@
     font-size: small;
 }
 
-.price-box span {
+.price-box .span {
     font-weight: bold;
 }
 
@@ -222,10 +222,61 @@
 	cursor: pointer;
     font-size: medium;
     font-weight: bold;
-	color: white;
+	color: var(--neutral-color-2);
 	background-color: var(--accent-color);
 }
 
 .price-box button:hover {
-    background-color: var(--accent-color-light);
+    background-color: var(--accent-color-dark);
+}
+
+.donation-box {
+    margin: 20px;
+    padding: 20px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 0px solid var(--main-color);
+    color: var(--contrast-color-1);
+    background-color: var(--neutral-color-2);
+}
+
+.donation-box .data {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-box input {
+    width: 100%;
+	padding: 15px 15px;
+	margin: 10px 0px;
+	display: inline-block;
+	border: 0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: var(--neutral-color-2);
+	box-shadow: inset 0px 0px 10px 0 var(--shadow-color);
+}
+
+.donation-box input:focus {
+	outline: none;
+	caret-color: var(--main-color);
+}
+
+.donation-box button {
+    margin: 0;
+    padding: 15px 15px;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+	cursor: pointer;
+    color: var(--neutral-color-2);
+    background-color: var(--main-color);
+}
+
+.donation-box button:hover {
+    background-color: var(--main-color-dark);
 }

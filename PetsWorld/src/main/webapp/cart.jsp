@@ -22,9 +22,10 @@
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null) 
 		{	
-			double subtotale = 0;
-			double costoTotale = 0;
-			double costoSpedizione = 15;
+			double subtotale = 0.0;
+			double costoTotale = 0.0;
+			double costoSpedizione = 15.0;
+			double prezzoDonazione = 0.0;
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
 			if(carrello != null)
 			{
@@ -86,6 +87,16 @@
 						}
 					%>
 				</div>
+				<div class="donation-box">
+					<div class="info">
+						<h2>Dona per gli animali in difficoltà</h2>
+						<p>Puoi scegliere un importo da aggiungere all'ordine che verrà donato ad associazioni che si prendono cura degli animali. <a href="#">Dimmi di più.</a></p>
+					</div>
+					<div class="data">
+						<input type="text" placeholder="€0.00">
+						<button>Seleziona</button>
+					</div>
+				</div>
 			</div>
 			<div class="price-panel">
 				<div class="price-box">
@@ -109,8 +120,16 @@
 							€<%=costoSpedizione%>
 						</p>
 					</div>
-					<% costoTotale = subtotale + costoSpedizione;%>
-					<span>
+					<div class="single-voice">
+						<p>
+							Donazione
+						</p>
+						<p class="price" id="spedizione">
+							€<%=prezzoDonazione%>
+						</p>
+					</div>
+					<% costoTotale = subtotale + costoSpedizione + prezzoDonazione;%>
+					<div class="span">
 						<div class="single-voice">
 							<p>
 								Costo totale 
@@ -121,7 +140,7 @@
 								€<%=costoTotale%>
 							</p>
 						</div>
-					</span>
+					</div>
 					<form method = "GET" action = "<%=response.encodeURL("./datiCartaAcquisto.jsp")%>">
 						<button>Procedi all'ordine</button>
 					</form>
@@ -158,7 +177,7 @@
 					var stringa2=response.riferimento2;
 					if(response.esaurimento==1)
 						{
-							document.getElementById(stringa2).innerHTML = "Esaurimento scorte nel magazzino";
+							document.getElementById(stringa2).innerHTML = "Raggiunto il limite di prodotti disponibili";
 						}
 					else
 						{
