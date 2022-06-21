@@ -17,7 +17,7 @@
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
-	<div class="cart-content">
+	<div id="cart-content">
 		<%
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null) 
@@ -65,13 +65,15 @@
 						<div class="product-values">
 							<div class="product-modifiers">
 								<div class="product-quantities">
-                  <button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')">Del</button>
+                  					<button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')"><i class="fa-solid fa-trash fa-2x"></i></button>
 									<button class="left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
-									<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
+									<div class="quantities">
+										<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
+									</div>
 									<button class="right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
 								</div>
 							</div>
-							<h3 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h3>
+							<h2 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h2>
 							<% subtotale += (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());
 							   subtotale=Math.round(subtotale*100)/100.0;%>
 						</div>
