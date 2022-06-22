@@ -81,11 +81,11 @@
 	border-radius: 4px;
 	cursor: pointer;
 	color: white;
-	background-color: var(--main-color);
+	background-color: var(--accent-color);
 }
 /* Change the button color when the cursor is on it */
 .form-section > button[type=submit]:hover {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color-dark);
 }
 /* Set the style of a link inside a form without decoration */
 p a {

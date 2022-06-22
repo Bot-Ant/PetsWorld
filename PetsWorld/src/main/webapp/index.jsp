@@ -37,6 +37,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="website-stripe">
+			<h1>PetsWorld</h1>
+			<h2>Leader nel mondo del Pet</h2>
+			<p>
+				PetsWorld è il sito e-commerce per i tuoi animali domestici. La nostra piattaforma di acquisti online, leader in Italia e in Europa, è pratica e affidabile e si impegna a offrire ai proprietari di animali domestici il migliore servizio possibile per acquistare cibo e accessori per i loro pet.
+			</p>
+		</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
 			<!-- Section of products selected -->
@@ -52,6 +59,8 @@
 								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 									<button type="submit" name="id" value="${prd.idProdotto}">
 										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+                    <p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</button>
 								</form>
 							</div>
@@ -62,7 +71,6 @@
 								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>
-							<p id="${prd.idProdotto}_demo_1"></p>
 						</div>
 					</c:forEach>
 					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
@@ -75,11 +83,14 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 									<button type="submit" name="id" value="${prd.idProdotto}">
 										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+                    <p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
+								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</button>
-								</form>							</div>
+								</form>					
+              </div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
@@ -87,7 +98,6 @@
 								  <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 2)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>
-							<p id="${prd.idProdotto}_demo_2"></p>
 						</div>
 					</c:forEach>
 					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
@@ -100,11 +110,14 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 									<button type="submit" name="id" value="${prd.idProdotto}">
 										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+                    <p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
+								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</button>
-								</form>							</div>
+								</form>						
+              </div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
@@ -112,7 +125,6 @@
 								  <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto},3)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>
-							<p id="${prd.idProdotto}_demo_3"></p>
 						</div>
 					</c:forEach>
 					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
@@ -146,7 +158,7 @@
 								{
 									if(sezione==1)
 										{
-											document.getElementById(stringa+"_1").innerHTML = "Esaurimento scorte nel magazzino";
+											document.getElementById(stringa+"_1").innerHTML = "TERMINATO";
 										}
 									if(sezione==2)
 										{
