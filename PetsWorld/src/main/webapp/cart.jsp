@@ -65,7 +65,7 @@
 						<div class="product-values">
 							<div class="product-modifiers">
 								<div class="product-quantities">
-                  <button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')">Del</button>
+                  					<button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')">Del</button>
 									<button class="left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
 									<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
 									<button class="right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
