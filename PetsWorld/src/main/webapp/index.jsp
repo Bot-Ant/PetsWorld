@@ -49,7 +49,11 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+									<button type="submit" name="id" value="${prd.idProdotto}">
+										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+									</button>
+								</form>
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
@@ -71,8 +75,11 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-							</div>
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+									<button type="submit" name="id" value="${prd.idProdotto}">
+										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+									</button>
+								</form>							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
@@ -93,8 +100,11 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-							</div>
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+									<button type="submit" name="id" value="${prd.idProdotto}">
+										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+									</button>
+								</form>							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
@@ -152,6 +162,7 @@
 				xhr.open("GET",url,true);
 				xhr.send(null);
 	}
+	
 </script>
 
 </body>
