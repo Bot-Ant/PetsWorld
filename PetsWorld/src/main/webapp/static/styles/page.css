@@ -25,19 +25,32 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--neutral-color-1);
+    background-color: var(--neutral-color-3);
 }
 
 .banner-container {
-    margin-top: 65px;
-    margin-bottom: 85px;
-    padding: 0;
-    width: 1440px;
+    padding-top: 65px;
+    padding-bottom: 85px;
+    width: 100%;
     height: auto;
-    border-radius: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: var(--neutral-color-2);
+}
+
+.website-stripe {
+    margin: 0;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    color: var(--neutral-color-2);
+    background-color: var(--main-color);
+}
+
+.website-stripe p {
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .best-products {
@@ -50,7 +63,7 @@ hr {
 }
 
 .products-section {
-    margin: 0;
+    margin: 25px 0 0 0;
     padding: 0;
     width: 100%;
     display: flex;
@@ -59,6 +72,7 @@ hr {
 }
 
 .products-section h1 {
+    margin-bottom: 30px;
     align-self: flex-start;
 }
 
@@ -79,13 +93,13 @@ hr {
     border-radius: 15px;
     cursor: default;
     border: none;
-    background-color: var(--neutral-color-1);
+    background-color: var(--transparent);
 }
 
 .products-slider i {
     border: 0;
     color: var(--contrast-color-3);
-    background-color: var(--neutral-color-1);
+    background-color: var(--transparent);
 }
 
 
