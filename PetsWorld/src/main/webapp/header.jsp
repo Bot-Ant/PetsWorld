@@ -53,7 +53,7 @@
 				%>
 				<a href="<%=urlcarrello%>">
 					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"><%=carrello.getQuantita() %></p>
+					<p id="quantita_carrello"> <%=carrello.getQuantita()%></p>
 				</a>
 				<%
 									}
@@ -81,7 +81,6 @@
 		<div class="bottom-bar">
 			<jsp:include page="./navbar.jsp"/>
 		</div>
-	</div>
 	<!-- Condensed version of the header, visible when the window is small -->
 	<div id="small-header">
 		<div class="top-bar">
