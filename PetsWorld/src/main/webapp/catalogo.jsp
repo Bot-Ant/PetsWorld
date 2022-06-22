@@ -27,13 +27,19 @@
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-				<jsp:include page="./static/templates/catalogHeaderDog.html"/>
+			<c:forEach items="${prodotto}" var="prd">
+                <jsp:include page="./static/templates/catalogHeader${prd.animale}.html"/>
+                </c:forEach>
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
 						<div class="image-container">
-							<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+								<button type="submit" name="id" value="${prd.idProdotto}">
+									<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+								</button>
+							</form>						
 						</div>
 						<h3 class="name">${prd.nome}</h3>
 						<div class="text-container">

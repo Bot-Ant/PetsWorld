@@ -34,6 +34,15 @@
 						<input type="password" required name="password" placeholder="" id="password">
 					</li>
 				</ul>
+				<%
+					String errore = (String) request.getAttribute("errore");
+					if(errore != null)
+					{ 
+					%>
+						<div align="center" Style="color:red"><%=errore %></div>
+		  			<%
+		  			}
+		  		%>
 				<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
 			</form>
 			<!-- Seperation line between sections-->

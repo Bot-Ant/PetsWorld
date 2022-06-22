@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" import="java.util.*, model.beans.* , java.lang.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,22 +17,28 @@
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
+	
+	<%
+		Prodotto prodotto= new Prodotto();
+		prodotto= (Prodotto) request.getAttribute("prodotto");
+	%>
+	
 	<div class="product-page-content">
 		<div class="product-top-row">
 			<div class="product-images">
-				<img src="" alt="Immagine Prodotto">
+				<img src="./static/images/<%=prodotto.getFoto() %>" alt="Immagine Prodotto">
 			</div>
 			<form class="product-form" action="">
-				<h1>Nome del prodotto</h1>
+				<h1><%=prodotto.getNome()%></h1>				
 				<p>
-					€xx.xx
+					<%=prodotto.getPrezzo()%>&euro;
 				</p>
 				<button>Aggiungi al carrello</button>
 			</form>
 		</div>
 		<div class="product-description">
 			<p>
-				Descrizione dettagliata del prodotto.
+					<%=prodotto.getDescrizione()%>
 			</p>
 		</div>
 		<div class="product-reviews">

@@ -56,9 +56,13 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-								<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
-								<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+									<button type="submit" name="id" value="${prd.idProdotto}">
+										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+                    <p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</button>
+								</form>
 							</div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
@@ -79,10 +83,14 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-								<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
-								<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-							</div>
+                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+									<button type="submit" name="id" value="${prd.idProdotto}">
+										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+                    <p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
+								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</button>
+								</form>					
+              </div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
@@ -102,10 +110,14 @@
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
 							<div class="image-container">
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-								<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
-								<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-							</div>
+                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+									<button type="submit" name="id" value="${prd.idProdotto}">
+										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+                    <p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
+								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</button>
+								</form>						
+              </div>
 							<h3 class="name">${prd.nome}</h3>
 							<div class="text-container">
 								<h2 class="price">€${prd.prezzo}</h2>
@@ -162,6 +174,7 @@
 				xhr.open("GET",url,true);
 				xhr.send(null);
 	}
+	
 </script>
 
 </body>
