@@ -63,7 +63,8 @@
 	border: 0px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
-	background-color: var(--neutral-color-1);
+	background-color: var(--neutral-color-2);
+	box-shadow: inset 0px 0px 20px 0 var(--shadow-color);
 }
 /* Change the input element style when selected*/
 .form-section input:focus {
@@ -80,11 +81,11 @@
 	border-radius: 4px;
 	cursor: pointer;
 	color: white;
-	background-color: var(--main-color);
+	background-color: var(--accent-color);
 }
 /* Change the button color when the cursor is on it */
 .form-section > button[type=submit]:hover {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color-dark);
 }
 /* Set the style of a link inside a form without decoration */
 p a {
@@ -138,6 +139,7 @@ p a:hover {
 	padding: 20px;
 	width: 250px;
 	border-radius: 10px;
+	list-style: none;
 	display: flex;
 	flex-direction: column;
 	color: var(--contrast-color-1);
@@ -145,16 +147,43 @@ p a:hover {
 	box-shadow: 0 4px 4px 0 var(--shadow-color), 0 4px 20px 0 var(--shadow-color);
 }
 
-.user-nav a {
-	margin: 10px 10px;
-	border: none;
+.user-nav li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.user-nav .link {
 	cursor: pointer;
+}
+
+.user-nav i {
+	margin: 10px;
+}
+.user-nav hr {
+	border: 0;
+	margin: 12px 0;
+}
+
+.user-nav h2 {
+	margin-bottom: 7px;
+}
+
+.user-nav a {
+	margin: 10px;
     text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
     color: var(--contrast-color-2);
 }
 
-.user-nav .active {
+.user-nav #active {
 	font-size: 1.2em;
 	font-weight: bold;
+	color: var(--main-color);
+}
+
+.user-nav #active a {
 	color: var(--main-color);
 }

@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.cart-content {
+#cart-content {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -9,7 +9,7 @@
     background-color: var(--neutral-color-3);
 }
 
-.cart-content h1 {
+#cart-content h1 {
     margin: 20px 0 20px 0;
 }
 
@@ -86,7 +86,7 @@
     align-items: flex-start;
 }
 .product-line .product-values {
-    margin: 0 0 0 0;
+    margin: 0;
     padding: 0;
     height: 100%;
     width: auto;
@@ -99,6 +99,8 @@
     margin: auto;
     padding: 0px;
     width: 100%;
+    align-self: center;
+    justify-self: center;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -113,7 +115,7 @@
 
 .product-modifiers .trash:hover {
     color: var(--accent-color);
-    background-color: var(--neutral-color-2);
+    background-color: var(--transparent);
 }
 
 .product-modifiers .product-quantities {
@@ -155,21 +157,30 @@
 }
 
 .product-quantities button:hover {
-    background-color: var(--main-color-light);
+    background-color: var(--main-color-dark);
 }
 
 .product-quantities .left {
-    border-radius: 4px 0 0 4px;
+    border-radius: 10px 0 0 10px;
 }
 
 .product-quantities .right {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.product-quantities .quantities {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-values .product-price {
-    margin: auto 0 0 0;
+    margin: auto;
     padding: 0px;
     width: 100%;
+    justify-self: center;
     text-align: right;
 }
 
@@ -194,7 +205,7 @@
     font-size: small;
 }
 
-.price-box span {
+.price-box .span {
     font-weight: bold;
 }
 
@@ -211,10 +222,61 @@
 	cursor: pointer;
     font-size: medium;
     font-weight: bold;
-	color: white;
+	color: var(--neutral-color-2);
 	background-color: var(--accent-color);
 }
 
 .price-box button:hover {
-    background-color: var(--accent-color-light);
+    background-color: var(--accent-color-dark);
+}
+
+.donation-box {
+    margin: 20px;
+    padding: 20px;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 0px solid var(--main-color);
+    color: var(--contrast-color-1);
+    background-color: var(--neutral-color-2);
+}
+
+.donation-box .data {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-box input {
+    width: 100%;
+	padding: 15px 15px;
+	margin: 10px 0px;
+	display: inline-block;
+	border: 0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: var(--neutral-color-2);
+	box-shadow: inset 0px 0px 10px 0 var(--shadow-color);
+}
+
+.donation-box input:focus {
+	outline: none;
+	caret-color: var(--main-color);
+}
+
+.donation-box button {
+    margin: 0;
+    padding: 15px 15px;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+	cursor: pointer;
+    color: var(--neutral-color-2);
+    background-color: var(--main-color);
+}
+
+.donation-box button:hover {
+    background-color: var(--main-color-dark);
 }

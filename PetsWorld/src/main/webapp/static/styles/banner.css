@@ -1,15 +1,15 @@
-@charset "ISO-8859-1";
-*{
+.banner-container *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.botton{
-    height: 100% ;
-    width: 100%;
+.banner{
+    height: 100%;
+    width: 1440px;
     margin: auto;
-    border: 2px solid black;
+    border: 0 solid black;
+    border-radius: 15px;
     overflow: hidden;
     position: relative;
 }
@@ -20,26 +20,11 @@
     height: 100%;
     text-align: center;
     color: white;
-
-
-
 }
 
-.botton-text{
-    font-family: Original Surfer, serif;
-    text-align: center;
-    width: 100%;
-    position:absolute;
-
-    top:50%;
-    left:25%;
-    padding: 8px 12px;
-    color: white;
-    font-size: 30px;
-    transform: translate(-50%,-50%);
+.pre-botton img {
+    border-radius: 15px;
 }
-
-
 
 #prevbtn{ /*Freccia scorrimento precedente*/
     position: absolute;
@@ -47,7 +32,7 @@
     z-index: 10;
     left:2%;
     font-size: 30px;
-    color: white;
+    color: var(--neutral-color-1);
     cursor: pointer;
 
 }
@@ -59,16 +44,12 @@
     z-index: 10;
     right: 2%;
     font-size: 30px;
-    color: white;
+    color: var(--neutral-color-1);
     cursor: pointer;
-
-
 }
 
 #nextbtn:hover,#prevbtn:hover{
-    background-color: black;
-
-
+    color: var(--main-color);
 }
 
 /* FADE ANIMATION ZONE WIP*/
@@ -79,36 +60,6 @@
     animation-duration: 1.5s;
 }
 
-
-
-
-#btnprev{ /*Freccia scorrimento precedente carte*/
-    position: absolute;
-    top:45%;
-    z-index: 10;
-    left:2%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-
-}
-
-#btnnext{ /*Freccia scorrimento successivo carte*/
-    position: absolute;
-    top: 45%;
-    width:auto;
-    z-index: 10;
-    right: 2%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-
-
-}
-
-#btnnext:hover,#btnprev:hover {
-    background-color: black;
-}
 
 
 @-webkit-keyframes fade {

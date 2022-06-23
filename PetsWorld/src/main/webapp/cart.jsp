@@ -19,14 +19,15 @@
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
-	<div class="cart-content">
+	<div id="cart-content">
 		<%
 		HttpSession sessione = request.getSession(false);
-		if (sessione != null) 
-		{	
-			double subtotale = 0;
-			double costoTotale = 0;
-			double costoSpedizione = 15;
+		if (sessione != null)
+		{
+			double subtotale = 0.0;
+			double costoTotale = 0.0;
+			double costoSpedizione = 15.0;
+			double prezzoDonazione = 0.0;
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
 			if(carrello != null)
 			{
@@ -39,7 +40,7 @@
 			<p>
 				Aggiungi prodotti al carrello per visualizzarli in questa sezione.
 			</p>
-		</div>					
+		</div>
 		<%
 		}
 		else
@@ -56,7 +57,7 @@
 					{
 					%>
 					<div class="product-line" id="<%=prodotti.get(i).getIdProdotto()%>">
-						<img src="./static/images/<%=prodotti.get(i).getFoto()%>" alt="<%=prodotti.get(i).getFoto()%>">				 
+						<img src="./static/images/<%=prodotti.get(i).getFoto()%>" alt="<%=prodotti.get(i).getFoto()%>">
 						<div class="product-name">
 							<h2><%=prodotti.get(i).getNome()%></h2>
 							<p>
@@ -67,24 +68,36 @@
 						<div class="product-values">
 							<div class="product-modifiers">
 								<div class="product-quantities">
-                  					<button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')">Del</button>
+                  <button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')"><i class="fa-solid fa-trash fa-2x"></i></button>
 									<button class="left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
-									<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
+									<div class="quantities">
+										<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
+									</div>
 									<button class="right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
 								</div>
 							</div>
-							<h3 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h3>
+							<h2 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h2>
 							<% subtotale += (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());
 							   subtotale=Math.round(subtotale*100)/100.0;%>
 						</div>
 					</div>
-					
+
 					<% if (i + 1 < prodotti.size()) { %>
 					<hr>
 					<%
 							}
 						}
 					%>
+				</div>
+				<div class="donation-box">
+					<div class="info">
+						<h2>Dona per gli animali in difficoltà</h2>
+						<p>Puoi scegliere un importo da aggiungere all'ordine che verrà donato ad associazioni che si prendono cura degli animali. <a href="#">Dimmi di più.</a></p>
+					</div>
+					<div class="data">
+						<input type="text" placeholder="€0.00">
+						<button>Seleziona</button>
+					</div>
 				</div>
 			</div>
 			<div class="price-panel">
@@ -109,11 +122,19 @@
 							€<%=costoSpedizione%>
 						</p>
 					</div>
-					<% costoTotale = subtotale + costoSpedizione;%>
-					<span>
+					<div class="single-voice">
+						<p>
+							Donazione
+						</p>
+						<p class="price" id="donazione">
+							€<%=prezzoDonazione%>
+						</p>
+					</div>
+					<% costoTotale = subtotale + costoSpedizione + prezzoDonazione;%>
+					<div class="span">
 						<div class="single-voice">
 							<p>
-								Costo totale 
+								Costo totale
 								<br>
 								<span class="small">(iva inclusa)</span>
 							</p>
@@ -121,8 +142,8 @@
 								€<%=costoTotale%>
 							</p>
 						</div>
-					</span>
-					<form method = "GET" action = "<%=response.encodeURL("./datiCartaAcquisto.jsp")%>">
+					</div>
+					<form method = "GET" action = "<%=response.encodeURL("./orderPage.jsp")%>">
 						<button>Procedi all'ordine</button>
 					</form>
 				</div>
@@ -133,7 +154,7 @@
 			}
 		}
 		%>
-		
+
 	</div>
 
 	<footer>
