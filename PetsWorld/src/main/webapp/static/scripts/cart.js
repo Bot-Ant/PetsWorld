@@ -25,17 +25,17 @@
 						}
 					document.getElementById(stringa).innerHTML=response.quantita;
 					document.getElementById("quantita_carrello").innerHTML = response.totale;
-					document.getElementById("subtotale").innerHTML = response.prezzoTot + " &euro;";
-					var prezzo = parseFloat(response.prezzoTot);
+					var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
+					document.getElementById("subtotale").innerHTML = " &euro;" + prezzo;
 					if (prezzo < 50)
 						{
-							document.getElementById("totale").innerHTML= prezzo+15 + " &euro;";
-							document.getElementById("spedizione").innerHTML= "15.0&euro;";
+							document.getElementById("spedizione").innerHTML= "&euro;"+"15.00 ";
+							document.getElementById("totale").innerHTML= " &euro;"+ (prezzo +15);
 						}
 					else
 						{
-							document.getElementById("spedizione").innerHTML= "0.0&euro;";
-							document.getElementById("totale").innerHTML= response.prezzoTot + " &euro;";
+							document.getElementById("spedizione").innerHTML= "&euro;"+"0.00 ";
+							document.getElementById("totale").innerHTML= " &euro;" + prezzo;
 						}
 				}
 			}
@@ -59,17 +59,16 @@
 					document.getElementById(stringa2).innerHTML = "";
 					document.getElementById(stringa).innerHTML=response.quantita;
 					document.getElementById("quantita_carrello").innerHTML = response.totale;
-					document.getElementById("subtotale").innerHTML = response.prezzoTot + " &euro;";
-					var prezzo = parseFloat(response.prezzoTot);
+					var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
+					document.getElementById("subtotale").innerHTML = " &euro;"+prezzo;
 					if (prezzo < 50)						{
-							document.getElementById("totale").innerHTML= prezzo+15 + " &euro;";
-							document.getElementById("spedizione").innerHTML= "15.0&euro;";
-
+							document.getElementById("spedizione").innerHTML= "&euro;"+"15.00 ";
+							document.getElementById("totale").innerHTML= " &euro;"+ (prezzo+15);
 						}
 					else
 						{
-							document.getElementById("spedizione").innerHTML= "0.0&euro;";
-							document.getElementById("totale").innerHTML= response.prezzoTot + " &euro;";
+							document.getElementById("spedizione").innerHTML= " &euro;"+"0.00";
+							document.getElementById("totale").innerHTML= " &euro;"+ prezzo;
 						}
 				}
 			}
@@ -91,19 +90,18 @@
 					var stringa= response.riferimento;
 					document.getElementById(stringa).remove();
 					document.getElementById("quantita_carrello").innerHTML = response.totale;
-					document.getElementById("subtotale").innerHTML = response.prezzoTot + " &euro;";
-					var prezzo = parseFloat(response.prezzoTot);
+					var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
+					document.getElementById("subtotale").innerHTML = " &euro;"+prezzo;
 					if (prezzo < 50)
 					{
 						
-						document.getElementById("totale").innerHTML= prezzo+15;
-						document.getElementById("spedizione").innerHTML= "15.0&euro;";
-
+						document.getElementById("spedizione").innerHTML= "&euro;"+"15.00";
+						document.getElementById("totale").innerHTML= (prezzo+15);
 					}
 					else
 					{
-						document.getElementById("spedizione").innerHTML= "0.0&euro;";
-						document.getElementById("totale").innerHTML= response.prezzoTot;
+						document.getElementById("spedizione").innerHTML= "&euro;"+"0.00";
+						document.getElementById("totale").innerHTML= prezzo;
 					}
 					
 					var totaleElementi = response.totale;

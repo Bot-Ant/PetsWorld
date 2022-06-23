@@ -24,10 +24,10 @@
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null)
 		{
-			double subtotale = 0.0;
-			double costoTotale = 0.0;
-			double costoSpedizione = 15.0;
-			double prezzoDonazione = 0.0;
+			double subtotale = 0;
+			double costoTotale = 0;
+			double costoSpedizione = 15;
+			double prezzoDonazione = 0;
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
 			if(carrello != null)
 			{
