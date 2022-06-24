@@ -19,6 +19,18 @@
 	</header>
 	<!-- Container section for forms-->
 	<div class="form-container">
+		<%
+					String errore = (String) request.getAttribute("errore");
+					if(errore != null)
+					{ 
+					%>
+						<div class="login-error">
+							<h3>Si è verificato un errore!</h3>
+							<p><%=errore %></p>
+						</div>
+		  			<%
+		  			}
+		  		%>
 		<!-- Form rectangle that contains form elements-->
 		<div class="form-box">
 			<!-- Form section connected to a servlet-->
@@ -34,15 +46,7 @@
 						<input type="password" required name="password" placeholder="" id="password">
 					</li>
 				</ul>
-				<%
-					String errore = (String) request.getAttribute("errore");
-					if(errore != null)
-					{ 
-					%>
-						<div align="center" Style="color:red"><%=errore %></div>
-		  			<%
-		  			}
-		  		%>
+				
 				<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
 			</form>
 			<!-- Seperation line between sections-->
