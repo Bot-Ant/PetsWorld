@@ -11,17 +11,7 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div class="user-content">
-		<div class="user-nav">
-			<a href="./userAccount.jsp">My petsworld</a>
-			<h2>Gestione account</h2>
-			<a href="./userOrders.jsp">Ordini</a>
-			<a href="./userData.jsp">Dati personali</a>
-			<a href="./userAddresses.jsp">Indirizzi</a>
-			<a class="active" href="#">Metodi di pagamento</a>
-			<h2>Gestione animali</h2>
-			<a href="#"> Animali adottati</a>
-			<a class="disconnect" href="#">Disconnettiti</a>
-		</div>
+		<jsp:include page="./static/templates/userNav.html"/>
 		<div class="data-panel">
 			<div class="welcome">
 				<h1>Metodi di pagamento</h1>

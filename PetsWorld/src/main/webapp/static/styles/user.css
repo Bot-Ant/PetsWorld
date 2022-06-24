@@ -197,12 +197,13 @@ p a:hover {
     color: var(--contrast-color-2);
 }
 
-.user-nav #active {
+.user-nav .active-link {
+	cursor: pointer;
 	font-size: 1.2em;
 	font-weight: bold;
 	color: var(--main-color);
 }
 
-.user-nav #active a {
+.user-nav .active-link a {
 	color: var(--main-color);
 }
