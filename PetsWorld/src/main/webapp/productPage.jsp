@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
+	<script type="text/javascript" src="./static/scripts/cart.js"></script>
+
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
@@ -47,9 +49,9 @@
 						</div>
 					</div>
 				</div>
-				<form class="add-to-cart" action="">
-					<button >Aggiungi al carrello</button>
-				</form>
+				<div class="add-to-cart" action="">
+					<button type="submit" name="id" value="<%=prodotto.getIdProdotto()%>" onclick="aggiungiAlCarrello('<%=prodotto.getIdProdotto()%>')">Aggiungi al carrello</button>
+				</div>
 			</div>
 		</div>
 		<div class="product-description">
@@ -62,6 +64,7 @@
 			<h2 class="section-title">Recensioni</h2>
 		</div>
 	</div>
+	
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>

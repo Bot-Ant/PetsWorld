@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
+	<script type="text/javascript" src="./static/scripts/cart.js"></script>
+	
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
@@ -22,10 +24,10 @@
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null)
 		{
-			double subtotale = 0.0;
-			double costoTotale = 0.0;
-			double costoSpedizione = 15.0;
-			double prezzoDonazione = 0.0;
+			double subtotale = 0;
+			double costoTotale = 0;
+			double costoSpedizione = 15;
+			double prezzoDonazione = 0;
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
 			if(carrello != null)
 			{
@@ -154,142 +156,6 @@
 		%>
 
 	</div>
-
-		<%
-		String url = response.encodeURL("AumentoProdottoCarrello");
-		String url1 = response.encodeURL("DiminuizioneProdottoCarrello");
-		String url2= response.encodeURL("RimozioneDaCarrello");
-		%>
-
-<script>
-	function funzionePiu(id)
-	{
-		var url = '<%=url%>' + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
-		//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id);
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = //alla risposta della servlet
-			function() //aumenta di 1 unità nel carrello
-			{
-				if(xhr.readyState == 4 && xhr.status == 200)
-				{
-					var response = JSON.parse(xhr.responseText);
-					var stringa=response.riferimento;
-					var stringa2=response.riferimento2;
-					if(response.esaurimento==1)
-						{
-							document.getElementById(stringa2).innerHTML = "TERMINATO";
-						}
-					else
-						{
-							document.getElementById(stringa2).innerHTML = "";
-						}
-					document.getElementById(stringa).innerHTML=response.quantita;
-					document.getElementById("quantita_carrello").innerHTML = response.totale;
-					document.getElementById("subtotale").innerHTML = response.prezzoTot + " &euro;";
-					var prezzo = parseFloat(response.prezzoTot);
-					if (prezzo < 50)
-						{
-							document.getElementById("totale").innerHTML= prezzo+15 + " &euro;";
-							document.getElementById("spedizione").innerHTML= "15.0&euro;";
-						}
-					else
-						{
-							document.getElementById("spedizione").innerHTML= "0.0&euro;";
-							document.getElementById("totale").innerHTML= response.prezzoTot + " &euro;";
-						}
-				}
-			}
-		xhr.open("GET",url,true);
-		xhr.send(null);
-	}
-
-	function funzioneMeno(id)
-	{
-		var url = '<%=url1%>' + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
-		//var url = 'DiminuizioneProdottoCarrello?id=' + encodeURIComponent(id);
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = //alla risposta della servlet
-			function() //diminuisce di 1 unità nel carrello
-			{
-				if(xhr.readyState == 4 && xhr.status == 200)
-				{
-					var response = JSON.parse(xhr.responseText);
-					var stringa=response.riferimento;
-					var stringa2=response.riferimento2;
-					document.getElementById(stringa2).innerHTML = "";
-					document.getElementById(stringa).innerHTML=response.quantita;
-					document.getElementById("quantita_carrello").innerHTML = response.totale;
-					document.getElementById("subtotale").innerHTML = response.prezzoTot + " &euro;";
-					var prezzo = parseFloat(response.prezzoTot);
-					if (prezzo < 50)						{
-							document.getElementById("totale").innerHTML= prezzo+15 + " &euro;";
-							document.getElementById("spedizione").innerHTML= "15.0&euro;";
-
-						}
-					else
-						{
-							document.getElementById("spedizione").innerHTML= "0.0&euro;";
-							document.getElementById("totale").innerHTML= response.prezzoTot + " &euro;";
-						}
-				}
-			}
-		xhr.open("GET",url,true);
-		xhr.send(null);
-	}
-
-	function funzioneDel(id)
-	{
-		var url = '<%=url2%>'+"?id=" + encodeURIComponent(id);
-		//var url = 'RimozioneDaCarrello?id=' + encodeURIComponent(id);
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = //alla risposta della servlet
-			function() //rimuovi il prodotto dal carrello
-			{
-				if(xhr.readyState == 4 && xhr.status == 200)
-				{
-					var response = JSON.parse(xhr.responseText);
-					var stringa= response.riferimento;
-					document.getElementById(stringa).remove();
-					document.getElementById("quantita_carrello").innerHTML = response.totale;
-					document.getElementById("subtotale").innerHTML = response.prezzoTot + " &euro;";
-					var prezzo = parseFloat(response.prezzoTot);
-					if (prezzo < 50)
-					{
-
-						document.getElementById("totale").innerHTML= prezzo+15;
-						document.getElementById("spedizione").innerHTML= "15.0&euro;";
-
-					}
-					else
-					{
-						document.getElementById("spedizione").innerHTML= "0.0&euro;";
-						document.getElementById("totale").innerHTML= response.prezzoTot;
-					}
-
-					var totaleElementi = response.totale;
-					if(totaleElementi == 0)
-					{
-						const newchild = document.createElement("div");
-
-            			newchild.setAttribute("id", "empty");
-            			const h1 = document.createElement("h1");
-           				h1.innerHTML = "Il carrello è vuoto"
-            			const p = document.createElement("p");
-            			p.innerHTML = "Aggiungi prodotti al carrello per visualizzarli in questa sezione."
-            			newchild.appendChild(h1);
-            			newchild.appendChild(p);
-
-            			const parent = document.getElementById("cart-content");
-            			const oldchild = document.getElementById("full");
-            			parent.replaceChild(newchild, oldchild);
-					}
-				}
-			}
-		xhr.open("GET",url,true);
-		xhr.send(null);
-	}
-
-</script>
 
 	<footer>
 		<!-- Page footer-->
