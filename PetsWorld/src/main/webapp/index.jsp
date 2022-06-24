@@ -55,21 +55,21 @@
 					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
-							<div class="image-container">
-								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-									<button type="submit" name="id" value="${prd.idProdotto}">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
 										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-                    <p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
-								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</button>
-								</form>
-							</div>
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${prd.prezzo}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
 								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
-								</div>
 							</div>
 						</div>
 					</c:forEach>
@@ -82,21 +82,21 @@
 					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
-							<div class="image-container">
-                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-									<button type="submit" name="id" value="${prd.idProdotto}">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
 										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-                    <p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
-								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</button>
-								</form>					
-              </div>
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
-								  <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 2)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
-								</div>
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
+										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${prd.prezzo}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
@@ -109,21 +109,21 @@
 					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
-							<div class="image-container">
-                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-									<button type="submit" name="id" value="${prd.idProdotto}">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
 										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-                    <p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
-								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</button>
-								</form>						
-              </div>
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
-								  <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto},3)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
-								</div>
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
+										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${prd.prezzo}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
