@@ -137,3 +137,8 @@
 					xhr.open("GET",url,true);
 					xhr.send(null);
 		}
+	
+	function DeviLoggartiPrima()
+	{
+		document.getElementById("demo").innerHTML="Devi loggarti prima di poter effettuare l'ordine";
+	}

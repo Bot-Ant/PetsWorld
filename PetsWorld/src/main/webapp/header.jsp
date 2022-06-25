@@ -31,25 +31,32 @@
 			<div class="header-buttons">
 				<%
 					Utente utente = new Utente();
+					Carrello carrello= new Carrello();
+					String urlcarrello = response.encodeURL("cart.jsp");
 					HttpSession sessione = request.getSession(false);
-					   if (sessione != null)
-					   {
-							utente = (Utente) sessione.getAttribute("utente");
+					if (sessione != null)
+					{
+						utente = (Utente) sessione.getAttribute("utente");
+						carrello = (Carrello) sessione.getAttribute ("carrello");
+						if(carrello !=null)
+						{	
 							if(utente == null)
 							{
 				%>
+				
+				<a href="<%=urlcarrello%>">
+					<i class="fa-solid fa-cart-shopping fa-xl"></i>
+					<p id="quantita_carrello"> <%=carrello.getQuantita()%></p>
+				</a>
 				<h3><a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>">Accedi <i class="fa-solid fa-user fa-xl"></i></a></h3>
+					
 				<%			
 							}
 							else
 							{
-								if(utente.isRuolo() == 0) {
+								if(utente.isRuolo() == 0) 
+								{
 									String urlutente = response.encodeURL("userAccount.jsp");
-									String urlcarrello = response.encodeURL("cart.jsp");
-
-									Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
-									if(carrello != null)
-									{
 				%>
 				<a href="<%=urlcarrello%>">
 					<i class="fa-solid fa-cart-shopping fa-xl"></i>
@@ -63,9 +70,7 @@
 					<i class="fa-solid fa-cart-shopping fa-xl" id="cart-icon"></i>
 					<i class="fa-solid fa-circle fa-lg" id="quantita_carrello"><label id="count-value"><%=carrello.getQuantita()%></label></i>
 				</a> -->
-				<%
-									}
-				%>
+
 				<h3 class="active"><a href="<%=urlutente%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
 				<%	
 								}
@@ -74,10 +79,12 @@
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
 				<h3 class="active"><a href="<%=urladmin%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				
 				<%
 								}
 							}
 						}
+					}
 				%>
 			</div> 
 		</div>
