@@ -6,9 +6,9 @@
 	<title>PetsWorld</title>
 </head>
 <body>
-	<form class="search-bar" action="SearchServlet" method="post">
+	<form class="search-bar" action="ServletSearch" method="post">
         <input class="" type="text" name="nome" placeholder="Cerca prodotto">
-        <button class="" name="bottonecerca"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
+        <button class="" type="submit" name="nome"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
     </form>
 </body>
 </html>
