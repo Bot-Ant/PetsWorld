@@ -16,6 +16,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
 </head>
 <body>
+	<script type="text/javascript" src="./static/scripts/cartIndex.js"></script>
+		
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
@@ -58,7 +60,7 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+										<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
 										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</div>
@@ -69,7 +71,7 @@
 								</button>
 							</form>
 							<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
@@ -85,7 +87,7 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+										<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
 										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</div>
@@ -96,7 +98,7 @@
 								</button>
 							</form>
 							<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
@@ -112,7 +114,7 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-										<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+										<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
 										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</div>
@@ -123,7 +125,7 @@
 								</button>
 							</form>
 							<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
@@ -136,46 +138,6 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-	
-	<%
-		String url = response.encodeURL("ServletCarrello");
-	%>
-<script type="text/javascript">
-	function aggiungiAlCarrello(id, sezione)
-	{
-			    var url = '<%=url%>' + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto e sezione
-				//var url = 'ServletCarrello?id=' + encodeURIComponent(id);
-				var xhr = new XMLHttpRequest();
-				xhr.onreadystatechange = //alla risposta della servlet
-					function() //aumenta di 1 unità il carrello
-					{
-						if(xhr.readyState == 4 && xhr.status == 200)
-						{
-							var response = JSON.parse(xhr.responseText); //stringa che contiene la risposta da parte del server
-							document.getElementById("quantita_carrello").innerHTML = response.number;
-							var stringa=response.riferimento;
-							if(response.esaurimento==1)
-								{
-									if(sezione==1)
-										{
-											document.getElementById(stringa+"_1").innerHTML = "TERMINATO";
-										}
-									if(sezione==2)
-										{
-											document.getElementById(stringa+"_2").innerHTML = "Esaurimento scorte nel magazzino";
-										}
-									if(sezione==3)
-										{
-											document.getElementById(stringa+"_3").innerHTML = "Esaurimento scorte nel magazzino";
-										}
-								}
-						}
-					}
-				xhr.open("GET",url,true);
-				xhr.send(null);
-	}
-	
-</script>
 
 </body>
 </html>
