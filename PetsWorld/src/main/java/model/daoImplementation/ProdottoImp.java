@@ -78,8 +78,9 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 	                List<Prodotto> listaProdotti = new ArrayList<>();
 	                
 	                while (rs.next()) {
-	                	ProdottoExtractor extractor = new ProdottoExtractor();
-	                    listaProdotti.add(extractor.extract(rs));
+	                	Prodotto prodotto = new ProdottoExtractor().extract(rs);
+	                	prodotto.setFotografia(new FotoProdottoExtractor().extract(rs));
+	                	listaProdotti.add(prodotto);
 	                    
 	                }
 	               
