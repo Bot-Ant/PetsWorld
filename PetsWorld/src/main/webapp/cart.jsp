@@ -28,6 +28,7 @@
 			double costoTotale = 0;
 			double costoSpedizione = 15;
 			double prezzoDonazione = 0;
+			Utente utente = (Utente) sessione.getAttribute("utente");
 			Carrello carrello = (Carrello) sessione.getAttribute ("carrello");
 			if(carrello != null)
 			{
@@ -143,9 +144,28 @@
 							</p>
 						</div>
 					</div>
+					
+						<%
+							if(utente!=null)
+							{
+						%>
+						
 					<form method = "GET" action = "<%=response.encodeURL("./orderPage.jsp")%>">
-						<button>Procedi all'ordine</button>
+						<button type="submit">Procedi all'ordine</button>
 					</form>
+					
+						<%
+							}
+							else
+							{	
+						%>
+						
+						<p id="demo"></p>
+						<button type="submit" onclick="DeviLoggartiPrima()">Procedi all'ordine</button>
+						
+						<%
+							}
+						%>
 				</div>
 			</div>
 		</div>
