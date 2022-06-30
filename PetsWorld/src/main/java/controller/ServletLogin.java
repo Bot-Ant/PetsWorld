@@ -63,8 +63,10 @@ public class ServletLogin extends HttpServlet {
         try {
         	boolean idUser=dao.Accountcheck(Email, Password);
         	int ruolo=dao.Admincheck(Email, Password);
-        	if(idUser == false) {
-        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./invalidLogin.jsp");
+        	if(idUser == false) 
+        	{
+				request.setAttribute("errore","Inserire dati di accesso corretti.");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("./login.jsp");
         		requestDispatcher.forward(request, response);
         	}
         	
@@ -72,7 +74,6 @@ public class ServletLogin extends HttpServlet {
         	{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);
-    			sessione.setAttribute("carrello", new Carrello());
         		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userAccount.jsp");
         		requestDispatcher.forward(request, response);
         	}

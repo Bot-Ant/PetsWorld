@@ -14,10 +14,10 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 	<link rel="stylesheet" href="./static/styles/banner.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
-	<link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
-	
 </head>
 <body>
+	<script type="text/javascript" src="./static/scripts/cartIndex.js"></script>
+		
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
@@ -27,18 +27,25 @@
 		<!-- Banner with news and sales -->
 		
 		 
-	<div class="banner">
-		<div class="botton">
-            <i class="fas fa-arrow-left" id="prevbtn"></i>
-            <i class="fas fa-arrow-right" id="nextbtn"></i>
+		<div class="banner-container">
+			<div class="banner">
+				<i class="fa-solid fa-chevron-left" id="prevbtn"></i>
+				<i class="fa-solid fa-chevron-right" id="nextbtn"></i>
             	<div class="pre-botton">
 					<c:forEach items="${banner}" var="ban">
-					<img src="./static/images/${ban.immagine}" alt="immagine prodotto">
+						<img src="./static/images/${ban.immagine}" alt="immagine banner">
 					</c:forEach>
-				<script src="./static/scripts/jsbanner.js" ></script>
+					<script src="./static/scripts/banner.js" ></script>
 				</div>
+			</div>
 		</div>
-	</div>
+		<div class="website-stripe">
+			<h1>PetsWorld</h1>
+			<h2>Leader nel mondo del Pet</h2>
+			<p>
+				PetsWorld è il sito e-commerce per i tuoi animali domestici. La nostra piattaforma di acquisti online, leader in Italia e in Europa, è pratica e affidabile e si impegna a offrire ai proprietari di animali domestici il migliore servizio possibile per acquistare cibo e accessori per i loro pet.
+			</p>
+		</div>
 		<!-- Selection of the best products of the website -->
 		<div class="best-products">
 			<!-- Section of products selected -->
@@ -47,96 +54,82 @@
 				<h1>I prodotti più venduti</h1>
 				<!-- Products to show in the row -->
 				<div class="products-row">
-					<button class="products-slider"><i class="fa-solid fa-circle-chevron-left fa-2x"></i></button>
+					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
-							<div class="image-container">
-<<<<<<< Updated upstream
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-=======
-								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-									<button type="submit" name="id" value="${prd.idProdotto}">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
 										<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
-                    <p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
-								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</button>
-								</form>
->>>>>>> Stashed changes
-							</div>
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
-								</div>
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${prd.prezzo}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
-					<button class="products-slider"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></button>
+					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 			<div class="products-section">
 				<h1>Le novità PetsWorld</h1>
 				<div class="products-row">
-					<button class="products-slider"><i class="fa-solid fa-circle-chevron-left fa-2x"></i></button>
+					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
-							<div class="image-container">
-<<<<<<< Updated upstream
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-							</div>
-=======
-                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-									<button type="submit" name="id" value="${prd.idProdotto}">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
 										<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
-                    <p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
-								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</button>
-								</form>					
-              </div>
->>>>>>> Stashed changes
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
-								  <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
-								</div>
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
+										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${prd.prezzo}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
-					<button class="products-slider"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></button>
+					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 			<div class="products-section">
 				<h1>I prodotti più consigliati</h1>
 				<div class="products-row">
-					<button class="products-slider"><i class="fa-solid fa-circle-chevron-left fa-2x"></i></button>
+					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
 					<c:forEach items="${list}" var="prd">
 						<div class="product-box">
-							<div class="image-container">
-<<<<<<< Updated upstream
-								<img src="./static/images/${prd.foto}" alt="immagine prodotto">
-							</div>
-=======
-                <form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-									<button type="submit" name="id" value="${prd.idProdotto}">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
 										<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
-                    <p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
-								    <p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</button>
-								</form>						
-              </div>
->>>>>>> Stashed changes
-							<h3 class="name">${prd.nome}</h3>
-							<div class="text-container">
-								<h2 class="price">€${prd.prezzo}</h2>
-								<div class="add-to-cart">
-								  <button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
-								</div>
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
+										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${prd.prezzo}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>
 					</c:forEach>
-					<button class="products-slider"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></button>
+					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 		</div>
@@ -145,29 +138,6 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-	
-	<%
-		String url = response.encodeURL("ServletCarrello");
-	%>
-<script type="text/javascript">
-	function aggiungiAlCarrello(id)
-	{
-			    var url = '<%=url%>' + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
-				//var url = 'ServletCarrello?id=' + encodeURIComponent(id);
-				var xhr = new XMLHttpRequest();
-				xhr.onreadystatechange = //alla risposta della servlet
-					function() //aumenta di 1 unità il carrello
-					{
-						if(xhr.readyState == 4 && xhr.status == 200)
-						{
-							var response = JSON.parse(xhr.responseText); //stringa che contiene la risposta da parte del server
-							document.getElementById("quantita_carrello").innerHTML = response.number;
-						}
-					}
-				xhr.open("GET",url,true);
-				xhr.send(null);
-	}
-</script>
 
 </body>
 </html>

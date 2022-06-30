@@ -35,4 +35,10 @@ public class ProdottoQuery {
 		builder.select().where("prd.idprodotto=?");
 		return builder.GeneratedQuery();
 	}
+	
+	public static String cerca_quantita() {
+		QueryBuilder builder= new QueryBuilder (PRODOTTO_QUERY, PRODOTTO_ALIAS);
+		builder.select().where("prd.idprodotto=?");
+		return builder.GeneratedQuery();
+	}
 }

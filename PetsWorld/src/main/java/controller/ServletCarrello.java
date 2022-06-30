@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -33,6 +34,7 @@ public class ServletCarrello extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		int ID = Integer.parseInt(id);
+		int esaurimento=0;
 		Carrello carrello = new Carrello();
 		HttpSession sessione = request.getSession(false);
 		if (sessione != null)
@@ -40,27 +42,34 @@ public class ServletCarrello extends HttpServlet {
 			 carrello = (Carrello) sessione.getAttribute("carrello");
 		}
 		
+		try
+		{
 		Prodotto prodotto = new Prodotto ();
 		ProdottoDao<SQLException> prodottoImp= new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
-		
-		try {
-			prodotto = prodottoImp.doRetrieveByKey(ID);
-		} catch (SQLException e) {
-			System.out.println("Errore ricerca prodotto nel db");
-			e.printStackTrace();
-		} 
+		prodotto = prodottoImp.doRetrieveByKey(ID);
+		int quantita = prodottoImp.restituisciQuantita(prodotto.getIdProdotto());
 		
 		ArrayList<Prodotto> prodotti = carrello.getProdotti();
 		int i=0;
+		
 		for (; i<prodotti.size(); i++)
 		{
 			if(prodotto.getIdProdotto() == prodotti.get(i).getIdProdotto())
 			{
-					int quantita=prodotti.get(i).getQuantita() + 1;
-					prodotti.get(i).setQuantita(quantita);
-					carrello.setProdotti(prodotti);
-					break;
-				}
+					int quantitaProdottoCarrello = prodotti.get(i).getQuantita();
+					if(quantita > quantitaProdottoCarrello)
+					{
+						quantita=prodotti.get(i).getQuantita() + 1;
+						prodotti.get(i).setQuantita(quantita);
+						break;
+					}
+					else
+					{
+						carrello.setPrezzoTotaleRimozione(prodotti.get(i).getPrezzo());
+						esaurimento=1;
+						break;
+					}
+			}
 		}
 		
 		if(i >= prodotti.size())
@@ -68,19 +77,26 @@ public class ServletCarrello extends HttpServlet {
 			prodotto.setQuantita(1);
 			carrello.addProdotto(prodotto);
 		}
+		
 		carrello.setPrezzoTotale(prodotto.getPrezzo());		
 		
 		response.setContentType("application/json");
 		JSONObject json = new JSONObject();
 		try {
 			json.put("number", carrello.getQuantita());
+			json.put("esaurimento", esaurimento);
+			String riferimento = prodotto.getIdProdotto() + "_demo";
+			json.put("riferimento", riferimento);
 		} catch (JSONException e) {
 			System.out.println("Eccezione numero elementi carrello");
 			e.printStackTrace();
 		}
 		
 		response.getWriter().print(json.toString());
-}
+		}	catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
