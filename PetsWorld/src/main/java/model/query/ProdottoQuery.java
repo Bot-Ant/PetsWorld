@@ -21,7 +21,7 @@ public class ProdottoQuery {
 	
 	public static String cerca(List<Condition> conditionList) {
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
-		builder.select();
+		builder.select().innerJoin("fotoprodotto", "ft").on("prd.idProdotto = ft.idProdotto");
 		if(!conditionList.isEmpty()) {
 			builder.where().search(conditionList);
 		}

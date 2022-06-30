@@ -39,7 +39,7 @@
 						<div class="image-container">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 								<button type="submit" name="id" value="${prd.idProdotto}">
-									<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+									<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
 								</button>
 							</form>						
 						</div>
