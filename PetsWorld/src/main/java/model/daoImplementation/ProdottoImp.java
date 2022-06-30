@@ -14,6 +14,8 @@ import model.Manager;
 import model.daoInterface.ProdottoDao;
 import model.query.ProdottoQuery;
 import model.search.Condition;
+import model.search.Operatore;
+import model.Extractor.FotoProdottoExtractor;
 import model.Extractor.ProdottoExtractor;
 
 public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
@@ -38,11 +40,12 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 				try(PreparedStatement ps = connection.prepareStatement(query)){
 			
                 ResultSet rs = ps.executeQuery();
-                ProdottoExtractor  prd = new ProdottoExtractor();
                 List<Prodotto> listaProdotti = new ArrayList<>();
                 
                 while (rs.next()) {
-                	listaProdotti.add(prd.extract(rs));
+                	Prodotto prodotto = new ProdottoExtractor().extract(rs);
+                	prodotto.setFotografia(new FotoProdottoExtractor().extract(rs));
+                	listaProdotti.add(prodotto);
                 }
                 return listaProdotti;
             }
@@ -58,8 +61,17 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 				
 					
 					for(int i=0; i < conditions.size(); i++) {
+						
+							if(conditions.get(i).getOperator() == Operatore.MATCH) {
+								
+								ps.setObject(i+1, "%" + conditions.get(i).getValue() + "%");
+								
+							}else {
+								
+								ps.setObject(i+1,  conditions.get(i).getValue() );
+								
+							}
 							
-							ps.setObject(i+1,  conditions.get(i).getValue() );
 							
 					}
 	                ResultSet rs = ps.executeQuery();

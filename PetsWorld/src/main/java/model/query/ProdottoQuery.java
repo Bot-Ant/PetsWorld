@@ -15,7 +15,7 @@ public class ProdottoQuery {
 	public static String lista() {
 
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
-		builder.select();
+		builder.select().innerJoin("fotoprodotto", "ft").on("prd.idProdotto = ft.idProdotto");
 		return builder.GeneratedQuery();
 	}
 	
@@ -25,7 +25,9 @@ public class ProdottoQuery {
 		if(!conditionList.isEmpty()) {
 			builder.where().search(conditionList);
 		}
+		
 		return builder.GeneratedQuery();
+		
 	}
 	
 	public static String cerca_nome() {

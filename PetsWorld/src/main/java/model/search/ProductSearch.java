@@ -21,12 +21,12 @@ public class ProductSearch implements SearchBuilder {
 				
 				case "nome" :{
 					conditions.add(new Condition ("nome", Operatore.MATCH, value));
-				
+					
 					break;
 				}
 				case "animale" :{
 					conditions.add(new Condition ("animale", Operatore.MATCH, value));
-				
+		
 					break;
 				}
 				case "categoria" :{

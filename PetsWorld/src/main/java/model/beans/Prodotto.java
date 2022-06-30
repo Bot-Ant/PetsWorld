@@ -12,14 +12,14 @@ public class Prodotto implements Serializable{
 	private String tipo;
 	private double prezzo;
 	private String descrizione;
-	private String foto;
 	private double iva;
 	private String dataScadenza;
 	private String dimensione;
 	private String colore;
-	private double peso;
+	private String peso;
 	private int quantita;
 	private String animale;
+	private FotoProdotto fotografia;
 	
 	public int getIdProdotto() {
 		return IdProdotto;
@@ -51,12 +51,7 @@ public class Prodotto implements Serializable{
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
+
 	public double getIva() {
 		return iva;
 	}
@@ -81,10 +76,11 @@ public class Prodotto implements Serializable{
 	public void setColore(String colore) {
 		this.colore = colore;
 	}
-	public double getPeso() {
+
+	public String getPeso() {
 		return peso;
 	}
-	public void setPeso(double peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
 	public int getQuantita() {
@@ -93,18 +89,25 @@ public class Prodotto implements Serializable{
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
-	@Override
-	public String toString() {
-		return "Prodotto [IdProdotto=" + IdProdotto + ", nome=" + nome + ", tipo=" + tipo + ", prezzo=" + prezzo
-				+ ", descrizione=" + descrizione + ", foto=" + foto + ", iva=" + iva + ", dataScadenza=" + dataScadenza
-				+ ", dimensione=" + dimensione + ", colore=" + colore + ", peso=" + peso + ", quantita=" + quantita
-				+ "]";
-	}
+	
 	public String getAnimale() {
 		return animale;
 	}
 	public void setAnimale(String animale) {
 		this.animale = animale;
+	}
+	public FotoProdotto getFotografia() {
+		return fotografia;
+	}
+	public void setFotografia(FotoProdotto fotografia) {
+		this.fotografia = fotografia;
+	}
+	@Override
+	public String toString() {
+		return "Prodotto [IdProdotto=" + IdProdotto + ", nome=" + nome + ", tipo=" + tipo + ", prezzo=" + prezzo
+				+ ", descrizione=" + descrizione + ", iva=" + iva + ", dataScadenza=" + dataScadenza + ", dimensione="
+				+ dimensione + ", colore=" + colore + ", peso=" + peso + ", quantita=" + quantita + ", animale="
+				+ animale + ", fotografia=" + fotografia + "]";
 	}
 	
 	
