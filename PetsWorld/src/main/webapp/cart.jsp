@@ -58,7 +58,7 @@
 					{
 					%>
 					<div class="product-line" id="<%=prodotti.get(i).getIdProdotto()%>">
-						<img src="./static/images/<%=prodotti.get(i).getFotografia()%>" alt="<%=prodotti.get(i).getFotografia()%>">
+						<img src="./static/images/<%=prodotti.get(i).getFoto()%>" alt="<%=prodotti.get(i).getFoto()%>">
 						<div class="product-name">
 							<h2><%=prodotti.get(i).getNome()%></h2>
 							<p>

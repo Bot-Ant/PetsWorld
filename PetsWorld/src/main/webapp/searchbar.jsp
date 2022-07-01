@@ -7,7 +7,7 @@
 </head>
 <body>
 	<form class="search-bar" action="ServletSearch" method="post">
-        <input class="" type="text" name="nome" placeholder="Cerca prodotto">
+        <input class="" type="text" name="nome" placeholder="Cerca prodotto" required>
         <button class="" type="submit" name="nome"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
     </form>
 </body>
