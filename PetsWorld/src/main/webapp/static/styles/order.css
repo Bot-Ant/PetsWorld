@@ -281,3 +281,121 @@
 .donation-box button:hover {
     background-color: var(--main-color-dark);
 }
+
+/* Order page style*/
+#order-content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--neutral-color-3);
+}
+
+#order-content #data-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-box {
+    margin: 20px;
+    padding: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--main-color);
+    background-color: var(--neutral-color-2);
+    box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+.data-box input {
+    width: 100%;
+}
+
+#order-content .row {
+    display: flex;
+    flex-direction: row;
+}
+
+#order-content .field {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#order-content .confirm-active {
+    margin-right: 10px;
+    margin-left: auto;
+    padding: 10px;
+    width: auto;
+    justify-self: end;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    color: var(--neutral-color-2);
+    background-color: var(--main-color);
+}
+
+#order-content .confirm-active:hover {
+    background-color: var(--main-color-dark);
+}
+
+#order-content .confirm-inactive {
+    margin-right: 10px;
+    margin-left: auto;
+    padding: 10px;
+    width: auto;
+    justify-self: end;
+    border: 0;
+    border-radius: 10px;
+    color: var(--neutral-color-2);
+    background-color: var(--main-color-light);
+}
+
+#order-content .save-data {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#order-content .save-data input {
+    margin: 10px;
+    height: 25px;
+    width: 25px;
+}
+
+#order-content .save-data input:checked {
+    color: var(--main-color);
+}
+
+#order-content #summary-panel {
+    margin: 0 20px 0 auto;
+    padding: 20px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-color-2);
+    box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+#order-content input, select {
+	width: 100%;
+	padding: 15px 15px;
+	margin: 10px 0px;
+	display: inline-block;
+    border: 0;
+	border-bottom: 1px solid var(--transparent);
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: var(--neutral-color-2);
+	box-shadow: inset 0px 0px 20px 0 var(--shadow-color);
+}
+
+#order-content input:focus {
+	outline: none;
+	caret-color: var(--main-color);
+	border-bottom: 1px solid var(--main-color);
+}

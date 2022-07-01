@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Admin header</title>
+	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
