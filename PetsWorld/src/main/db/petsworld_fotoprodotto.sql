@@ -16,33 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `metodo_pagamento`
+-- Table structure for table `fotoprodotto`
 --
 
-DROP TABLE IF EXISTS `metodo_pagamento`;
+DROP TABLE IF EXISTS `fotoprodotto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `metodo_pagamento` (
-  `IDutente` int NOT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
-  `numero` varchar(45) DEFAULT NULL,
-  `proprietario` varchar(45) DEFAULT NULL,
-  `dataScadenza` varchar(45) DEFAULT NULL,
-  `codice` varchar(45) DEFAULT NULL,
-  `idPago` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idPago`),
-  KEY `pagamento_idx` (`IDutente`),
-  CONSTRAINT `pagamento` FOREIGN KEY (`IDutente`) REFERENCES `utente` (`idUtente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `fotoprodotto` (
+  `idProdotto` int NOT NULL,
+  `foto` varchar(45) NOT NULL,
+  `idFoto` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idFoto`),
+  KEY `foto` (`idProdotto`),
+  CONSTRAINT `foto` FOREIGN KEY (`idProdotto`) REFERENCES `prodotto` (`idprodotto`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `metodo_pagamento`
+-- Dumping data for table `fotoprodotto`
 --
 
-LOCK TABLES `metodo_pagamento` WRITE;
-/*!40000 ALTER TABLE `metodo_pagamento` DISABLE KEYS */;
-/*!40000 ALTER TABLE `metodo_pagamento` ENABLE KEYS */;
+LOCK TABLES `fotoprodotto` WRITE;
+/*!40000 ALTER TABLE `fotoprodotto` DISABLE KEYS */;
+INSERT INTO `fotoprodotto` VALUES (7,'product-0-pic-0',1),(8,'product-1-pic-0',2),(8,'product-1-pic-1',3),(11,'product-2-pic-0',4),(11,'product-2-pic-1',5),(13,'product-3-pic-0',6),(14,'product-4-pic-0',7);
+/*!40000 ALTER TABLE `fotoprodotto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-01 11:31:05
+-- Dump completed on 2022-07-01 11:31:06
