@@ -30,11 +30,15 @@
 .fields {
 	text-align: left;
 }
-/* Add a margin on top and bottom of the single field */
-.field {
+/* Add a margin on top and bottom of the single field name */
+.field-name {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	/*text-align: left;*/
+}
+/* Add a margin on top and bottom of the single field name */
+.field-content {
+	font-weight: normal;
 }
 /* Set the style of the list of fields without decoration */
 .form-section ul {
@@ -156,6 +160,7 @@ p a:hover {
 .user-content .user-nav {
 	margin: 20px;
 	padding: 20px;
+	height: min-content;
 	width: 250px;
 	border-radius: 10px;
 	list-style: none;
@@ -206,4 +211,156 @@ p a:hover {
 
 .user-nav .active-link a {
 	color: var(--main-color);
+}
+
+.data-box {
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 4px 0 var(--shadow-color), 0 4px 20px 0 var(--shadow-color);
+}
+
+.form-display {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-display .line {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.form-display .element {
+	margin: 20px auto;
+	width: 250px;
+}
+
+.form-display .section-name {
+	margin: 0;
+}
+
+.form-display button {
+	margin: 0;
+	margin-left: auto;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+	background-color: var(--transparent);
+}
+
+.form-display button:hover {
+	border: 2px solid var(--main-color);
+	color: var(--neutral-color-2);
+	background-color: var(--main-color);
+	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+.order-box {
+	margin: 20px 0;
+	border-radius: 15px;
+	border: 0px solid lightgray;
+	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+.order-info {
+	padding: 10px 10px;
+	border-radius: 15px 15px 0 0;
+	border-bottom: 0px solid lightgrey;
+	display: flex;
+	flex-direction: row;
+	background-color: var(--neutral-color-2);
+}
+
+.order-info .delivery-number {
+	margin-left: 5px;
+	margin-right: auto;
+	text-align: left;
+}
+
+.order-info .date {
+	margin: auto;
+	text-align: left;
+}
+
+.order-info .total-price {
+	margin: auto;
+	text-align: left;
+}
+
+.order-info .order-details {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.order-info .order-details button {
+	height: 50px;
+	width: 150px;
+	border: 0;
+	border-radius: 15px;
+	cursor: pointer;
+	color: var(--neutral-color-2);
+	background-color: var(--main-color);
+}
+
+.order-info .order-details button:hover {
+	background-color: var(--main-color-dark);
+}
+
+.order-info p {
+	margin: 0;
+}
+
+.order-info span {
+	font-size: 1.2em;
+}
+
+.order-box .single-product {
+	display: flex;
+	flex-direction: row;
+}
+
+.order-box .single-product .picture {
+	height: 100px;
+	width: 100px;
+	margin: 20px;
+}
+
+.order-box img {
+	height: 100px;
+	width: 100px;
+}
+
+.product-info {
+	width: 100%;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.product-info .name {
+	margin-top: 0;
+}
+
+.product-info button {
+	width: 100px;
+	border: 0;
+	text-align: left;
+	color: var(--contrast-color-1);
+	background-color: var(--transparent);
+}
+
+.product-info button:hover {
+	color: var(--main-color);
+}
+
+.product-info .price {
+	margin-top: auto;
+	margin-bottom: 0;
+	align-self: end;
+	justify-self: end;
+	font-size: 1.2em;
 }

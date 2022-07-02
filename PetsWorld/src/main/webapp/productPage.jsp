@@ -28,7 +28,7 @@
 	<div class="product-page-content">
 		<div class="product-top-row">
 			<div class="product-images">
-				<img src="./static/images/<%=prodotto.getFotografia() %>" alt="Immagine Prodotto">
+				<img src="./static/images/<%=prodotto.getFoto() %>" alt="Immagine Prodotto">
 			</div>
 			<div class="product-info" action="">
 				<h1 class="product-name"><%=prodotto.getNome()%></h1>				

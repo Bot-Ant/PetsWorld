@@ -19,8 +19,15 @@ public class Prodotto implements Serializable{
 	private String peso;
 	private int quantita;
 	private String animale;
+	private String foto;
 	private FotoProdotto fotografia;
 	
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 	public int getIdProdotto() {
 		return IdProdotto;
 	}
@@ -107,8 +114,9 @@ public class Prodotto implements Serializable{
 		return "Prodotto [IdProdotto=" + IdProdotto + ", nome=" + nome + ", tipo=" + tipo + ", prezzo=" + prezzo
 				+ ", descrizione=" + descrizione + ", iva=" + iva + ", dataScadenza=" + dataScadenza + ", dimensione="
 				+ dimensione + ", colore=" + colore + ", peso=" + peso + ", quantita=" + quantita + ", animale="
-				+ animale + ", fotografia=" + fotografia + "]";
+				+ animale + ", foto=" + foto + ", fotografia=" + fotografia + "]";
 	}
+
 	
 	
 }

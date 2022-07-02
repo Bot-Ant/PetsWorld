@@ -82,10 +82,11 @@
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
+
 						<div class="image-container">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 								<button type="submit" name="id" value="${prd.idProdotto}">
-									<img src="./static/images/${prd.fotografia.foto}" alt="immagine prodotto">
+									<img src="./static/images/${prd.foto}" alt="immagine prodotto">
 								</button>
 							</form>						
 						</div>
@@ -96,6 +97,7 @@
 						    	<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
 							</div>
 							<p id="${prd.idProdotto}_demo"></p>
+
 						</div>
 					</div>
 				</c:forEach>

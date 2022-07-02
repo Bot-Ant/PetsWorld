@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: petsworld
 -- ------------------------------------------------------
--- Server version	8.0.24
+-- Server version	8.0.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -47,7 +47,7 @@ CREATE TABLE `utente` (
   CONSTRAINT `donazione` FOREIGN KEY (`IdDonazione_fk`) REFERENCES `donazione` (`idDonazione`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ordine` FOREIGN KEY (`IdOrdine_fk`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `recensione` FOREIGN KEY (`IdRecensione_fk`) REFERENCES `recensione` (`idrecensione`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES (10,'Mario','Rossi','Mrossi@rossi.com','rossi','333-1231232','MRARSS12F431A',0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `utente` VALUES (10,'Mario','Rossi','mrossi@rossi.com','rossi','333-1231232','MRARSS12F431A',0,NULL,NULL,NULL,NULL,NULL),(11,'John','Doe','johndoe@test.com','doe','333-0000000','JHNDOE00101F839A',1,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -69,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-31 17:56:41
+-- Dump completed on 2022-07-01 11:31:06

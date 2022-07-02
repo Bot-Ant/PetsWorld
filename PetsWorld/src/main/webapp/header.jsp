@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- Extended version of the header, visible when the window is large -->
-	<div id="large-header">
+	<div class="standard-header" id="large-header">
 		<!-- Elements in the top bar of the header -->
 		<div class="top-bar">
 			<div class="logo-box">
@@ -94,7 +94,7 @@
 			<jsp:include page="./navbar.jsp"/>
 		</div>
 	<!-- Condensed version of the header, visible when the window is small -->
-	<div id="small-header">
+	<div class="standard-header" id="small-header">
 		<div class="top-bar">
 			
 		</div>
