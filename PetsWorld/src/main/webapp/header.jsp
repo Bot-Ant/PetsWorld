@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
     <link rel="stylesheet" href="./static/styles/footer.css">
+	<link rel="stylesheet" href="./static/styles/form.css">
     <link rel="stylesheet" href="./static/styles/user.css">
 	<link rel="stylesheet" href="./static/styles/catalog.css">
 	<link rel="stylesheet" href="./static/styles/order.css">
@@ -44,11 +45,14 @@
 							{
 				%>
 				
-				<a href="<%=urlcarrello%>">
+				<a class="esperimento" href="<%=urlcarrello%>">
 					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"> <%=carrello.getQuantita()%></p>
+					<p id="quantita_carrello"><%=carrello.getQuantita()%></p>
 				</a>
-				<h3><a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>">Accedi <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<a class="cart" href="<%=urlcarrello%>">
+					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></i>
+				</a>
+				<a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3>Accedi <i class="fa-solid fa-user fa-xl"></i></h3></a>
 					
 				<%			
 							}
@@ -58,28 +62,26 @@
 								{
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
-				<a href="<%=urlcarrello%>">
+				<a class="esperimento" href="<%=urlcarrello%>">
 					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"> <%=carrello.getQuantita()%></p>
-
+					<p id="quantita_carrello"><%=carrello.getQuantita()%></p>
+				</a>
 				<a class="cart" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></i>
-
 				</a>
 				<!-- <a class="cart" href="<%=urlcarrello%>">
 					<i class="fa-solid fa-cart-shopping fa-xl" id="cart-icon"></i>
 					<i class="fa-solid fa-circle fa-lg" id="quantita_carrello"><label id="count-value"><%=carrello.getQuantita()%></label></i>
 				</a> -->
 
-				<h3 class="active"><a href="<%=urlutente%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
+				<a href="<%=urlutente%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
 				<%	
 								}
 								else if(utente.isRuolo() == 1)
 								{
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
-				<h3 class="active"><a href="<%=urladmin%>">Account <i class="fa-solid fa-user fa-xl"></i></a></h3>
-				
+				<a href="<%=urladmin%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
 				<%
 								}
 							}

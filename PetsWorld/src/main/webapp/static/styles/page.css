@@ -16,7 +16,141 @@ h1, h2, h2, h4, h5, h6 {
 
 hr {
     margin: 20px 0;
+    width: 100%;
+    color: var(--shadow-color);
 }
+
+.active-basic-button {
+    margin: 0;
+	padding: 15px;
+	border-radius: 10px;
+    border: none;
+	cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+	color: var(--neutral-color-2);
+	background-color: var(--main-color);
+}
+
+.active-basic-button:hover {
+	background-color: var(--main-color-dark);
+}
+
+.inactive-basic-button {
+    margin: 0;
+	padding: 15px;
+	border-radius: 10px;
+    border: none;
+	color: var(--neutral-color-2);
+	background-color: var(--main-color-light);
+}
+
+.inactive-basic-button:hover {
+	cursor: default;
+}
+
+.active-accent-button {
+    margin: 0;
+	padding: 15px;
+	border-radius: 10px;
+    border: none;
+	cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+	color: var(--neutral-color-2);
+	background-color: var(--accent-color);
+}
+
+.active-accent-button:hover {
+	background-color: var(--accent-color-dark);
+}
+
+.inactive-accent-button {
+    margin: 0;
+	padding: 15px;
+	border-radius: 10px;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+	color: var(--neutral-color-2);
+	background-color: var(--accent-color-light);
+}
+
+.inactive-accent-button:hover {
+	cursor: default;
+}
+
+.active-edit-button {
+	margin: 0;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+	background-color: var(--transparent);
+}
+
+.active-edit-button:hover {
+    cursor: pointer;
+	color: var(--neutral-color-2);
+	background-color: var(--main-color);
+	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+.inactive-edit-button {
+	margin: 0;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 2px solid var(--main-color-light);
+	color: var(--main-color-light);
+	background-color: var(--transparent);
+}
+
+.inactive-edit-button:hover {
+	cursor: default;
+}
+
+.input-field {
+    width: 100%;
+	padding: 15px;
+	margin: 10px 0px;
+	display: inline-block;
+	border: none;
+	border-radius: 10px;
+	box-sizing: border-box;
+    border-bottom: 1px solid var(--transparent);
+    color: var(--main-color);
+	background-color: var(--neutral-color-1);
+	box-shadow: inset 0px 0px 10px 0 var(--shadow-color);
+}
+
+.input-field:focus {
+	outline: none;
+	caret-color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    margin: 20px;
+	padding: 20px;
+    height: auto;
+	width: auto;
+	border-radius: 10px;
+    color: var(--contrast-color-1);
+    background-color: var(--neutral-color-2);
+	box-shadow: 0 4px 4px 0 var(--shadow-color), 0 4px 20px 0 var(--shadow-color);
+}
+
+
 
 .home-content {
     margin: 0;
