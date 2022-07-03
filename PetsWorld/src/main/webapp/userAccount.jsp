@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
+
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
@@ -31,7 +32,7 @@
 
 				</div>
 				<div class="adozioni">
-					
+
 				</div>
 			</div>
 		</div>
@@ -40,5 +41,10 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
+	<script type="text/javascript" src="./static/scripts/page.js"></script>
+	<script type="text/javascript" src="./static/scripts/user.js"></script>
+	<script>
+		setUserSectionActive("user-petsworld");
+	</script>
 </body>
 </html>
