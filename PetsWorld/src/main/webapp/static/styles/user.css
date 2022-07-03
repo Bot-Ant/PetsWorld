@@ -1,163 +1,14 @@
 @charset "utf-8";
-/* Reset any graphic element and display the forms in a central column with flexbox */
-.form-container{
-	margin: 0;
-    padding: 50px 0 0 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--neutral-color-2);
-}
-/* Style a form rectangle with a static dimension */
-.form-box {
-	display: flex;
-	flex-direction: column;
-	width: 500px;
-	margin: 0 0 50px 0;
-	padding: 30px;
-	border-radius: 15px;
-	border: 3px solid var(--main-color);
-	background-color: var(--neutral-color-2);
-	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
-}
-/* Reset margin and padding for better centred content */
-.form-section {
-	margin: 0;
-	padding: 0;
-}
-/* Allign the text of the forms to the left */
-.fields {
-	text-align: left;
-}
-/* Add a margin on top and bottom of the single field name */
-.field-name {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	/*text-align: left;*/
-}
-/* Add a margin on top and bottom of the single field name */
-.field-content {
-	font-weight: normal;
-}
-/* Set the style of the list of fields without decoration */
-.form-section ul {
-	padding: 0;
-	text-align: center;
-	list-style: none;
-}
-/* Add a margin for the list item containing a form field */
-.form-section ul li {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: left;
-}
+/* style for user pages */
 
-.form-section ul li p {
-	margin-top: 0;
-	font-size: 0.8em;
-	color: var(--accent-color);
-}
-/* Set the width to take all the space of the form and adds some padding and rounded corners */
-.form-section input, select {
-	width: 100%;
-	padding: 15px 15px;
-	margin: 10px 0px;
-	display: inline-block;
-	border: 0px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	background-color: var(--neutral-color-2);
-	box-shadow: inset 0px 0px 20px 0 var(--shadow-color);
-}
-/* Change the input element style when selected*/
-.form-section input:focus {
-	outline: none;
-	caret-color: var(--main-color);
-	border-bottom: 1px solid var(--main-color);
-}
-/* Style the buttons inside the form */
-.form-section > button[type=submit] {
-	padding: 15px 15px;
-	margin: 10px 0px;
-	width: 100%;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	color: white;
-	background-color: var(--accent-color);
-}
-/* Change the button color when the cursor is on it */
-.form-section > button[type=submit]:hover {
-	background-color: var(--accent-color-dark);
-}
-/* Set the style of a link inside a form without decoration */
-p a {
-	text-decoration: none;
-	color: var(--main-color);
-}
-/* Change the color of the link when the cursor is on it*/
-p a:hover {
-	color: var(--accent-color);
-}
-/* Set the style of the form element separator to take all space avaliable */
-.form-box hr {
-	width: 100%;
-	color: var(--main-color);
-}
-
-.login-error {
-	margin-bottom: 30px;
-	padding: 30px;
-	width: 500px;
-	border-radius: 15px;
-	border: 2px solid var(--accent-color-dark);
-	color: var(--accent-color-dark);
-	background-color: var(--transparent);
-	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
-}
-
-.login-error p {
-	margin: 0;
-}
-
-.login-error h3 {
-	margin-top: 0;
-}
-
-.login-message-container {
-	margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-message-container h1 {
-	color: var(--main-color); 
-	margin-top: 50px; 
-	text-align: center;
-}
-
-.login-message-container button {
-	padding: 0;
-	margin: 0;
-	border: none;
-	cursor: pointer;
-	font-size: medium;
-	color: var(--main-color);
-	background-color: var(--neutral-color-2);
-}
-
-.user-content {
+#user-content {
 	margin: 0;
 	padding: 0;
 	display: flex;
 	background-color: var(--neutral-color-2);
 }
 
-.user-content .user-nav {
+#user-content .user-nav {
 	margin: 20px;
 	padding: 20px;
 	height: min-content;
@@ -183,7 +34,15 @@ p a:hover {
 
 .user-nav i {
 	margin: 10px;
+	height: 18px;
+	width: 18px;
+	display: flex;
 }
+
+.user-nav i::before {
+	margin: auto;
+}
+
 .user-nav hr {
 	border: 0;
 	margin: 12px 0;
@@ -213,139 +72,112 @@ p a:hover {
 	color: var(--main-color);
 }
 
-.data-box {
-	padding: 20px;
-	border-radius: 15px;
-	box-shadow: 0 4px 4px 0 var(--shadow-color), 0 4px 20px 0 var(--shadow-color);
-}
-
-.form-display {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-}
-
-.form-display .line {
+#data-panel {
 	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
 }
 
-.form-display .element {
+#user-page-header {
+	margin-right: 20px;
+}
+
+
+
+/* style for userData.jsp */
+
+#data-box {
+	margin-right: 20px;
+}
+
+#data-box .element-left {
+	margin: 20px auto 20px 0px;
+	width: 40%;
+}
+
+#data-box .element-middle {
 	margin: 20px auto;
-	width: 250px;
+	width: 40%;
 }
 
-.form-display .section-name {
+#data-box .element-right {
+	margin: 20px 0px 20px auto;
+	width: 40%;
+}
+
+#data-box .section-name {
 	margin: 0;
 }
 
-.form-display button {
-	margin: 0;
+#data-box button {
 	margin-left: auto;
-	padding: 5px 10px;
-	border-radius: 10px;
-	border: 2px solid var(--main-color);
-	color: var(--main-color);
-	background-color: var(--transparent);
 }
 
-.form-display button:hover {
-	border: 2px solid var(--main-color);
-	color: var(--neutral-color-2);
-	background-color: var(--main-color);
-	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+
+
+/* style for userOrders.jsp */
+
+#orders-box {
+	margin-right: 20px;
 }
 
-.order-box {
+#orders-box .order-box {
 	margin: 20px 0;
-	border-radius: 15px;
-	border: 0px solid lightgray;
-	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
 }
 
-.order-info {
-	padding: 10px 10px;
-	border-radius: 15px 15px 0 0;
-	border-bottom: 0px solid lightgrey;
-	display: flex;
-	flex-direction: row;
+#orders-box .order-info {
+	border-radius: 10px 10px 0 0;
 	background-color: var(--neutral-color-2);
 }
 
-.order-info .delivery-number {
-	margin-left: 5px;
+#orders-box .order-info .delivery-number {
+	margin-left: 0;
 	margin-right: auto;
 	text-align: left;
 }
 
-.order-info .date {
+#orders-box .order-info .date {
 	margin: auto;
 	text-align: left;
 }
 
-.order-info .total-price {
+#orders-box .order-info .total-price {
 	margin: auto;
 	text-align: left;
 }
 
-.order-info .order-details {
+#orders-box .order-info .order-details {
 	margin-left: auto;
 	margin-right: 0;
 }
 
-.order-info .order-details button {
-	height: 50px;
-	width: 150px;
-	border: 0;
-	border-radius: 15px;
-	cursor: pointer;
-	color: var(--neutral-color-2);
-	background-color: var(--main-color);
-}
-
-.order-info .order-details button:hover {
-	background-color: var(--main-color-dark);
-}
-
-.order-info p {
+#orders-box .order-info p {
 	margin: 0;
 }
 
-.order-info span {
+#orders-box .order-info span {
 	font-size: 1.2em;
 }
 
-.order-box .single-product {
-	display: flex;
-	flex-direction: row;
-}
-
-.order-box .single-product .picture {
+#orders-box .order-box .picture {
 	height: 100px;
 	width: 100px;
 	margin: 20px;
 }
 
-.order-box img {
+#orders-box .order-box img {
 	height: 100px;
 	width: 100px;
 }
 
-.product-info {
+#orders-box .product-info {
 	width: 100%;
 	margin: 20px;
-	display: flex;
-	flex-direction: column;
 }
 
-.product-info .name {
+#orders-box .product-info .name {
 	margin-top: 0;
 }
 
-.product-info button {
+#orders-box .product-info .stars {
 	width: 100px;
 	border: 0;
 	text-align: left;
@@ -353,14 +185,76 @@ p a:hover {
 	background-color: var(--transparent);
 }
 
-.product-info button:hover {
+#orders-box .product-info .stars:hover {
+	cursor: pointer;
 	color: var(--main-color);
 }
 
-.product-info .price {
+#orders-box .product-info .price {
 	margin-top: auto;
 	margin-bottom: 0;
 	align-self: end;
 	justify-self: end;
 	font-size: 1.2em;
+}
+
+
+
+/* style for userAddresses.jsp */
+
+#addresses-box {
+	margin-right: 20px;
+}
+
+#addresses-box button {
+	margin-left: auto;
+	margin-right: 0;
+	align-self: start;
+}
+
+#addresses-box .address-line {
+	margin: 20px 0;
+}
+
+#addresses-box .address-name {
+	margin: 10px 0;
+}
+
+#addresses-box p {
+	margin: 10px 0;
+}
+
+#no-addresses .message {
+	margin: 0;
+	align-self: center;
+}
+
+
+/* style for userPayMethods.jsp */
+
+#pay-methods-box {
+	margin-right: 20px;
+}
+
+#pay-methods-box button {
+	margin-left: auto;
+	margin-right: 0;
+	align-self: start;
+}
+
+#pay-methods-box .pay-method-line {
+	margin: 20px 0;
+}
+
+#pay-methods-box .pay-method-name {
+	margin: 10px 0;
+}
+
+#pay-methods-box p {
+	margin: 10px 0;
+}
+
+#no-pay-methods .message {
+	margin: 0;
+	align-self: center;
 }

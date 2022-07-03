@@ -28,32 +28,32 @@
 				<ul>
 					<li>
 						<label class="field-name" for="nome"><b>Nome</b></label>
-						<input type="text" required name="nome" placeholder="" id="nome" onblur="nameValidity()">
+						<input class="input-field" type="text" required name="nome" placeholder="" id="nome" onblur="nameValidity()">
 						<p id="name-validity"></p>
 					</li>
 					<li>
 						<label class="field-name" for="cognome"><b>Cognome</b></label>
-						<input type="text" required name="cognome" placeholder="" id="cognome" onblur="surnameValidity()">
+						<input class="input-field" type="text" required name="cognome" placeholder="" id="cognome" onblur="surnameValidity()">
 						<p id="surname-validity"></p>
 					</li>
 					<li>
 						<label class="field-name" for="email"><b>Email</b></label>
-						<input type="email" required name="email" placeholder="" id="email" onkeyup="lowercase('email')" onblur="emailValidity()">
+						<input class="input-field" type="email" required name="email" placeholder="" id="email" onkeyup="lowercase('email')" onblur="emailValidity()">
 						<p id="email-validity"></p>
 					</li>
 					<li>
 						<label class="field-name" for="password"><b>Password</b></label>
-						<input type="password" required name="password" placeholder="Inserire almeno 8 caratteri" id="password" minlength="8" onblur="passwordValidity()">
+						<input class="input-field" type="password" required name="password" placeholder="Inserire almeno 8 caratteri" id="password" minlength="8" onblur="passwordValidity()">
 						<p id="password-validity"></p>
 					</li>
 					<li>
 						<label class="field-name" for="codiceFiscale"><b>Codice Fiscale</b></label>
-						<input type="text" required name="codiceFiscale" placeholder="" id="codiceFiscale" onkeyup="uppercase('codiceFiscale')" onblur="taxCodeValidity()" >
+						<input class="input-field" type="text" required name="codiceFiscale" placeholder="" id="codiceFiscale" onkeyup="uppercase('codiceFiscale')" onblur="taxCodeValidity()" >
 						<p id="taxcode-validity"></p>
 					</li>
 					<li>
 						<label class="field-name" for="cellulare"><b>Cellulare</b></label>
-						<input type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="111-1111111" required name="cellulare" id="cellulare" onblur="phoneNumberValidity()" >
+						<input class="input-field" type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="111-1111111" required name="cellulare" id="cellulare" onblur="phoneNumberValidity()" >
 						<p id="number-validity"></p>
 					</li>
 				</ul>

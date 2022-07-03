@@ -10,53 +10,53 @@
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
-	<div class="user-content">
+	<div id="user-content">
 		<jsp:include page="./static/templates/userNav.html"/>
-		<div class="data-panel">
-			<div class="welcome">
+		<div id="data-panel">
+			<div id="user-page-header">
 				<h1>Dati personali</h1>
 				<p>
 					Questi sono i tuoi dati personali.
 				</p>
 			</div>
-			<div class="data-box">
-				<div class="form-display" id="user-info">
-					<div class="line">
+			<div id="data-box" class="box">
+				<div class="column" id="user-info">
+					<div class="row">
 						<h2 class="section-name">Dati</h2>
-						<button>Modifica</button>
+						<button class="active-edit-button">Modifica</button>
 					</div>
-					<div class="line">
-						<div class="element">
+					<div class="row">
+						<div class="element-left">
 							<label class="field-name" for="nome"><b>Nome</b></label><br>
 							<label class="field-content" for="nome">Nome</label>
 						</div>
-						<div class="element">
+						<div class="element-right">
 							<label class="field-name" for="cognome"><b>Cognome</b></label><br>
 							<label class="field-content" for="cognome">Cognome</label>
 						</div>			
 					</div>
-					<div class="line">
-						<div class="element">
+					<div class="row">
+						<div class="element-left">
 							<label class="field-name" for="codiceFiscale"><b>Codice Fiscale</b></label><br>
 							<label class="field-content" for="codiceFiscale">Codice Fiscale</label>
 						</div>
-						<div class="element">
+						<div class="element-right">
 							<label class="field-name" for="cellulare"><b>Cellulare</b></label><br>
 							<label class="field-content" for="cellulare">Cellulare</label>
 						</div>			
 					</div>
 				</div>
-				<div class="form-display" id="user-contacts">
-					<div class="line">
+				<div class="column" id="user-contacts">
+					<div class="row">
 						<h2 class="section-name">Credenziali</h2>
-						<button>Modifica</button>
+						<button class="active-edit-button">Modifica</button>
 					</div>
-					<div class="line">
-						<div class="element">
+					<div class="row">
+						<div class="element-left">
 							<label class="field-name" for="email"><b>Email</b></label><br>
 							<label class="field-content" for="email">Email</label>
 						</div>
-						<div class="element">
+						<div class="element-right">
 							<label class="field-name" for="password"><b>Password</b></label><br>
 							<label class="field-content" for="password">********</label>
 						</div>			

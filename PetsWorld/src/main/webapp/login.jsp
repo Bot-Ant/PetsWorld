@@ -39,11 +39,11 @@
 				<ul>
 					<li>
 						<label class="field" for="email"> <b>Email</b></label><br>
-						<input type="email" required name="email" placeholder="" id="email">
+						<input class="input-field" type="email" required name="email" placeholder="" id="email">
 					</li>
 					<li>
 						<label class="field" for="password"><b>Password</b></label><br>
-						<input type="password" required name="password" placeholder="" id="password">
+						<input class="input-field" type="password" required name="password" placeholder="" id="password">
 					</li>
 				</ul>
 				

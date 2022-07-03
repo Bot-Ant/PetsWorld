@@ -44,23 +44,10 @@
     flex-direction: column;
 }
 
-.cart-box {
+#cart-box {
     margin: 20px;
-    padding: 20px;
-    height: auto;
-    width: auto;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    border: 0px solid var(--main-color);
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-2);
-}
-
-.cart-box hr {
-    margin: 20px 0 20px 0;
-    width: 100%;
-    color: var(--neutral-color-3);
 }
 
 .product-line {
@@ -109,6 +96,7 @@
 .product-modifiers .trash {
     margin: 0 15px;
     padding: 0;
+    border: none;
     color: var(--main-color);
     background-color: var(--neutral-color-2);
 }
@@ -128,37 +116,10 @@
     align-items: center;
 }
 
-.product-quantities input[type="text"] {
-    margin: 0;
-    height: 40px;
-    width: 40px;
-    font-size: medium;
-    display: flex;
-    box-sizing: border-box;
-}
-
-.product-quantities input[type="text"]:focus {
-	outline: none;
-	caret-color: var(--main-color);
-	border: 1px solid var(--main-color);
-}
-
 .product-quantities button {
-    margin: 0;
-    padding: 10px 10px;
+    padding: 10px;
     height: 40px;
     width: 40px;
-    box-sizing: border-box;
-    border: none;
-	cursor: pointer;
-    font-size: medium;
-    font-weight: bold;
-	color: white;
-    background-color: var(--main-color);
-}
-
-.product-quantities button:hover {
-    background-color: var(--main-color-dark);
 }
 
 .product-quantities .left {
@@ -215,72 +176,19 @@
 }
 
 .price-box button {
-    margin: 0;
-    padding: 15px 15px;
     width: 100%;
-    border-radius: 7px;
-    border: none;
-	cursor: pointer;
-    font-size: medium;
-    font-weight: bold;
-	color: var(--neutral-color-2);
-	background-color: var(--accent-color);
 }
 
-.price-box button:hover {
+/* .price-box button:hover {
     background-color: var(--accent-color-dark);
-}
+} */
 
-.donation-box {
-    margin: 20px;
-    padding: 20px;
-    height: auto;
-    width: auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    border: 0px solid var(--main-color);
-    color: var(--contrast-color-1);
-    background-color: var(--neutral-color-2);
-}
 
-.donation-box .data {
+#donation-box .donation-data-box {
     align-self: center;
-    display: flex;
-    flex-direction: column;
 }
 
-.donation-box input {
-    width: 100%;
-	padding: 15px 15px;
-	margin: 10px 0px;
-	display: inline-block;
-	border: 0;
-	border-radius: 4px;
-	box-sizing: border-box;
-	background-color: var(--neutral-color-2);
-	box-shadow: inset 0px 0px 10px 0 var(--shadow-color);
-}
 
-.donation-box input:focus {
-	outline: none;
-	caret-color: var(--main-color);
-}
-
-.donation-box button {
-    margin: 0;
-    padding: 15px 15px;
-    width: 100%;
-    border-radius: 4px;
-    border: none;
-	cursor: pointer;
-    color: var(--neutral-color-2);
-    background-color: var(--main-color);
-}
-
-.donation-box button:hover {
-    background-color: var(--main-color-dark);
-}
 
 /* Order page style*/
 #order-content {
@@ -297,19 +205,25 @@
     flex-direction: column;
 }
 
-.data-box {
-    margin: 20px;
-    padding: 20px;
-    width: auto;
+#order-content #shipping-info-box {
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--main-color);
-    background-color: var(--neutral-color-2);
-    box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+    border: 2px solid;
+    border-color: var(--main-color);
 }
 
-.data-box input {
-    width: 100%;
+#order-content #payment-method-box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    border-color: var(--main-color);
+}
+
+#order-content #confirm-order-box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    border-color: var(--main-color);
 }
 
 #order-content .row {
@@ -324,33 +238,11 @@
     flex-direction: column;
 }
 
-#order-content .confirm-active {
+#order-content button {
     margin-right: 10px;
     margin-left: auto;
-    padding: 10px;
     width: auto;
     justify-self: end;
-    cursor: pointer;
-    border: 0;
-    border-radius: 10px;
-    color: var(--neutral-color-2);
-    background-color: var(--main-color);
-}
-
-#order-content .confirm-active:hover {
-    background-color: var(--main-color-dark);
-}
-
-#order-content .confirm-inactive {
-    margin-right: 10px;
-    margin-left: auto;
-    padding: 10px;
-    width: auto;
-    justify-self: end;
-    border: 0;
-    border-radius: 10px;
-    color: var(--neutral-color-2);
-    background-color: var(--main-color-light);
 }
 
 #order-content .save-data {
@@ -382,20 +274,5 @@
 }
 
 #order-content input, select {
-	width: 100%;
-	padding: 15px 15px;
 	margin: 10px 0px;
-	display: inline-block;
-    border: 0;
-	border-bottom: 1px solid var(--transparent);
-	border-radius: 4px;
-	box-sizing: border-box;
-	background-color: var(--neutral-color-2);
-	box-shadow: inset 0px 0px 20px 0 var(--shadow-color);
-}
-
-#order-content input:focus {
-	outline: none;
-	caret-color: var(--main-color);
-	border-bottom: 1px solid var(--main-color);
 }
