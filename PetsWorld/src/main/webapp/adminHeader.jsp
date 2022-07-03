@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
     <link rel="stylesheet" href="./static/styles/footer.css">
+	<link rel="stylesheet" href="./static/styles/form.css">
     <link rel="stylesheet" href="./static/styles/user.css">
 	<link rel="stylesheet" href="./static/styles/catalog.css">
 	<link rel="stylesheet" href="./static/styles/order.css">

@@ -51,7 +51,7 @@
 		%>
 		<div id="full">
 			<div class="cart-panel">
-				<div class="cart-box">
+				<div id="cart-box" class="box">
 					<h1>Carrello</h1>
 					<%
 					for (int i=0; i<prodotti.size(); i++)
@@ -70,11 +70,11 @@
 							<div class="product-modifiers">
 								<div class="product-quantities">
                   					<button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')"><i class="fa-solid fa-trash fa-2x"></i></button>
-									<button class="left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
+									<button class="active-basic-button left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
 									<div class="quantities">
 										<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
 									</div>
-									<button class="right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
+									<button class="active-basic-button right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
 								</div>
 							</div>
 							<h2 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h2>
@@ -90,14 +90,16 @@
 						}
 					%>
 				</div>
-				<div class="donation-box">
-					<div class="info">
-						<h2>Dona per gli animali in difficoltà</h2>
-						<p>Puoi scegliere un importo da aggiungere all'ordine che verrà donato ad associazioni che si prendono cura degli animali. <a href="#">Dimmi di più.</a></p>
-					</div>
-					<div class="data">
-						<input type="text" placeholder="€0.00">
-						<button>Seleziona</button>
+				<div id="donation-box" class="box">
+					<div class="row">
+						<div class="info">
+							<h2>Dona per gli animali in difficoltà</h2>
+							<p>Puoi scegliere un importo da aggiungere all'ordine che verrà donato ad associazioni che si prendono cura degli animali. <a href="#">Dimmi di più.</a></p>
+						</div>
+						<div id="donation-data-box" class="column">
+							<input class="input-field" type="text" placeholder="€0.00">
+							<button class="active-basic-button">Seleziona</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -151,7 +153,7 @@
 						%>
 						
 					<form method = "GET" action = "<%=response.encodeURL("./orderPage.jsp")%>">
-						<button type="submit">Procedi all'ordine</button>
+						<button type="submit" class="active-accent-button">Procedi all'ordine</button>
 					</form>
 					
 						<%
@@ -161,7 +163,7 @@
 						%>
 						
 						<p id="demo"></p>
-						<button type="submit" onclick="DeviLoggartiPrima()">Procedi all'ordine</button>
+						<button type="submit" class="active-accent-button" onclick="DeviLoggartiPrima()">Procedi all'ordine</button>
 						
 						<%
 							}

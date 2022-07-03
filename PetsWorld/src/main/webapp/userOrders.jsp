@@ -10,50 +10,65 @@
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
-	<div class="user-content">
+	<div id="user-content">
 		<jsp:include page="./static/templates/userNav.html"/>
-		<div class="data-panel">
-			<div class="welcome">
+		<div id="data-panel">
+			<div id="user-page-header">
 				<h1>Ordini</h1>
 				<p>
 					Da qui potrai vedere tutti i tuoi ordini e scaricarne le fatture.
 				</p>
 			</div>
-			<div class="orders-list">
+			<div id="orders-box">
+				<!-- if there are no orders -->
+				<div id="no-orders" style="display: none;">
+					<h1>Non ci sono ordini</h1>
+					<p>
+						Gli ordini che effettui vengono visualizzati in questa sezione.
+					</p>
+				</div>
+				<!-- if there is at least one order -->
 				<div class="loop">
 					<div class="order-box">
-						<div class="order-info">
-							<div class="delivery-number">
-								<p>Ordine n°</p>
-								<span>SAM0045210093</span>
-							</div>
-							<div class="date">
-								<p>Data ordine</p>
-								<span>27/06/2022</span>
-							</div>
-							<div class="total-price">
-								<p>Totale</p>
-								<span>€49,90</span>
-							</div>
-							<div class="order-details">
-								<button>Dettagli ordine</button>
-							</div>
-						</div>
-						<div class="loop">
-							<div class="single-product">
-								<div class="picture">
-									<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
+						<div class="box">
+							<div class="order-info">
+								<div class="row">
+									<div class="delivery-number">
+										<p>Ordine n°</p>
+										<span>SAM0045210093</span>
+									</div>
+									<div class="date">
+										<p>Data ordine</p>
+										<span>27/06/2022</span>
+									</div>
+									<div class="total-price">
+										<p>Totale</p>
+										<span>€49,90</span>
+									</div>
+									<div class="order-details">
+										<button class="active-basic-button">Dettagli ordine</button>
+									</div>
 								</div>
-								<div class="product-info">
-									<h3 class="name">Nome prodotto</h3>
-									<button>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-									</button>
-									<p class="price">€49,90</p>
+							</div>
+							<hr>
+							<div class="loop">
+								<div class="row">
+									<div class="picture">
+										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
+									</div>
+									<div class="product-info">
+										<div class="column">
+											<h3 class="name">Nome prodotto</h3>
+											<button class="stars">
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+											</button>
+											<p class="price">€49,90</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -61,54 +76,81 @@
 
 
 					<div class="order-box">
-						<div class="order-info">
-							<div class="delivery-number">
-								<p>Ordine n°</p>
-								<span>SAM0045210093</span>
-							</div>
-							<div class="date">
-								<p>Data ordine</p>
-								<span>27/06/2022</span>
-							</div>
-							<div class="total-price">
-								<p>Totale</p>
-								<span>€49,90</span>
-							</div>
-							<div class="order-details">
-								<button>Dettagli ordine</button>
-							</div>
-						</div>
-						<div class="loop">
-							<div class="single-product">
-								<div class="picture">
-									<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
-								</div>
-								<div class="product-info">
-									<h3 class="name">Nome prodotto</h3>
-									<button>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-									</button>
-									<p class="price">€49,90</p>
+						<div class="box">
+							<div class="order-info">
+								<div class="row">
+									<div class="delivery-number">
+										<p>Ordine n°</p>
+										<span>SAM0045210093</span>
+									</div>
+									<div class="date">
+										<p>Data ordine</p>
+										<span>27/06/2022</span>
+									</div>
+									<div class="total-price">
+										<p>Totale</p>
+										<span>€49,90</span>
+									</div>
+									<div class="order-details">
+										<button class="active-basic-button">Dettagli ordine</button>
+									</div>
 								</div>
 							</div>
-							<div class="single-product">
-								<div class="picture">
-									<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
+							<hr>
+							<div class="loop">
+								<div class="row">
+									<div class="picture">
+										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
+									</div>
+									<div class="product-info">
+										<div class="column">
+											<h3 class="name">Nome prodotto</h3>
+											<button class="stars">
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+											</button>
+											<p class="price">€49,90</p>
+										</div>
+									</div>
 								</div>
-								<div class="product-info">
-									<h3 class="name">Nome prodotto</h3>
-									<button>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-										<i class="fa-regular fa-star"></i>
-									</button>
-									<p class="price">€49,90</p>
+								<div class="row">
+									<div class="picture">
+										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
+									</div>
+									<div class="product-info">
+										<div class="column">
+											<h3 class="name">Nome prodotto</h3>
+											<button class="stars">
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+											</button>
+											<p class="price">€49,90</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="picture">
+										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
+									</div>
+									<div class="product-info">
+										<div class="column">
+											<h3 class="name">Nome prodotto</h3>
+											<button class="stars">
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+												<i class="fa-regular fa-star"></i>
+											</button>
+											<p class="price">€49,90</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

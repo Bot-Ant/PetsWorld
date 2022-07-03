@@ -17,10 +17,10 @@
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
-	<div class="user-content">
+	<div id="user-content">
 		<jsp:include page="./static/templates/userNav.html"/>
-		<div class="data-panel">
-			<div class="welcome">
+		<div id="data-panel">
+			<div id="user-page-header">
 				<h1>My petsworld</h1>
 				<p>
 					Ciao [nome utente], benvenuto nel tuo spazio personale.

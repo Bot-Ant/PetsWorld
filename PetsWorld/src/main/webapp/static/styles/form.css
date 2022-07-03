@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* Reset any graphic element and display the forms in a central column with flexbox */
+.form-container{
+	margin: 0;
+    padding: 50px 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--neutral-color-2);
+}
+/* Style a form rectangle with a static dimension */
+.form-box {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	margin: 0 0 50px 0;
+	padding: 30px;
+	border-radius: 15px;
+	border: 3px solid var(--main-color);
+	background-color: var(--neutral-color-2);
+	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+/* Reset margin and padding for better centred content */
+.form-section {
+	margin: 0;
+	padding: 0;
+}
+/* Allign the text of the forms to the left */
+.fields {
+	text-align: left;
+}
+/* Add a margin on top and bottom of the single field name */
+.field-name {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	/*text-align: left;*/
+}
+/* Add a margin on top and bottom of the single field name */
+.field-content {
+	font-weight: normal;
+}
+/* Set the style of the list of fields without decoration */
+.form-section ul {
+	padding: 0;
+	text-align: center;
+	list-style: none;
+}
+/* Add a margin for the list item containing a form field */
+.form-section ul li {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.form-section ul li p {
+	margin-top: 0;
+	font-size: 0.8em;
+	color: var(--accent-color);
+}
+/* Style the buttons inside the form */
+.form-section > button[type=submit] {
+	padding: 15px 15px;
+	margin: 10px 0px;
+	width: 100%;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	color: white;
+	background-color: var(--accent-color);
+}
+/* Change the button color when the cursor is on it */
+.form-section > button[type=submit]:hover {
+	background-color: var(--accent-color-dark);
+}
+/* Set the style of a link inside a form without decoration */
+p a {
+	text-decoration: none;
+	color: var(--main-color);
+}
+/* Change the color of the link when the cursor is on it*/
+p a:hover {
+	color: var(--accent-color);
+}
+/* Set the style of the form element separator to take all space avaliable */
+.form-box hr {
+	color: var(--main-color);
+}
+
+.login-error {
+	margin-bottom: 30px;
+	padding: 30px;
+	width: 500px;
+	border-radius: 15px;
+	border: 2px solid var(--accent-color-dark);
+	color: var(--accent-color-dark);
+	background-color: var(--transparent);
+	box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+.login-error p {
+	margin: 0;
+}
+
+.login-error h3 {
+	margin-top: 0;
+}
+
+.login-message-container {
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-message-container h1 {
+	color: var(--main-color); 
+	margin-top: 50px; 
+	text-align: center;
+}
+
+.login-message-container button {
+	padding: 0;
+	margin: 0;
+	border: none;
+	cursor: pointer;
+	font-size: medium;
+	color: var(--main-color);
+	background-color: var(--neutral-color-2);
+}
