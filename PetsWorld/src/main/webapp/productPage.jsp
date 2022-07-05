@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" import="java.util.*, model.beans.* , java.lang.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,9 @@
 		Prodotto prodotto= new Prodotto();
 		prodotto= (Prodotto) request.getAttribute("prodotto");
 	%>
-	
+	<c:forEach items="${foto}" var="ft">
+	<img src="./static/images/${ft.foto}" alt="immagine prodotto">
+	</c:forEach>
 	<div class="product-page-content">
 		<div class="product-top-row">
 			<div class="product-images">
