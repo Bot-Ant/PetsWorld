@@ -31,7 +31,6 @@
 			<div class="catalog-top">
 			<%
 				String animale=request.getParameter("animale");
-				System.out.println(animale);
 				switch(animale)
 				{
 				
@@ -86,7 +85,7 @@
 						<div class="image-container">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 								<button type="submit" name="id" value="${prd.idProdotto}">
-									<img src="./static/images/${prd.foto}" alt="immagine prodotto">
+									<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
 								</button>
 							</form>						
 						</div>
