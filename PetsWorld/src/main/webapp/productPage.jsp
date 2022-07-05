@@ -44,11 +44,11 @@
 				<div class="product-parameter">
 					<div class="product-modifiers">
 						<div class="product-quantities">
-							<button class="left">-</button>
+							<button class="active-basic-button left">-</button>
 							<div class="quantities">
 								<p id="">1</p>
 							</div>
-							<button class="right">+</button>
+							<button class="active-basic-button right">+</button>
 						</div>
 					</div>
 				</div>
