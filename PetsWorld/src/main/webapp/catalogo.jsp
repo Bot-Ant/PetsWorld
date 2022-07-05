@@ -29,9 +29,55 @@
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-			<c:forEach items="${prodotto}" var="prd">
-                <jsp:include page="./static/templates/catalogHeader${prd.animale}.html"/>
-                </c:forEach>
+			<%
+				String animale=request.getParameter("animale");
+				System.out.println(animale);
+				switch(animale)
+				{
+				
+				case "cane": {
+			%>
+                <jsp:include page="./static/templates/catalogHeadercane.html"/>
+			<%
+				break;
+			    }
+			    	
+			    case "gatto": {
+			 %>           
+                <jsp:include page="./static/templates/catalogHeadergatto.html"/>
+
+			 <%
+			  	break;
+			    }
+		    	
+			    case "pesci": { 
+			 %>           
+                <jsp:include page="./static/templates/catalogHeaderpesci.html"/>
+
+			 <%	
+			 	break;
+			    }
+			    
+			 	case "piccoliAnimali": {
+					%>
+	                <jsp:include page="./static/templates/catalogHeaderpiccolianimali.html"/>
+			 <%
+				break;
+				}
+				    	
+			    case "volatili" : {
+			 %>
+				  <jsp:include page="./static/templates/catalogHeadervolatili.html"/>
+			 <%
+				break;
+			    }
+			    
+			    case "null" :{
+			    }
+			    break;
+				}
+			 %>
+				
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
@@ -44,7 +90,7 @@
 								</button>
 							</form>						
 						</div>
-						<h3 class="name">${prd.nome}</h3>
+	<h3 class="name">${prd.nome}</h3>
 						<div class="text-container">
 							<h2 class="price">€${prd.prezzo}</h2>
               				<div class="add-to-cart">
