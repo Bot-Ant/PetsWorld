@@ -4,7 +4,6 @@
  
  function aggiungiAlCarrelloDaIndex(id, sezione)
 	{
-				console.log("ciao");
 			    var url = "ServletCarrello" + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto e sezione
 				//var url = 'ServletCarrello?id=' + encodeURIComponent(id);
 				var xhr = new XMLHttpRequest();
@@ -36,3 +35,4 @@
 				xhr.open("GET",url,true);
 				xhr.send(null);
 	}
+	

@@ -81,7 +81,6 @@
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
-
 						<div class="image-container">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
 								<button type="submit" name="id" value="${prd.idProdotto}">
