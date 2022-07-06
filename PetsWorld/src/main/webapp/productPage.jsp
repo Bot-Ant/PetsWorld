@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
-	<script type="text/javascript" src="./static/scripts/cart.js"></script>
+	<script type="text/javascript" src="./static/scripts/cartProductPage.js"></script>
 
 	<header>
 		<!-- Standard header -->
@@ -25,15 +25,15 @@
 		Prodotto prodotto= new Prodotto();
 		prodotto= (Prodotto) request.getAttribute("prodotto");
 	%>
-	<c:forEach items="${foto}" var="ft">
-	<img src="./static/images/${ft.foto}.webp" alt="immagine prodotto">
-	</c:forEach>
+	
 	<div class="product-page-content">
 		<div class="product-top-row">
 			<div class="product-images">
-				<img src="./static/images/<%=prodotto.getFoto() %>.webp" alt="Immagine Prodotto">
+				<c:forEach items="${foto}" var="ft">
+				<img src="./static/images/${ft.foto}.webp" alt="immagine prodotto">
+				</c:forEach>			
 			</div>
-			<div class="product-info" action="">
+			<div class="product-info">
 				<h1 class="product-name"><%=prodotto.getNome()%></h1>				
 				<h2 class="product-price">€<%=prodotto.getPrezzo()%></h2>
 				<p id="product-availability">Disponibile</p>
@@ -44,16 +44,25 @@
 				<div class="product-parameter">
 					<div class="product-modifiers">
 						<div class="product-quantities">
-							<button class="left">-</button>
-							<div class="quantities">
-								<p id="">1</p>
+						
+							<%
+							HttpSession sessione = request.getSession(false);
+							sessione.setAttribute("quantita_product_page", new Integer(1));
+							int quantita = ((Integer)session.getAttribute("quantita_product_page")).intValue();
+							%>
+															
+							<button class="left" onclick="DiminuzioneQuantita('<%=prodotto.getIdProdotto()%>', 'diminuzione')">-</button>
+							<div class="quantities">								
+								<p id="quantita"><%=quantita%></p>
 							</div>
-							<button class="right">+</button>
+							<button class="right" onclick="AumentoQuantita('<%=prodotto.getIdProdotto()%>', 'aumento')">+</button>
 						</div>
+						<p id="demo"></p>
+						<p id="demo_1"></p>
 					</div>
 				</div>
-				<div class="add-to-cart" action="">
-					<button type="submit" name="id" value="<%=prodotto.getIdProdotto()%>" onclick="aggiungiAlCarrello('<%=prodotto.getIdProdotto()%>')">Aggiungi al carrello</button>
+				<div class="add-to-cart">
+					<button type="submit" name="id" value="<%=prodotto.getIdProdotto()%>" onclick="AggiungiAlCarrello('<%=prodotto.getIdProdotto()%>', 'acquisto')">Aggiungi al carrello</button>
 				</div>
 			</div>
 		</div>
