@@ -86,6 +86,7 @@ public class ServletAcquistaProdotto extends HttpServlet {
 					{
 						quantita=prodotti.get(i).getQuantita() + quantity;
 						prodotti.get(i).setQuantita(quantita);
+						carrello.setPrezzoTotale(prodotto.getPrezzo()*quantity);	
 						break;
 					}
 					else
@@ -102,14 +103,13 @@ public class ServletAcquistaProdotto extends HttpServlet {
 				{
 					prodotto.setQuantita(quantity);
 					carrello.addProdotto(prodotto);
+					carrello.setPrezzoTotale(prodotto.getPrezzo()*quantity);	
 				}
 				else
 				{
 					esaurimento=1;
 				}
 			}
-
-			carrello.setPrezzoTotale(prodotto.getPrezzo()*quantity);	
 			
 			JSONObject json = new JSONObject();
 			json.put("number", carrello.getQuantita());
