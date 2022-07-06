@@ -43,19 +43,19 @@
 				</div>
 				<div class="product-parameter">
 					<div class="product-modifiers">
-						<div class="product-quantities">
-						
+						<div class="product-quantities">	
+            
 							<%
 							HttpSession sessione = request.getSession(false);
 							sessione.setAttribute("quantita_product_page", new Integer(1));
 							int quantita = ((Integer)session.getAttribute("quantita_product_page")).intValue();
 							%>
 															
-							<button class="left" onclick="DiminuzioneQuantita('<%=prodotto.getIdProdotto()%>', 'diminuzione')">-</button>
+							<button class="active-basic-button left" onclick="DiminuzioneQuantita('<%=prodotto.getIdProdotto()%>', 'diminuzione')">-</button>
 							<div class="quantities">								
 								<p id="quantita"><%=quantita%></p>
 							</div>
-							<button class="right" onclick="AumentoQuantita('<%=prodotto.getIdProdotto()%>', 'aumento')">+</button>
+							<button class="active-basic-button right" onclick="AumentoQuantita('<%=prodotto.getIdProdotto()%>', 'aumento')">+</button>
 						</div>
 						<p id="demo"></p>
 						<p id="demo_1"></p>
