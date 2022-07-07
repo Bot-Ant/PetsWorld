@@ -8,18 +8,18 @@ public class MetodoPagamento implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String email;
+	private int IdUtente;
 	private String tipo;
 	private String numero;
 	private String proprietario;
 	private String dataScadenza;
 	private String codice;
 
-	public String getEmail() {
-		return email;
+	public int getIdUtente() {
+		return IdUtente;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setIdUtente(int idUtente) {
+		IdUtente = idUtente;
 	}
 	public String getTipo() {
 		return tipo;
@@ -53,7 +53,8 @@ public class MetodoPagamento implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "MetodoPagamento [email=" + email + ", tipo=" + tipo + ", numero=" + numero + ", proprietario="
+		return "MetodoPagamento [IdUtente=" + IdUtente + ", tipo=" + tipo + ", numero=" + numero + ", proprietario="
 				+ proprietario + ", dataScadenza=" + dataScadenza + ", codice=" + codice + "]";
 	}
+	
 }
