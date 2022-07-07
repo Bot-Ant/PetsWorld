@@ -8,18 +8,18 @@ public class Indirizzo implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String email;
+	private int IdUtente;
 	private String citta;
 	private String nome_strada;
 	private String civico;
 	private String CAP;
 	private String provincia;
 	
-	public String getEmail() {
-		return email;
+	public int getIdUtente() {
+		return IdUtente;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setIdUtente(int idUtente) {
+		IdUtente = idUtente;
 	}
 	public String getCitta() {
 		return citta;
@@ -53,8 +53,8 @@ public class Indirizzo implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Indirizzo [email=" + email + ", citta=" + citta + ", nome_strada=" + nome_strada + ", civico=" + civico
-				+ ", CAP=" + CAP + ", provincia=" + provincia + "]";
+		return "Indirizzo [IdUtente=" + IdUtente + ", citta=" + citta + ", nome_strada=" + nome_strada + ", civico="
+				+ civico + ", CAP=" + CAP + ", provincia=" + provincia + "]";
 	}
 	
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="order-content">	
-		<form id="data-panel">
+		<form id="data-panel" method="GET" action = "ServletOrdine" >
 			<header>
 				<!-- Standard header -->
 				<jsp:include page="./formHeader.jsp"/>
@@ -54,7 +54,7 @@
 						<p>Salva indirizzo</p>
 						<input type="checkbox" name="" id="">
 					</div>
-					<button class="active-basic-button" id="confirm-shipping">Conferma indirizzo</button>
+					<button class="active-basic-button" id="confirm-shipping" onclick="">Conferma indirizzo</button>
 				</div>
 			</div>
 			<div class="box" id="payment-method-box">
@@ -78,18 +78,22 @@
 				</div>
 				<div class="row">
 					<div class="field">
+						<label for="tipo-carta">Tipo</label>
+						<input class="input-field" type="text" required name="tipo-carta" placeholder="" id="tipo-carta">
+					</div>
+					<div class="field">
 						<label for="numero-carta">Numero</label>
 						<input class="input-field" type="text" required name="numero-carta" placeholder="" id="numero-carta">
 					</div>
 				</div>
 				<div class="row">
 					<div class="field">
-						<label for="data-scadenza">Data</label>
+						<label for="data-scadenza">Data Scadenza</label>
 						<input class="input-field" type="text" required name="data-scadenza" placeholder="" id="data-scadenza">
 					</div>
 					<div class="field">
-						<label for="ccv">CCV</label>
-						<input class="input-field" type="text" required name="ccv" placeholder="" id="ccv">
+						<label for="ccv">CVV</label>
+						<input class="input-field" type="text" required name="cvv" placeholder="" id="ccv">
 					</div>
 				</div>
 				<div class="row">
