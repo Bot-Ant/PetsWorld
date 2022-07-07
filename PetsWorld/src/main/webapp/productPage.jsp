@@ -33,11 +33,22 @@
 			<div class="product-info" action="">
 				<h1 class="product-name"><%=prodotto.getNome()%></h1>				
 				<h2 class="product-price">€<%=prodotto.getPrezzo()%></h2>
-				<p id="product-availability">Disponibile</p>
-				<p class="parameter-tag">Quantità</p>
-				<div class="main-elements">
-
+				<p class="parameter-tag">Dettagli</p>
+				<div id="product-distinct-info" class="row">
+					<div id="prod-weight" class="product-data-box">
+						12KG
+					</div>
+					<div id="prod-size" class="product-data-box-missing">
+						VUOTO
+					</div>
+					<div id="prod-color" class="product-data-box-missing">
+						VUOTO
+					</div>
+					<div id="prod-expiry-date" class="product-data-box">
+						Scadenza 2025/04/10
+					</div>
 				</div>
+				<p class="parameter-tag">Quantità</p>
 				<div class="product-parameter">
 					<div class="product-modifiers">
 						<div class="product-quantities">
@@ -49,6 +60,7 @@
 						</div>
 					</div>
 				</div>
+				<p id="product-availability">Disponibile</p>
 				<div class="add-to-cart" action="">
 					<button type="submit" name="id" value="<%=prodotto.getIdProdotto()%>" onclick="aggiungiAlCarrello('<%=prodotto.getIdProdotto()%>')">Aggiungi al carrello</button>
 				</div>
