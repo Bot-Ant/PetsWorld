@@ -60,7 +60,9 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-										<img src="./static/images/${prd.fotografia.foto}.webp" alt="immagine prodotto">
+
+										<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
+
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
 										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</div>
@@ -87,7 +89,9 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-										<img src="./static/images/${prd.fotografia.foto}.webp" alt="immagine prodotto">
+
+										<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
+
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
 										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</div>
@@ -114,7 +118,9 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-										<img src="./static/images/${prd.fotografia.foto}.webp" alt="immagine prodotto">
+
+										<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
+
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
 										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
 									</div>

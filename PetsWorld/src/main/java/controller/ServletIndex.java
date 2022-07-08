@@ -38,9 +38,11 @@ public class ServletIndex extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("removal")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
 		sessione.setAttribute("carrello", new Carrello());
+		sessione.setAttribute("quantita_product_page", new Integer(1));
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
 		requestDispatcher.forward(request, response);
 	}

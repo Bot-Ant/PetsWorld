@@ -29,28 +29,73 @@
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-			<c:forEach items="${prodotto}" var="prd">
-                <jsp:include page="./static/templates/catalogHeader${prd.animale}.html"/>
-                </c:forEach>
+			<%
+				String animale=request.getParameter("animale");
+				switch(animale)
+				{
+				
+				case "cane": {
+			%>
+                <jsp:include page="./static/templates/catalogHeadercane.html"/>
+			<%
+				break;
+			    }
+			    	
+			    case "gatto": {
+			 %>           
+                <jsp:include page="./static/templates/catalogHeadergatto.html"/>
+
+			 <%
+			  	break;
+			    }
+		    	
+			    case "pesci": { 
+			 %>           
+                <jsp:include page="./static/templates/catalogHeaderpesci.html"/>
+
+			 <%	
+			 	break;
+			    }
+			    
+			 	case "piccoliAnimali": {
+					%>
+	                <jsp:include page="./static/templates/catalogHeaderpiccolianimali.html"/>
+			 <%
+				break;
+				}
+				    	
+			    case "volatili" : {
+			 %>
+				  <jsp:include page="./static/templates/catalogHeadervolatili.html"/>
+			 <%
+				break;
+			    }
+			    
+			    case "null" :{
+			    }
+			    break;
+				}
+			 %>
+				
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
-						<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
-							<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
-								<div class="image-container">
-									<img src="./static/images/${prd.fotografia.foto}.webp" alt="immagine prodotto">
-									<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
-									<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-								</div>
-								<h3 class="name">${prd.nome}</h3>
-								<div class="text-container">
-									<h2 class="price">€${prd.prezzo}</h2>
-								</div>
-							</button>
-						</form>
-						<div class="add-to-cart">
-							<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+						<div class="image-container">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
+								<button type="submit" name="id" value="${prd.idProdotto}">
+									<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
+								</button>
+							</form>						
+						</div>
+	<h3 class="name">${prd.nome}</h3>
+						<div class="text-container">
+							<h2 class="price">€${prd.prezzo}</h2>
+              				<div class="add-to-cart">
+						    	<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
+							</div>
+							<p id="${prd.idProdotto}_demo"></p>
+
 						</div>
 					</div>
 				</c:forEach>

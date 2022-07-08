@@ -10,7 +10,7 @@ public class MetodoPagamentoExtractor implements ResultSetExtractor<MetodoPagame
 
     public MetodoPagamento extract(ResultSet resultSet) throws SQLException{
     	MetodoPagamento MetodoPagamento=new MetodoPagamento();
-    	MetodoPagamento.setEmail(resultSet.getString("metodo_pagamento.email"));
+    	MetodoPagamento.setIdUtente(resultSet.getInt("metodo_pagamento.IDutente"));
     	MetodoPagamento.setTipo(resultSet.getString("metodo_pagamento.tipo"));
         MetodoPagamento.setNumero(resultSet.getString("metodo_pagamento.numero"));
         MetodoPagamento.setProprietario(resultSet.getString("metodo_pagamento.proprietario"));

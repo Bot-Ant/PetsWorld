@@ -58,7 +58,7 @@
 					{
 					%>
 					<div class="product-line" id="<%=prodotti.get(i).getIdProdotto()%>">
-						<img src="./static/images/<%=prodotti.get(i).getFotografia()%>" alt="<%=prodotti.get(i).getFotografia()%>">
+						<img src="./static/images/<%=prodotti.get(i).getFoto()%>.webp" alt="<%=prodotti.get(i).getFoto()%>.webp">
 						<div class="product-name">
 							<h2><%=prodotti.get(i).getNome()%></h2>
 							<p>
@@ -69,7 +69,7 @@
 						<div class="product-values">
 							<div class="product-modifiers">
 								<div class="product-quantities">
-                  					<button class="trash"onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')"><i class="fa-solid fa-trash fa-2x"></i></button>
+                  					<button class="trash" onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')"><i class="fa-solid fa-trash fa-2x"></i></button>
 									<button class="active-basic-button left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
 									<div class="quantities">
 										<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>

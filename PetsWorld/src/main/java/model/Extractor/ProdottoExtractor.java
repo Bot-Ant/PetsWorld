@@ -11,6 +11,7 @@ public class ProdottoExtractor implements ResultSetExtractor<Prodotto> {
     public Prodotto extract(ResultSet resultSet) throws SQLException{
     	Prodotto prodotto=new Prodotto();
     	prodotto.setIdProdotto(resultSet.getInt("prd.idprodotto"));
+    	prodotto.setFoto(resultSet.getString("prd.foto"));
     	prodotto.setNome(resultSet.getString("prd.nome"));
     	prodotto.setTipo(resultSet.getString("prd.tipo"));
     	prodotto.setPrezzo(resultSet.getDouble("prd.prezzo"));
