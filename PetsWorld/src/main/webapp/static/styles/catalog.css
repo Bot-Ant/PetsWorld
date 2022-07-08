@@ -311,3 +311,24 @@
     margin-top: 0;
     font-size: 2em;
 }
+
+
+
+.product-page-content #product-distinct-info{
+    justify-items: start;
+}
+
+.product-page-content .product-data-box {
+    margin: 10px 20px 10px 0;
+	padding: 10px;
+	border-radius: 20px;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+	color: var(--neutral-color-2);
+	background-color: var(--main-color);
+}
+
+.product-page-content .product-data-box-missing {
+    display: none;
+}

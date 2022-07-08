@@ -107,7 +107,19 @@
 					var totaleElementi = response.totale;
 					if(totaleElementi == 0)
 					{
-						document.getElementById("full").innerHTML ="<h1>il carrello è vuoto</h1>";
+						const newchild = document.createElement("div");
+
+            			newchild.setAttribute("id", "empty");
+            			const h1 = document.createElement("h1");
+            			h1.innerHTML = "Il carrello è vuoto"
+            			const p = document.createElement("p");
+            			p.innerHTML = "Aggiungi prodotti al carrello per visualizzarli in questa sezione."
+            			newchild.appendChild(h1);
+           				newchild.appendChild(p);
+
+            			const parent = document.getElementById("cart-content");
+            			const oldchild = document.getElementById("full");
+            			parent.replaceChild(newchild, oldchild);
 					}
 				}
 			}

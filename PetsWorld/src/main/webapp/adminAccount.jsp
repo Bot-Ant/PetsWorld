@@ -3,18 +3,26 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Admin account page</title>
+	<title>Sezione Admin</title>
 </head>
 <body>
-	<header>
-		<!-- Standard header -->
-		<jsp:include page="./adminHeader.jsp"/>
-	</header>
-	<div class="admin-content">
-		<h1>Benvenuto nella tua sezione da admin</h1>
-		<p>
-			anche oggi domani ci 
-		</p>
+	<div id="admin-page">
+		<header>
+			<jsp:include page="./adminHeader.jsp"/>
+		</header>
+		<div id="admin-page-content" class="column">
+			<h1>Benvenuto nella tua sezione da admin</h1>
+			<div id="admin-info" class="box">
+				<div class="row">
+					<h1>mypetsworld 0000000001</h1>
+				</div>
+				<p>dati personali</p>
+			</div>
+		</div>
 	</div>
+	<script src="./static/scripts/admin.js"></script>
+	<script>
+		setAdminSectionActive("admin-info-link");
+	</script>
 </body>
 </html>

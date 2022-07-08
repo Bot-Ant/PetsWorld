@@ -150,7 +150,14 @@ hr {
 	box-shadow: 0 4px 4px 0 var(--shadow-color), 0 4px 20px 0 var(--shadow-color);
 }
 
+.box > h1 {
+    margin-top: 0;
+    margin-left: 0;
+}
 
+
+
+/* style of index.jsp */
 
 .home-content {
     margin: 0;

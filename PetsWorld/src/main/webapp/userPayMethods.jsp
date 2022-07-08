@@ -35,7 +35,7 @@
 						<div class="row">
 							<div class="pay-method-data">
 								<h3 class="pay-method-name">Numero_carta</h3>
-								<p>Proprietario </p>
+								<p>Proprietario</p>
 								<p>Data_scadenza</p>
 							</div>
 							<button class="active-edit-button">Modifica</button>
@@ -49,5 +49,10 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
+	<script type="text/javascript" src="./static/scripts/page.js"></script>
+	<script type="text/javascript" src="./static/scripts/user.js"></script>
+	<script>
+		setUserSectionActive("user-payments");
+	</script>
 </body>
 </html>

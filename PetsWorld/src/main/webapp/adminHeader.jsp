@@ -18,19 +18,15 @@
 </head>
 <body>
 	<!-- Extended version of the header, visible when the window is large -->
-	<div id="extended-header">
-		<!-- Elements in the top bar of the header -->
-		<div class="admin-header">
-			<div class="logo-box">
-				<a href="index.jsp">
-					<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
-				</a>
-			</div>
-			<jsp:include page="./adminNavbar.jsp"/>
-			<div class="header-buttons">
-				<a href="./adminAccount.jsp">Account <i class="fa-solid fa-user fa-xl"></i></a>
-			</div>
+	<div id="extended-header" class="admin-header">
+		<div class="logo-box">
+			<a href="index.jsp">
+				<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
+			</a>
 		</div>
+		<nav>
+			<jsp:include page="./adminNavbar.jsp"/>
+		</nav>
 	</div>
 	<!-- Condensed version of the header, visible when the window is small -->
 	<div id="condensed-header">
