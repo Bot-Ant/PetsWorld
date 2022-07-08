@@ -35,7 +35,7 @@
 						<div class="row">
 							<div class="pay-method-data">
 								<h3 class="pay-method-name">Numero_carta</h3>
-								<p>Proprietario </p>
+								<p>Proprietario</p>
 								<p>Data_scadenza</p>
 							</div>
 							<button class="active-edit-button">Modifica</button>

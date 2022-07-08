@@ -1,16 +1,238 @@
 @charset "UTF-8";
 
-.admin-header {
+/* style of all admin pages */
+
+#admin-page {
     margin: 0;
     padding: 0;
-    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+}
+
+#admin-page-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#admin-page header {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
     background-color: var(--main-color);
+}
+
+.admin-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-header nav {
+    width: 100%;
 }
 
 .admin-header .logo {
     border-radius: 4px;
     background-color: var(--light);
+}
+
+
+
+/* style of adminNavbar.jsp */
+
+#admin-page .logo-box {
+    margin: 10px 0;
+}
+
+#admin-nav {
+    margin: 0;
+    padding: 0;
+    width: 320px;
+    flex-direction: column;
+}
+
+#admin-nav li {
+    margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+    width: 100%;
+    color: var(--light);
+}
+
+#admin-nav li .row {
+    align-items: center;
+}
+
+#admin-nav .link {
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 240px;
+	cursor: pointer;
+}
+
+#admin-nav .link:hover {
+    background-color: var(--main-color-light);
+} 
+
+#admin-nav .link a {
+    margin: 0;
+}
+
+#admin-nav i {
+    margin: 5px;
+	height: 28px;
+	width: 28px;
+	display: flex;
+}
+
+#admin-nav i::before {
+	margin: auto;
+}
+
+.user-nav hr {
+	border: 0;
+	margin: 12px 0;
+}
+
+#admin-nav h3 {
+	margin: 0;
+}
+
+#admin-nav a {
+	margin: 5px;
+    text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    color: var(--neutral-color-2);
+}
+
+#admin-nav .active-link {
+	cursor: pointer;
+	font-size: 1.2em;
+	font-weight: bold;
+    border-radius: 10px;
+	color: var(--main-color);
+    background-color: var(--neutral-color-2);
+}
+
+#admin-nav .active-link a {
+	color: var(--main-color);
+    background-color: var(--neutral-color-2);
+}
+
+
+
+/* style of adminProducts.jsp */
+#admin-page-content > h1 {
+    margin: 10px 20px;
+}
+
+#products-list .product-info-line {
+    height: auto;
+    width: 100%;
+}
+
+#products-list .product-info-line img {
+    height: 60px;
+}
+
+#products-list .inactive {
+    font-size: 1.3em;
+    box-shadow: none;
+    background-color: var(--transparent);
+    pointer-events: none;
+}  
+
+#products-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}  
+
+#products-list .voice {
+    margin: 0 10px;
+}  
+
+#products-list .first {
+    margin-left: 0;
+}
+
+#products-list .last {
+    margin-right: 0;
+}
+
+#products-list .size-s {
+    width: 50px;
+}
+
+#products-list .size-m {
+    width: 70px;
+}
+
+#products-list .size-l {
+    width: 120px;
+}
+
+#products-list .size-xl {
+    width: 140px;
+}
+
+#products-list .size-auto {
+    margin-right: auto;
+}
+
+
+/* style of adminNewProduct.jsp */
+#catalog-new-product> .row{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#catalog-new-product> .column{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#product-selection-boxes .selection-box {
+    margin: 0 auto;
+}
+
+#catalog-new-product .left {
+    margin-left: 0px;
+    margin-right: auto;
+    width: auto;
+}
+
+#catalog-new-product .middle {
+    margin: 0 auto;
+    width: auto;
+}
+
+#catalog-new-product .right {
+    margin-left: auto;
+    margin-right: 0px;
+    width: auto;
+}
+
+#product-description-section input {
+    height: 100px;
+    text-align: start;
+    text-justify: initial;
+}
+
+#catalog-new-product #product-add-button {
+    margin: 0;
+}
+
+#catalog-new-product #product-add-button button {
+    margin-left: auto;
+    justify-self: end;
 }

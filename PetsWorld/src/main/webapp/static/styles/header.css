@@ -33,7 +33,6 @@
 .logo-box {
     all:unset;
     display: flex;
-    align-self: center;
     align-items: center;
 }
 
