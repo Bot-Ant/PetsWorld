@@ -26,7 +26,7 @@
 	
 	<div id="product-page-content">
 		<div id="product-top" class="row">
-			<img id="product-image" src="./static/images/<%=prodotto.getFoto()%>.webp" alt="immagine prodotto">
+			<img id="product-image" src="./static/images/<%=prodotto.getFoto()%>.png" alt="immagine prodotto">
 			<div id="product-info" class="box">
 				<h1 class="product-name"><%=prodotto.getNome()%></h1>				
 				<h2 class="product-price">€<%=prodotto.getPrezzo()%></h2>

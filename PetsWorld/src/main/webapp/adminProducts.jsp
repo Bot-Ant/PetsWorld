@@ -26,7 +26,7 @@
 									<input type="text" id="id-product-code" class="input-field inactive" name="product-code" value="id_del_prodotto">
 								</li>
 								<li class="voice size-m">
-									<img src="./static/images/cucciaPerCani.jpg" alt="Foto prodotto">
+									<img src="./static/images/product-0-pic-0.png" alt="Foto prodotto">
 								</li>
 								<li class="size-auto">
 									<h3>Nome prodotto</h3>
