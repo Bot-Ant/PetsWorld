@@ -60,29 +60,30 @@
 								{
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
-				<a class="esperimento" href="<%=urlcarrello%>">
-					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"><%=carrello.getQuantita()%></p>
-				</a>
+
 				<a id="cart-icon-link" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
 				</a>
 				<a href="<%=urlutente%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
+
 				<%	
 								}
 								else if(utente.isRuolo() == 1)
 								{
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
+
 				<a href="<%=urladmin%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
+				
 				<%
 								}
 							}
 						}
 					}
 				%>
+				
 			</div> 
 		</div>
 	</div>
