@@ -104,7 +104,7 @@
 				</div>
 			</div>
 			<div class="price-panel">
-				<div class="price-box">
+				<div id="price-box" class="box">
 					<h1>Totale</h1>
 					<div class="single-voice">
 						<p>

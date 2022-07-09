@@ -15,18 +15,13 @@
 	<link rel="stylesheet" href="./static/styles/banner.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
 </head>
-<body>
-	<script type="text/javascript" src="./static/scripts/cartIndex.js"></script>
-		
+<body>	
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
 	</header>
-
 	<div class="home-content">
-		<!-- Banner with news and sales -->
-		
-		 
+		<!-- Banner with news and sales --> 
 		<div class="banner-container">
 			<div class="banner">
 				<i class="fa-solid fa-chevron-left" id="prevbtn"></i>
@@ -60,7 +55,6 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-
 										<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
 
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
@@ -89,7 +83,6 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-
 										<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
 
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
@@ -118,7 +111,6 @@
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
 									<div class="image-container">
-
 										<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
 
 										<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
@@ -144,6 +136,6 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-
+	<script type="text/javascript" src="./static/scripts/index.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /**
  * 
  */
- 
+
  function funzionePiu(id)
 	{
 		var url = "AumentoProdottoCarrello" + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
@@ -24,7 +24,7 @@
 							document.getElementById(stringa2).innerHTML = "";
 						}
 					document.getElementById(stringa).innerHTML=response.quantita;
-					document.getElementById("quantita_carrello").innerHTML = response.totale;
+					updateCartBadgeValue(response.totale);
 					var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
 					document.getElementById("subtotale").innerHTML = " &euro;" + prezzo;
 					if (prezzo < 50)
@@ -58,7 +58,7 @@
 					var stringa2=response.riferimento2;
 					document.getElementById(stringa2).innerHTML = "";
 					document.getElementById(stringa).innerHTML=response.quantita;
-					document.getElementById("quantita_carrello").innerHTML = response.totale;
+					updateCartBadgeValue(response.totale);
 					var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
 					document.getElementById("subtotale").innerHTML = " &euro;"+prezzo;
 					if (prezzo < 50)						{
@@ -89,7 +89,7 @@
 					var response = JSON.parse(xhr.responseText);
 					var stringa= response.riferimento;
 					document.getElementById(stringa).remove();
-					document.getElementById("quantita_carrello").innerHTML = response.totale;
+					updateCartBadgeValue(response.totale);
 					var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
 					document.getElementById("subtotale").innerHTML = " &euro;"+prezzo;
 					if (prezzo < 50)
@@ -138,7 +138,7 @@
 							if(xhr.readyState == 4 && xhr.status == 200)
 							{
 								var response = JSON.parse(xhr.responseText); //stringa che contiene la risposta da parte del server
-								document.getElementById("quantita_carrello").innerHTML = response.number;
+								updateCartBadgeValue(response.number);
 								var stringa=response.riferimento;
 								if(response.esaurimento==1)
 									{
