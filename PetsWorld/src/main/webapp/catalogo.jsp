@@ -36,14 +36,14 @@
 				
 				case "cane": {
 			%>
-                <jsp:include page="./static/templates/catalogHeadercane.html"/>
+                <jsp:include page="./static/templates/catalogHeader_cane.html"/>
 			<%
 				break;
 			    }
 			    	
 			    case "gatto": {
 			 %>           
-                <jsp:include page="./static/templates/catalogHeadergatto.html"/>
+                <jsp:include page="./static/templates/catalogHeader_gatto.html"/>
 
 			 <%
 			  	break;
@@ -51,7 +51,7 @@
 		    	
 			    case "pesci": { 
 			 %>           
-                <jsp:include page="./static/templates/catalogHeaderpesci.html"/>
+                <jsp:include page="./static/templates/catalogHeader_pesci.html"/>
 
 			 <%	
 			 	break;
@@ -59,14 +59,14 @@
 			    
 			 	case "piccoliAnimali": {
 					%>
-	                <jsp:include page="./static/templates/catalogHeaderpiccolianimali.html"/>
+	                <jsp:include page="./static/templates/catalogHeader_piccolianimali.html"/>
 			 <%
 				break;
 				}
 				    	
 			    case "volatili" : {
 			 %>
-				  <jsp:include page="./static/templates/catalogHeadervolatili.html"/>
+				  <jsp:include page="./static/templates/catalogHeader_volatili.html"/>
 			 <%
 				break;
 			    }
@@ -81,21 +81,22 @@
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
 					<div class="product-box">
-						<div class="image-container">
-							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get"> 
-								<button type="submit" name="id" value="${prd.idProdotto}">
+						<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+							<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+								<div class="image-container">
 									<img src="./static/images/${prd.foto}.webp" alt="immagine prodotto">
-								</button>
-							</form>						
-						</div>
-	<h3 class="name">${prd.nome}</h3>
-						<div class="text-container">
-							<h2 class="price">€${prd.prezzo}</h2>
-              				<div class="add-to-cart">
-						    	<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
-							</div>
-							<p id="${prd.idProdotto}_demo"></p>
 
+									<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+									<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
+								</div>
+								<h3 class="name">${prd.nome}</h3>
+								<div class="text-container">
+									<h2 class="price">€${prd.prezzo}</h2>
+								</div>
+							</button>
+						</form>
+						<div class="add-to-cart">
+							<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 						</div>
 					</div>
 				</c:forEach>
