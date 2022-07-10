@@ -116,7 +116,7 @@
 			<h1>Sommario</h1>
 			<div class="loop">
 				<div class="row">
-					<img src="" alt="foto prodotto">
+					<img src="./static/images/product-0-pic-0.png" alt="foto prodotto">
 					<p>[nome]</p>
 					<p>[prezzo]</p>
 					<p>[quantità]</p>

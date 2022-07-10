@@ -29,7 +29,7 @@
 			<div class="bar-center">
 				<jsp:include page="./searchbar.jsp"/>
 			</div>
-			<div class="header-buttons">
+			<div id="header-buttons">
 				<%
 					Utente utente = new Utente();
 					Carrello carrello= new Carrello();
@@ -44,13 +44,11 @@
 							if(utente == null)
 							{
 				%>
-				
-				<a class="esperimento" href="<%=urlcarrello%>">
-					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"><%=carrello.getQuantita()%></p>
-				</a>
-				<a class="cart" href="<%=urlcarrello%>">
-					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></i>
+
+				<a id="cart-icon-link" href="<%=urlcarrello%>">
+					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
+						<i class="fa-solid fa-cart-shopping fa-xl"></i>
+					</i>
 				</a>
 				<a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3>Accedi <i class="fa-solid fa-user fa-xl"></i></h3></a>
 					
@@ -62,32 +60,30 @@
 								{
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
-				<a class="esperimento" href="<%=urlcarrello%>">
-					<i class="fa-solid fa-cart-shopping fa-xl"></i>
-					<p id="quantita_carrello"><%=carrello.getQuantita()%></p>
-				</a>
-				<a class="cart" href="<%=urlcarrello%>">
-					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>"><i class="fa-solid fa-cart-shopping fa-xl"></i></i>
-				</a>
-				<!-- <a class="cart" href="<%=urlcarrello%>">
-					<i class="fa-solid fa-cart-shopping fa-xl" id="cart-icon"></i>
-					<i class="fa-solid fa-circle fa-lg" id="quantita_carrello"><label id="count-value"><%=carrello.getQuantita()%></label></i>
-				</a> -->
 
+				<a id="cart-icon-link" href="<%=urlcarrello%>">
+					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
+						<i class="fa-solid fa-cart-shopping fa-xl"></i>
+					</i>
+				</a>
 				<a href="<%=urlutente%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
+
 				<%	
 								}
 								else if(utente.isRuolo() == 1)
 								{
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
+
 				<a href="<%=urladmin%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
+				
 				<%
 								}
 							}
 						}
 					}
 				%>
+				
 			</div> 
 		</div>
 	</div>
@@ -104,5 +100,6 @@
 			
 		</div>
 	</div>
+	<script type="text/javascript" src="./static/scripts/header.js"></script>
 </body>
 </html>
