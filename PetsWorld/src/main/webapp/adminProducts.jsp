@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,41 +20,63 @@
 			</div>
 			<h1>Catalogo</h1>
 			<div id="products-list">
-				<div class="loop">
+							<%
+								String error2 = (String)request.getAttribute("errore2"); 
+								String error1 = (String)request.getAttribute("errore1");
+								if(error2 != null){ 
+							%>
+								<div align="center" Style="color:red"><%=error2 %></div>
+							<% 
+								}
+								else if(error1!=null)
+								{
+							%>
+								<div align="center" Style="color:red"><%=error1 %></div>
+							<%
+								}	
+							%>
+							
+				<c:forEach items="${list}" var="prd">
 					<div class="product-info-line">
 						<div class="box">
+							<form method="get" action="ServletModificaProdotto">
 							<ul id="data-product-id_prodotto" class="row">
 								<li class="size-l">
-									<input type="text" id="id-product-code" class="input-field inactive" name="product-code" value="id_del_prodotto">
+									<input type="text" id="id-product-code" class="input-field inactive" name="product-code" value="${prd.idProdotto}">
 								</li>
 								<li class="voice size-m">
-									<img src="./static/images/product-0-pic-0.png" alt="Foto prodotto">
+									<img src="./static/images/${prd.foto}.png" alt="Foto prodotto">
 								</li>
 								<li class="size-auto">
-									<h3>Nome prodotto</h3>
+									<h3>${prd.nome}</h3>
 								</li>
 								<li class="voice size-m">
-									<input type="text" id="id-price" class="input-field inactive" name="product-price" value="prezzo_del_prodotto">
+									<input type="text" id="id-price" class="input-field inactive" name="product-price" value="${prd.prezzo}">
 								</li>
 								<li class="voice size-s">
-									<p>iva%</p>
+									<p>iva=${prd.iva}%</p>
 								</li>
 								<li class="voice size-xl">
-									<p>piccolianimali</p>
+									<p>${prd.animale}</p>
 								</li>
 								<li class="voice size-m">
-									<input type="text" id="id-quantity" class="input-field inactive" name="product-quantity" value="quantità_del_prodotto">
+									<input type="text" id="id-quantity" class="input-field inactive" name="product-quantity" value="${prd.quantita}">
 								</li>
 								<li id="edit-section-id_prodotto" class="voice">
 									<input type="button" id="edit-button-id_prodotto" class="active-edit-button" onclick="editProductData('id-product-code')" value="Modifica">
 								</li>
-								<li class="voice last">
-									<button class="active-accent-button">Elimina</button>
-								</li>
-							</ul>
+							</ul>			
+							</form>
+							<form method="get" action="ServletRimozioneProdotto">
+								<ul id="data-product-id_prodotto" class="row">
+									<li class="voice last">
+										<button class="active-accent-button" name="product-code" value="${prd.idProdotto}">Elimina</button>
+									</li>
+								</ul>
+							</form>
 						</div>
 					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

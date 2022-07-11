@@ -10,9 +10,18 @@
 		<header>
 			<jsp:include page="./adminHeader.jsp"/>
 		</header>
+		<form method="post" action="ServletAggiuntaProdotto">
 		<div id="admin-page-content" class="column">
 			<div id="catalog-new-product" class="box">
 				<h1>Nuovo prodotto</h1>
+							<%
+								String error2 = (String)request.getAttribute("errore2"); 
+								if(error2 != null){ 
+							%>
+								<div align="center" Style="color:red"><%=error2 %></div>
+							<% 
+								}
+							%>
 				<div id="product-name-section" class="column">
 					<label for="" class="field"><b>Nome</b></label>
 					<input type="text" id="product-name" class="input-field" required name="product-name">
@@ -118,6 +127,7 @@
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
     <script src="./static/scripts/admin.js"></script>
 	<script>
