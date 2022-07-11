@@ -15,7 +15,6 @@ import model.daoInterface.ProdottoDao;
 import model.query.ProdottoQuery;
 import model.search.Condition;
 import model.search.Operatore;
-import model.Extractor.FotoProdottoExtractor;
 import model.Extractor.ProdottoExtractor;
 
 public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
@@ -44,7 +43,6 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
                 
                 while (rs.next()) {
                 	Prodotto prodotto = new ProdottoExtractor().extract(rs);
-                	prodotto.setFotografia(new FotoProdottoExtractor().extract(rs));
                 	listaProdotti.add(prodotto);
                 }
                 return listaProdotti;
@@ -79,7 +77,6 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 	                
 	                while (rs.next()) {
 	                	Prodotto prodotto = new ProdottoExtractor().extract(rs);
-	                	prodotto.setFotografia(new FotoProdottoExtractor().extract(rs));
 	                	listaProdotti.add(prodotto);
 	                    
 	                }
@@ -123,5 +120,40 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 				return prodotto.getQuantita();
 			}
 		}
+	}
+
+
+	public void doUpdateCatalogo(Prodotto prd) throws SQLException {
+		try (Connection connection= createConnection()){
+			String query= ProdottoQuery.aggiornaProdotto();
+			
+			System.out.print(query);
+			try (PreparedStatement ps= connection.prepareStatement(query)){
+				
+				ps.setInt(1, prd.getQuantita());
+				ps.setDouble(2, prd.getPrezzo());
+				ps.setInt(3, prd.getIdProdotto());
+				ps.executeUpdate();
+				return;
+			}
+		}
+	}
+
+
+	public void doDelete(Prodotto prd) throws SQLException {
+		try (Connection connection= createConnection()){
+			String query= ProdottoQuery.rimuovi_prodotto();
+			
+			try (PreparedStatement ps= connection.prepareStatement(query)){
+				
+				ps.setInt(1, prd.getIdProdotto());
+				ps.executeUpdate();
+				return;
+			}
+		}
+	}
+	
+	public void doSave(Prodotto prd) throws SQLException{
+		
 	}
 }

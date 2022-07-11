@@ -20,7 +20,6 @@ public class Prodotto implements Serializable{
 	private int quantita;
 	private String animale;
 	private String foto;
-	private FotoProdotto fotografia;
 	
 	public String getFoto() {
 		return foto;
@@ -103,20 +102,11 @@ public class Prodotto implements Serializable{
 	public void setAnimale(String animale) {
 		this.animale = animale;
 	}
-	public FotoProdotto getFotografia() {
-		return fotografia;
-	}
-	public void setFotografia(FotoProdotto fotografia) {
-		this.fotografia = fotografia;
-	}
 	@Override
 	public String toString() {
 		return "Prodotto [IdProdotto=" + IdProdotto + ", nome=" + nome + ", tipo=" + tipo + ", prezzo=" + prezzo
 				+ ", descrizione=" + descrizione + ", iva=" + iva + ", dataScadenza=" + dataScadenza + ", dimensione="
 				+ dimensione + ", colore=" + colore + ", peso=" + peso + ", quantita=" + quantita + ", animale="
-				+ animale + ", foto=" + foto + ", fotografia=" + fotografia + "]";
-	}
-
-	
-	
+				+ animale + ", foto=" + foto + "]";
+	}	
 }

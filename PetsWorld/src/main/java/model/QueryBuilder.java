@@ -63,18 +63,19 @@ import model.search.Condition;
 	        return this;
 	    }
 	    public QueryBuilder delete(){
-	        query.append(" DELETE FROM ").append(table);
+	        query.append(" DELETE FROM ").append(table).append(" ").append(alias);
 	        return this;
 	    }
+	    
 	    public QueryBuilder update(String...fields){
-	        query.append(" UPDATE ").append(table);
-	        StringJoiner commaJoiner=new StringJoiner(",","(",")");
-	        for(String field:fields){
-	            commaJoiner.add(String.format("%s = %s",field,QM));
-	        }
-	        query.append(commaJoiner.toString());
-	        return this;
-	    }
+            query.append(" UPDATE ").append(table).append(" ").append(alias).append(" SET ");
+            StringJoiner commaJoiner=new StringJoiner(",");
+            for(String field:fields){
+                commaJoiner.add(String.format(("%s = %s"),field,QM));
+            }
+            query.append(commaJoiner.toString());
+            return this;
+           }
 	    
 	    public QueryBuilder limit(boolean withOffset){
 	        query.append(" LIMIT ").append(QM);

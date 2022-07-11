@@ -15,4 +15,10 @@ public interface ProdottoDao<S extends Exception> {
 	Prodotto doRetrieveByKey(int ID) throws SQLException;
 	
 	int restituisciQuantita(int ID) throws SQLException;
+	
+	void doUpdateCatalogo(Prodotto prd) throws SQLException;
+	
+	void doDelete (Prodotto prd) throws SQLException;
+	
+	void doSave (Prodotto prd) throws SQLException;
 }
