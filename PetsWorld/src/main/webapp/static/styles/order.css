@@ -139,14 +139,14 @@
 }
 
 .product-values .product-price {
-    margin: auto;
+    margin: 30px auto auto auto;
     padding: 0px;
     width: 100%;
     justify-self: center;
     text-align: right;
 }
 
-.price-box {
+#price-box {
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -157,29 +157,29 @@
     background-color: var(--neutral-color-2);
 }
 
-.price-box .single-voice {
+#price-box .single-voice {
     margin: 5px 0 5px 0;
     display: flex;
     flex-direction: row;
 }
 
-.price-box .small {
+#price-box .small {
     font-size: small;
 }
 
-.price-box .span {
+#price-box .span {
     font-weight: bold;
 }
 
-.price-box .price {
+#price-box .price {
     margin-left: auto;
 }
 
-.price-box button {
+#price-box button {
     width: 100%;
 }
 
-/* .price-box button:hover {
+/* #price-box button:hover {
     background-color: var(--accent-color-dark);
 } */
 

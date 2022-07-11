@@ -58,7 +58,7 @@
 					{
 					%>
 					<div class="product-line" id="<%=prodotti.get(i).getIdProdotto()%>">
-						<img src="./static/images/<%=prodotti.get(i).getFoto()%>.webp" alt="<%=prodotti.get(i).getFoto()%>.webp">
+						<img src="./static/images/<%=prodotti.get(i).getFoto()%>.png" alt="<%=prodotti.get(i).getFoto()%>.webp">
 						<div class="product-name">
 							<h2><%=prodotti.get(i).getNome()%></h2>
 							<p>
@@ -104,7 +104,7 @@
 				</div>
 			</div>
 			<div class="price-panel">
-				<div class="price-box">
+				<div id="price-box" class="box">
 					<h1>Totale</h1>
 					<div class="single-voice">
 						<p>

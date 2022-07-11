@@ -14,8 +14,6 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
-	<script type="text/javascript" src="./static/scripts/cartProductPage.js"></script>
-
 	<header>
 		<!-- Standard header -->
 		<jsp:include page="./header.jsp"/>
@@ -26,14 +24,10 @@
 		prodotto= (Prodotto) request.getAttribute("prodotto");
 	%>
 	
-	<div class="product-page-content">
-		<div class="product-top-row">
-			<div class="product-images">
-				<c:forEach items="${foto}" var="ft">
-				<img src="./static/images/${ft.foto}.webp" alt="immagine prodotto">
-				</c:forEach>			
-			</div>
-			<div class="product-info">
+	<div id="product-page-content">
+		<div id="product-top" class="row">
+			<img id="product-image" src="./static/images/<%=prodotto.getFoto()%>.png" alt="immagine prodotto">
+			<div id="product-info" class="box">
 				<h1 class="product-name"><%=prodotto.getNome()%></h1>				
 				<h2 class="product-price">€<%=prodotto.getPrezzo()%></h2>
 				<p class="parameter-tag">Dettagli</p>
@@ -78,20 +72,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="product-description">
-			<h2 class="section-title">Descrizione</h2>
-			<p>
-				<%=prodotto.getDescrizione()%>
-			</p>
+		<div id="product-description" class="box">
+			<div class="content">
+				<h2 class="section-title">Descrizione</h2>
+				<p>
+					<%=prodotto.getDescrizione()%>
+				</p>
+			</div>
 		</div>
-		<div class="product-reviews">
-			<h2 class="section-title">Recensioni</h2>
+		<div id="product-reviews" class="box">
+			<div class="content">
+				<h2 class="section-title">Recensioni</h2>
+			</div>
 		</div>
 	</div>
-	
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
+	<script type="text/javascript" src="./static/scripts/productPage.js"></script>
 </body>
 </html>

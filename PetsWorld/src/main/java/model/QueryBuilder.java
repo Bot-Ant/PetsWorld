@@ -76,7 +76,7 @@ import model.search.Condition;
             query.append(commaJoiner.toString());
             return this;
            }
-	    
+           
 	    public QueryBuilder limit(boolean withOffset){
 	        query.append(" LIMIT ").append(QM);
 	        if(withOffset){

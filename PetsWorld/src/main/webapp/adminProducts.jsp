@@ -45,7 +45,7 @@
 									<input type="text" id="id-product-code" class="input-field inactive" name="product-code" value="${prd.idProdotto}">
 								</li>
 								<li class="voice size-m">
-									<img src="./static/images/${prd.foto}.webp" alt="Foto prodotto">
+									<img src="./static/images/${prd.foto}.png" alt="Foto prodotto">
 								</li>
 								<li class="size-auto">
 									<h3>${prd.nome}</h3>
