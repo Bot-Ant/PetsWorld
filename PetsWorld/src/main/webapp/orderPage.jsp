@@ -50,12 +50,11 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="save-data">
-						<p>Salva indirizzo</p>
-						<input type="checkbox" name="" id="">
-					</div>
-					<button class="active-basic-button" id="confirm-shipping" onclick="">Conferma indirizzo</button>
+					<input type="button" id="confirm-shipping" class="active-basic-button" value="Conferma indirizzo" onclick="verifyAddressInfo()">
 				</div>
+			</div>
+			<div id="empty-payment-method" class="box">
+				<h1>Pagamento</h1>
 			</div>
 			<div class="box" id="payment-method-box">
 				<h1>Pagamento</h1>
@@ -97,12 +96,11 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="save-data">
-						<p>Salva metodo di pagamento</p>
-						<input type="checkbox" name="" id="">
-					</div>
-					<button class="inactive-basic-button" id="confirm-payment">Conferma metodo</button>
+					<input type="button" id="confirm-payment" class="active-basic-button" value="Conferma metodo" onclick="verifyPaymentMethodInfo()">
 				</div>
+			</div>
+			<div id="empty-confirm-order" class="box">
+				<h1>Conferma ordine</h1>
 			</div>
 			<div class="box" id="confirm-order-box">
 				<h1>Conferma ordine</h1>
@@ -122,21 +120,24 @@
 					<p>[quantità]</p>
 				</div>
 			</div>
-			<div class="row">
-				<h3>Subtotale</h3>
-				<h3>[subtotale ordine]</h3>
-			</div>
-			<div class="row">
-				<h3>Spedizione</h3>
-				<h3>[costo spedizione]</h3>
-			</div>
-			<div class="span">
+			<div id="total">
 				<div class="row">
-					<h2>Totale</h2>
-					<h2>[prezzo totale]</h2>
+					<h3>Subtotale</h3>
+					<h3 class="price">[subtotale ordine]</h3>
+				</div>
+				<div class="row">
+					<h3>Spedizione</h3>
+					<h3 class="price">[costo spedizione]</h3>
+				</div>
+				<div class="span">
+					<div class="row">
+						<h2>Totale</h2>
+						<h2 class="price">[prezzo totale]</h2>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script src="./static/scripts/order.js"></script>
 </body>
 </html>

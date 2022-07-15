@@ -19,28 +19,53 @@
 					Questi sono tutti gli indirizzi che hai salvato.
 				</p>
 			</div>
-			<div id="addresses-box" class="box">
+			<div id="addresses-box" class="user-list box">
 				<!-- if there is no saved address -->
-				<div id="no-addresses" class="row" style="display: none;">
+				<div id="no-user-elements" class="row" style="display: none;">
 					<h2 class="message">Non hai indirizzi salvati</h2>
-					<button class="active-basic-button">Aggiungi indirizzo</button>
+					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewUserElementForm()">
 				</div>
+				<hr id="top-separator" class="not-displayed">
 				<!-- if there is at least one saved address -->
 				<div id="add-address" class="row">
-					<button class="active-basic-button">Aggiungi indirizzo</button>
+					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewUserElementForm()">
 				</div>
-				<hr>
+				<hr id="top-separator">
 				<div class="loop">
-					<div class="address-line">
-						<div class="row">
-							<div class="address-data">
-								<h3 class="address-name">Nome_strada Civico</h3>
-								<p>Città - Provincia</p>
-								<p>CAP</p>
+					<div id="user-element-[id]" class="user-element-line row">
+							<div class="user-element-data">
+								<div class="row">
+									<input type="text" id="address-name-[id]" class="input-field inactive user-element-name" name="address-name" value="Nome_strada" required>
+									<input type="text" id="address-number-[id]" class="input-field inactive user-element-name number" name="address-number" value="Civico"required>
+								</div>
+								<div class="row">
+									<input type="text" id="citta-[id]" class="input-field inactive" name="citta" value="Città" required>
+									<input type="text" id="provincia-[id]" class="input-field inactive" name="provincia" value="Provincia" required>
+								</div>
+								<input type="text" id="cap-[id]" class="input-field inactive number" name="cap" value="CAP" required>
 							</div>
-							<button class="active-edit-button">Modifica</button>
-						</div>
+							<div id="user-element-[id]-buttons" class="user-element-buttons column">
+								<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('[id]')">
+							</div>	
 					</div>
+				</div>
+				<!-- always in the page -->
+				<div id="new-user-element" class="user-element-line row not-displayed">
+					<div class="user-element-data">
+						<div class="row">
+							<h2 class="new-element-title">Nuovo indirizzo</h2>
+						</div>
+						<div class="row">
+							<input type="text" id="new-address-name" class="input-field user-element-name" name="address-name" placeholder="Nome della strada" required>
+							<input type="text" id="new-address-number" class="input-field user-element-name number" name="address-number" placeholder="Civico" required>
+						</div>
+						<div class="row">
+							<input type="text" id="new-citta" class="input-field" name="citta" placeholder="Città" required>
+							<input type="text" id="new-provincia" class="input-field" name="provincia" placeholder="Provincia" required>
+						</div>
+						<input type="text" id="new-cap" class="input-field number" name="cap" placeholder="CAP" required>
+					</div>
+					<button id="save-new-user-element" class="active-save-button">Salva</button>
 				</div>
 			</div>
 		</div>

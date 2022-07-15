@@ -19,28 +19,55 @@
 					Questi sono tutti i metodi di pagamento che hai salvato.
 				</p>
 			</div>
-			<div id="pay-methods-box" class="box">
+			<div id="pay-methods-box" class="user-list box">
 				<!-- if there is no saved payment method -->
-				<div id="no-pay-methods" class="row" style="display: none;">
+				<div id="no-user-elements" class="row" style="display: none;">
 					<h2 class="message">Non hai metodi di pagamento salvati</h2>
-					<button class="active-basic-button">Aggiungi metodo di pagamento</button>
+					<input type="button" class="active-basic-button" value="Aggiungi metodo di pagamento" onclick="activateNewUserElementForm()">
 				</div>
+				<hr id="top-separator" class="not-displayed">
 				<!-- if there is at least one saved payment method -->
 				<div id="add-pay-method" class="row">
-					<button class="active-basic-button">Aggiungi metodo di pagamento</button>
+					<input type="button" class="active-basic-button" value="Aggiungi metodo di pagamento" onclick="activateNewUserElementForm()">
 				</div>
-				<hr>
+				<hr id="top-separator">
 				<div class="loop">
-					<div class="pay-method-line">
-						<div class="row">
-							<div class="pay-method-data">
-								<h3 class="pay-method-name">Numero_carta</h3>
-								<p>Proprietario</p>
-								<p>Data_scadenza</p>
+					<div id="user-element-[id]" class="user-element-line row">
+						<div class="user-element-data">
+							<div class="row">
+								<input type="text" id="pay-method-number-[id]" class="input-field inactive user-element-name" name="pay-method-number" value="Numero_carta" required>
 							</div>
-							<button class="active-edit-button">Modifica</button>
+							<div class="row">
+								<input type="text" id="owner-[id]" class="input-field inactive" name="proprietario" value="Proprietario" required>
+							</div>
+							<div class="row">
+								<input type="text" id="month-[id]" class="input-field inactive number" name="mese" value="Mese" required>
+								<input type="text" id="year-[id]" class="input-field inactive number" name="anno" value="Anno" required>
+							</div>
+						</div>
+						<div id="user-element-[id]-buttons" class="user-element-buttons column">
+							<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserPayMethod('[id]')">
+						</div>	
+					</div>
+				</div>
+				<!-- always in the page -->
+				<div id="new-user-element" class="user-element-line row not-displayed">
+					<div class="user-element-data">
+						<div class="row">
+							<h2>Nuovo metodo di pagamento</h2>
+						</div>
+						<div class="row">
+							<input type="text" id="new-pay-method-number" class="input-field user-element-name" name="pay-method-number" placeholder="Numero della carta" required>
+						</div>
+						<div class="row">
+							<input type="text" id="new-proprietario" class="input-field" name="proprietario" placeholder="Proprietario" required>
+						</div>
+						<div class="row">
+							<input type="text" id="new-month" class="input-field number" name="mese" placeholder="Mese" required>
+							<input type="text" id="new-year" class="input-field number" name="anno" placeholder="Anno" required>
 						</div>
 					</div>
+					<button id="save-new-user-element" class="active-save-button">Salva</button>
 				</div>
 			</div>
 		</div>

@@ -8,7 +8,7 @@ function editProductData(id) {
 
     const newbutton = document.createElement("button");
     newbutton.setAttribute("id", "save-button-" + id);
-    newbutton.setAttribute("class", "active-edit-button");
+    newbutton.setAttribute("class", "active-save-button");
     newbutton.innerHTML = "Salva"
     const parent = document.getElementById("edit-section-id_prodotto");
     const oldbutton = document.getElementById("edit-button-id_prodotto");

@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--neutral-color-2);
 }
 
 #full {
@@ -213,14 +214,14 @@
 }
 
 #order-content #payment-method-box {
-    display: flex;
+    display: none;
     flex-direction: column;
     border: 2px solid;
     border-color: var(--main-color);
 }
 
 #order-content #confirm-order-box {
-    display: flex;
+    display: none;
     flex-direction: column;
     border: 2px solid;
     border-color: var(--main-color);
@@ -271,6 +272,19 @@
     flex-direction: column;
     background-color: var(--neutral-color-2);
     box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
+}
+
+#order-content #summary-panel img {
+    height: 60px;
+    width: 60px;
+}
+
+#order-content #summary-panel #total {
+    margin-top: auto;
+}
+
+#order-content #summary-panel .price {
+    margin-left: auto;
 }
 
 #order-content input, select {
