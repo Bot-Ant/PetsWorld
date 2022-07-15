@@ -114,18 +114,20 @@
 					<p>[quantità]</p>
 				</div>
 			</div>
-			<div class="row">
-				<h3>Subtotale</h3>
-				<h3>[subtotale ordine]</h3>
-			</div>
-			<div class="row">
-				<h3>Spedizione</h3>
-				<h3>[costo spedizione]</h3>
-			</div>
-			<div class="span">
+			<div id="total">
 				<div class="row">
-					<h2>Totale</h2>
-					<h2>[prezzo totale]</h2>
+					<h3>Subtotale</h3>
+					<h3 class="price">[subtotale ordine]</h3>
+				</div>
+				<div class="row">
+					<h3>Spedizione</h3>
+					<h3 class="price">[costo spedizione]</h3>
+				</div>
+				<div class="span">
+					<div class="row">
+						<h2>Totale</h2>
+						<h2 class="price">[prezzo totale]</h2>
+					</div>
 				</div>
 			</div>
 		</div>

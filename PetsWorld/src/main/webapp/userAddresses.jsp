@@ -19,24 +19,24 @@
 					Questi sono tutti gli indirizzi che hai salvato.
 				</p>
 			</div>
-			<div id="addresses-box" class="box">
+			<div id="addresses-box" class="user-list box">
 				<!-- if there is no saved address -->
-				<div id="no-addresses" class="row" style="display: none;">
+				<div id="no-user-elements" class="row" style="display: none;">
 					<h2 class="message">Non hai indirizzi salvati</h2>
-					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewAddressForm()">
+					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewUserElementForm()">
 				</div>
 				<hr id="top-separator" class="not-displayed">
 				<!-- if there is at least one saved address -->
 				<div id="add-address" class="row">
-					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewAddressForm()">
+					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewUserElementForm()">
 				</div>
 				<hr id="top-separator">
 				<div class="loop">
-					<div id="address-[id]" class="address-line row">
-							<div class="address-data">
+					<div id="user-element-[id]" class="user-element-line row">
+							<div class="user-element-data">
 								<div class="row">
-									<input type="text" id="address-name-[id]" class="input-field inactive address-name name" name="address-name" value="Nome_strada" required>
-									<input type="text" id="address-number-[id]" class="input-field inactive address-name number" name="address-number" value="Civico"required>
+									<input type="text" id="address-name-[id]" class="input-field inactive user-element-name" name="address-name" value="Nome_strada" required>
+									<input type="text" id="address-number-[id]" class="input-field inactive user-element-name number" name="address-number" value="Civico"required>
 								</div>
 								<div class="row">
 									<input type="text" id="citta-[id]" class="input-field inactive" name="citta" value="Città" required>
@@ -44,20 +44,20 @@
 								</div>
 								<input type="text" id="cap-[id]" class="input-field inactive number" name="cap" value="CAP" required>
 							</div>
-							<div id="address-[id]-buttons" class="address-buttons column">
-								<input type="button" id="address-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('[id]')">
+							<div id="user-element-[id]-buttons" class="user-element-buttons column">
+								<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('[id]')">
 							</div>	
 					</div>
 				</div>
 				<!-- always in the page -->
-				<div id="new-address" class="address-line row not-displayed">
-					<div class="address-data">
+				<div id="new-user-element" class="user-element-line row not-displayed">
+					<div class="user-element-data">
 						<div class="row">
-							<h2>Nuovo indirizzo</h2>
+							<h2 class="new-element-title">Nuovo indirizzo</h2>
 						</div>
 						<div class="row">
-							<input type="text" id="new-address-name" class="input-field address-name name" name="address-name" placeholder="Nome della strada" required>
-							<input type="text" id="new-address-number" class="input-field address-name number" name="address-number" placeholder="Civico" required>
+							<input type="text" id="new-address-name" class="input-field user-element-name" name="address-name" placeholder="Nome della strada" required>
+							<input type="text" id="new-address-number" class="input-field user-element-name number" name="address-number" placeholder="Civico" required>
 						</div>
 						<div class="row">
 							<input type="text" id="new-citta" class="input-field" name="citta" placeholder="Città" required>
@@ -65,7 +65,7 @@
 						</div>
 						<input type="text" id="new-cap" class="input-field number" name="cap" placeholder="CAP" required>
 					</div>
-					<button id="save-new-address" class="active-save-button">Salva</button>
+					<button id="save-new-user-element" class="active-save-button">Salva</button>
 				</div>
 			</div>
 		</div>
