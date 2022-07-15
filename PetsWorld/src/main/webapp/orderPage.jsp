@@ -53,6 +53,9 @@
 					<input type="button" id="confirm-shipping" class="active-basic-button" value="Conferma indirizzo" onclick="verifyAddressInfo()">
 				</div>
 			</div>
+			<div id="empty-payment-method" class="box">
+				<h1>Pagamento</h1>
+			</div>
 			<div class="box" id="payment-method-box">
 				<h1>Pagamento</h1>
 				<div class="row">
@@ -95,6 +98,9 @@
 				<div class="row">
 					<input type="button" id="confirm-payment" class="active-basic-button" value="Conferma metodo" onclick="verifyPaymentMethodInfo()">
 				</div>
+			</div>
+			<div id="empty-confirm-order" class="box">
+				<h1>Conferma ordine</h1>
 			</div>
 			<div class="box" id="confirm-order-box">
 				<h1>Conferma ordine</h1>
