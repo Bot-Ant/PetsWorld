@@ -12,7 +12,7 @@
 	margin: 20px;
 	padding: 20px;
 	height: min-content;
-	width: 250px;
+	width: 260px;
 	border-radius: 10px;
 	list-style: none;
 	display: flex;
@@ -78,9 +78,18 @@
 
 #user-page-header {
 	margin-right: 20px;
+	margin-left: 20px
 }
 
-
+#user-content .inactive {
+	margin-left: 0;
+	padding-left: 0;
+    font-size: 1em;
+    box-shadow: none;
+	color: var(--contrast-color-1);
+    background-color: var(--transparent);
+    pointer-events: none;
+}  
 
 /* style for userData.jsp */
 
@@ -107,7 +116,7 @@
 	margin: 0;
 }
 
-#data-box button {
+#data-box button,input[type=button] {
 	margin-left: auto;
 }
 
@@ -206,28 +215,56 @@
 	margin-right: 20px;
 }
 
-#addresses-box button {
+#addresses-box .input-field {
+	margin: 7px 15px 7px 0px;
+	padding: 10px;
+}
+
+#addresses-box button,input[type=button] {
 	margin-left: auto;
 	margin-right: 0;
 	align-self: start;
+}
+
+#addresses-box .address-buttons {
+	margin-left: auto;
+}
+
+#addresses-box .address-buttons button {
+	width: 100%;
+}
+
+#addresses-box .delete-button {
+	margin-top: 20px;
 }
 
 #addresses-box .address-line {
 	margin: 20px 0;
 }
 
-#addresses-box .address-name {
-	margin: 10px 0;
+#addresses-box .address-data {
+	width: 70%;
 }
 
-#addresses-box p {
-	margin: 10px 0;
+#addresses-box .address-name {
+	font-weight: 600;
+	font-size: 1.3em;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#addresses-box .number {
+	width: 120px;
 }
 
 #no-addresses .message {
 	margin: 0;
 	align-self: center;
 }
+
+#new-address h2 {
+	margin-bottom: 10px;
+}
+
 
 
 /* style for userPayMethods.jsp */
@@ -236,18 +273,42 @@
 	margin-right: 20px;
 }
 
-#pay-methods-box button {
+#pay-methods-box .input-field {
+	margin: 7px 15px 7px 0px;
+	padding: 10px;
+}
+
+#pay-methods-box button,input[type=button] {
 	margin-left: auto;
 	margin-right: 0;
 	align-self: start;
+}
+
+#pay-methods-box .pay-method-buttons {
+	margin-left: auto;
+}
+
+#pay-methods-box .pay-method-buttons button {
+	width: 100%;
+}
+
+#pay-methods-box .delete-button {
+	margin-top: 20px;
 }
 
 #pay-methods-box .pay-method-line {
 	margin: 20px 0;
 }
 
-#pay-methods-box .pay-method-name {
-	margin: 10px 0;
+#pay-methods-box .pay-method-number {
+	margin: 10px 0px;
+	font-weight: 600;
+	font-size: 1.3em;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#pay-methods-box .number {
+	width: 120px;
 }
 
 #pay-methods-box p {

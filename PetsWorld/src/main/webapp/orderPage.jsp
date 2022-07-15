@@ -50,11 +50,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="save-data">
-						<p>Salva indirizzo</p>
-						<input type="checkbox" name="" id="">
-					</div>
-					<button class="active-basic-button" id="confirm-shipping" onclick="">Conferma indirizzo</button>
+					<input type="button" id="confirm-shipping" class="active-basic-button" value="Conferma indirizzo" onclick="verifyAddressInfo()">
 				</div>
 			</div>
 			<div class="box" id="payment-method-box">
@@ -97,11 +93,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="save-data">
-						<p>Salva metodo di pagamento</p>
-						<input type="checkbox" name="" id="">
-					</div>
-					<button class="inactive-basic-button" id="confirm-payment">Conferma metodo</button>
+					<input type="button" id="confirm-payment" class="active-basic-button" value="Conferma metodo" onclick="verifyPaymentMethodInfo()">
 				</div>
 			</div>
 			<div class="box" id="confirm-order-box">
@@ -138,5 +130,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="./static/scripts/order.js"></script>
 </body>
 </html>
