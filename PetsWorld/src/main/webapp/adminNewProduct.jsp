@@ -10,25 +10,24 @@
 		<header>
 			<jsp:include page="./adminHeader.jsp"/>
 		</header>
-		<form method="post" action="ServletAggiuntaProdotto">
-		<div id="admin-page-content" class="column">
+		<form method="post" action="ServletAggiuntaProdotto" id="admin-page-content" class="column">
 			<div id="catalog-new-product" class="box">
 				<h1>Nuovo prodotto</h1>
-							<%
-								String error2 = (String)request.getAttribute("errore2"); 
-								if(error2 != null){ 
-							%>
-								<div align="center" Style="color:red"><%=error2 %></div>
-							<% 
-								}
-							%>
+					<%
+						String error2 = (String)request.getAttribute("errore2"); 
+						if(error2 != null){ 
+					%>
+				<div class="changes-result-message"><%=error2 %></div>
+					<% 
+						}
+					%>
 				<div id="product-name-section" class="column">
 					<label for="" class="field"><b>Nome</b></label>
-					<input type="text" id="product-name" class="input-field" required name="product-name">
+					<input type="text" id="product-name" class="input-field" name="product-name" required>
 				</div>
 				<div id="product-selection-boxes" class="row">
 					<div id="product-animal-section" class="selection-box left">
-						<fieldset>
+						<fieldset required>
 							<legend><b>Animale</b></legend>
 							<div class="row">
 								<input type="radio" id="cane" name="animale" value="cane">
@@ -56,28 +55,56 @@
 						<fieldset>
 							<legend><b>Tipo</b></legend>
 							<div class="row">
-								<input type="checkbox" id="cane" name="animale" value="cane">
-								<label for="cane">Alimenti</label>
+								<input type="checkbox" id="alimenti" name="tipo" value="alimenti">
+								<label for="alimenti">Alimenti</label>
 							</div>
 							<div class="row">
-								<input type="checkbox" id="gatto" name="animale" value="gatto">
-								<label for="gatto">Cibo</label>
+								<input type="checkbox" id="cibo-umido" name="tipo" value="cibo umido">
+								<label for="cibo-umido">Cibo umido</label>
 							</div>
 							<div class="row">
-								<input type="checkbox" id="pesci" name="animale" value="pesci">
-								<label for="pesci">Salute</label>
+								<input type="checkbox" id="crocchette" name="tipo" value="crocchette">
+								<label for="crocchette">Crocchette</label>
 							</div>
 							<div class="row">
-								<input type="checkbox" id="pesci" name="animale" value="pesci">
-								<label for="pesci">Antiparassitario</label>
+								<input type="checkbox" id="salute" name="tipo" value="salute">
+								<label for="salute">Salute</label>
 							</div>
 							<div class="row">
-								<input type="checkbox" id="volatili" name="animale" value="volatili">
-								<label for="volatili">Accessori</label>
+								<input type="checkbox" id="tappetini" name="tipo" value="tappetini assorbenti">
+								<label for="tappetini">Tappetini assorbenti</label>
 							</div>
 							<div class="row">
-								<input type="checkbox" id="piccolianimali" name="animale" value="piccolianimali">
-								<label for="piccolianimali">Giochi</label>
+								<input type="checkbox" id="antiparassitario-spot-on" name="tipo" value="antiparassitario spot-on">
+								<label for="antiparassitario-spot-on">Antiparassitario spot-on</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="antiparassitario-collare" name="tipo" value="antiparassitario collare">
+								<label for="antiparassitario-collare">Antiparassitario collare</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="accessori" name="tipo" value="accessori">
+								<label for="accessori">Accessori</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="guinzagli" name="tipo" value="guinzagli">
+								<label for="guinzagli">Guinzagli</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="cucce" name="tipo" value="cucce">
+								<label for="cucce">Cucce</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="ciotole" name="tipo" value="ciotole">
+								<label for="ciotole">Ciotole</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="giochi" name="tipo" value="giochi">
+								<label for="giochi">Giochi</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="intrattenimento" name="tipo" value="intrattenimento">
+								<label for="intrattenimento">Intrattenimento</label>
 							</div>
 						</fieldset>
 					</div>
@@ -85,48 +112,49 @@
 				<div id="product-warehouse-section" class="row">
 					<div id="product-price-section" class="column left">
 						<label for="product-price"><b>Prezzo</b></label>
-						<input type="text" id="product-price" class="input-field" required name="product-price">
+						<input type="text" id="product-price" class="input-field" name="product-price" required>
 					</div>
 					<div id="product-tax-section" class="column middle">
 						<label for="product-tax"><b>Iva</b></label>
-						<input type="text" id="product-tax" class="input-field" required name="product-tax">
+						<input type="text" id="product-tax" class="input-field" name="product-tax" required>
 					</div>
 					<div id="product-quantity-section" class="column right">
 						<label for="product-quantity"><b>Quantità</b></label>
-						<input type="text" id="product-quantity" class="input-field" required name="product-quantity">
+						<input type="text" id="product-quantity" class="input-field" name="product-quantity" required>
 					</div>
 				</div>
-				<div id="product-differences-section" class="row">
+				<div id="product-differences-section-1" class="row">
 					<div id="product-weight-section" class="column left">
 						<label for="product-weight"><b>Peso</b></label>
-						<input type="text" id="product-weight" class="input-field" required name="product-weight">
+						<input type="text" id="product-weight" class="input-field" name="product-weight">
 					</div>
 					<div id="product-size-section" class="column middle">
 						<label for="product-size"><b>Dimensione</b></label>
-						<input type="text" id="product-size" class="input-field" required name="product-size">
+						<input type="text" id="product-size" class="input-field" name="product-size">
 					</div>
-					<div id="product-color-section" class="column middle">
+					<div id="product-color-section" class="column right">
 						<label for="product-color"><b>Colore</b></label>
-						<input type="text" id="product-color" class="input-field" required name="product-color">
+						<input type="text" id="product-color" class="input-field" name="product-color">
 					</div>
-					<div id="product-expirydate-section" class="column right">
+				</div>
+				<div id="product-differences-section-2" class="row">
+					<div id="product-expirydate-section" class="column left">
 						<label for="product-expiry-date"><b>Scadenza</b></label>
-						<input type="text" id="product-expiry-date" class="input-field" required name="product-expiry-date">
+						<input type="text" id="product-expiry-date" class="input-field" name="product-expiry-date">
 					</div>
 				</div>
 				<div id="product-description-section" class="column">
 					<label for=""><b>Descrizione</b></label>
-					<textarea name="product-description" id="product-description" class="input-field" cols="30" rows="5"></textarea>
+					<textarea name="product-description" id="product-description" class="input-field" cols="30" rows="5" required></textarea>
 				</div>
 				<div id="product-photo-section" class="column">
-					<label for="product-picture"><b>Carica le foto:</b></label>
-					<input type="file" id="product-picture" name="product-picture" multiple> 
+					<label for="product-picture"><b>Carica la foto:</b></label>
+					<input type="file" id="product-picture" name="product-picture" required> 
 				</div>
 				<div id="product-add-button" class="row no-margin">
 					<button id="add-new-product" class="active-basic-button">Aggiungi prodotto</button>
 				</div>
 			</div>
-		</div>
 		</form>
 	</div>
     <script src="./static/scripts/admin.js"></script>
