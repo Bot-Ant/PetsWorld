@@ -52,7 +52,7 @@
 		<div id="full">
 			<div class="cart-panel">
 				<div id="cart-box" class="box">
-					<h1>Carrello</h1>
+					<h1 class="title">Carrello</h1>
 					<%
 					for (int i=0; i<prodotti.size(); i++)
 					{
@@ -60,7 +60,7 @@
 					<div class="product-line" id="<%=prodotti.get(i).getIdProdotto()%>">
 						<img src="./static/images/<%=prodotti.get(i).getFoto()%>.png" alt="<%=prodotti.get(i).getFoto()%>.webp">
 						<div class="product-name">
-							<h2><%=prodotti.get(i).getNome()%></h2>
+							<a href=""><h2><%=prodotti.get(i).getNome()%></h2></a>
 							<p>
 								Prodotto nel carrello
 							</p>
@@ -83,10 +83,7 @@
 						</div>
 					</div>
 
-					<% if (i + 1 < prodotti.size()) { %>
-					<hr>
 					<%
-							}
 						}
 					%>
 				</div>
@@ -105,7 +102,7 @@
 			</div>
 			<div class="price-panel">
 				<div id="price-box" class="box">
-					<h1>Totale</h1>
+					<h1 class="title">Totale</h1>
 					<div class="single-voice">
 						<p>
 							Subtotale
