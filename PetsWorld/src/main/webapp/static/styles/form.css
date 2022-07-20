@@ -60,18 +60,11 @@
 }
 /* Style the buttons inside the form */
 .form-section > button[type=submit] {
-	padding: 15px 15px;
-	margin: 10px 0px;
 	width: 100%;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	color: white;
-	background-color: var(--accent-color);
 }
-/* Change the button color when the cursor is on it */
-.form-section > button[type=submit]:hover {
-	background-color: var(--accent-color-dark);
+/* Style the buttons inside the form */
+.form-section > input[type=button] {
+	width: 100%;
 }
 /* Set the style of a link inside a form without decoration */
 p a {

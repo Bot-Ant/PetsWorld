@@ -64,4 +64,3 @@ function activateNewUserElementForm() {
     document.getElementById("top-separator").className = " ";
     document.getElementById("new-user-element").className = "user-element-line row";
 }
-

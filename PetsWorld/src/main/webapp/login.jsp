@@ -47,7 +47,7 @@
 					</li>
 				</ul>
 				
-				<button type="submit" class="loginbtn" name="submit" value="ConfermaLogin">Accedi</button>
+				<button type="submit" id="loginbtn" class="active-accent-button" name="submit" value="ConfermaLogin">Accedi</button>
 			</form>
 			<!-- Seperation line between sections-->
 			<hr>
