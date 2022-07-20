@@ -9,8 +9,8 @@
     background-color: var(--neutral-color-3);
 }
 
-#cart-content h1 {
-    margin: 20px 0 20px 0;
+#cart-content .title {
+    margin: 0px 0px 10px 0px;
 }
 
 #empty {
@@ -52,7 +52,7 @@
 }
 
 .product-line {
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0px;
     width: auto;
     display: flex;
@@ -73,6 +73,16 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
+.product-line .product-name a {
+    text-decoration: none;
+    color: var(--contrast-color-1);
+}
+
+.product-line .product-name a:hover {
+    color: var(--main-color);
+}
+
 .product-line .product-values {
     margin: 0;
     padding: 0;
@@ -140,7 +150,7 @@
 }
 
 .product-values .product-price {
-    margin: 30px auto auto auto;
+    margin: 40px auto 0 auto;
     padding: 0px;
     width: 100%;
     justify-self: center;

@@ -3,14 +3,14 @@ function setAdminSectionActive(id){
 }
 
 function editProductData(id) {
-    document.getElementById("id-price").className = "input-field";
-    document.getElementById("id-quantity").className = "input-field";
+    document.getElementById(id + "-price").className = "input-field";
+    document.getElementById(id + "-quantity").className = "input-field";
 
     const newbutton = document.createElement("button");
     newbutton.setAttribute("id", "save-button-" + id);
     newbutton.setAttribute("class", "active-save-button");
     newbutton.innerHTML = "Salva"
-    const parent = document.getElementById("edit-section-id_prodotto");
-    const oldbutton = document.getElementById("edit-button-id_prodotto");
+    const parent = document.getElementById("edit-section-" + id);
+    const oldbutton = document.getElementById("edit-button-" + id);
     parent.replaceChild(newbutton, oldbutton);
 }

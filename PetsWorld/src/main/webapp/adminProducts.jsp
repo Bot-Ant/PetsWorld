@@ -19,60 +19,57 @@
 				<jsp:include page="./searchbar.jsp"/>
 			</div>
 			<h1>Catalogo</h1>
-			<div id="products-list">
-							<%
-								String error2 = (String)request.getAttribute("errore2"); 
-								String error1 = (String)request.getAttribute("errore1");
-								if(error2 != null){ 
-							%>
-								<div align="center" Style="color:red"><%=error2 %></div>
-							<% 
-								}
-								else if(error1!=null)
-								{
-							%>
-								<div align="center" Style="color:red"><%=error1 %></div>
-							<%
-								}	
-							%>
+			<div id="products-list" class="column">
+				<%
+					String error1 = (String)request.getAttribute("errore1");
+					String error2 = (String)request.getAttribute("errore2"); 
+					if(error2 != null){ 
+				%>
+				<div class="changes-result-message"><%=error2 %></div>
+				<% 
+					}
+					else if(error1!=null)
+					{
+				%>
+				<div class="changes-result-message error"><%=error1 %></div>
+				<%
+					}	
+				%>
+				
 							
 				<c:forEach items="${list}" var="prd">
 					<div class="product-info-line">
-						<div class="box">
-							<form method="get" action="ServletModificaProdotto">
-							<ul id="data-product-id_prodotto" class="row">
-								<li class="size-l">
-									<input type="text" id="id-product-code" class="input-field inactive" name="product-code" value="${prd.idProdotto}">
-								</li>
-								<li class="voice size-m">
+						<div class="box row">
+							<form method="get" action="ServletModificaProdotto" id="data-product-${prd.idProdotto}" class="product-data-row row">
+								<div class="size-l">
+									<input type="text" id="$product-code-${prd.idProdotto}" class="input-field inactive" name="product-code" value="${prd.idProdotto}">
+								</div>
+								<div class="voice size-m">
 									<img src="./static/images/${prd.foto}.png" alt="Foto prodotto">
-								</li>
-								<li class="size-auto">
+								</div>
+								<div class="size-auto">
 									<h3>${prd.nome}</h3>
-								</li>
-								<li class="voice size-m">
-									<input type="text" id="id-price" class="input-field inactive" name="product-price" value="${prd.prezzo}">
-								</li>
-								<li class="voice size-s">
-									<p>iva=${prd.iva}%</p>
-								</li>
-								<li class="voice size-xl">
+								</div>
+								<div class="voice size-l">
+									<input type="text" id="${prd.idProdotto}-price" class="input-field inactive" name="product-price" value="${prd.prezzo}">
+								</div>
+								<div class="voice size-m">
+									<p>iva ${prd.iva}%</p>
+								</div>
+								<div class="voice size-xl">
 									<p>${prd.animale}</p>
-								</li>
-								<li class="voice size-m">
-									<input type="text" id="id-quantity" class="input-field inactive" name="product-quantity" value="${prd.quantita}">
-								</li>
-								<li id="edit-section-id_prodotto" class="voice">
-									<input type="button" id="edit-button-id_prodotto" class="active-edit-button" onclick="editProductData('id-product-code')" value="Modifica">
-								</li>
-							</ul>			
+								</div>
+								<div class="voice size-m">
+									<input type="text" id="${prd.idProdotto}-quantity" class="input-field inactive" name="product-quantity" value="${prd.quantita}">
+								</div>
+								<div id="edit-section-${prd.idProdotto}" class="voice">
+									<input type="button" id="edit-button-${prd.idProdotto}" class="active-edit-button" onclick="editProductData('${prd.idProdotto}')" value="Modifica">
+								</div>	
 							</form>
-							<form method="get" action="ServletRimozioneProdotto">
-								<ul id="data-product-id_prodotto" class="row">
-									<li class="voice last">
-										<button class="active-accent-button" name="product-code" value="${prd.idProdotto}">Elimina</button>
-									</li>
-								</ul>
+							<form method="get" action="ServletRimozioneProdotto" id="data-product-id_prodotto" class="delete row">
+								<div class="voice last">
+									<button class="active-accent-button" name="product-code" value="${prd.idProdotto}">Elimina</button>
+								</div>	
 							</form>
 						</div>
 					</div>
