@@ -35,14 +35,29 @@
 					<div id="user-element-[id]" class="user-element-line row">
 							<div class="user-element-data">
 								<div class="row">
-									<input type="text" id="address-name-[id]" class="input-field inactive user-element-name" name="address-name" value="Nome_strada" required>
-									<input type="text" id="address-number-[id]" class="input-field inactive user-element-name number" name="address-number" value="Civico"required>
+									<div class="column">
+										<input type="text" id="address-name-[id]" class="input-field inactive user-element-name" name="address-name" value="Nome_strada" required>
+										<p id="address-name-[id]-validity" class="invalid"></p>
+									</div>
+									<div class="column">
+										<input type="text" id="address-number-[id]" class="input-field inactive user-element-name number" name="address-number" value="Civico"required>
+										<p id="address-number-[id]-validity" class="invalid"></p>
+									</div>
 								</div>
 								<div class="row">
-									<input type="text" id="citta-[id]" class="input-field inactive" name="citta" value="Città" required>
-									<input type="text" id="provincia-[id]" class="input-field inactive" name="provincia" value="Provincia" required>
+									<div class="column">
+										<input type="text" id="address-city-[id]" class="input-field inactive" name="citta" value="Città" required>
+										<p id="address-city-[id]-validity" class="invalid"></p>
+									</div>
+									<div class="column">
+										<input type="text" id="address-province-[id]" class="input-field inactive" name="provincia" value="Provincia" required>
+										<p id="address-province-[id]-validity" class="invalid"></p>
+									</div>
 								</div>
-								<input type="text" id="cap-[id]" class="input-field inactive number" name="cap" value="CAP" required>
+								<div class="column">
+									<input type="text" id="address-cap-[id]" class="input-field inactive number" name="cap" value="CAP" required>
+									<p id="address-cap-[id]-validity" class="invalid"></p>
+								</div>
 							</div>
 							<div id="user-element-[id]-buttons" class="user-element-buttons column">
 								<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('[id]')">
@@ -56,16 +71,31 @@
 							<h2 class="new-element-title">Nuovo indirizzo</h2>
 						</div>
 						<div class="row">
-							<input type="text" id="new-address-name" class="input-field user-element-name" name="address-name" placeholder="Nome della strada" required>
-							<input type="text" id="new-address-number" class="input-field user-element-name number" name="address-number" placeholder="Civico" required>
+							<div class="column">
+								<input type="text" id="address-name-new" class="input-field user-element-name" name="address-name" placeholder="Nome della strada" required>
+								<p id="address-name-new-validity" class="invalid"></p>
+							</div>
+							<div class="column">
+								<input type="text" id="address-number-new" class="input-field user-element-name number" name="address-number" placeholder="Civico" required>
+								<p id="address-number-new-validity" class="invalid"></p>
+							</div>
 						</div>
 						<div class="row">
-							<input type="text" id="new-citta" class="input-field" name="citta" placeholder="Città" required>
-							<input type="text" id="new-provincia" class="input-field" name="provincia" placeholder="Provincia" required>
+							<div class="column">
+								<input type="text" id="address-city-new" class="input-field" name="citta" placeholder="Città" required>
+								<p id="address-city-new-validity" class="invalid"></p>
+							</div>
+							<div class="column">
+								<input type="text" id="address-province-new" class="input-field" name="provincia" placeholder="Provincia" required>
+								<p id="address-province-new-validity" class="invalid"></p>
+							</div>
 						</div>
-						<input type="text" id="new-cap" class="input-field number" name="cap" placeholder="CAP" required>
+						<div class="column">
+							<input type="text" id="address-cap-new" class="input-field number" name="cap" placeholder="CAP" required>
+							<p id="address-cap-new-validity" class="invalid"></p>
+						</div>
 					</div>
-					<button id="save-new-user-element" class="active-save-button">Salva</button>
+					<input type="button" id="save-new-user-element" class="active-save-button" value="Salva" onclick="submitNewAddress('new')">
 				</div>
 			</div>
 		</div>
@@ -74,7 +104,7 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-	<script type="text/javascript" src="./static/scripts/page.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
 	<script type="text/javascript" src="./static/scripts/user.js"></script>
 	<script>
 		setUserSectionActive("user-addresses");

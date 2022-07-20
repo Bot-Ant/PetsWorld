@@ -35,14 +35,26 @@
 					<div id="user-element-[id]" class="user-element-line row">
 						<div class="user-element-data">
 							<div class="row">
-								<input type="text" id="pay-method-number-[id]" class="input-field inactive user-element-name" name="pay-method-number" value="Numero_carta" required>
+								<div class="column">
+									<input type="text" id="pay-method-number-[id]" class="input-field inactive user-element-name" name="pay-method-number" value="Numero_carta" required>
+									<p id="pay-method-number-[id]-validity" class="invalid"></p>
+								</div>
 							</div>
 							<div class="row">
-								<input type="text" id="owner-[id]" class="input-field inactive" name="proprietario" value="Proprietario" required>
+								<div class="column">
+									<input type="text" id="pay-method-owner-[id]" class="input-field inactive" name="proprietario" value="Proprietario" required>
+									<p id="pay-method-owner-[id]-validity" class="invalid"></p>
+								</div>
 							</div>
 							<div class="row">
-								<input type="text" id="month-[id]" class="input-field inactive number" name="mese" value="Mese" required>
-								<input type="text" id="year-[id]" class="input-field inactive number" name="anno" value="Anno" required>
+								<div class="column">
+									<input type="text" id="pay-method-month-[id]" class="input-field inactive number" name="mese" value="Mese" required>
+									<p id="pay-method-month-[id]-validity" class="invalid"></p>
+								</div>
+								<div class="column">
+									<input type="text" id="pay-method-year-[id]" class="input-field inactive number" name="anno" value="Anno" required>
+									<p id="pay-method-year-[id]-validity" class="invalid"></p>
+								</div>
 							</div>
 						</div>
 						<div id="user-element-[id]-buttons" class="user-element-buttons column">
@@ -57,17 +69,29 @@
 							<h2>Nuovo metodo di pagamento</h2>
 						</div>
 						<div class="row">
-							<input type="text" id="new-pay-method-number" class="input-field user-element-name" name="pay-method-number" placeholder="Numero della carta" required>
+							<div class="column">
+								<input type="text" id="pay-method-number-new" class="input-field user-element-name" name="pay-method-number" placeholder="Numero della carta" required>
+								<p id="pay-method-number-new-validity" class="invalid"></p>
+							</div>
 						</div>
 						<div class="row">
-							<input type="text" id="new-proprietario" class="input-field" name="proprietario" placeholder="Proprietario" required>
+							<div class="column">
+								<input type="text" id="pay-method-owner-new" class="input-field" name="proprietario" placeholder="Proprietario" required>
+								<p id="pay-method-owner-new-validity" class="invalid"></p>
+							</div>
 						</div>
 						<div class="row">
-							<input type="text" id="new-month" class="input-field number" name="mese" placeholder="Mese" required>
-							<input type="text" id="new-year" class="input-field number" name="anno" placeholder="Anno" required>
+							<div class="column">
+								<input type="text" id="pay-method-month-new" class="input-field number" name="mese" placeholder="Mese" required>
+								<p id="pay-method-month-new-validity" class="invalid"></p>
+							</div>
+							<div class="column">
+								<input type="text" id="pay-method-year-new" class="input-field number" name="anno" placeholder="Anno" required>
+								<p id="pay-method-year-new-validity" class="invalid"></p>
+							</div>
 						</div>
 					</div>
-					<button id="save-new-user-element" class="active-save-button">Salva</button>
+					<input type="button" id="save-new-user-element" class="active-save-button" value="Salva" onclick="submitNewPayMethod('new')">
 				</div>
 			</div>
 		</div>
@@ -76,7 +100,7 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-	<script type="text/javascript" src="./static/scripts/page.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
 	<script type="text/javascript" src="./static/scripts/user.js"></script>
 	<script>
 		setUserSectionActive("user-payments");

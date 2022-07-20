@@ -69,6 +69,7 @@
 			</p>
 		</div>
 	</div>
-	<script src="./static/scripts/form.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
+	<script type="text/javascript" src="./static/scripts/form.js"></script>
 </body>
 </html>
