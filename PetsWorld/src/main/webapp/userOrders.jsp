@@ -163,7 +163,7 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-	<script type="text/javascript" src="./static/scripts/page.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
 	<script type="text/javascript" src="./static/scripts/user.js"></script>
 	<script>
 		setUserSectionActive("user-orders");

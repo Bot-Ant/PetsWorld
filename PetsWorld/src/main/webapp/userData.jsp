@@ -29,20 +29,24 @@
 						<div class="element-left">
 							<label class="field-name" for="nome"><b>Nome</b></label><br>
 							<input type="text" id="nome" class="input-field inactive" name="nome" value="Nome_utente">
+							<p id="name-validity" class="invalid"></p>
 						</div>
 						<div class="element-right">
 							<label class="field-name" for="cognome"><b>Cognome</b></label><br>
 							<input type="text" id="cognome" class="input-field inactive" name="cognome" value="Cognome_utente">
+							<p id="surname-validity" class="invalid"></p>
 						</div>			
 					</div>
 					<div class="row">
 						<div class="element-left">
 							<label class="field-name" for="codiceFiscale"><b>Codice Fiscale</b></label><br>
 							<input type="text" id="codiceFiscale" class="input-field inactive" name="codiceFiscale" value="Codice_fiscale_utente">
+							<p id="taxcode-validity" class="invalid"></p>
 						</div>
 						<div class="element-right">
 							<label class="field-name" for="cellulare"><b>Cellulare</b></label><br>
 							<input type="text" id="cellulare" class="input-field inactive" name="cellulare" value="Cellulare_utente">
+							<p id="number-validity" class="invalid"></p>
 						</div>			
 					</div>
 				</div>
@@ -55,10 +59,12 @@
 						<div class="element-left">
 							<label class="field-name" for="email"><b>Email</b></label><br>
 							<input type="text" id="email" class="input-field inactive" name="email" value="Email_utente">
+							<p id="email-validity" class="invalid"></p>
 						</div>
 						<div class="element-right">
 							<label class="field-name" for="password"><b>Password</b></label><br>
 							<input type="text" id="password" class="input-field inactive" name="password" value="********">
+							<p id="password-validity" class="invalid"></p>
 						</div>			
 					</div>
 				</div>
@@ -69,7 +75,8 @@
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
-	<script type="text/javascript" src="./static/scripts/page.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
+	<script type="text/javascript" src="./static/scripts/form.js"></script>
 	<script type="text/javascript" src="./static/scripts/user.js"></script>
 	<script>
 		setUserSectionActive("user-data");

@@ -90,6 +90,16 @@
     pointer-events: none;
 }  
 
+#user-content .invalid {
+	margin-top: 0;
+	font-size: 0.8em;
+	color: var(--accent-color);
+}
+
+#user-content .column {
+	margin-right: 20px;
+}
+
 /* style for userData.jsp */
 
 #data-box {
