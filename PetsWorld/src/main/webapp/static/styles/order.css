@@ -74,12 +74,14 @@
     align-items: flex-start;
 }
 
-.product-line .product-name a {
+.product-line .product-name button {
     text-decoration: none;
+    border: 0;
     color: var(--contrast-color-1);
+    background-color: var(--transparent);
 }
 
-.product-line .product-name a:hover {
+.product-line .product-name button:hover {
     color: var(--main-color);
 }
 
