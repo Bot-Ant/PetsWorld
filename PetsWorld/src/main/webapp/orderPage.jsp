@@ -17,38 +17,15 @@
 				<div class="row">
 					<div class="field">
 						<label for="saved-addresses">Scegli tra i salvati</label>
-						<select class="input-field" name="saved-addresses" id="" >
-							<option value="" selected>Nuovo indirizzo</option>
+						<select class="input-field" name="saved-addresses" id="">
+							<option value="" selected>Scegli indirizzo</option>
+
 							<option value="option-1">Primo indirizzo</option>
-							<option value="option-2">Secondo indirizzo</option>
-							<option value="option-3">Terzo indirizzo</option>
+
 						</select>
 					</div>
 				</div>
-				<div class="row">
-					<div class="field">
-						<label for="indirizzo">Indirizzo</label>
-						<input class="input-field" type="text" required name="indirizzo" placeholder="" id="indirizzo">
-					</div>
-					<div class="field">
-						<label for="civico">Civico</label>
-						<input class="input-field" type="text" required name="civico" placeholder="" id="civico">
-					</div>
-				</div>
-				<div class="row">
-					<div class="field">
-						<label for="citta">Città</label>
-						<input class="input-field" type="text" required name="citta" placeholder="" id="citta">
-					</div>
-					<div class="field">
-						<label for="CAP">CAP</label>
-						<input class="input-field" type="text" required name="CAP" placeholder="" id="CAP">
-					</div>
-					<div class="field">
-						<label for="provincia">Provincia</label>
-						<input class="input-field" type="text" required name="provincia" placeholder="" id="provincia">
-					</div>
-				</div>
+				
 				<div class="row">
 					<input type="button" id="confirm-shipping" class="active-basic-button" value="Conferma indirizzo" onclick="verifyAddressInfo()">
 				</div>
@@ -62,39 +39,14 @@
 					<div class="field">
 						<label for="saved-payments">Scegli tra i salvati</label>
 						<select class="input-field" name="saved-payments" id="" >
-							<option value="" selected>Nuovo metodo di pagamento</option>
+							<option value="" selected>Scegli metodo di pagamento</option>
+
 							<option value="option-1">Primo metodo di pagamento</option>
-							<option value="option-2">Secondo metodo di pagamento</option>
-							<option value="option-3">Terzo metodo di pagamento</option>
+
 						</select>
 					</div>
 				</div>
-				<div class="row">
-					<div class="field">
-						<label for="nome-proprietario">Nome proprietario</label>
-						<input class="input-field" type="text" required name="nome-proprietario" placeholder="" id="nome-proprietario">
-					</div>
-				</div>
-				<div class="row">
-					<div class="field">
-						<label for="tipo-carta">Tipo</label>
-						<input class="input-field" type="text" required name="tipo-carta" placeholder="" id="tipo-carta">
-					</div>
-					<div class="field">
-						<label for="numero-carta">Numero</label>
-						<input class="input-field" type="text" required name="numero-carta" placeholder="" id="numero-carta">
-					</div>
-				</div>
-				<div class="row">
-					<div class="field">
-						<label for="data-scadenza">Data Scadenza</label>
-						<input class="input-field" type="text" required name="data-scadenza" placeholder="" id="data-scadenza">
-					</div>
-					<div class="field">
-						<label for="ccv">CVV</label>
-						<input class="input-field" type="text" required name="cvv" placeholder="" id="ccv">
-					</div>
-				</div>
+				
 				<div class="row">
 					<input type="button" id="confirm-payment" class="active-basic-button" value="Conferma metodo" onclick="verifyPaymentMethodInfo()">
 				</div>
