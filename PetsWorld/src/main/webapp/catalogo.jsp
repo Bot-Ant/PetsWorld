@@ -91,7 +91,7 @@
 								</div>
 								<h3 class="name">${prd.nome}</h3>
 								<div class="text-container">
-									<h2 class="price">€${prd.prezzo}</h2>
+									<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
 								</div>
 							</button>
 						</form>

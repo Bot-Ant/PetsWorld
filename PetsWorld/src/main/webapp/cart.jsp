@@ -65,9 +65,28 @@
 									<h2><%=prodotti.get(i).getNome()%></h2>
 								</button>
 							</form>
-							<p>
-								Prodotto nel carrello
-							</p>
+							<div class="row">
+								<%
+						if(prodotti.get(i).getPeso()!=null)
+						{
+					%>
+					<p id="prod-weight" class="product-data-box"><%=prodotti.get(i).getPeso()%></p>
+					<%
+						}
+						if(prodotti.get(i).getDimensione()!=null)
+						{
+					%>
+					<p id="prod-size" class="product-data-box"><%=prodotti.get(i).getDimensione()%></p>
+					<%
+						}
+						if(prodotti.get(i).getColore()!=null)
+						{
+					%>
+					<p id="prod-color" class="product-data-box"><%=prodotti.get(i).getColore()%></p>
+					<%
+						}
+					%>
+					</div>
 							<p id="<%=prodotti.get(i).getIdProdotto()%>_demo"></p>
 						</div>
 						<div class="product-values">
@@ -81,7 +100,7 @@
 									<button class="active-basic-button right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
 								</div>
 							</div>
-							<h2 class="product-price">€<%=prodotti.get(i).getPrezzo()%></h2>
+							<h2 class="product-price">€<%=String.format("%,.2f", (prodotti.get(i).getPrezzo()))%></h2>
 							<% subtotale += (prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita());
 							   subtotale=Math.round(subtotale*100)/100.0;%>
 						</div>
@@ -112,7 +131,7 @@
 							Subtotale
 						</p>
 						<p class="price" id="subtotale">
-							€<%=subtotale%>
+							€<%=String.format("%,.2f", (subtotale))%>
 						</p>
 					</div>
 					<% if (subtotale >= 50) {
@@ -123,7 +142,7 @@
 							Spese di spedizione
 						</p>
 						<p class="price" id="spedizione">
-							€<%=costoSpedizione%>
+							€<%=String.format("%,.2f", (costoSpedizione))%>
 						</p>
 					</div>
 					<div class="single-voice">
@@ -131,7 +150,7 @@
 							Donazione
 						</p>
 						<p class="price" id="donazione">
-							€<%=prezzoDonazione%>
+							€<%=String.format("%,.2f", (prezzoDonazione))%>
 						</p>
 					</div>
 					<% costoTotale = subtotale + costoSpedizione + prezzoDonazione;%>
@@ -143,7 +162,7 @@
 								<span class="small">(iva inclusa)</span>
 							</p>
 							<p class="price" id="totale">
-								€<%=costoTotale%>
+								€<%=String.format("%,.2f", (costoTotale))%>
 							</p>
 						</div>
 					</div>

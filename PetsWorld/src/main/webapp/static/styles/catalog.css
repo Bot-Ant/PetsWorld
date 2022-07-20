@@ -157,7 +157,9 @@
     background-color: var(--neutral-color-2);
 }
 
-/*main section of the catalog page*/
+
+
+/* style of catalogo.jsp */
 .catalog-content {
     margin: 0;
     padding: 0;
@@ -206,7 +208,7 @@
 
 
 
-/*main section of the product page*/
+/* style of productPage.jsp */
 #product-page-content {
     margin: 0;
     padding: 0;
@@ -230,6 +232,10 @@
     padding: 0;
     width: 50%;
     height: 50%;
+    border-radius: 15px;
+    border: 1px solid var(--neutral-color-3);
+    background-color: var(--neutral-color-2);
+    box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
 }
 
 #product-page-content #product-info {
@@ -322,8 +328,6 @@
     margin-top: 0;
     font-size: 2em;
 }
-
-
 
 #product-page-content #product-distinct-info{
     justify-items: start;

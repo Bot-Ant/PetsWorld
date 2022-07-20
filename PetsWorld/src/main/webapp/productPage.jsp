@@ -28,8 +28,9 @@
 		<div id="product-top" class="row">
 			<img id="product-image" src="./static/images/<%=prodotto.getFoto()%>.png" alt="immagine prodotto">
 			<div id="product-info" class="box">
-				<h1 class="product-name"><%=prodotto.getNome()%></h1>				
-				<h2 class="product-price">€<%=prodotto.getPrezzo()%></h2>
+				<h1 class="product-name"><%=prodotto.getNome()%></h1>	
+							
+				<h2 class="product-price">€<%= String.format("%,.2f", (prodotto.getPrezzo()))%></h2>
 				<p class="parameter-tag">Dettagli</p>
 				<div id="product-distinct-info" class="row">
 					

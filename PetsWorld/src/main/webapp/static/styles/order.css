@@ -85,6 +85,17 @@
     color: var(--main-color);
 }
 
+.product-line .product-data-box {
+    margin: 10px 20px 10px 0;
+	padding: 10px;
+	border-radius: 20px;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+	color: var(--main-color);
+	background-color: var(--transparent);
+}
+
 .product-line .product-values {
     margin: 0;
     padding: 0;
