@@ -30,6 +30,17 @@
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
 			<%
+				if(request.getParameter("animale")==null)
+				{
+					String nome= request.getParameter("search");
+
+			%>
+			
+			<h1>Risultati per ricerca: <%=nome%></h1>
+			
+			<% 
+				} else
+				{
 				String animale=request.getParameter("animale");
 				switch(animale)
 				{
@@ -71,9 +82,12 @@
 				break;
 			    }
 			    
-			    case "null" :{
+			    default : {
+			  %>
+					  <jsp:include page="./static/templates/catalogHeader_volatili.html"/>
+			  <%
 			    }
-			    break;
+				}
 				}
 			 %>
 				
