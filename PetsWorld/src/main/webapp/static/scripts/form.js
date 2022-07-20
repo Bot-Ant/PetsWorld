@@ -62,6 +62,9 @@ function nameValidity() {
     var name = document.getElementById("nome");
     if (!checkName(name)) {
         document.getElementById("name-validity").innerHTML = "Formato nome non valido";
+        return 0;
+    } else {
+        document.getElementById("name-validity").innerHTML = "";
     }
 }
 
@@ -69,6 +72,9 @@ function surnameValidity() {
     var surname = document.getElementById("cognome");
     if (!checkName(surname)) {
         document.getElementById("surname-validity").innerHTML = "Formato cognome non valido";
+        return 0;
+    } else {
+        document.getElementById("surname-validity").innerHTML = "";
     }
 }
 
@@ -76,17 +82,21 @@ function emailValidity() {
     var email = document.getElementById("email");
     if (!checkEmail(email)) {
         document.getElementById("email-validity").innerHTML = "Formato email non valido";
+        return 0;
+    } else {
+        document.getElementById("email-validity").innerHTML = "";
     }
 }
 
 function passwordValidity() {
     var password = document.getElementById("password");
     if (!checkPassword(password)) {
-        document.getElementById("password-validity").innerHTML = "La password deve contenere almeno 8 caratteri";    
-    } else if (password.length < 15) {
-        document.getElementById("password-validity").innerHTML = "Password poco sicura";
+        document.getElementById("password-validity").innerHTML = "La password deve contenere almeno 8 caratteri"; 
+        document.getElementById("password-validity").style.color = "var(--accent-color)";
+        return 0;
     } else {
-        document.getElementById("password-validity").innerHTML = "Password sicura";
+        document.getElementById("password-validity").innerHTML = "Password valida";
+        document.getElementById("password-validity").style.color = "var(--main-color)";
     }
 }
 
@@ -94,6 +104,9 @@ function taxCodeValidity() {
     var code = document.getElementById("codiceFiscale");
     if (!checkTaxCode(code)) {
         document.getElementById("taxcode-validity").innerHTML = "Formato codice fiscale non valido";  
+        return 0;
+    } else {
+        document.getElementById("taxcode-validity").innerHTML = "";  
     }
 }
 
@@ -101,5 +114,21 @@ function phoneNumberValidity() {
     var number = document.getElementById("cellulare");
     if (!checkPhoneNumber(number)) {
         document.getElementById("number-validity").innerHTML = "Formato numero di telefono non valido";
+        return 0;
+    } else {
+        document.getElementById("number-validity").innerHTML = "";
+    }
+}
+
+function submitRegistration() {
+    var status = 1;
+    status = nameValidity();
+    status = surnameValidity();
+    status = emailValidity();
+    status = passwordValidity();
+    status = taxCodeValidity();
+    status = phoneNumberValidity();
+    if (status) {
+        //submit del form
     }
 }
