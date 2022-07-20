@@ -32,7 +32,7 @@
 			<%
 				if(request.getParameter("animale")==null)
 				{
-					String nome= request.getParameter("nome");
+					String nome= request.getParameter("search");
 
 			%>
 			
