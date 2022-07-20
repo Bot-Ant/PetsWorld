@@ -32,18 +32,34 @@
 				<h2 class="product-price">€<%=prodotto.getPrezzo()%></h2>
 				<p class="parameter-tag">Dettagli</p>
 				<div id="product-distinct-info" class="row">
-					<div id="prod-weight" class="product-data-box">
-						12KG
-					</div>
-					<div id="prod-size" class="product-data-box-missing">
-						VUOTO
-					</div>
-					<div id="prod-color" class="product-data-box-missing">
-						VUOTO
-					</div>
-					<div id="prod-expiry-date" class="product-data-box">
-						Scadenza 2025/04/10
-					</div>
+					
+					<%
+						if(prodotto.getPeso()!=null)
+						{
+					%>
+					<div id="prod-weight" class="product-data-box"><%=prodotto.getPeso()%></div>
+					<%
+						}
+						if(prodotto.getDimensione()!=null)
+						{
+					%>
+					<div id="prod-size" class="product-data-box"><%=prodotto.getDimensione()%></div>
+					<%
+						}
+						if(prodotto.getColore()!=null)
+						{
+					%>
+					<div id="prod-color" class="product-data-box"><%=prodotto.getColore()%></div>
+					<%
+						}
+						if(prodotto.getDataScadenza()!=null)
+						{
+					%>
+					<div id="prod-expiry-date" class="product-data-box">Scadenza:<%=prodotto.getDataScadenza()%></div>
+					<%
+						}
+					%>
+					
 				</div>
 				<p class="parameter-tag">Quantità</p>
 				<div class="product-parameter">
