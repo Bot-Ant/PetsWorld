@@ -26,4 +26,18 @@ public class UtenteQuery {
 		builder.select().where("email=?").andwhere("password=?");	
 		return builder.GeneratedQuery();
 	}
+	
+	public static String elimina() {
+		QueryBuilder builder = new QueryBuilder (UTENTE_QUERY, UTENTE_ALIAS);
+		builder.delete();
+		builder.where("idProdotto = ?");
+		return builder.GeneratedQuery();
+	}
+	
+	public static String modifica() {
+		QueryBuilder builder = new QueryBuilder (UTENTE_QUERY, UTENTE_ALIAS);
+		builder.update(null);
+		return builder.GeneratedQuery();
+	}
+	
 }

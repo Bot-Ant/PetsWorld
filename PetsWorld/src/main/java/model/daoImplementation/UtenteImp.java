@@ -1,6 +1,7 @@
 package model.daoImplementation;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -82,4 +83,31 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 		return ruolo;
 	}
 
-}
+	@Override
+	public boolean DeleteAccount(Utente elimina) throws SQLException {
+		// TODO Auto-generated method stub
+		try(Connection connection = createConnection()){
+			String query = UtenteQuery.elimina();
+			 
+			try(PreparedStatement ps = connection.prepareStatement(query)){
+           {
+			/**---MAPPING---*/
+        	   ps.setInt(1,elimina.getIdUtente());
+        	   
+               int rows= ps.executeUpdate();
+               
+               return rows==1;
+
+           	}
+			}
+
+		}	
+	}
+
+	@Override
+	public boolean UpdateAccount(Utente modifica) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	}
+

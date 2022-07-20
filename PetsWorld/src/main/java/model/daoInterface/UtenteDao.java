@@ -12,4 +12,7 @@ public interface UtenteDao <s extends Exception> {
 		
 	int Admincheck (String email, String password) throws SQLException;
 
+	boolean DeleteAccount(Utente elimina) throws SQLException;
+	
+	boolean UpdateAccount(Utente modifica) throws SQLException;
 }
