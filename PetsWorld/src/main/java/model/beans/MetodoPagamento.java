@@ -14,7 +14,14 @@ public class MetodoPagamento implements Serializable{
 	private String meseScadenza;
 	private String annoScadenza;
 	private String cvv;
-
+	private int idpaga;
+	
+	public int getIdpaga() {
+		return idpaga;
+	}
+	public void setIdpaga(int idpaga) {
+		this.idpaga = idpaga;
+	}
 	public int getIdUtente() {
 		return IdUtente;
 	}
@@ -55,7 +62,10 @@ public class MetodoPagamento implements Serializable{
 	@Override
 	public String toString() {
 		return "MetodoPagamento [IdUtente=" + IdUtente + ", numero=" + numero + ", proprietario=" + proprietario
-				+ ", meseScadenza=" + meseScadenza + ", annoScadenza=" + annoScadenza + ", cvv=" + cvv + "]";
+				+ ", meseScadenza=" + meseScadenza + ", annoScadenza=" + annoScadenza + ", cvv=" + cvv + ", idpaga="
+				+ idpaga + "]";
 	}
-		
+
+
+
 }

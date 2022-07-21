@@ -14,7 +14,14 @@ public class Indirizzo implements Serializable{
 	private String civico;
 	private String CAP;
 	private String provincia;
+	private int idindirizzo;
 	
+	public int getIdindirizzo() {
+		return idindirizzo;
+	}
+	public void setIdindirizzo(int idindirizzo) {
+		this.idindirizzo = idindirizzo;
+	}
 	public int getIdUtente() {
 		return IdUtente;
 	}
@@ -54,7 +61,9 @@ public class Indirizzo implements Serializable{
 	@Override
 	public String toString() {
 		return "Indirizzo [IdUtente=" + IdUtente + ", citta=" + citta + ", nome_strada=" + nome_strada + ", civico="
-				+ civico + ", CAP=" + CAP + ", provincia=" + provincia + "]";
+				+ civico + ", CAP=" + CAP + ", provincia=" + provincia + ", idindirizzo=" + idindirizzo + "]";
 	}
+	
+	
 	
 }

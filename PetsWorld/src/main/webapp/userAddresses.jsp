@@ -42,35 +42,35 @@
 						
 						%>
 				
-					<div id="user-element-<%=u.getIdUtente()%>" class="user-element-line row">
+					<div id="user-element-<%=u.getIdindirizzo()%>" class="user-element-line row">
 							<div class="user-element-data">
 								<div class="row">
 									<div class="column">
-										<input type="text" id="address-name-<%=u.getIdUtente()%>" class="input-field inactive user-element-name" name="address-name" value=" <%=u.getNome_strada()%>" required>
-										<p id="address-name-<%=u.getIdUtente()%>-validity" class="invalid"></p>
+										<input type="text" id="address-name-<%=u.getIdindirizzo()%>" class="input-field inactive user-element-name" name="address-name" value=" <%=u.getNome_strada()%>" required>
+										<p id="address-name-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 									<div class="column">
-										<input type="text" id="address-number-<%=u.getIdUtente()%>" class="input-field inactive user-element-name number" name="address-number" value="<%=u.getCivico()%>"required>
-										<p id="address-number-<%=u.getIdUtente()%>-validity" class="invalid"></p>
+										<input type="text" id="address-number-<%=u.getIdindirizzo()%>" class="input-field inactive user-element-name number" name="address-number" value="<%=u.getCivico()%>"required>
+										<p id="address-number-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 								</div>
 								<div class="row">
 									<div class="column">
-										<input type="text" id="address-city-<%=u.getIdUtente()%>" class="input-field inactive" name="citta" value="<%=u.getCitta()%>" required>
-										<p id="address-city-<%=u.getIdUtente()%>-validity" class="invalid"></p>
+										<input type="text" id="address-city-<%=u.getIdindirizzo()%>" class="input-field inactive" name="citta" value="<%=u.getCitta()%>" required>
+										<p id="address-city-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 									<div class="column">
-										<input type="text" id="address-province-<%=u.getIdUtente()%>" class="input-field inactive" name="provincia" value="<%=u.getProvincia()%>" required>
-										<p id="address-province-<%=u.getIdUtente()%>-validity" class="invalid"></p>
+										<input type="text" id="address-province-<%=u.getIdindirizzo()%>" class="input-field inactive" name="provincia" value="<%=u.getProvincia()%>" required>
+										<p id="address-province-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 								</div>
 								<div class="column">
-									<input type="text" id="address-cap-<%=u.getIdUtente()%>" class="input-field inactive number" name="cap" value="<%=u.getCAP()%>" required>
-									<p id="address-cap-<%=u.getIdUtente()%>-validity" class="invalid"></p>
+									<input type="text" id="address-cap-<%=u.getIdindirizzo()%>" class="input-field inactive number" name="cap" value="<%=u.getCAP()%>" required>
+									<p id="address-cap-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 								</div>
 							</div>
-							<div id="user-element-<%=u.getIdUtente()%>-buttons" class="user-element-buttons column">
-								<input type="button" id="user-element-<%=u.getIdUtente()%>-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('<%=u.getIdUtente()%>')">
+							<div id="user-element-<%=u.getIdindirizzo()%>-buttons" class="user-element-buttons column">
+								<input type="button" id="user-element-<%=u.getIdindirizzo()%>-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('<%=u.getIdindirizzo()%>')">
 							</div>	
 					</div>
 					<% }
