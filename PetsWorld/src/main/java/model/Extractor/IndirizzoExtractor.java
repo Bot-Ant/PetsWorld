@@ -10,12 +10,12 @@ public class IndirizzoExtractor implements ResultSetExtractor<Indirizzo> {
 
     public Indirizzo extract(ResultSet resultSet) throws SQLException{
     	Indirizzo indirizzo=new Indirizzo();
-    	indirizzo.setIdUtente(resultSet.getInt("indirizzo.IDutente_fk"));
-    	indirizzo.setCitta(resultSet.getString("indirizzo.citta"));
-    	indirizzo.setNome_strada(resultSet.getString("indirizzo.nome_strada"));
-    	indirizzo.setCivico(resultSet.getString("indirizzo.civico"));
-    	indirizzo.setCAP(resultSet.getString("indirizzo.CAP"));
-    	indirizzo.setProvincia(resultSet.getString("indirizzo.provincia"));
+    	indirizzo.setIdUtente(resultSet.getInt("via.IDutente_fk"));
+    	indirizzo.setCitta(resultSet.getString("via.citta"));
+    	indirizzo.setNome_strada(resultSet.getString("via.nome_strada"));
+    	indirizzo.setCivico(resultSet.getString("via.civico"));
+    	indirizzo.setCAP(resultSet.getString("via.CAP"));
+    	indirizzo.setProvincia(resultSet.getString("via.provincia"));
         return indirizzo;
     }
 }

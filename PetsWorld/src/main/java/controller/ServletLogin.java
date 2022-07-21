@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.tomcat.jdbc.pool.DataSource;
 
 import model.beans.Carrello;
+import model.beans.Indirizzo;
+import model.beans.MetodoPagamento;
 import model.beans.Utente;
 import model.daoImplementation.UtenteImp;
 import model.daoInterface.UtenteDao;
@@ -56,9 +59,29 @@ public class ServletLogin extends HttpServlet {
         
         Utente accountdaloggare = new Utente();
         UtenteDao<SQLException> dao= new UtenteImp(source);
+        ArrayList<Indirizzo> indirizzi= new ArrayList<Indirizzo>();
+        ArrayList<MetodoPagamento> metodiPagamento= new ArrayList<MetodoPagamento>();
         
-        accountdaloggare.setEmail(Email);
-        accountdaloggare.setPassword(Password);
+        try {
+			accountdaloggare=dao.doRetrieveByKey(Email);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+        try {
+			indirizzi=dao.setIndirizzi(accountdaloggare.getIdUtente());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        
+        try {
+			metodiPagamento=dao.setMetodiPagamento(accountdaloggare.getIdUtente());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        
+        accountdaloggare.setIndirizziSpedizione(indirizzi);
+        accountdaloggare.setMetodiPagamento(metodiPagamento);
         
         try {
         	boolean idUser=dao.Accountcheck(Email, Password);

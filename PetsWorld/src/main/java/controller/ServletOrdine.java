@@ -41,6 +41,8 @@ public class ServletOrdine extends HttpServlet {
 		Utente utente = (Utente) sessione.getAttribute("utente");
 		Carrello carrello = (Carrello) sessione.getAttribute("carrello");
 		Ordine ordine = new Ordine();
+		
+		/*
 		String nome_strada = (String) request.getParameter("indirizzo");
 		String civico = (String) request.getParameter("civico");
 		String citta = (String) request.getParameter("citta");
@@ -48,9 +50,9 @@ public class ServletOrdine extends HttpServlet {
 		String provincia = (String) request.getParameter("provincia");
 		String nome_proprietario = (String) request.getParameter("nome-proprietario");
 		String numero = (String) request.getParameter("numero-carta");
-		String data = (String) request.getParameter("data-scadenza");
+		String mese = (String) request.getParameter("mese-scadenza");
+		String anno = (String) request.getParameter("anno-scadenza");
 		String cvv = (String) request.getParameter("cvv");
-		String tipo = (String) request.getParameter("tipo-carta");
 
 		
 		Indirizzo ind= new Indirizzo();
@@ -72,17 +74,20 @@ public class ServletOrdine extends HttpServlet {
         metodoPagamentoDao<SQLException> dao_metodo_pagamento=new metodoPagamentoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		
         cart.setIdUtente(utente.getIdUtente());
-        cart.setTipo(tipo);
         cart.setNumero(numero);
         cart.setProprietario(nome_proprietario);
-        cart.setDataScadenza(data);
-        cart.setCodice(cvv);
+        cart.setMeseScadenza(mese);
+        cart.setAnnoScadenza(anno);
+        cart.setCvv(cvv);
         try {
             dao_metodo_pagamento.aggiungi_metodo_pagamento(cart);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        
+        */
+		
+		String indirizzo = (String) request.getParameter("saved-addresses");
+		String pagamento = (String) request.getParameter("saved-payments");
         
 		
 	}

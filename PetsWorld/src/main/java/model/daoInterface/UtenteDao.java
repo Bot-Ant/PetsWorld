@@ -1,7 +1,11 @@
 package model.daoInterface;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import model.beans.Indirizzo;
+import model.beans.MetodoPagamento;
+import model.beans.Prodotto;
 import model.beans.Utente;
 
 public interface UtenteDao <s extends Exception> {
@@ -15,4 +19,11 @@ public interface UtenteDao <s extends Exception> {
 	boolean DeleteAccount(Utente elimina) throws SQLException;
 	
 	boolean UpdateAccount(Utente modifica) throws SQLException;
+	
+	Utente doRetrieveByKey(String email) throws SQLException;
+
+	ArrayList<Indirizzo> setIndirizzi (int ID) throws SQLException;
+	
+	ArrayList<MetodoPagamento> setMetodiPagamento (int ID) throws SQLException;
+
 }
