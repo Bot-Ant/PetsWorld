@@ -9,11 +9,11 @@ public class MetodoPagamento implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private int IdUtente;
-	private String tipo;
 	private String numero;
 	private String proprietario;
-	private String dataScadenza;
-	private String codice;
+	private String meseScadenza;
+	private String annoScadenza;
+	private String cvv;
 
 	public int getIdUtente() {
 		return IdUtente;
@@ -21,12 +21,7 @@ public class MetodoPagamento implements Serializable{
 	public void setIdUtente(int idUtente) {
 		IdUtente = idUtente;
 	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
+
 	public String getNumero() {
 		return numero;
 	}
@@ -39,22 +34,28 @@ public class MetodoPagamento implements Serializable{
 	public void setProprietario(String proprietario) {
 		this.proprietario = proprietario;
 	}
-	public String getDataScadenza() {
-		return dataScadenza;
+	public String getMeseScadenza() {
+		return meseScadenza;
 	}
-	public void setDataScadenza(String dataScadenza) {
-		this.dataScadenza = dataScadenza;
+	public void setMeseScadenza(String meseScadenza) {
+		this.meseScadenza = meseScadenza;
 	}
-	public String getCodice() {
-		return codice;
+	public String getAnnoScadenza() {
+		return annoScadenza;
 	}
-	public void setCodice(String codice) {
-		this.codice = codice;
+	public void setAnnoScadenza(String annoScadenza) {
+		this.annoScadenza = annoScadenza;
+	}
+	public String getCvv() {
+		return cvv;
+	}
+	public void setCvv(String cvv) {
+		this.cvv = cvv;
 	}
 	@Override
 	public String toString() {
-		return "MetodoPagamento [IdUtente=" + IdUtente + ", tipo=" + tipo + ", numero=" + numero + ", proprietario="
-				+ proprietario + ", dataScadenza=" + dataScadenza + ", codice=" + codice + "]";
+		return "MetodoPagamento [IdUtente=" + IdUtente + ", numero=" + numero + ", proprietario=" + proprietario
+				+ ", meseScadenza=" + meseScadenza + ", annoScadenza=" + annoScadenza + ", cvv=" + cvv + "]";
 	}
-	
+		
 }
