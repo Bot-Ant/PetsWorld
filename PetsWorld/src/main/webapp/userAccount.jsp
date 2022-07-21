@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*, model.beans.* , java.lang.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +23,17 @@
 		<div id="data-panel">
 			<div id="user-page-header">
 				<h1>My petsworld</h1>
+					<%
+						HttpSession sessione=request.getSession(true);
+						if (sessione != null)
+						{
+							Utente utente = (Utente) sessione.getAttribute("utente");
+					%>
 				<p>
-					Ciao [nome utente], benvenuto nel tuo spazio personale.
+					Ciao <%=utente.getNome()%> <%=utente.getCognome()%>, benvenuto nel tuo spazio personale.
 				</p>
+				<%
+					} %>
 			</div>
 			<div class="extra">
 				<div class="donazioni">
