@@ -16,6 +16,7 @@ public class IndirizzoExtractor implements ResultSetExtractor<Indirizzo> {
     	indirizzo.setCivico(resultSet.getString("via.civico"));
     	indirizzo.setCAP(resultSet.getString("via.CAP"));
     	indirizzo.setProvincia(resultSet.getString("via.provincia"));
+    	indirizzo.setIdindirizzo(resultSet.getInt("via.idIndirizzo"));
         return indirizzo;
     }
 }

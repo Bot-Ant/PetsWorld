@@ -93,7 +93,7 @@ public class ServletLogin extends HttpServlet {
         		requestDispatcher.forward(request, response);
         	}
         	
-        	if(ruolo==0) //in questo caso è un utente
+        	else if(ruolo==0) //in questo caso è un utente
         	{
     			HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
     			sessione.setAttribute("utente", accountdaloggare);

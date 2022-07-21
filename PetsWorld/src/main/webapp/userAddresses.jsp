@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*, model.beans.* , java.lang.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,38 +32,53 @@
 				</div>
 				<hr id="top-separator">
 				<div class="loop">
-					<div id="user-element-[id]" class="user-element-line row">
+				<%
+				HttpSession sessione=request.getSession(true);
+				if (sessione != null)
+				{
+					Utente utente = (Utente) sessione.getAttribute("utente");
+			               for(Indirizzo u : utente.getIndirizziSpedizione()){
+           			 
+						
+						%>
+				
+					<div id="user-element-<%=u.getIdindirizzo()%>" class="user-element-line row">
 							<div class="user-element-data">
 								<div class="row">
 									<div class="column">
-										<input type="text" id="address-name-[id]" class="input-field inactive user-element-name" name="address-name" value="Nome_strada" required>
-										<p id="address-name-[id]-validity" class="invalid"></p>
+										<input type="text" id="address-name-<%=u.getIdindirizzo()%>" class="input-field inactive user-element-name" name="address-name" value=" <%=u.getNome_strada()%>" required>
+										<p id="address-name-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 									<div class="column">
-										<input type="text" id="address-number-[id]" class="input-field inactive user-element-name number" name="address-number" value="Civico"required>
-										<p id="address-number-[id]-validity" class="invalid"></p>
+										<input type="text" id="address-number-<%=u.getIdindirizzo()%>" class="input-field inactive user-element-name number" name="address-number" value="<%=u.getCivico()%>"required>
+										<p id="address-number-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 								</div>
 								<div class="row">
 									<div class="column">
-										<input type="text" id="address-city-[id]" class="input-field inactive" name="citta" value="Città" required>
-										<p id="address-city-[id]-validity" class="invalid"></p>
+										<input type="text" id="address-city-<%=u.getIdindirizzo()%>" class="input-field inactive" name="citta" value="<%=u.getCitta()%>" required>
+										<p id="address-city-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 									<div class="column">
-										<input type="text" id="address-province-[id]" class="input-field inactive" name="provincia" value="Provincia" required>
-										<p id="address-province-[id]-validity" class="invalid"></p>
+										<input type="text" id="address-province-<%=u.getIdindirizzo()%>" class="input-field inactive" name="provincia" value="<%=u.getProvincia()%>" required>
+										<p id="address-province-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 								</div>
 								<div class="column">
-									<input type="text" id="address-cap-[id]" class="input-field inactive number" name="cap" value="CAP" required>
-									<p id="address-cap-[id]-validity" class="invalid"></p>
+									<input type="text" id="address-cap-<%=u.getIdindirizzo()%>" class="input-field inactive number" name="cap" value="<%=u.getCAP()%>" required>
+									<p id="address-cap-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 								</div>
 							</div>
-							<div id="user-element-[id]-buttons" class="user-element-buttons column">
-								<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('[id]')">
+							<div id="user-element-<%=u.getIdindirizzo()%>-buttons" class="user-element-buttons column">
+								<input type="button" id="user-element-<%=u.getIdindirizzo()%>-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('<%=u.getIdindirizzo()%>')">
 							</div>	
 					</div>
+					<% }
+			               } 
+			               
+			               %>
 				</div>
+				
 				<!-- always in the page -->
 				<div id="new-user-element" class="user-element-line row not-displayed">
 					<div class="user-element-data">

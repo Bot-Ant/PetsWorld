@@ -99,3 +99,34 @@ function checkYearNumber(input) {
         return  false;
     }
 }
+
+
+
+// functions used in admin pages
+
+function checkPrice(input) {
+    var name = /^\d+(.\d{1,2})?$/;
+    if (input.value.match(name)) {
+        return true;
+    } else {
+        return  false;
+    }
+}
+
+function checkComplexName(input) {
+    var name = /^[A-Za-z0-9]+((\s)?((\'|\-|\.)?([A-Za-z0-9])+))*$/;
+    if (input.value.match(name)) {
+        return true;
+    } else {
+        return  false;
+    }
+}
+
+function checkIntNumber(input) {
+    var name = /^([0-9])+$/;
+    if (input.match(name)) {
+        return true;
+    } else {
+        return  false;
+    }
+}

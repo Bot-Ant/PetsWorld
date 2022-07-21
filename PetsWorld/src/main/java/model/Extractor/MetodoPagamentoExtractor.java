@@ -16,6 +16,7 @@ public class MetodoPagamentoExtractor implements ResultSetExtractor<MetodoPagame
         MetodoPagamento.setMeseScadenza(resultSet.getString("cart.meseScadenza"));
         MetodoPagamento.setAnnoScadenza(resultSet.getString("cart.annoScadenza"));
         MetodoPagamento.setCvv(resultSet.getString("cart.cvv"));
+        MetodoPagamento.setIdpaga(resultSet.getInt("cart.idMetodoPagamento"));
         return MetodoPagamento;
     }
 }
