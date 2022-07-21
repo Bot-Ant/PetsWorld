@@ -22,8 +22,9 @@
 						}
 					%>
 				<div id="product-name-section" class="column">
-					<label for="" class="field"><b>Nome</b></label>
+					<label for="product-name" class="field"><b>Nome</b></label>
 					<input type="text" id="product-name" class="input-field" name="product-name" required>
+					<p id="product-name-validity" class="invalid"></p>
 				</div>
 				<div id="product-selection-boxes" class="row">
 					<div id="product-animal-section" class="selection-box left">
@@ -112,15 +113,21 @@
 				<div id="product-warehouse-section" class="row">
 					<div id="product-price-section" class="column left">
 						<label for="product-price"><b>Prezzo</b></label>
-						<input type="text" id="product-price" class="input-field" name="product-price" required>
+						<input type="text" id="product-price" class="input-field" name="product-price" placeholder="00.00" required>
+						<p id="product-price-validity" class="invalid"></p>
 					</div>
 					<div id="product-tax-section" class="column middle">
 						<label for="product-tax"><b>Iva</b></label>
-						<input type="text" id="product-tax" class="input-field" name="product-tax" required>
+						<select name="product-tax" id="product-tax" class="input-field" required>
+							<option value="4">4%</option>
+							<option value="10">10%</option>
+							<option value="22">22%</option>
+						</select>
 					</div>
 					<div id="product-quantity-section" class="column right">
 						<label for="product-quantity"><b>Quantità</b></label>
 						<input type="text" id="product-quantity" class="input-field" name="product-quantity" required>
+						<p id="product-quantity-validity" class="invalid"></p>
 					</div>
 				</div>
 				<div id="product-differences-section-1" class="row">
@@ -140,7 +147,7 @@
 				<div id="product-differences-section-2" class="row">
 					<div id="product-expirydate-section" class="column left">
 						<label for="product-expiry-date"><b>Scadenza</b></label>
-						<input type="text" id="product-expiry-date" class="input-field" name="product-expiry-date">
+						<input type="text" id="product-expiry-date" class="input-field" name="product-expiry-date" placeholder="YYYY/MM/GG">
 					</div>
 				</div>
 				<div id="product-description-section" class="column">
@@ -152,12 +159,13 @@
 					<input type="file" id="product-picture" name="product-picture" required> 
 				</div>
 				<div id="product-add-button" class="row no-margin">
-					<button id="add-new-product" class="active-basic-button">Aggiungi prodotto</button>
+					<input type="button" id="add-new-product" class="active-basic-button" value="Aggiungi prodotto" onclick="submitNewProduct()">
 				</div>
 			</div>
 		</form>
 	</div>
-    <script src="./static/scripts/admin.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
+	<script type="text/javascript" src="./static/scripts/admin.js"></script>
 	<script>
 		setAdminSectionActive("admin-new-product-link");
 	</script>

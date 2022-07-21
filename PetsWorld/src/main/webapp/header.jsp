@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
+	<link rel="stylesheet" href="./static/styles/searchbar.css">
     <link rel="stylesheet" href="./static/styles/footer.css">
 	<link rel="stylesheet" href="./static/styles/form.css">
     <link rel="stylesheet" href="./static/styles/user.css">

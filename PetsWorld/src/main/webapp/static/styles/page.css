@@ -188,6 +188,12 @@ hr {
     display: none;
 }
 
+.invalid {
+	margin-top: 0;
+	font-size: 0.8em;
+	color: var(--accent-color);
+}
+
 
 
 /* style of index.jsp */

@@ -302,6 +302,15 @@
     width: 60px;
 }
 
+#order-content #summary-panel .list-product-name {
+    margin-right: auto;
+}
+
+#order-content #summary-panel .last-list-voice {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
 #order-content #summary-panel #total {
     margin-top: auto;
 }
