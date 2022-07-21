@@ -36,7 +36,7 @@
 
 			%>
 			
-			<h1>Risultati per ricerca: <%=nome%></h1>
+			<h1>Risultati per: <%=nome%></h1>
 			
 			<% 
 				} else

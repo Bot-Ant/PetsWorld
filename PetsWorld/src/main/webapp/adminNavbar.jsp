@@ -31,6 +31,14 @@
 		</li>
 		<li>
 			<div class="row">
+				<h3>ORDINI</h3>
+			</div>
+			<div class="link" id="admin-orders-link">
+				<a href="./adminOrders.jsp"><i class="fa-solid fa-receipt"></i> <h3>Lista ordini</h3></a>
+			</div>
+		</li>
+		<li>
+			<div class="row">
 				<h3>ACCOUNT</h3>
 			</div>
 			<div class="link" id="admin-info-link">
