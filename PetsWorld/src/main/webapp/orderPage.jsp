@@ -52,7 +52,7 @@
 				<div class="row">
 					<div class="field">
 						<label for="saved-payments">Scegli tra i salvati</label>
-						<select class="input-field" name="saved-addresses" id="">
+						<select class="input-field" name="saved-payments" id="">
 							<option value="" selected>Scegli indirizzo</option>
 						
 						<%if (utente != null){ 

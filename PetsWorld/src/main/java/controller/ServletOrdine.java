@@ -89,7 +89,9 @@ public class ServletOrdine extends HttpServlet {
 		String indirizzo = (String) request.getParameter("saved-addresses");
 		String pagamento = (String) request.getParameter("saved-payments");
         
-		
+		System.out.print(indirizzo);	
+		System.out.print(pagamento);		
+
 	}
 
 
