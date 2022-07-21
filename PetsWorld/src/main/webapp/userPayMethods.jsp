@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*, model.beans.* , java.lang.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,36 +32,52 @@
 				</div>
 				<hr id="top-separator">
 				<div class="loop">
+				<%
+					HttpSession sessione=request.getSession(true);
+				if (sessione != null)
+				{
+					Utente utente = (Utente) sessione.getAttribute("utente");
+			               for(MetodoPagamento u : utente.getMetodiPagamento()){ 
+
+            
+						%>
 					<div id="user-element-[id]" class="user-element-line row">
 						<div class="user-element-data">
 							<div class="row">
 								<div class="column">
-									<input type="text" id="pay-method-number-[id]" class="input-field inactive user-element-name" name="pay-method-number" value="Numero_carta" required>
+									<input type="text" id="pay-method-number-[id]" class="input-field inactive user-element-name" name="pay-method-number" value="<%=u.getNumero()%>" required>
 									<p id="pay-method-number-[id]-validity" class="invalid"></p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="column">
-									<input type="text" id="pay-method-owner-[id]" class="input-field inactive" name="proprietario" value="Proprietario" required>
+									<input type="text" id="pay-method-owner-[id]" class="input-field inactive" name="proprietario" value="<%=u.getProprietario()%>" required>
 									<p id="pay-method-owner-[id]-validity" class="invalid"></p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="column">
-									<input type="text" id="pay-method-month-[id]" class="input-field inactive number" name="mese" value="Mese" required>
+									<input type="text" id="pay-method-month-[id]" class="input-field inactive number" name="mese" value="<%=u.getMeseScadenza()%>" required>
 									<p id="pay-method-month-[id]-validity" class="invalid"></p>
 								</div>
 								<div class="column">
-									<input type="text" id="pay-method-year-[id]" class="input-field inactive number" name="anno" value="Anno" required>
+									<input type="text" id="pay-method-year-[id]" class="input-field inactive number" name="anno" value="<%=u.getAnnoScadenza()%>" required>
 									<p id="pay-method-year-[id]-validity" class="invalid"></p>
 								</div>
 							</div>
 						</div>
 						<div id="user-element-[id]-buttons" class="user-element-buttons column">
-							<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserPayMethod('[id]')">
+							<input type="button" id="user-element-[id]-edit-button" class="active-edit-button" value="Modifica" onclick="editUserPayMethod('<%=u.getIdUtente()%>')">
+						
 						</div>	
 					</div>
+						<%
+								}
+			               		} 
+			               
+			               %>
 				</div>
+				
 				<!-- always in the page -->
 				<div id="new-user-element" class="user-element-line row not-displayed">
 					<div class="user-element-data">
