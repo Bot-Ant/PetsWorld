@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: petsworld
+-- Host: 127.0.0.1    Database: petsworld
 -- ------------------------------------------------------
--- Server version	8.0.27
+-- Server version	8.0.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `metodo_pagamento`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `metodo_pagamento` (
   `IDutente` int NOT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
   `numero` varchar(45) DEFAULT NULL,
   `proprietario` varchar(45) DEFAULT NULL,
-  `dataScadenza` varchar(45) DEFAULT NULL,
-  `codice` varchar(45) DEFAULT NULL,
-  `idPago` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idPago`),
+  `meseScadenza` varchar(45) DEFAULT NULL,
+  `annoScadenza` varchar(45) DEFAULT NULL,
+  `cvv` varchar(45) DEFAULT NULL,
+  `idMetodoPagamento` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idMetodoPagamento`),
   KEY `pagamento_idx` (`IDutente`),
   CONSTRAINT `pagamento` FOREIGN KEY (`IDutente`) REFERENCES `utente` (`idUtente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-11 10:52:52
+-- Dump completed on 2022-07-21 12:48:41
