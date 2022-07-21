@@ -121,3 +121,12 @@ function checkComplexName(input) {
         return  false;
     }
 }
+
+function checkIntNumber(input) {
+    var name = /^([0-9])+$/;
+    if (input.match(name)) {
+        return true;
+    } else {
+        return  false;
+    }
+}
