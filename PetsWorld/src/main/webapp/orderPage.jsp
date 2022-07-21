@@ -27,12 +27,12 @@
 				<div class="row">
 					<div class="field">
 						<label for="saved-addresses">Scegli tra i salvati</label>
-						<select class="input-field" name="saved-addresses" id="">
+						<select id="saved-addresses" class="input-field" name="saved-addresses" id="">
 							<option value="" selected>Scegli indirizzo</option>
 						
 						<%if (utente != null){ 
 			               for(Indirizzo u : utente.getIndirizziSpedizione()){ %>
-			               	<option value="<%=u.getIdUtente()%>"> <%= "Via: "+u.getNome_strada() +" "+u.getCivico()+" "+"Città: "+u.getCitta()+" "+u.getCAP()+" "+u.getProvincia()%></option>
+			               	<option value="<%=u.getIdUtente()%>"> <%= u.getNome_strada() +", "+u.getCivico()+" "+", "+u.getCitta()+", "+u.getCAP()+", "+u.getProvincia()%></option>
               			<%	}    
 						}
 						%>
@@ -52,8 +52,8 @@
 				<div class="row">
 					<div class="field">
 						<label for="saved-payments">Scegli tra i salvati</label>
-						<select class="input-field" name="saved-addresses" id="">
-							<option value="" selected>Scegli indirizzo</option>
+						<select id="saved-payments" class="input-field" name="saved-addresses" id="">
+							<option value="" selected>Scegli metodo di pagamento</option>
 						
 						<%if (utente != null){ 
 			               for(MetodoPagamento u : utente.getMetodiPagamento()){ %>
@@ -88,20 +88,18 @@
 				%>
 				<div class="row">
 					<img src="./static/images/<%=prodotti.get(i).getFoto()%>.png" alt="foto prodotto">
-					<p><%=prodotti.get(i).getNome()%></p>
-					<p><%=prodotti.get(i).getPrezzo()%></p>
-					<p><%=prodotti.get(i).getQuantita()%></p>
-				</div>
-			</div>
-			
-		<% 	
+					<p class="list-product-name"><%=prodotti.get(i).getNome()%></p>
+					<p class="last-list-voice"><%=String.format("€%,.2f", (prodotti.get(i).getPrezzo()))%></p>
+					<p class="last-list-voice"><%=prodotti.get(i).getQuantita()%></p>
+				</div>	
+				<% 	
 					}
-		%>
-		
+				%>
+			</div>
 			<div id="total">
 				<div class="row">
 					<h3>Subtotale</h3>
-					<h3 class="price"><%=String.format("%,.2f", (carrello.getPrezzoTotale()))%></h3>
+					<h3 class="price"><%=String.format("€%,.2f", (carrello.getPrezzoTotale()))%></h3>
 				</div>
 				<div class="row">
 					<h3>Spedizione</h3>
@@ -111,7 +109,7 @@
 							costoSpedizione = 15;
 						}
 					%>
-					<h3 class="price"><%=String.format("%,.2f", (costoSpedizione))%></h3>
+					<h3 class="price"><%=String.format("€%,.2f", (costoSpedizione))%></h3>
 				</div>
 				<div class="span">
 					<div class="row">
@@ -119,7 +117,7 @@
 						<%
 							double costoTotale= carrello.getPrezzoTotale()+costoSpedizione;
 						%>
-						<h2 class="price"><%=String.format("%,.2f", (costoTotale))%></h2>
+						<h2 class="price"><%=String.format("€%,.2f", (costoTotale))%></h2>
 					</div>
 				</div>
 			</div>
@@ -128,6 +126,7 @@
 	<%
 			}
 	%>
-	<script src="./static/scripts/order.js"></script>
+	<script type="text/javascript" src="./static/scripts/regex.js"></script>
+  	<script type="text/javascript" src="./static/scripts/order.js"></script>
 </body>
 </html>
