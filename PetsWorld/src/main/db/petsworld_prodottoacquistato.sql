@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: petsworld
+-- Host: localhost    Database: petsworld
 -- ------------------------------------------------------
--- Server version	8.0.24
+-- Server version	8.0.27
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,8 +37,8 @@ CREATE TABLE `prodottoacquistato` (
   `colore` varchar(15) DEFAULT NULL,
   `IDordine_fk` int DEFAULT NULL,
   PRIMARY KEY (`idProdottoAcquistato`),
-  KEY `idordine_idx` (`IDordine_fk`),
-  CONSTRAINT `idordine` FOREIGN KEY (`IDordine_fk`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fassoli_idx` (`IDordine_fk`),
+  CONSTRAINT `fassoli` FOREIGN KEY (`IDordine_fk`) REFERENCES `ordine` (`idordine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-21 16:41:35
+-- Dump completed on 2022-07-21 20:24:23
