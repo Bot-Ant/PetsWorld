@@ -59,7 +59,7 @@
 								</div>
 								<div class="voice size-l">
 									<label for="">Iva</label>
-									<input type="text" id="$product-tax-${prd.idProdotto}" class="input-field inactive" name="product-tax" value="${prd.iva}%">
+									<input type="text" id="$product-tax-${prd.idProdotto}" class="input-field inactive" name="product-tax" value="${String.format("%.0f", (prd.iva))}%">
 								</div>
 								<div class="voice size-xl">
 									<label for="">Animale</label>

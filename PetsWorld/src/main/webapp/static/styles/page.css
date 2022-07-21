@@ -188,6 +188,14 @@ hr {
     display: none;
 }
 
+.inactive {
+    font-size: 1.3em;
+    box-shadow: none;
+    color: var(--contrast-color-1);
+    background-color: var(--transparent);
+    pointer-events: none;
+}  
+
 .invalid {
 	margin-top: 0;
 	font-size: 0.8em;
