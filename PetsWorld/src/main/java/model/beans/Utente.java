@@ -1,6 +1,7 @@
 package model.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Utente implements Serializable {
 	/**
@@ -15,6 +16,8 @@ public class Utente implements Serializable {
 	private String telefono;
 	private int ruolo;
 	private String codiceFiscale;
+	private ArrayList<MetodoPagamento> MetodiPagamento;
+	private ArrayList<Indirizzo> indirizziSpedizione;
 	
 	public String getCodiceFiscale() {
 		return codiceFiscale;
@@ -65,12 +68,27 @@ public class Utente implements Serializable {
 		this.ruolo = ruolo;
 	}
 	
+	
+	public ArrayList<MetodoPagamento> getMetodiPagamento() {
+		return MetodiPagamento;
+	}
+	public void setMetodiPagamento(ArrayList<MetodoPagamento> MetodiPagamento) {
+		this.MetodiPagamento = MetodiPagamento;
+	}
+	public ArrayList<Indirizzo> getIndirizziSpedizione() {
+		return indirizziSpedizione;
+	}
+	public void setIndirizziSpedizione(ArrayList<Indirizzo> indirizziSpedizione) {
+		this.indirizziSpedizione = indirizziSpedizione;
+	}
+	
 	@Override
 	public String toString() {
 		return "Utente [IdUtente=" + IdUtente + ", nome=" + nome + ", cognome=" + cognome + ", email=" + email
-				+ ", password=" + password + ", telefono=" + telefono + ", ruolo=" + ruolo + "]";
+				+ ", password=" + password + ", telefono=" + telefono + ", ruolo=" + ruolo + ", codiceFiscale="
+				+ codiceFiscale + ", MetodiPagamento=" + MetodiPagamento + ", indirizziSpedizione="
+				+ indirizziSpedizione + "]";
 	}
-	
 }
 
    

@@ -42,11 +42,11 @@ public class metodoPagamentoImp extends Manager implements metodoPagamentoDao <S
                 /**------Mapping-------*/
             	
                 pst.setInt(1, metodo.getIdUtente());
-            	pst.setString(2, metodo.getTipo());
-                pst.setString(3, metodo.getNumero());
-                pst.setString(4, metodo.getProprietario());
-                pst.setString(5, metodo.getDataScadenza());
-                pst.setString(6, metodo.getCodice());
+                pst.setString(2, metodo.getNumero());
+                pst.setString(3, metodo.getProprietario());
+                pst.setString(4, metodo.getMeseScadenza());
+                pst.setString(5, metodo.getAnnoScadenza());
+                pst.setString(6, metodo.getCvv());
            
                int rows= pst.executeUpdate();
                return rows==1;
