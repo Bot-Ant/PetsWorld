@@ -1,6 +1,7 @@
 package model.beans;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Ordine implements Serializable{
 
@@ -10,28 +11,29 @@ public class Ordine implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int IdOrdine;
 	private String dataOrdine;
-	private String statusOrdine;
 	private double totale;
-	private String pagamento;
-	private String indirizzo;
+	private int pagamento;
+	private int indirizzo;
+	private int idUtente; 
 	
+	public int getIdUtente() {
+		return idUtente;
+	}
+	public void setIdUtente(int idUtente) {
+		this.idUtente = idUtente;
+	}
 	public int getIdOrdine() {
 		return IdOrdine;
 	}
 	public void setIdOrdine(int idOrdine) {
 		IdOrdine = idOrdine;
 	}
+
 	public String getDataOrdine() {
 		return dataOrdine;
 	}
 	public void setDataOrdine(String dataOrdine) {
 		this.dataOrdine = dataOrdine;
-	}
-	public String getStatusOrdine() {
-		return statusOrdine;
-	}
-	public void setStatusOrdine(String statusOrdine) {
-		this.statusOrdine = statusOrdine;
 	}
 	public double getTotale() {
 		return totale;
@@ -39,26 +41,25 @@ public class Ordine implements Serializable{
 	public void setTotale(double totale) {
 		this.totale = totale;
 	}
-	public String getPagamento() {
+	public int getPagamento() {
 		return pagamento;
 	}
-	public void setPagamento(String pagamento) {
+	public void setPagamento(int pagamento) {
 		this.pagamento = pagamento;
 	}
-	public String getIndirizzo() {
+	public int getIndirizzo() {
 		return indirizzo;
 	}
-	public void setIndirizzo(String indirizzo) {
+	public void setIndirizzo(int indirizzo) {
 		this.indirizzo = indirizzo;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
 	@Override
 	public String toString() {
-		return "Ordine [dataOrdine=" + dataOrdine + ", statusOrdine=" + statusOrdine + ", totale=" + totale
-				+ ", pagamento=" + pagamento + ", indirizzo=" + indirizzo + "]";
+		return "Ordine [IdOrdine=" + IdOrdine + ", dataOrdine=" + dataOrdine + ", totale=" + totale + ", pagamento="
+				+ pagamento + ", indirizzo=" + indirizzo + ", idUtente=" + idUtente + "]";
 	}
 
 }

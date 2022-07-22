@@ -2,7 +2,10 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,13 +18,20 @@ import model.beans.Carrello;
 import model.beans.Indirizzo;
 import model.beans.MetodoPagamento;
 import model.beans.Ordine;
+import model.beans.Prodotto;
 import model.beans.Utente;
 import model.daoImplementation.IndirizzoImp;
+import model.daoImplementation.OrdineImp;
+import model.daoImplementation.ProdottoImp;
 import model.daoImplementation.UtenteImp;
 import model.daoImplementation.metodoPagamentoImp;
+import model.daoImplementation.prodottoAcquistatoImp;
 import model.daoInterface.IndirizzoDao;
+import model.daoInterface.OrdineDao;
+import model.daoInterface.ProdottoDao;
 import model.daoInterface.UtenteDao;
 import model.daoInterface.metodoPagamentoDao;
+import model.daoInterface.prodottoAcquistatoDao;
 
 /**
  * Servlet implementation class ServletOrdine
@@ -86,12 +96,54 @@ public class ServletOrdine extends HttpServlet {
         }
         */
 		
-		String indirizzo = (String) request.getParameter("saved-addresses");
-		String pagamento = (String) request.getParameter("saved-payments");
-        
+		int indirizzo = Integer.parseInt(request.getParameter("saved-addresses"));
+		int pagamento = Integer.parseInt(request.getParameter("saved-payments"));
 		
+		if(carrello != null )
+		{
+			int id_MAX=0;
+			OrdineDao<SQLException> ordineImp= new OrdineImp((org.apache.tomcat.jdbc.pool.DataSource) source);
+			prodottoAcquistatoDao<SQLException> prodottoacquistatoImp= new prodottoAcquistatoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
+			
+			try {
+				id_MAX=ordineImp.cerca_ID_Max();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			
+			ordine.setTotale(carrello.getPrezzoTotale());
+			ordine.setPagamento(pagamento);
+			ordine.setIndirizzo(indirizzo);
+			ordine.setIdUtente(utente.getIdUtente());
+			ordine.setIdOrdine(id_MAX+1);
+			
+			try {
+				ordineImp.doSave(ordine);
+			} catch (SQLException e) {
+				System.out.println("Eccezione salvataggio ordine in tabella");
+				e.printStackTrace();
+			}
+			
+			ArrayList<Prodotto> lista=new ArrayList<Prodotto>();
+			lista=carrello.getProdotti();
+			for(int i=0; i<lista.size();i++)
+			{
+				try {
+					prodottoacquistatoImp.doSave(lista.get(i), id_MAX+1);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		
+		carrello.svuotaCarrello();
+		carrello.azzeraPrezzoTotale();
+		
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(response.encodeURL("/userAccount.jsp"));
+		dispatcher.forward(request, response);
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

@@ -27,12 +27,12 @@
 				<div class="row">
 					<div class="field">
 						<label for="saved-addresses">Scegli tra i salvati</label>
-						<select id="saved-addresses" class="input-field" name="saved-addresses" id="">
+						<select id="saved-addresses" class="input-field" name="saved-addresses">
 							<option value="" selected>Scegli indirizzo</option>
 						
 						<%if (utente != null){ 
 			               for(Indirizzo u : utente.getIndirizziSpedizione()){ %>
-			               	<option value="<%=u.getIdUtente()%>"> <%= u.getNome_strada() +", "+u.getCivico()+" "+", "+u.getCitta()+", "+u.getCAP()+", "+u.getProvincia()%></option>
+			               	<option value="<%=u.getIdindirizzo()%>"> <%= u.getNome_strada() +", "+u.getCivico()+" "+", "+u.getCitta()+", "+u.getCAP()+", "+u.getProvincia()%></option>
               			<%	}    
 						}
 						%>
@@ -52,12 +52,12 @@
 				<div class="row">
 					<div class="field">
 						<label for="saved-payments">Scegli tra i salvati</label>
-						<select id="saved-payments" class="input-field" name="saved-addresses" id="">
+						<select id="saved-payments" class="input-field" name="saved-payments">
 							<option value="" selected>Scegli metodo di pagamento</option>
 						
 						<%if (utente != null){ 
 			               for(MetodoPagamento u : utente.getMetodiPagamento()){ %>
-			               	<option value="<%=u.getIdUtente()%>"> <%= u.getNumero() +" "+u.getProprietario()+" "+" "+u.getMeseScadenza()+" "+u.getAnnoScadenza()+" "+u.getCvv()%></option>
+			               	<option value="<%=u.getIdpaga()%>"> <%= u.getNumero() +" "+u.getProprietario()+" "+" "+u.getMeseScadenza()+" "+u.getAnnoScadenza()+" "+u.getCvv()%></option>
               			<%	}    
 						}
 						%>
