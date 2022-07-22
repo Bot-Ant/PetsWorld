@@ -30,7 +30,6 @@ public class prodottoAcquistatoImp extends Manager implements prodottoAcquistato
 	public void doSave(Prodotto prd, int id) throws SQLException {
 		try (Connection connection = createConnection()) {
 			String query = "insert into prodottoacquistato (nome, quantita, foto, prezzo, iva, IDordine_fk) values ('" + prd.getNome() +"',"+prd.getQuantita()+",'"+prd.getFoto()+"',"+prd.getPrezzo()+","+prd.getIva()+","+id+");";
-			 System.out.print(query);
 				try(PreparedStatement ps = connection.prepareStatement(query)){
 				ps.executeUpdate();
 				}

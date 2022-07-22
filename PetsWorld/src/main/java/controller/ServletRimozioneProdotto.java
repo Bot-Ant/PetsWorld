@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +35,6 @@ public class ServletRimozioneProdotto extends HttpServlet {
 	
 		int id=Integer.parseInt(request.getParameter("product-code"));		
 		prodotto.setIdProdotto(id);
-		System.out.print(id);
 
 		try {
 			prodottoImp.doDelete(prodotto);
@@ -41,11 +42,23 @@ public class ServletRimozioneProdotto extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		List<Prodotto> list = new ArrayList<>();
+	    ProdottoImp slider = new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
+	    
+	    try {
+	        list = slider.SliderProdotto();
+	        this.getServletContext().setAttribute("list", list);
+	    } catch (SQLException throwables) {
+	        throwables.printStackTrace();
+	    }
+	    
 		request.setAttribute("errore1","Rimozione con successo");
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminProducts.jsp");
 		requestDispatcher.forward(request, response);
 		return;
 	}
+	
+
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
