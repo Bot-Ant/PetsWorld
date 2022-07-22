@@ -48,6 +48,11 @@ public class Carrello implements Serializable{
 		prodotti.removeAll(prodotti);
 	}
 	
+	public void azzeraPrezzoTotale()
+	{
+		prezzoTotale=0;
+	}
+	
 	public int getQuantita()
 	{
 		int count=0;
