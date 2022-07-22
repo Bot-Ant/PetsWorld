@@ -9,8 +9,20 @@ public class metodoPagamentoQuery {
 	
 	public static String inserimento_metodo_pagamento() {
 		QueryBuilder builder = new QueryBuilder (METODO_PAGAMENTO_QUERY, METODO_PAGAMENTO_ALIAS);
-		builder.insert("tipo","numero","proprietario","dataScadenza","codice");		
+		builder.insert("numero","proprietario","MeseScadenza","AnnoScadenza","cvv");		
 		return builder.GeneratedQuery();
 	}
 
+	public static String modifica_metodo_pagamento() {
+		QueryBuilder builder = new QueryBuilder (METODO_PAGAMENTO_QUERY, METODO_PAGAMENTO_ALIAS);
+		builder.update2("numero","proprietario","MeseScadenza","AnnoScadenza","cvv").where("idMetodoPagamento=?");
+		return builder.GeneratedQuery();
+	}
+	
+	public static String elimina() {
+		QueryBuilder builder = new QueryBuilder (METODO_PAGAMENTO_QUERY, METODO_PAGAMENTO_ALIAS);
+		builder.delete().where("idMetodoPagamento=?");
+		return builder.GeneratedQuery();
+		
+	}
 }

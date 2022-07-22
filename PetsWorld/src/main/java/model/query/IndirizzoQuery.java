@@ -12,5 +12,17 @@ public class IndirizzoQuery {
 		builder.insert("citta","nome_strada","civico","CAP","provincia");		
 		return builder.GeneratedQuery();
 	}
+	
+	public static String modifica_indirizzo() {
+		QueryBuilder builder = new QueryBuilder (INDIRIZZO_QUERY, INDIRIZZO_ALIAS);
+		builder.update2("citta","nome_strada","civico","CAP","provincia").where("idIndirizzo=?");	
+		return builder.GeneratedQuery();
+	}
+	
 
+	public static String elimina() {
+		QueryBuilder builder = new QueryBuilder (INDIRIZZO_QUERY, INDIRIZZO_ALIAS);
+		builder.delete().where("idIndirizzo=?");
+		return builder.GeneratedQuery();
+	}
 }

@@ -54,6 +54,45 @@ public class metodoPagamentoImp extends Manager implements metodoPagamentoDao <S
         }
 	}
 
+	@Override
+	public boolean modificapay(MetodoPagamento nuovo) throws SQLException {
+		try(Connection connection = createConnection()){
+			String query = metodoPagamentoQuery.modifica_metodo_pagamento();
+			try(PreparedStatement pst = connection.prepareStatement(query)){
+                /**------Mapping-------*/
+            	
+               
+				pst.setString(1, nuovo.getNumero());
+                pst.setString(2, nuovo.getProprietario());
+                pst.setString(3, nuovo.getMeseScadenza());
+                pst.setString(4, nuovo.getAnnoScadenza());
+                pst.setString(5, nuovo.getCvv());
+                pst.setInt(6, nuovo.getIdpaga());
+           
+               int rows= pst.executeUpdate();
+               return rows==1;
+            }
+	}
 
+	}
 
+	@Override
+	public boolean DeleteAccount(MetodoPagamento elimina) throws SQLException {
+		try(Connection connection = createConnection()){
+			String query = metodoPagamentoQuery.elimina();
+			 
+			try(PreparedStatement ps = connection.prepareStatement(query)){
+           {
+			/**---MAPPING---*/
+        	   ps.setInt(1,elimina.getIdpaga());
+        	   
+               int rows= ps.executeUpdate();
+               
+               return rows==1;
+
+           	}
+			}
+
+		}	
+	}
 }

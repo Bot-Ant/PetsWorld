@@ -119,5 +119,17 @@ import model.search.Condition;
 			query.append(searchJoiner);
 			return this;
 		}
-		
+		public QueryBuilder update2(String...fields){
+		     query.append(" UPDATE ").append(table).append(" SET ");
+		     StringJoiner commaJoiner=new StringJoiner(",");
+		     for(String field:fields){
+		         commaJoiner.add(String.format(("%s = %s"),field,QM));
+		     }
+		     query.append(commaJoiner.toString());
+		     return this;
+		    }
+		public  QueryBuilder limit2(int condition ){
+	        query.append(" LIMIT ").append(condition);
+	        return this;
+	    }
 }

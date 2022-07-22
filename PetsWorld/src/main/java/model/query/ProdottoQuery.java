@@ -13,9 +13,8 @@ public class ProdottoQuery {
 	
 	
 	public static String lista() {
-
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
-		builder.select();
+		builder.select().limit2(3);
 		return builder.GeneratedQuery();
 	}
 	
