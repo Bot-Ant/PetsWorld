@@ -128,4 +128,8 @@ import model.search.Condition;
 		     query.append(commaJoiner.toString());
 		     return this;
 		    }
+		public  QueryBuilder limit2(int condition ){
+	        query.append(" LIMIT ").append(condition);
+	        return this;
+	    }
 }
