@@ -21,7 +21,7 @@
 	<!-- Extended version of the header, visible when the window is large -->
 	<div id="extended-header" class="admin-header">
 		<div class="logo-box">
-			<a href="index.jsp">
+			<a href="adminAccount.jsp">
 				<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
 			</a>
 		</div>
