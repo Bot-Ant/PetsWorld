@@ -64,12 +64,16 @@
 									<input type="text" id="pay-method-year-<%=u.getIdpaga()%>" class="input-field inactive number" name="anno" value="<%=u.getAnnoScadenza()%>" required>
 									<p id="pay-method-year-<%=u.getIdpaga()%>-validity" class="invalid"></p>
 								</div>
+								<div class="column">
+									<input type="text" id="pay-method-cvv-<%=u.getIdpaga()%>" class="input-field inactive number" name="cvv" value="<%=u.getCvv()%>" required>
+									<p id="pay-method-cvv-<%=u.getIdpaga()%>-validity" class="invalid"></p>
+								</div>
 							</div>
 						</div>
-						<div id="user-element-<%=u.getIdpaga()%>-buttons" class="user-element-buttons column">
+						<form action="ServletEliminaPay" method="post" id="user-element-<%=u.getIdpaga()%>-buttons" class="user-element-buttons column">
 							<input type="button" id="user-element-<%=u.getIdpaga()%>-edit-button" class="active-edit-button" value="Modifica" onclick="editUserPayMethod('<%=u.getIdpaga()%>')">
-						
-						</div>	
+							<input type="hidden" id="elimina" name="elimina"  value="<%=u.getIdpaga()%>">
+						</form>	
 					</div>
 						<%
 								}

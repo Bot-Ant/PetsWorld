@@ -60,6 +60,7 @@ function editUserPayMethod(id) {
     document.getElementById("pay-method-owner-" + id).className = "input-field";
     document.getElementById("pay-method-month-" + id).className = "input-field number";
     document.getElementById("pay-method-year-" + id).className = "input-field number";
+    document.getElementById("pay-method-cvv-" + id).className = "input-field number";
 }
 
 function activateNewUserElementForm() {
@@ -87,10 +88,29 @@ function submitUpdatedUserCredentials(id) {
 
 function submitUpdatedAddress(id) {
     if (checkAddressFields(id)) {
-        //submit del form
-    }
-}
+	var name = document.getElementById("address-name-" + id);
+    
+    var number = document.getElementById("address-number-" + id);
+    
+    var city = document.getElementById("address-city-" + id);
+    
+    var prov = document.getElementById("address-province-" + id);
+    
+    var cap = document.getElementById("address-cap-" + id);
+   
+        var url = "ServletUtente" + "?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(name.value) + "&number=" + encodeURIComponent(number.value) + "&city=" + encodeURIComponent(city.value) + "&prov=" + encodeURIComponent(prov.value) + "&cap=" + encodeURIComponent(cap.value); //metto url passando come parametro id del prodotto
+	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = //alla risposta della servlet
+	function () 
+	{
 
+	}
+	xhr.open("GET",url,true);
+	xhr.send(null);
+}
+}
 function submitNewAddress(id) {
     if (checkAddressFields(id)) {
         //submit del form
@@ -99,13 +119,38 @@ function submitNewAddress(id) {
 
 function submitUpdatedPayMethod(id) {
     if (checkPayMethodFields(id)) {
-        //submit del form
-    }
+	
+    var number = document.getElementById("pay-method-number-" + id);
+    
+    var owner = document.getElementById("pay-method-owner-" + id);
+    
+    var month = document.getElementById("pay-method-month-" + id);
+   
+    var year= document.getElementById("pay-method-year-" + id);
+   
+    var cvv = document.getElementById("pay-method-cvv-" + id);
+    
+    var url = "ServletModificaPay" + "?id=" + encodeURIComponent(id) + "&number=" + encodeURIComponent(number.value) + "&owner=" + encodeURIComponent(owner.value) + "&month=" + encodeURIComponent(month.value)  + "&year=" + encodeURIComponent(year.value) + "&cvv=" + encodeURIComponent(cvv.value); //metto url passando come parametro id del prodotto
+	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = //alla risposta della servlet
+	function () 
+	{
+
+	}
+	xhr.open("GET",url,true);
+	xhr.send(null);
 }
+}
+
+
+
 
 function submitNewPayMethod(id) {
     if (checkPayMethodFields(id)) {
-        //submit del form
+  
+  
     }
 }
 
@@ -284,4 +329,4 @@ function methodYearValidity(id) {
         document.getElementById("pay-method-year-" + id + "-validity").innerHTML = "";
         return 1;
     }
-}
+    }

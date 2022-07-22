@@ -5,6 +5,7 @@
 function funzionePiu(id)
 {
 	var url = "AumentoProdottoCarrello" + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
+	
 	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = //alla risposta della servlet

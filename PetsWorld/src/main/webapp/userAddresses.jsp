@@ -36,6 +36,7 @@
 				HttpSession sessione=request.getSession(true);
 				if (sessione != null)
 				{
+					
 					Utente utente = (Utente) sessione.getAttribute("utente");
 			               for(Indirizzo u : utente.getIndirizziSpedizione()){
            			 
@@ -69,9 +70,12 @@
 									<p id="address-cap-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 								</div>
 							</div>
-							<div id="user-element-<%=u.getIdindirizzo()%>-buttons" class="user-element-buttons column">
+							<form action="ServletElimina" method="post" id="user-element-<%=u.getIdindirizzo()%>-buttons" class="user-element-buttons column">
 								<input type="button" id="user-element-<%=u.getIdindirizzo()%>-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('<%=u.getIdindirizzo()%>')">
-							</div>	
+								<input type="hidden" id="indirizzo" name="elimina"  value="<%=u.getIdindirizzo()%>">
+							
+							</form>
+								
 					</div>
 					<% }
 			               } 

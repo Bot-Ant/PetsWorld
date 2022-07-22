@@ -15,6 +15,7 @@ import org.apache.tomcat.jdbc.pool.DataSource;
 
 import model.beans.*;
 import model.daoImplementation.*;
+import model.daoInterface.IndirizzoDao;
 import model.daoInterface.UtenteDao;
 /**
  * Servlet implementation class ServletUtente
@@ -36,61 +37,47 @@ public class ServletUtente extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		String id = request.getParameter("id");
+		String Nome = request.getParameter("name");
+        String Civico = request.getParameter("number");
+        String Citta = request.getParameter("city");
+        String Provincia = request.getParameter("prov");
+        String Cap = request.getParameter("cap");
+       
+        
+        int ID = Integer.parseInt(id);
+        
+        Indirizzo nuovo=new Indirizzo();
+        IndirizzoDao<SQLException> dao=new IndirizzoImp(source);
+        
+ 
+        nuovo.setIdindirizzo(ID);
+        nuovo.setNome_strada(Nome);
+        nuovo.setCivico(Civico);
+        nuovo.setCitta(Citta);
+        nuovo.setProvincia(Provincia);
+        nuovo.setCAP(Cap);
+        
+        
+   
+        try {
+            dao.modificaIndirizzo(nuovo);
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        
+       
+     
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userAccount.jsp");
+		requestDispatcher.forward(request, response);
+   
+	   }
+   
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String operazione= request.getParameter("operazione");
-	    HttpSession session= request.getSession();
-	    String address;
-	    switch(operazione){
-	        case "Elimina": { //eliminazione dei dati personali dell'utente
-	        	String intero = request.getParameter("id");
-				
-				int ID = Integer.parseInt(intero);
-				Utente delete = new Utente(); 
-				UtenteDao<SQLException> dao= new UtenteImp(source);
-				
-				delete.setIdUtente(ID);
-				
-				try {
-					dao.DeleteAccount(delete);
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	            address="";
-	            break;
-	        }
-	        case "Modifica" : {//modifica dei dati personale dell'utente 
-	        	String intero = request.getParameter("id");
-				
-				int ID = Integer.parseInt(intero);
-				Utente modifica = new Utente(); 
-				UtenteDao<SQLException> dao= new UtenteImp(source);
-				
-				modifica.setIdUtente(ID);
-				
-				try {
-					dao.UpdateAccount(modifica);
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	            address="";
-	            break;
-	        }
-	    
-	        default:
-	            throw new IllegalStateException("Unexpected value: " + operazione);
-	    }
-	    
-	    RequestDispatcher requestDispatcher= request.getRequestDispatcher(address);
-	    requestDispatcher.include(request,response);
-	    }
+	}
 	}
 
