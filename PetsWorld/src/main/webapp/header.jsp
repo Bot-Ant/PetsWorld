@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Header</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
@@ -18,7 +19,7 @@
 </head>
 <body>
 	<!-- Extended version of the header, visible when the window is large -->
-	<div class="standard-header" id="large-header">
+	<div id="large-header" class="standard-header">
 		<!-- Elements in the top bar of the header -->
 		<div class="top-bar">
 			<div class="logo-box">
@@ -87,18 +88,79 @@
 				
 			</div> 
 		</div>
-	</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
 			<jsp:include page="./navbar.jsp"/>
 		</div>
+	</div>
+	
 	<!-- Condensed version of the header, visible when the window is small -->
-	<div class="standard-header" id="small-header">
+	<div id="small-header" class="standard-header" >
 		<div class="top-bar">
-			
+			<div class="bar-hamburger">
+				<jsp:include page="./navbar.jsp"/>
+			</div>
+			<div class="logo-box">
+				<%url1 = response.encodeURL("index.jsp");%>
+				<a href="<%=url1%>">
+					<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
+				</a>
+			</div>
+			<div id="header-buttons">
+				<%
+					if (sessione != null)
+					{
+						utente = (Utente) sessione.getAttribute("utente");
+						carrello = (Carrello) sessione.getAttribute ("carrello");
+						if(carrello !=null)
+						{	
+							if(utente == null)
+							{
+				%>
+
+				<a id="cart-icon-link" href="<%=urlcarrello%>">
+					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
+						<i class="fa-solid fa-cart-shopping fa-xl"></i>
+					</i>
+				</a>
+				<a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3><i class="fa-solid fa-user fa-xl"></i></h3></a>
+					
+				<%			
+							}
+							else
+							{
+								if(utente.isRuolo() == 0) 
+								{
+									String urlutente = response.encodeURL("userAccount.jsp");
+				%>
+
+				<a id="cart-icon-link" href="<%=urlcarrello%>">
+					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
+						<i class="fa-solid fa-cart-shopping fa-xl"></i>
+					</i>
+				</a>
+				<a href="<%=urlutente%>"><h3 class="active"><i class="fa-solid fa-user fa-xl"></i></h3></a>
+
+				<%	
+								}
+								else if(utente.isRuolo() == 1)
+								{
+									String urladmin = response.encodeURL("adminAccount.jsp");
+				%>
+
+				<a href="<%=urladmin%>"><h3 class="active"><i class="fa-solid fa-user fa-xl"></i></h3></a>
+				
+				<%
+								}
+							}
+						}
+					}
+				%>
+				
+			</div> 
 		</div>
 		<div class="bottom-bar">
-			
+			<jsp:include page="./searchbar.jsp"/>
 		</div>
 	</div>
 	<script type="text/javascript" src="./static/scripts/header.js"></script>

@@ -42,33 +42,34 @@
 						<div class="box row">
 							<form method="get" action="ServletModificaProdotto" id="data-product-${prd.idProdotto}" class="product-data-row row">
 								<div class="voice size-l">
-									<label for="product-code">Id</label>
+									<label for="product-code">ID</label>
 									<input type="text" id="$product-code-${prd.idProdotto}" class="input-field inactive" name="product-code" value="${prd.idProdotto}">
 								</div>
 								<div class="voice size-m">
+									<label for="">FOTO</label>
 									<img src="./static/images/${prd.foto}.png" alt="Foto prodotto">
 								</div>
 								<div class="voice size-auto">
-									<label for="">Nome</label>
+									<label for="">NOME</label>
 									<h3>${prd.nome}</h3>
 								</div>
 								<div class="voice size-l">
-									<label for="product-price">Prezzo</label>
+									<label for="product-price">PREZZO</label>
 									<input type="text" id="${prd.idProdotto}-price" class="input-field inactive" name="product-price" value="${prd.prezzo}">
-									<p id="product-price-${prd.idProdotto}-validity" class="invalid"></p>
+									
 								</div>
 								<div class="voice size-l">
-									<label for="">Iva</label>
+									<label for="">IVA</label>
 									<input type="text" id="$product-tax-${prd.idProdotto}" class="input-field inactive" name="product-tax" value="${String.format("%.0f", (prd.iva))}%">
 								</div>
 								<div class="voice size-xl">
-									<label for="">Animale</label>
+									<label for="">ANIMALE</label>
 									<input type="text" id="$product-animal-${prd.idProdotto}" class="input-field inactive" name="product-animal" value="${prd.animale}">
 								</div>
 								<div class="voice size-l">
-									<label for="product-quantity">Quantità</label>
+									<label for="product-quantity">QUANTITÀ</label>
 									<input type="text" id="${prd.idProdotto}-quantity" class="input-field inactive" name="product-quantity" value="${prd.quantita}">
-									<p id="product-quantity-${prd.idProdotto}-validity" class="invalid"></p>
+									
 								</div>
 								<div id="edit-section-${prd.idProdotto}" class="voice">
 									<input type="button" id="edit-button-${prd.idProdotto}" class="active-edit-button" onclick="editProductData('${prd.idProdotto}')" value="Modifica">

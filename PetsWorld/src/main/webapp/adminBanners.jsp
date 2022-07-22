@@ -11,6 +11,9 @@
 			<jsp:include page="./adminHeader.jsp"/>
 		</header>
 		<div id="admin-page-content" class="column">
+			<div id="catalog-new-banner" class="box">
+				<h1>Nuovo banner</h1>
+			</div>
 			<h1>Banner</h1>
 			<div id="banners-list" class="box">
 				

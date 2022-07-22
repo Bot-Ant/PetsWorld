@@ -25,9 +25,6 @@
 			<div class="link" id="admin-banners-link">
 				<a href="./adminBanners.jsp"><i class="fa-solid fa-images"></i> <h3>Lista banner</h3></a>
 			</div>
-			<div class="link" id="admin-new-banner-link">
-				<a href="./adminNewBanner.jsp"><i class="fa-solid fa-square-plus fa-lg"></i> <h3>Aggiungi banner</h3></a>
-			</div>
 		</li>
 		<li>
 			<div class="row">
