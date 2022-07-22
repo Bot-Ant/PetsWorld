@@ -14,7 +14,13 @@ public class ProdottoQuery {
 	
 	public static String lista() {
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
-		builder.select().limit2(3);
+		builder.select();
+		return builder.GeneratedQuery();
+	}
+	
+	public static String caos() {
+		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
+		builder.select().order().limit2(4);
 		return builder.GeneratedQuery();
 	}
 	

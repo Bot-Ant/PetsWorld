@@ -50,7 +50,7 @@
 				<!-- Products to show in the row -->
 				<div class="products-row">
 					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
-					<c:forEach items="${list}" var="prd">
+					<c:forEach items="${venduto}" var="prd">
 						<div class="product-box">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
@@ -78,7 +78,7 @@
 				<h1>Le novità PetsWorld</h1>
 				<div class="products-row">
 					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
-					<c:forEach items="${list}" var="prd">
+					<c:forEach items="${consigliato}" var="prd">
 						<div class="product-box">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
@@ -106,7 +106,7 @@
 				<h1>I prodotti più consigliati</h1>
 				<div class="products-row">
 					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
-					<c:forEach items="${list}" var="prd">
+					<c:forEach items="${novito}" var="prd">
 						<div class="product-box">
 							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
 								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
