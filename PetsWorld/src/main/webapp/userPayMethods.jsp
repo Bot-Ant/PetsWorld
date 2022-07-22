@@ -37,6 +37,9 @@
 				if (sessione != null)
 				{
 					Utente utente = (Utente) sessione.getAttribute("utente");
+					%>
+					<input type="hidden" id="idutente" value="<%=utente.getIdUtente() %>">
+		              <% 
 			               for(MetodoPagamento u : utente.getMetodiPagamento()){ 
 
             
@@ -109,6 +112,10 @@
 								<input type="text" id="pay-method-year-new" class="input-field number" name="anno" placeholder="Anno" required>
 								<p id="pay-method-year-new-validity" class="invalid"></p>
 							</div>
+							<div class="column">
+									<input type="text" id="pay-method-cvv-new" class="input-field number" name="cvv" placeholder="CVV" required>
+									<p id="pay-method-cvv-new-validity" class="invalid"></p>
+								</div>
 						</div>
 					</div>
 					<input type="button" id="save-new-user-element" class="active-save-button" value="Salva" onclick="submitNewPayMethod('new')">
