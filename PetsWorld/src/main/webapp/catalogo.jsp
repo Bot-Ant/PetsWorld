@@ -23,9 +23,65 @@
 	</header>
 	<div class="catalog-content">
 		<div class="filters-panel">
-			<p>
-				Filtri di ricerca avanzata all'interno della pagina
-			</p>
+			<div class="wrapper">
+				<h2>Prezzo</h2>
+				<div class="price-input">
+				  <div class="field">
+					<span>Min</span>
+					<input type="number" id="price-filter-min" class="input-min input-field" value="0">
+				  </div>
+				  <div class="separator">-</div>
+				  <div class="field">
+					<span>Max</span>
+					<input type="number" id="price-filter-max" class="input-max input-field" value="2000">
+				  </div>
+				</div>
+				<div class="slider">
+				  <div class="progress"></div>
+				</div>
+				<div class="range-input">
+				  <input type="range" class="range-min" min="0" max="2000" value="0" step="100">
+				  <input type="range" class="range-max" min="0" max="2000" value="2000" step="100">
+				</div>
+			  </div>
+			<div id="filter-categories">
+				<h2 class="category-name">Categorie</h2>
+				<button class="category-animal">Cane</button>
+				<button class="category-voice">Alimenti</button>
+				<button class="category-voice">Igiene</button>
+				<button class="category-voice">Accessori</button>
+				<button class="category-voice">Abbigliamento</button>
+				<button class="category-voice">Giochi</button>
+
+				<button class="category-animal">Gatto</button>
+				<button class="category-voice">Alimenti</button>
+				<button class="category-voice">Igiene</button>
+				<button class="category-voice">Accessori</button>
+				<button class="category-voice">Abbigliamento</button>
+				<button class="category-voice">Giochi</button>
+
+				<button class="category-animal">Pesci</button>
+				<button class="category-voice">Alimenti</button>
+				<button class="category-voice">Igiene</button>
+				<button class="category-voice">Accessori</button>
+				<button class="category-voice">Acquari</button>
+				<button class="category-voice">Decorazioni</button>
+
+				<button class="category-animal">Uccelli</button>
+				<button class="category-voice">Alimenti</button>
+				<button class="category-voice">Igiene</button>
+				<button class="category-voice">Accessori</button>
+				<button class="category-voice">Gabbie</button>
+				<button class="category-voice">Giochi</button>
+
+				<button class="category-animal">Piccoli animali</button>
+				<button class="category-voice">Alimenti</button>
+				<button class="category-voice">Igiene</button>
+				<button class="category-voice">Accessori</button>
+				<button class="category-voice">Gabbie</button>
+				<button class="category-voice">Giochi</button>
+			</div>
+			
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
@@ -94,33 +150,33 @@
 			</div>
 			<div class="catalog-products">
 				<c:forEach items="${prodotto}" var="prd">
-					<div class="product-box">
-						<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
-							<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
-								<div class="image-container">
-									<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
-
-									<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
-									<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-								</div>
-								<h3 class="name">${prd.nome}</h3>
-								<div class="text-container">
-									<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
-								</div>
-							</button>
-						</form>
-						<div class="add-to-cart">
-							<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+					<div class="product-container">
+						<div class="product-box">
+							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+									<div class="image-container">
+										<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
+										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+									</div>
+									<h3 class="name">${prd.nome}</h3>
+									<div class="text-container">
+										<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
+									</div>
+								</button>
+							</form>
+							<div class="add-to-cart">
+								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+							</div>
 						</div>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>
 	</footer>
+	<script type="text/javascript" src="./static/scripts/slider.js"></script>
 </body>
 </html>

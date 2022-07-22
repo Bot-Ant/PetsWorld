@@ -261,7 +261,7 @@ hr {
 
 .products-section h1 {
     margin-bottom: 30px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .products-row {
@@ -269,8 +269,16 @@ hr {
     padding: 0;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.products-row .product-box {
+    margin: 20px;
+}
+
+.products-row .product-container {
+    margin: 0px auto 20px auto;
 }
 
 .products-slider {
