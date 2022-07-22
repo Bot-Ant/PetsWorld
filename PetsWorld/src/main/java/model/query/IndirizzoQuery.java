@@ -9,7 +9,7 @@ public class IndirizzoQuery {
 	
 	public static String inserimento_indirizzo() {
 		QueryBuilder builder = new QueryBuilder (INDIRIZZO_QUERY, INDIRIZZO_ALIAS);
-		builder.insert("citta","nome_strada","civico","CAP","provincia");		
+		builder.insert("IDutente_fk","citta","nome_strada","civico","CAP","provincia");		
 		return builder.GeneratedQuery();
 	}
 	
