@@ -14,6 +14,7 @@ public class OrdineExtractor implements ResultSetExtractor<Ordine> {
         ordine.setTotale(resultSet.getDouble("ordine.totale"));
         ordine.setPagamento(resultSet.getInt("ordine.Pagamento"));
         ordine.setIndirizzo(resultSet.getInt("ordine.indirizzo"));
+        ordine.setIdUtente(resultSet.getInt("ordine.IDUtente_fk"));
         return ordine;
     }
 }

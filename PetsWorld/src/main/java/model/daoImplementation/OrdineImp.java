@@ -19,6 +19,7 @@ import model.daoInterface.ProdottoDao;
 import model.query.ProdottoQuery;
 import model.search.Condition;
 import model.search.Operatore;
+import model.Extractor.OrdineExtractor;
 import model.Extractor.ProdottoExtractor;
 
 public class OrdineImp extends Manager implements OrdineDao <SQLException> {
@@ -53,4 +54,22 @@ public class OrdineImp extends Manager implements OrdineDao <SQLException> {
 					}
 			}
 	}
+
+	@Override
+	public ArrayList<Ordine> cerca_ordini_utente(int id) throws SQLException {
+		try (Connection connection = createConnection()) {
+			String query = "select * from ordine where IDUtente_fk="+id+";";
+			ArrayList<Ordine> ordini= new ArrayList<Ordine>();
+				try(PreparedStatement ps = connection.prepareStatement(query)){
+					
+					Resultset rs=(Resultset) ps.executeQuery();
+					 while (((ResultSet) rs).next()) {
+		                	Ordine ordine = new OrdineExtractor().extract((ResultSet) rs);
+		                	ordini.add(ordine);
+		                }
+				}
+				return ordini;
+			}
+	}
+	
 }

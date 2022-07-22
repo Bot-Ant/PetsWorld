@@ -140,7 +140,6 @@ public class ServletOrdine extends HttpServlet {
 		carrello.svuotaCarrello();
 		carrello.azzeraPrezzoTotale();
 		
-		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(response.encodeURL("/userAccount.jsp"));
 		dispatcher.forward(request, response);
 	}

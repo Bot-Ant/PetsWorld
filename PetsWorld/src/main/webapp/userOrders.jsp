@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*, model.beans.* , java.lang.*, java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div id="user-content">
-		<jsp:include page="./static/templates/userNav.html"/>
+		<jsp:include page="./userNav.jsp"/>
 		<div id="data-panel">
 			<div id="user-page-header">
 				<h1>Ordini</h1>
@@ -21,7 +21,14 @@
 			</div>
 			<div id="orders-box">
 				<!-- if there are no orders -->
-				<div id="no-orders" style="display: none;">
+				<%
+						String errore = (String) request.getAttribute("errore");
+						if(errore!=null)
+						{
+				%>
+				
+				<div id="no-orders">
+				
 					<h1>Non ci sono ordini</h1>
 					<p>
 						Gli ordini che effettui vengono visualizzati in questa sezione.
@@ -29,132 +36,39 @@
 				</div>
 				<!-- if there is at least one order -->
 				<div class="loop">
+				<%
+				
+						} else {
+						ArrayList<Ordine> ordine = (ArrayList<Ordine>) request.getAttribute("ordini");
+						for(int i=0; i<ordine.size();i++)
+						{
+					
+				%>
 					<div class="order-box">
 						<div class="box">
 							<div class="order-info">
 								<div class="row">
 									<div class="delivery-number">
 										<p>Ordine n°</p>
-										<span>SAM0045210093</span>
-									</div>
-									<div class="date">
-										<p>Data ordine</p>
-										<span>27/06/2022</span>
+										<span><%=ordine.get(i).getIdOrdine()%></span>
 									</div>
 									<div class="total-price">
 										<p>Totale</p>
-										<span>€49,90</span>
+										<span><%=String.format("€%,.2f", (ordine.get(i).getTotale()))%></span>
 									</div>
-									<div class="order-details">
-										<button class="active-basic-button">Dettagli ordine</button>
-									</div>
-								</div>
-							</div>
-							<hr>
-							<div class="loop">
-								<div class="row">
-									<div class="picture">
-										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
-									</div>
-									<div class="product-info">
-										<div class="column">
-											<h3 class="name">Nome prodotto</h3>
-											<button class="stars">
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-											</button>
-											<p class="price">€49,90</p>
-										</div>
-									</div>
+									<form action="ServletFattura" method="get" class="order-details">
+										<button name="id_ordine" value="<%=ordine.get(i).getIdOrdine()%>" class="active-basic-button">Dettagli ordine</button>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
+					
+					<%
+							}
+						}
+					%>
 
-
-					<div class="order-box">
-						<div class="box">
-							<div class="order-info">
-								<div class="row">
-									<div class="delivery-number">
-										<p>Ordine n°</p>
-										<span>SAM0045210093</span>
-									</div>
-									<div class="date">
-										<p>Data ordine</p>
-										<span>27/06/2022</span>
-									</div>
-									<div class="total-price">
-										<p>Totale</p>
-										<span>€49,90</span>
-									</div>
-									<div class="order-details">
-										<button class="active-basic-button">Dettagli ordine</button>
-									</div>
-								</div>
-							</div>
-							<hr>
-							<div class="loop">
-								<div class="row">
-									<div class="picture">
-										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
-									</div>
-									<div class="product-info">
-										<div class="column">
-											<h3 class="name">Nome prodotto</h3>
-											<button class="stars">
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-											</button>
-											<p class="price">€49,90</p>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="picture">
-										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
-									</div>
-									<div class="product-info">
-										<div class="column">
-											<h3 class="name">Nome prodotto</h3>
-											<button class="stars">
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-											</button>
-											<p class="price">€49,90</p>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="picture">
-										<img src="./static/images/cucciaPerCani.jpg" alt="foto prodotto">
-									</div>
-									<div class="product-info">
-										<div class="column">
-											<h3 class="name">Nome prodotto</h3>
-											<button class="stars">
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-												<i class="fa-regular fa-star"></i>
-											</button>
-											<p class="price">€49,90</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

@@ -11,7 +11,7 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div id="user-content">
-		<jsp:include page="./static/templates/userNav.html"/>
+		<jsp:include page="./userNav.jsp"/>
 		<div id="data-panel">
 			<div id="user-page-header">
 				<h1>Dati personali</h1>
