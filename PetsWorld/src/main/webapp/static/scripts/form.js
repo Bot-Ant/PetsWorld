@@ -18,9 +18,10 @@ function nameValidity() {
     var name = document.getElementById("nome");
     if (!checkName(name)) {
         document.getElementById("name-validity").innerHTML = "Formato nome non valido";
-        return 0;
+        return false;
     } else {
         document.getElementById("name-validity").innerHTML = "";
+        return true;
     }
 }
 
@@ -28,9 +29,10 @@ function surnameValidity() {
     var surname = document.getElementById("cognome");
     if (!checkName(surname)) {
         document.getElementById("surname-validity").innerHTML = "Formato cognome non valido";
-        return 0;
+        return false;
     } else {
         document.getElementById("surname-validity").innerHTML = "";
+        return true;
     }
 }
 
@@ -38,9 +40,10 @@ function emailValidity() {
     var email = document.getElementById("email");
     if (!checkEmail(email)) {
         document.getElementById("email-validity").innerHTML = "Formato email non valido";
-        return 0;
+        return false;
     } else {
         document.getElementById("email-validity").innerHTML = "";
+        return true;
     }
 }
 
@@ -49,10 +52,11 @@ function passwordValidity() {
     if (!checkPassword(password)) {
         document.getElementById("password-validity").innerHTML = "La password deve contenere almeno 8 caratteri"; 
         document.getElementById("password-validity").style.color = "var(--accent-color)";
-        return 0;
+        return false;
     } else {
         document.getElementById("password-validity").innerHTML = "Password valida";
         document.getElementById("password-validity").style.color = "var(--main-color)";
+        return true;
     }
 }
 
@@ -60,9 +64,10 @@ function taxCodeValidity() {
     var code = document.getElementById("codiceFiscale");
     if (!checkTaxCode(code)) {
         document.getElementById("taxcode-validity").innerHTML = "Formato codice fiscale non valido";  
-        return 0;
+        return false;
     } else {
         document.getElementById("taxcode-validity").innerHTML = "";  
+        return true;
     }
 }
 
@@ -70,30 +75,36 @@ function phoneNumberValidity() {
     var number = document.getElementById("cellulare");
     if (!checkPhoneNumber(number)) {
         document.getElementById("number-validity").innerHTML = "Formato numero di telefono non valido";
-        return 0;
+        return false;
     } else {
         document.getElementById("number-validity").innerHTML = "";
+        return true;
     }
 }
 
 function submitRegistration() {
     var status = 1;
+    console.log(status);	
     if (!nameValidity()) {
         status = 0;
     }
+    console.log(status);	
     if (!surnameValidity()) {
         status = 0;
     }
+    console.log(status);	
     if (!emailValidity()) {
         status = 0;
     }
+    console.log(status);	
     if (!passwordValidity()) {
         status = 0;
     }
+    console.log(status);	
     if (!taxCodeValidity()) {
         status = 0;
     }
-       console.log(2);			
+    console.log(status);			
 
     if (!phoneNumberValidity()) {
         status = 0;
@@ -121,13 +132,13 @@ function submitRegistration() {
 		xhr.onreadystatechange = //alla risposta della servlet
 		function () 
 		{
-	
+            let url2 = "index.jsp";
+            window.location.href = url2;
 		}
 		xhr.open("GET",url,true);
-		xhr.send(null);    
-		}
-		else
-		{
-			console.log("ciaone");			
-		}
+		xhr.send(null);   
+	}
+    if (status) {
+         
+    }
 }
