@@ -44,6 +44,7 @@ public class ServletReg extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String Nome = request.getParameter("nome");
         String Cognome = request.getParameter("cognome");
         String Email = request.getParameter("email");
@@ -68,5 +69,5 @@ public class ServletReg extends HttpServlet {
         request.getRequestDispatcher("./login.jsp").forward(request,response);
     }
 
-	}
+}
 

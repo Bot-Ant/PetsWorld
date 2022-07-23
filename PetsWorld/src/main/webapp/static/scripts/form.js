@@ -93,10 +93,41 @@ function submitRegistration() {
     if (!taxCodeValidity()) {
         status = 0;
     }
+       console.log(2);			
+
     if (!phoneNumberValidity()) {
         status = 0;
     }
+    console.log("cao");			
+
     if (status) {
-        //submit del form
-    }
+		
+		console.log("ciao");			
+		var name = document.getElementById("nome");
+	    
+	    var surname = document.getElementById("cognome");
+	    
+	    var email = document.getElementById("email");
+	    
+	    var pass = document.getElementById("password");
+	    
+	    var cf = document.getElementById("codiceFiscale");
+	    
+	   	var cell = document.getElementById("cellulare");
+
+	    var url = "ServletReg" + "?nome=" + encodeURIComponent(name.value) + "&cognome=" + encodeURIComponent(surname.value) + "&email=" + encodeURIComponent(email.value) + "&password=" + encodeURIComponent(pass.value) + "&codiceFiscale=" + encodeURIComponent(cf.value) + "&cellulare=" + encodeURIComponent(cell.value);
+		
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = //alla risposta della servlet
+		function () 
+		{
+	
+		}
+		xhr.open("GET",url,true);
+		xhr.send(null);    
+		}
+		else
+		{
+			console.log("ciaone");			
+		}
 }
