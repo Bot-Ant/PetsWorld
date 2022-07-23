@@ -9,7 +9,7 @@ public class metodoPagamentoQuery {
 	
 	public static String inserimento_metodo_pagamento() {
 		QueryBuilder builder = new QueryBuilder (METODO_PAGAMENTO_QUERY, METODO_PAGAMENTO_ALIAS);
-		builder.insert("numero","proprietario","MeseScadenza","AnnoScadenza","cvv");		
+		builder.insert("IDutente","numero","proprietario","MeseScadenza","AnnoScadenza","cvv");		
 		return builder.GeneratedQuery();
 	}
 

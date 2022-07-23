@@ -156,4 +156,24 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 	public void doSave(Prodotto prd) throws SQLException{
 		
 	}
+
+
+	@Override
+	public List<Prodotto> Prodottocaos() throws SQLException {
+		try (Connection connection = createConnection()) {
+			String query = ProdottoQuery.caos();
+			 
+				try(PreparedStatement ps = connection.prepareStatement(query)){
+			
+                ResultSet rs = ps.executeQuery();
+                List<Prodotto> listaProdotti = new ArrayList<>();
+                
+                while (rs.next()) {
+                	Prodotto prodotto = new ProdottoExtractor().extract(rs);
+                	listaProdotti.add(prodotto);
+                }
+                return listaProdotti;
+            }
+        }
+    }
 }

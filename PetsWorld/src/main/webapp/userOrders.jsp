@@ -42,7 +42,6 @@
 						ArrayList<Ordine> ordine = (ArrayList<Ordine>) request.getAttribute("ordini");
 						for(int i=0; i<ordine.size();i++)
 						{
-			
 				%>
 					<div class="order-box">
 						<div class="box">

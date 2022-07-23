@@ -22,8 +22,8 @@ import model.query.ProdottoQuery;
 import model.search.Condition;
 import model.search.Operatore;
 import model.Extractor.IndirizzoExtractor;
-import model.Extractor.OrdineExtractor;
 import model.Extractor.ProdottoAcquistatoExtractor;
+import model.Extractor.OrdineExtractor;
 import model.Extractor.ProdottoExtractor;
 
 public class OrdineImp extends Manager implements OrdineDao <SQLException> {
@@ -112,5 +112,4 @@ public class OrdineImp extends Manager implements OrdineDao <SQLException> {
 			}
 		}
 	}
-	
 }

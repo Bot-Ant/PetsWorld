@@ -49,85 +49,79 @@
 				<h1>I prodotti più venduti</h1>
 				<!-- Products to show in the row -->
 				<div class="products-row">
-					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
-					<c:forEach items="${list}" var="prd">
-						<div class="product-box">
-							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
-								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
-									<div class="image-container">
-										<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
-
-										<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
-										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</div>
-									<h3 class="name">${prd.nome}</h3>
-									<div class="text-container">
-										<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
-									</div>
-								</button>
-							</form>
-							<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+					<c:forEach items="${venduto}" var="prd">
+						<div class="product-container">
+							<div class="product-box">
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+									<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+										<div class="image-container">
+											<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
+											<p class="out-of-stock" id="${prd.idProdotto}_demo_1">TERMINATO</p>
+										</div>
+										<h3 class="name">${prd.nome}</h3>
+										<div class="text-container">
+											<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
+										</div>
+									</button>
+								</form>
+								<div class="add-to-cart">
+									<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								</div>
 							</div>
 						</div>
 					</c:forEach>
-					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 			<div class="products-section">
 				<h1>Le novità PetsWorld</h1>
 				<div class="products-row">
-					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
-					<c:forEach items="${list}" var="prd">
-						<div class="product-box">
-							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
-								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
-									<div class="image-container">
-										<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
-
-										<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
-										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</div>
-									<h3 class="name">${prd.nome}</h3>
-									<div class="text-container">
-										<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
-									</div>
-								</button>
-							</form>
-							<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+					<c:forEach items="${consigliato}" var="prd">
+						<div class="product-container">
+							<div class="product-box">
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+									<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+										<div class="image-container">
+											<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
+											<p class="out-of-stock" id="${prd.idProdotto}_demo_2">TERMINATO</p>
+										</div>
+										<h3 class="name">${prd.nome}</h3>
+										<div class="text-container">
+											<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
+										</div>
+									</button>
+								</form>
+								<div class="add-to-cart">
+									<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								</div>
 							</div>
 						</div>
 					</c:forEach>
-					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 			<div class="products-section">
 				<h1>I prodotti più consigliati</h1>
 				<div class="products-row">
-					<button class="products-slider"><i class="fa-solid fa-chevron-left fa-2x"></i></button>
-					<c:forEach items="${list}" var="prd">
-						<div class="product-box">
-							<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
-								<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
-									<div class="image-container">
-										<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
-
-										<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
-										<p class="discount" id="${prd.idProdotto}-discount">SCONTO</p>
-									</div>
-									<h3 class="name">${prd.nome}</h3>
-									<div class="text-container">
-										<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
-									</div>
-								</button>
-							</form>
-							<div class="add-to-cart">
-								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+					<c:forEach items="${novito}" var="prd">
+						<div class="product-container">
+							<div class="product-box">
+								<form action="<%=response.encodeURL("ServletCercaProdotto")%>" method="get">
+									<button class="product-link" type="submit" name="id" value="${prd.idProdotto}">
+										<div class="image-container">
+											<img src="./static/images/${prd.foto}.png" alt="immagine prodotto">
+											<p class="out-of-stock" id="${prd.idProdotto}_demo_3">TERMINATO</p>
+										</div>
+										<h3 class="name">${prd.nome}</h3>
+										<div class="text-container">
+											<h2 class="price">€${String.format("%,.2f", (prd.prezzo))}</h2>
+										</div>
+									</button>
+								</form>
+								<div class="add-to-cart">
+									<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
+								</div>
 							</div>
 						</div>
 					</c:forEach>
-					<button class="products-slider"><i class="fa-solid fa-chevron-right fa-2x"></i></button>
 				</div>
 			</div>
 		</div>

@@ -113,8 +113,32 @@ function submitUpdatedAddress(id) {
 }
 function submitNewAddress(id) {
     if (checkAddressFields(id)) {
-        //submit del form
-    }
+	
+	var idutente = document.getElementById("idutente");
+	
+    var name = document.getElementById("address-name-" + id);
+    
+    var number = document.getElementById("address-number-" + id);
+    
+    var city = document.getElementById("address-city-" + id);
+    
+    var prov = document.getElementById("address-province-" + id);
+    
+    var cap = document.getElementById("address-cap-" + id);
+   
+        var url = "ServleNuovoIndirizzo" + "?id=" + encodeURIComponent(idutente.value) + "&name=" + encodeURIComponent(name.value) + "&number=" + encodeURIComponent(number.value) + "&city=" + encodeURIComponent(city.value) + "&prov=" + encodeURIComponent(prov.value) + "&cap=" + encodeURIComponent(cap.value); //metto url passando come parametro id del prodotto
+	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = //alla risposta della servlet
+	function () 
+	{
+
+	}
+	xhr.open("GET",url,true);
+	xhr.send(null);
+}
+
 }
 
 function submitUpdatedPayMethod(id) {
@@ -149,9 +173,31 @@ function submitUpdatedPayMethod(id) {
 
 function submitNewPayMethod(id) {
     if (checkPayMethodFields(id)) {
-  
-  
-    }
+	 var idutente = document.getElementById("idutente");
+	
+    var number = document.getElementById("pay-method-number-" + id);
+    
+    var owner = document.getElementById("pay-method-owner-" + id);
+    
+    var month = document.getElementById("pay-method-month-" + id);
+   
+    var year= document.getElementById("pay-method-year-" + id);
+   
+    var cvv = document.getElementById("pay-method-cvv-" + id);
+    
+    var url = "ServletNewPay" + "?id=" + encodeURIComponent(idutente.value) + "&number=" + encodeURIComponent(number.value) + "&owner=" + encodeURIComponent(owner.value) + "&month=" + encodeURIComponent(month.value)  + "&year=" + encodeURIComponent(year.value) + "&cvv=" + encodeURIComponent(cvv.value); //metto url passando come parametro id del prodotto
+	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = //alla risposta della servlet
+	function () 
+	{
+
+	}
+	xhr.open("GET",url,true);
+	xhr.send(null);
+}
+
 }
 
 /***************************************

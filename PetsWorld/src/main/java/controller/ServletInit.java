@@ -36,11 +36,27 @@ public class ServletInit extends HttpServlet {
         List<Prodotto> list = new ArrayList<>();
         ProdottoImp slider = new ProdottoImp(source);
         
+        List<Prodotto> venduti = new ArrayList<>();
+        ProdottoImp venduto = new ProdottoImp(source);
+        
+        List<Prodotto> consigliati = new ArrayList<>();
+        ProdottoImp consigliato = new ProdottoImp(source);
+        
+        List<Prodotto> novita = new ArrayList<>();
+        ProdottoImp novito = new ProdottoImp(source);
+        
+        
         try {
             list = slider.SliderProdotto();
             banner = Banner.SliderBanner();
             this.getServletContext().setAttribute("list", list);
             this.getServletContext().setAttribute("banner", banner);
+            venduti = venduto.Prodottocaos();
+            this.getServletContext().setAttribute("venduto", venduti);
+            consigliati = consigliato.Prodottocaos();
+            this.getServletContext().setAttribute("consigliato", consigliati);
+            novita = novito.Prodottocaos();
+            this.getServletContext().setAttribute("novito", novita);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

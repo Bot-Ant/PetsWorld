@@ -38,7 +38,9 @@
 				{
 					
 					Utente utente = (Utente) sessione.getAttribute("utente");
-			               for(Indirizzo u : utente.getIndirizziSpedizione()){
+					%>
+						<input type="hidden" id="idutente" value="<%=utente.getIdUtente() %>">
+			              <%  for(Indirizzo u : utente.getIndirizziSpedizione()){
            			 
 						
 						%>

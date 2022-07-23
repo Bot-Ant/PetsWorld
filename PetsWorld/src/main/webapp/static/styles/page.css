@@ -261,7 +261,7 @@ hr {
 
 .products-section h1 {
     margin-bottom: 30px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .products-row {
@@ -269,8 +269,16 @@ hr {
     padding: 0;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.products-row .product-box {
+    margin: 20px;
+}
+
+.products-row .product-container {
+    margin: 0px auto 20px auto;
 }
 
 .products-slider {
@@ -289,27 +297,3 @@ hr {
     color: var(--contrast-color-3);
     background-color: var(--transparent);
 }
-
-
-
-
-/* Responsive layout - when the screen is less than 700px wide, make the elements stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-    .row, nav {   
-        flex-direction: column;
-    }
-    header{
-        /* Reverse the axis of the header, making it vertical. */
-        flex-direction: column;
-
-        /* Align items to the begining (the left) of the header. */
-        align-items: flex-start;
-    }
-}
-
-
-@media screen and (min-width: 1400px) {
-    body {
-        flex-direction: column;
-    }
-  }

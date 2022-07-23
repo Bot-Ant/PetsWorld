@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
-	<nav>
+	<nav id="large-navbar">
 		<form class="nav-links" action="ServletCatalogo" method="post">
 			<button class="link" type="submit" name="animale" value="cane"><span>Cane</span></button>
 			<button class="link" type="submit" name="animale" value="gatto"><span>Gatto</span></button>
@@ -20,6 +20,9 @@
 			<button class="link" type="submit" name="animale" value="volatili"><span>Volatili</span></button>
 			<button class="link" type="submit" name="animale" value="piccoliAnimali"><span>Piccoli Animali</span></button>
 		</form>
+	</nav>
+	<nav id="small-navbar">
+		<a href=""><h3><i class="fa-solid fa-bars fa-xl"></i></h3></a>
 	</nav>
 </body>
 </html>

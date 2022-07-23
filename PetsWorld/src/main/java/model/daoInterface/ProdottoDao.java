@@ -10,6 +10,8 @@ public interface ProdottoDao<S extends Exception> {
 	
 	List<Prodotto> SliderProdotto() throws SQLException;
 	
+	List<Prodotto> Prodottocaos() throws SQLException;
+	
 	List<Prodotto> ListaProdotti(List<Condition> conditions) throws SQLException;
 	
 	Prodotto doRetrieveByKey(int ID) throws SQLException;

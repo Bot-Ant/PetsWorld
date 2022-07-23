@@ -41,7 +41,7 @@ public class ServletFattura extends HttpServlet {
 		HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
 		Indirizzo ind=new Indirizzo();
 		Utente utente=(Utente) sessione.getAttribute("utente");
-		
+
 		/*Utente user = new Utente();
 		OrdineDao<SQLException> dao= new OrdineImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		HttpSession sessione = request.getSession(false);

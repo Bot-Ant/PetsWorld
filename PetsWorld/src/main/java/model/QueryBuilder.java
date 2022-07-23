@@ -131,5 +131,10 @@ import model.search.Condition;
 		public  QueryBuilder limit2(int condition ){
 	        query.append(" LIMIT ").append(condition);
 	        return this;
-	    }
+		}
+		
+		public QueryBuilder order() {
+			query.append(" ORDER BY RAND()  ");
+	        return this;
+		}
 }
