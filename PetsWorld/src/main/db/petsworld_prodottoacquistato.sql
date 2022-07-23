@@ -33,7 +33,7 @@ CREATE TABLE `prodottoacquistato` (
   PRIMARY KEY (`idProdottoAcquistato`),
   KEY `fassoli_idx` (`IDordine_fk`),
   CONSTRAINT `fassoli` FOREIGN KEY (`IDordine_fk`) REFERENCES `ordine` (`idordine`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `prodottoacquistato` (
 
 LOCK TABLES `prodottoacquistato` WRITE;
 /*!40000 ALTER TABLE `prodottoacquistato` DISABLE KEYS */;
-INSERT INTO `prodottoacquistato` VALUES (2,1,'product-0-pic-0',45.00,10,24,'fassoleria'),(3,1,'product-0-pic-0',45.00,10,24,'fassoleria'),(4,1,'product-0-pic-0',45.90,10,26,'Monge All Breeds Adult Salmone e Riso'),(5,1,'product-1-pic-0',27.50,10,27,'Acana Pacifica 2KG'),(6,1,'product-0-pic-0',45.90,10,28,'Monge All Breeds Adult Salmone e Riso');
+INSERT INTO `prodottoacquistato` VALUES (25,5,'product-2-pic-0',72.50,10,7,'Acana Classic Red 11.4KG'),(39,2,'product-2-pic-0',72.50,10,14,'Acana Classic Red 11.4KG');
 /*!40000 ALTER TABLE `prodottoacquistato` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-22  3:06:27
+-- Dump completed on 2022-07-23 20:53:14

@@ -7,35 +7,18 @@ public class ProdottoAcquistato implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int IdProdottoAcquistato;
-	private String nome;
-	private String tipo;
 	private int quantita;
 	private String foto;
 	private double prezzo;
 	private double iva;
-	private double peso;
-	private String dataScadenza; 
-	private String dimensione;
-	private String colore;
+	private int IdOrdine;
+	private String nome;
 	
-	public int getIdProdottoAcquistato() {
-		return IdProdottoAcquistato;
-	}
-	public void setIdProdottoAcquistato(int idProdottoAcquistato) {
-		IdProdottoAcquistato = idProdottoAcquistato;
-	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 	public int getQuantita() {
 		return quantita;
@@ -61,35 +44,16 @@ public class ProdottoAcquistato implements Serializable{
 	public void setIva(double iva) {
 		this.iva = iva;
 	}
-	public double getPeso() {
-		return peso;
+	public int getIdOrdine() {
+		return IdOrdine;
 	}
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
-	public String getDataScadenza() {
-		return dataScadenza;
-	}
-	public void setDataScadenza(String dataScadenza) {
-		this.dataScadenza = dataScadenza;
-	}
-	public String getDimensione() {
-		return dimensione;
-	}
-	public void setDimensione(String dimensione) {
-		this.dimensione = dimensione;
-	}
-	public String getColore() {
-		return colore;
-	}
-	public void setColore(String colore) {
-		this.colore = colore;
+	public void setIdOrdine(int idOrdine) {
+		IdOrdine = idOrdine;
 	}
 	@Override
 	public String toString() {
-		return "ProdottoAcquistato [IdProdottoAcquistato=" + IdProdottoAcquistato + ", nome=" + nome + ", tipo=" + tipo
-				+ ", quantita=" + quantita + ", foto=" + foto + ", prezzo=" + prezzo + ", iva=" + iva + ", peso=" + peso
-				+ ", dataScadenza=" + dataScadenza + ", dimensione=" + dimensione + ", colore=" + colore + "]";
+		return "ProdottoAcquistato [quantita=" + quantita + ", foto=" + foto + ", prezzo=" + prezzo + ", iva=" + iva
+				+ ", IdOrdine=" + IdOrdine + ", nome=" + nome + "]";
 	}
 	
 }

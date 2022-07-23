@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -51,7 +52,7 @@
 					</li>
 					<li>
 						<label class="field-name" for="cellulare"><b>Cellulare</b></label>
-						<input class="input-field" type="tel" pattern="[0-9]{3}-[0-9]{7}" placeholder="111-1111111" required name="cellulare" id="cellulare">
+						<input class="input-field" type="tel" placeholder="111-111-1111" required name="cellulare" id="cellulare">
 						<p id="number-validity"></p>
 					</li>
 				</ul>
