@@ -31,7 +31,7 @@
 			<div class="bar-center">
 				<jsp:include page="./static/templates/searchbar.html"/>
 			</div>
-			<div id="header-buttons">
+			<div id="header-buttons" class="header-buttons">
 				<%
 					Utente utente = new Utente();
 					Carrello carrello= new Carrello();
@@ -47,7 +47,7 @@
 							{
 				%>
 
-				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
+				<a id="cart-icon-link" class="cart-icon-link button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
@@ -63,7 +63,7 @@
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
 
-				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
+				<a id="cart-icon-link" class="cart-icon-link button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
@@ -109,7 +109,7 @@
 					<img class="logo" src="./static/images/petsworld-logo.svg" alt="logo" name="home">
 				</a>
 			</div>
-			<div id="header-buttons">
+			<div id="header-buttons-small" class="header-buttons">
 				<%
 					if (sessione != null)
 					{
@@ -121,7 +121,7 @@
 							{
 				%>
 
-				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
+				<a id="cart-icon-link-small" class="cart-icon-link button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
@@ -137,7 +137,7 @@
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
 
-				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
+				<a id="cart-icon-link-small" class="cart-icon-link button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>

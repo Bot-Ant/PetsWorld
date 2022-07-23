@@ -55,14 +55,14 @@
 
 
 
-#header-buttons {
+.header-buttons {
     width: auto;
     display: flex;
     margin-left: auto;
     text-align: center;
 }
 
-#header-buttons h3 {
+.header-buttons h3 {
     margin: 0;
 }
 
@@ -84,7 +84,7 @@ header .button:hover {
 	color: var(--main-color-dark);
 }
 
-#header-buttons #cart-icon-link {
+.header-buttons .cart-icon-link {
     padding: 5px;
     width: 35px;
     height: 35px;
@@ -92,17 +92,17 @@ header .button:hover {
     position: relative;
 }
 
-#cart-icon-link .badge {
+.cart-icon-link .badge {
     width: 35px;
     height: 35px;
 }
 
-#cart-icon-link .fa-cart-shopping {
+.cart-icon-link .fa-cart-shopping {
     position:relative;
     top: 17px;
 }
 
-#cart-icon-link .badge:after{
+.cart-icon-link .badge:after{
     content:attr(value);
     font-size:12px;
     color: var(--neutral-color-2);
