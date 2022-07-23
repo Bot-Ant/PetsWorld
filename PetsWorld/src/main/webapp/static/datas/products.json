@@ -2,86 +2,41 @@
   {
     "name":"Monge All Breeds Adult Salmone e Riso",
     "image": "static/images/product-0-pic-0.png",
-    "brand":"Monge"
+    "animal":"Cane"
   },
   {
-    "name":"Justin Dean",
-    "image": "https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAIMAAAAJGExNTE4OWY4LWU4ODMtNDA2ZS1iNWI1LWNkYmIyOWMyMGQ5Zg.jpg",
-    "brand":"Muscatine, IA"
+    "name":"Acana Pacifica 2KG",
+    "image": "static/images/product-1-pic-0.png",
+    "animal":"Cane"
   },
   {
-    "name":"Nora Blake",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/2/005/0b8/118/387e091.jpg",
-    "brand":"Seattle, WA"
+    "name":"Acana Pacifica 6KG",
+    "image": "static/images/product-1-pic-0.png",
+    "animal":"Cane"
   },
   {
-    "name":"Russell Fox",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/2/000/084/26e/2d9e05b.jpg",
-    "brand":"Albuquerque, NM"
+    "name":"Acana Pacifica 11.4KG",
+    "image": "static/images/product-1-pic-0.png",
+    "animal":"Cane"
   },
   {
-    "name":"Daryl Bradley",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/042/0ad/197566e.jpg",
-    "brand":"Buckeystown, MD"
+    "name":"Acana Classic Red 2KG",
+    "image": "static/images/product-2-pic-0.png",
+    "animal":"Cane"
   },
   {
-    "name":"Benjamin Gonzales",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/005/0b2/1c9/2a423c1.jpg",
-    "brand":"Atlanta, GA"
+    "name":"Acana Classic Red 11.4KG",
+    "image": "static/images/product-2-pic-0.png",
+    "animal":"Cane"
   },
   {
-    "name":"Viola Francis",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAASJAAAAJGMyMTUzN2EyLTExY2ItNDZiNS1hMTY1LTI4NDA2NDMwZmFkNg.jpg",
-    "brand":"Zanesville, OH"
+    "name":"Seresto Collare Antiparassitario Cani Grandi",
+    "image": "static/images/product-3-pic-0.png",
+    "animal":"Cane"
   },
   {
-    "name":"Reginald Benson",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/000/10f/3cc/275a407.jpg",
-    "brand":"Gilbert, AZ"
-  },
-  {
-    "name":"Glenda Ray",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/005/0ac/1ca/07c25a2.jpg",
-    "brand":"Baltimore, MD"
-  },
-  {
-    "name":"Paula Vargas",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/03e/073/36a5c47.jpg",
-    "brand":"Baltimore, MD"
-  },
-  {
-    "name":"Mark Armstrong",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/010/09b/39b122d.jpg",
-    "brand":"Hallandale Beach, FL"
-  },
-  {
-    "name":"Jaime Campbell",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAATUAAAAJDJkY2Q1Mzk0LTI1YzItNDFhNy04ZmQ0LWY3NzZlZTZlNGVmYw.jpg",
-    "brand":"Zanesville, OH"
-  },
-  {
-    "name":"Mike Beck",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/2/000/01c/0d4/2b69e7c.jpg",
-    "brand":"Garner, NC"
-  },
-  {
-    "name":"Ann Lowe",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/7/000/1f6/019/29cd853.jpg",
-    "brand":"Cabin John, MD"
-  },
-  {
-    "name":"Ryan Wolfe",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/000/0bf/335/05a57f6.jpg",
-    "brand":"Los Angeles, CA"
-  },
-  {
-    "name":"Dwayne Gutierrez",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/29b/028/2426536.jpg",
-    "brand":"San Jose, CA"
-  },
-  {
-    "name":"Bill Burke",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/7/000/1bc/12e/1423106.jpg",
-    "brand":"Bakersfield, CA"
+    "name":"nome",
+    "image": "static/images/.png",
+    "animal":"animale"
   }
 ]
