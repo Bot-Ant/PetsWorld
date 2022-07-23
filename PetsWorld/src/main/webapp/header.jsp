@@ -29,7 +29,7 @@
 				</a>
 			</div>
 			<div class="bar-center">
-				<jsp:include page="./searchbar.jsp"/>
+				<jsp:include page="./static/templates/searchbar.html"/>
 			</div>
 			<div id="header-buttons">
 				<%
@@ -47,12 +47,12 @@
 							{
 				%>
 
-				<a id="cart-icon-link" href="<%=urlcarrello%>">
+				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
 				</a>
-				<a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3>Accedi <i class="fa-solid fa-user fa-xl"></i></h3></a>
+				<a class="button" title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3>Accedi <i class="fa-solid fa-user fa-xl"></i></h3></a>
 					
 				<%			
 							}
@@ -63,12 +63,12 @@
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
 
-				<a id="cart-icon-link" href="<%=urlcarrello%>">
+				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
 				</a>
-				<a href="<%=urlutente%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
+				<a class="button" href="<%=urlutente%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
 
 				<%	
 								}
@@ -77,7 +77,7 @@
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
 
-				<a href="<%=urladmin%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
+				<a class="button" href="<%=urladmin%>"><h3 class="active">Account <i class="fa-solid fa-user fa-xl"></i></h3></a>
 				
 				<%
 								}
@@ -90,15 +90,18 @@
 		</div>
 		<!-- Elements in the bottom bar of the header -->
 		<div class="bottom-bar">
-			<jsp:include page="./navbar.jsp"/>
+			<jsp:include page="./static/templates/navbar.html"/>
 		</div>
 	</div>
 	
 	<!-- Condensed version of the header, visible when the window is small -->
 	<div id="small-header" class="standard-header" >
 		<div class="top-bar">
+			<div id="side-navbar">
+				<jsp:include page="./static/templates/smallNavbar.html"/>
+			</div>
 			<div class="bar-hamburger">
-				<jsp:include page="./navbar.jsp"/>
+				<button class="button" onclick="showSideNavbar()"><i class="fa-solid fa-bars fa-xl"></i></button>
 			</div>
 			<div class="logo-box">
 				<%url1 = response.encodeURL("index.jsp");%>
@@ -118,12 +121,12 @@
 							{
 				%>
 
-				<a id="cart-icon-link" href="<%=urlcarrello%>">
+				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
 				</a>
-				<a title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3><i class="fa-solid fa-user fa-xl"></i></h3></a>
+				<a class="button" title="login" Style="transition:0.5s;" href="<%=response.encodeURL("login.jsp")%>"><h3><i class="fa-solid fa-user fa-xl"></i></h3></a>
 					
 				<%			
 							}
@@ -134,12 +137,12 @@
 									String urlutente = response.encodeURL("userAccount.jsp");
 				%>
 
-				<a id="cart-icon-link" href="<%=urlcarrello%>">
+				<a id="cart-icon-link" class="button" href="<%=urlcarrello%>">
 					<i class="fa badge fa-lg" value="<%=carrello.getQuantita()%>">
 						<i class="fa-solid fa-cart-shopping fa-xl"></i>
 					</i>
 				</a>
-				<a href="<%=urlutente%>"><h3 class="active"><i class="fa-solid fa-user fa-xl"></i></h3></a>
+				<a class="button" href="<%=urlutente%>"><h3 class="active"><i class="fa-solid fa-user fa-xl"></i></h3></a>
 
 				<%	
 								}
@@ -148,7 +151,7 @@
 									String urladmin = response.encodeURL("adminAccount.jsp");
 				%>
 
-				<a href="<%=urladmin%>"><h3 class="active"><i class="fa-solid fa-user fa-xl"></i></h3></a>
+				<a class="button" href="<%=urladmin%>"><h3 class="active"><i class="fa-solid fa-user fa-xl"></i></h3></a>
 				
 				<%
 								}
@@ -160,9 +163,10 @@
 			</div> 
 		</div>
 		<div class="bottom-bar">
-			<jsp:include page="./searchbar.jsp"/>
+			<jsp:include page="./static/templates/smallSearchbar.html"/>
 		</div>
 	</div>
 	<script type="text/javascript" src="./static/scripts/header.js"></script>
+	<script type="text/javascript" src="./static/scripts/navbar.js"></script>
 </body>
 </html>

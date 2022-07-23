@@ -16,7 +16,7 @@
 			<div id="catalog-searchbar" class="box">
 				<h1>Ricerca prodotti</h1>
 				<!-- sostituire con una searchbar nuova -->
-				<jsp:include page="./searchbar.jsp"/>
+				<jsp:include page="./static/templates/searchbar.html"/>
 			</div>
 			<h1>Catalogo</h1>
 			<div id="products-list" class="column">

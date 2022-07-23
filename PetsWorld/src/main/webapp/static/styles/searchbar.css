@@ -102,3 +102,23 @@
     font-weight: 400;
     color: var(--contrast-color-2);
 }
+
+
+
+
+
+
+
+/* Responsive style for the large window */
+@media only screen and (min-width: 900px) {
+    #small-searchbar {
+        display: none;
+    }
+}
+
+/* Responsive style for the small window */
+@media only screen and (max-width: 900px) {
+    #standard-searchbar {
+        display: none;
+    }
+}

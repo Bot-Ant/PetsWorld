@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Admin header</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
@@ -26,7 +27,7 @@
 			</a>
 		</div>
 		<nav>
-			<jsp:include page="./adminNavbar.jsp"/>
+			<jsp:include page="./static/templates/adminNav.html"/>
 		</nav>
 	</div>
 	<!-- Condensed version of the header, visible when the window is small -->
