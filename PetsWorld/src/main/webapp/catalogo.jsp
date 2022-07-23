@@ -46,42 +46,25 @@
 			  </div>
 			<div id="filter-categories">
 				<h2 class="category-name">Categorie</h2>
-				<button class="category-animal">Cane</button>
-				<button class="category-voice">Alimenti</button>
-				<button class="category-voice">Igiene</button>
-				<button class="category-voice">Accessori</button>
-				<button class="category-voice">Abbigliamento</button>
-				<button class="category-voice">Giochi</button>
-
-				<button class="category-animal">Gatto</button>
-				<button class="category-voice">Alimenti</button>
-				<button class="category-voice">Igiene</button>
-				<button class="category-voice">Accessori</button>
-				<button class="category-voice">Abbigliamento</button>
-				<button class="category-voice">Giochi</button>
-
-				<button class="category-animal">Pesci</button>
-				<button class="category-voice">Alimenti</button>
-				<button class="category-voice">Igiene</button>
-				<button class="category-voice">Accessori</button>
-				<button class="category-voice">Acquari</button>
-				<button class="category-voice">Decorazioni</button>
-
-				<button class="category-animal">Uccelli</button>
-				<button class="category-voice">Alimenti</button>
-				<button class="category-voice">Igiene</button>
-				<button class="category-voice">Accessori</button>
-				<button class="category-voice">Gabbie</button>
-				<button class="category-voice">Giochi</button>
-
-				<button class="category-animal">Piccoli animali</button>
-				<button class="category-voice">Alimenti</button>
-				<button class="category-voice">Igiene</button>
-				<button class="category-voice">Accessori</button>
-				<button class="category-voice">Gabbie</button>
-				<button class="category-voice">Giochi</button>
+				<select class="category-animal" id="category-animal">
+					<option value="cane">Cane</option>
+					<option value="gatto">Gatto</option>
+					<option value="pesci">Pesci</option>
+					<option value="volatili">Volatili</option>
+					<option value="piccolianimali">Piccoli animali</option>
+				</select>
+				<select class="category-voice" name="category-animal" id="category-animal">
+					<option value="alimenti">Alimenti</option>
+					<option value="igiene">Igiene</option>
+					<option value="accessori">Accessori</option>
+					<option value="abbigliamento">Abbigliamento</option>
+					<option value="giochi">Giochi</option>
+					<option value="acquari">Acquari</option>
+					<option value="decorazioni">Decorazioni</option>
+					<option value="gabbiette">Gabbiette</option>
+				</select>
 			</div>
-			
+			<button class="active-basic-button">Filtra risultati</button>
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
