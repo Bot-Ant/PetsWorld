@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -111,6 +112,11 @@ public class ServletOrdine extends HttpServlet {
 				e1.printStackTrace();
 			}
 			
+			LocalDate data = LocalDate.now();
+			 
+			String date = data.toString();
+			
+			ordine.setDataOrdine(date);
 			ordine.setTotale(carrello.getPrezzoTotale());
 			ordine.setPagamento(pagamento);
 			ordine.setIndirizzo(indirizzo);

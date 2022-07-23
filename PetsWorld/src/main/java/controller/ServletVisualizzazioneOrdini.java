@@ -32,7 +32,8 @@ public class ServletVisualizzazioneOrdini extends HttpServlet {
 		super();
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DataSource ds = (DataSource)getServletContext().getAttribute("DataSource"); //recuperiamo il datasource
+		DataSource ds = (DataSource)getServletContext().getAttribute("DataSource"); 
+
 		Utente user = new Utente();
 		OrdineDao<SQLException> dao= new OrdineImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		HttpSession sessione = request.getSession(false);
@@ -57,7 +58,7 @@ public class ServletVisualizzazioneOrdini extends HttpServlet {
 		}
 		else
 		{
-			request.setAttribute("errore", 1);
+			request.setAttribute("errore", "errore");
 			getServletContext().getRequestDispatcher(response.encodeURL("/userOrders.jsp")).forward(request, response);
 		}
 		

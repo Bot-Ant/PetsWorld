@@ -42,24 +42,28 @@
 						ArrayList<Ordine> ordine = (ArrayList<Ordine>) request.getAttribute("ordini");
 						for(int i=0; i<ordine.size();i++)
 						{
-					
 				%>
 					<div class="order-box">
 						<div class="box">
 							<div class="order-info">
-								<div class="row">
+								<form action="ServletFattura" method="get" class="row">
 									<div class="delivery-number">
 										<p>Ordine n°</p>
-										<span><%=ordine.get(i).getIdOrdine()%></span>
+										<input type="text" class="input-field inactive" name="id_ordine" value="<%=ordine.get(i).getIdOrdine()%>">
 									</div>
 									<div class="total-price">
 										<p>Totale</p>
-										<span><%=String.format("€%,.2f", (ordine.get(i).getTotale()))%></span>
+										<input type="text" class="input-field inactive" value="<%=String.format("€%,.2f", (ordine.get(i).getTotale()))%>">
+										<input type="hidden" name="totale" value="<%=ordine.get(i).getTotale()%>">
 									</div>
-									<form action="ServletFattura" method="get" class="order-details">
-										<button name="id_ordine" value="<%=ordine.get(i).getIdOrdine()%>" class="active-basic-button">Dettagli ordine</button>
-									</form>
-								</div>
+									<div class="date-order">
+										<p>Data Ordine</p>
+										<input type="text" class="input-field inactive" name="data" value="<%=ordine.get(i).getDataOrdine()%>">
+									</div>
+									<div>
+										<button class="active-basic-button">Dettagli ordine</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
