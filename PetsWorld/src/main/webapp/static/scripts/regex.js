@@ -34,7 +34,7 @@ function checkTaxCode(input) {
 }
 
 function checkPhoneNumber(input) {
-    var number = /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/;
+    var number = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
     if (input.value.match(number)) {
         return true;
     } else {

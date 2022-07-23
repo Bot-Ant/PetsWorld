@@ -36,7 +36,6 @@ public class OrdineImp extends Manager implements OrdineDao <SQLException> {
 
 	public void doSave(Ordine ord) throws SQLException {
 		try (Connection connection = createConnection()) {
-			System.out.print(ord.getDataOrdine());
 			String query = "insert into ordine (idordine, totale,Pagamento,indirizzo,IDUtente_fk, dataOrdine) values ("+ ord.getIdOrdine() +","+ ord.getTotale() +",'"+ord.getPagamento()+"',"+ord.getIndirizzo()+","+ord.getIdUtente()+",'"+ord.getDataOrdine()+"');";	
 			try(PreparedStatement ps = connection.prepareStatement(query)){
 				ps.executeUpdate();
