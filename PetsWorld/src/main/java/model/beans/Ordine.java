@@ -10,12 +10,12 @@ public class Ordine implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private int IdOrdine;
-	private String dataOrdine;
 	private double totale;
 	private int pagamento;
 	private int indirizzo;
-	private int idUtente; 
-	
+	private int idUtente;
+	private String dataOrdine;
+
 	public int getIdUtente() {
 		return idUtente;
 	}
@@ -27,13 +27,6 @@ public class Ordine implements Serializable{
 	}
 	public void setIdOrdine(int idOrdine) {
 		IdOrdine = idOrdine;
-	}
-
-	public String getDataOrdine() {
-		return dataOrdine;
-	}
-	public void setDataOrdine(String dataOrdine) {
-		this.dataOrdine = dataOrdine;
 	}
 	public double getTotale() {
 		return totale;
@@ -56,10 +49,17 @@ public class Ordine implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public String getDataOrdine() {
+		return dataOrdine;
+	}
+	public void setDataOrdine(String dataOrdine) {
+		this.dataOrdine = dataOrdine;
+	}
 	@Override
 	public String toString() {
-		return "Ordine [IdOrdine=" + IdOrdine + ", dataOrdine=" + dataOrdine + ", totale=" + totale + ", pagamento="
-				+ pagamento + ", indirizzo=" + indirizzo + ", idUtente=" + idUtente + "]";
+		return "Ordine [IdOrdine=" + IdOrdine + ", totale=" + totale + ", pagamento=" + pagamento + ", indirizzo="
+				+ indirizzo + ", idUtente=" + idUtente + ", dataOrdine=" + dataOrdine + "]";
 	}
 
 }

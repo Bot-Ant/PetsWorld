@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -13,8 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+import model.beans.Indirizzo;
 import model.beans.Ordine;
 import model.beans.Utente;
+import model.beans.Prodotto;
+import model.beans.ProdottoAcquistato;
 import model.daoImplementation.OrdineImp;
 import model.daoImplementation.UtenteImp;
 import model.daoInterface.OrdineDao;
@@ -33,7 +37,11 @@ public class ServletFattura extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DataSource ds = (DataSource)getServletContext().getAttribute("DataSource"); //recuperiamo il datasource
+		DataSource ds = (DataSource)getServletContext().getAttribute("DataSource"); 
+		HttpSession sessione = request.getSession(true); //restituisce la sessione se esiste, altrimenti la crea nuova
+		Indirizzo ind=new Indirizzo();
+		Utente utente=(Utente) sessione.getAttribute("utente");
+		
 		/*Utente user = new Utente();
 		OrdineDao<SQLException> dao= new OrdineImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		HttpSession sessione = request.getSession(false);
@@ -63,8 +71,36 @@ public class ServletFattura extends HttpServlet {
 		}
 		
 	}*/
-		int ordine= Integer.parseInt(request.getParameter("id_ordine"));
-		System.out.print(ordine);
+		String totale= request.getParameter("totale");
+		Double tot=Double.parseDouble(totale);
+		int ordine= Integer.parseInt(request.getParameter("id_ordine"));		
+		String DataOrdine= request.getParameter("data");
+
+		OrdineDao<SQLException> ordineImp= new OrdineImp((org.apache.tomcat.jdbc.pool.DataSource) source);
+		ArrayList<ProdottoAcquistato> prodotti=new ArrayList<ProdottoAcquistato>();
+		
+		try {
+			prodotti=ordineImp.cerca_prodotti_ordine(ordine);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(ordine);
+		System.out.print(utente.getIdUtente());
+		
+		try {
+			ind=ordineImp.cerca_indirizzo_ordine(ordine, utente.getIdUtente());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		request.setAttribute("id_ordine", ordine);
+		request.setAttribute("data_ordine", DataOrdine);
+		request.setAttribute("totale", tot);
+		request.setAttribute("prodotti", prodotti);
+		request.setAttribute("indirizzo", ind);
+		
 		getServletContext().getRequestDispatcher(response.encodeURL("/fattura.jsp")).forward(request, response);
 	}
 	
