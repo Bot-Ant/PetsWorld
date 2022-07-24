@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>PetsWorld</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
 	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
@@ -24,5 +25,6 @@
 			</a>
 		</div>
 	</div>
+	<script type="text/javascript" src="./static/scripts/header.js"></script>
 </body>
 </html>

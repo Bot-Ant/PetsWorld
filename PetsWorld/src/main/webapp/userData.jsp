@@ -11,7 +11,7 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div id="user-content">
-		<jsp:include page="./userNav.jsp"/>
+		<jsp:include page="./static/templates/userNav.html"/>
 		<div id="data-panel">
 			<div id="user-page-header">
 				<h1>Dati personali</h1>
@@ -24,7 +24,15 @@
 						if (sessione != null)
 						{
 							Utente utente = (Utente) sessione.getAttribute("utente");
-					%>
+					
+							if (utente == null) {
+			%>
+								<script>
+									window.onload = redirectToPage("error401.jsp");
+								</script>
+			<%
+							}
+			%>
 			<div id="data-box" class="box">
 				<div id="user-info" class="column">
 					<div id="user-info-top" class="row">

@@ -6,13 +6,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Catalogo</title>
-	<link rel="stylesheet" href="./static/styles/light.css">
-	<link rel="stylesheet" href="./static/styles/page.css">
-    <link rel="stylesheet" href="./static/styles/header.css">
-    <link rel="stylesheet" href="./static/styles/footer.css">
-    <link rel="stylesheet" href="./static/styles/user.css">
-	<link rel="stylesheet" href="./static/styles/catalog.css">
-	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
 	<script type="text/javascript" src="./static/scripts/cart.js"></script>
@@ -46,14 +39,14 @@
 			  </div>
 			<div id="filter-categories">
 				<h2 class="category-name">Categorie</h2>
-				<select class="category-animal" id="category-animal">
+				<select class="category-animal input-field" id="category-animal">
 					<option value="cane">Cane</option>
 					<option value="gatto">Gatto</option>
 					<option value="pesci">Pesci</option>
 					<option value="volatili">Volatili</option>
 					<option value="piccolianimali">Piccoli animali</option>
 				</select>
-				<select class="category-voice" name="category-animal" id="category-animal">
+				<select class="category-voice input-field" name="category-animal" id="category-animal">
 					<option value="alimenti">Alimenti</option>
 					<option value="igiene">Igiene</option>
 					<option value="accessori">Accessori</option>

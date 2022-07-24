@@ -105,7 +105,7 @@ function submitUpdatedAddress(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
-
+        redirectToPage("userAddresses.jsp");
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);
@@ -133,7 +133,7 @@ function submitNewAddress(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
-
+        redirectToPage("userAddresses.jsp");
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);
@@ -161,7 +161,7 @@ function submitUpdatedPayMethod(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
-
+        redirectToPage("userPayMethods.jsp");
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);
@@ -192,7 +192,7 @@ function submitNewPayMethod(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
-
+        redirectToPage("userPayMethods.jsp");
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);

@@ -26,6 +26,10 @@
 
 }
 
+#login-error-message {
+    color: var(--accent-color);
+}
+
 .cart-panel {
     margin: 0;
     padding: 0;

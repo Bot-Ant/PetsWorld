@@ -1,0 +1,34 @@
+
+
+#intestazione {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#intestazione img {
+    margin-right: auto;
+}
+
+#info-venditore {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#dati-utente,
+#dati-fattura,
+#parametri-costo {
+    display: flex;
+    flex-direction: column;
+}
+
+.riga-prodotto {
+    display: flex;
+    flex-direction: row;
+}
+
+#info-totale {
+    display: flex;
+    flex-direction: row;
+}

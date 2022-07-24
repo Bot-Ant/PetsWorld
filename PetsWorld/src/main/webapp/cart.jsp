@@ -4,13 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Carrello</title>
-	<link rel="stylesheet" href="./static/styles/light.css">
-	<link rel="stylesheet" href="./static/styles/page.css">
-    <link rel="stylesheet" href="./static/styles/header.css">
-    <link rel="stylesheet" href="./static/styles/footer.css">
-    <link rel="stylesheet" href="./static/styles/user.css">
-	<link rel="stylesheet" href="./static/styles/catalog.css">
-	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
 	<script type="text/javascript" src="./static/scripts/cart.js"></script>
@@ -182,7 +175,7 @@
 							{	
 						%>
 						
-						<p id="demo"></p>
+						<p id="login-error-message"></p>
 						<button type="submit" class="active-accent-button" onclick="DeviLoggartiPrima()">Procedi all'ordine</button>
 						
 						<%

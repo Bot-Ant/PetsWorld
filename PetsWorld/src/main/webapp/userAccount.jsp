@@ -4,13 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pagina utente</title>
-	<link rel="stylesheet" href="../static/styles/light.css">
-	<link rel="stylesheet" href="../static/styles/page.css">
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/footer.css">
-    <link rel="stylesheet" href="../static/styles/user.css">
-	<link rel="stylesheet" href="../static/styles/catalog.css">
-	<link rel="stylesheet" href="../static/styles/order.css">
 </head>
 <body>
 
@@ -19,7 +12,7 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div id="user-content">
-		<jsp:include page="./userNav.jsp"/>
+		<jsp:include page="./static/templates/userNav.html"/>
 		<div id="data-panel">
 			<div id="user-page-header">
 				<h1>My petsworld</h1>
@@ -28,12 +21,24 @@
 						if (sessione != null)
 						{
 							Utente utente = (Utente) sessione.getAttribute("utente");
+							if (utente != null) {
+								%>
+								
+								<%
 					%>
 				<p>
 					Ciao <%=utente.getNome()%> <%=utente.getCognome()%>, benvenuto nel tuo spazio personale.
 				</p>
-				<%
-					} %>
+					<%
+							} else {
+						%>
+						<script>
+							window.onload = redirectToPage("error401.jsp");
+						</script>
+						<%
+							}
+						}
+					%>
 			</div>
 			<div class="extra">
 				<div class="donazioni">

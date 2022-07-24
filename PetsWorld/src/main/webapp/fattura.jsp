@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div id="container-fattura">
 		<%
 			HttpSession sessione = request.getSession(false);
 			Utente user=(Utente) sessione.getAttribute("utente");
@@ -15,34 +16,82 @@
 			Indirizzo indirizzo= (Indirizzo) request.getAttribute("indirizzo");
 			int id= (int) request.getAttribute("id_ordine");
 		%>
-			
-			<h3>
-			Nome:<%=user.getNome()%>
-			Cognome: <%=user.getCognome()%>
-			ID ordine:<%=id %>
-			Totale ordine:<%=totale%>
-			Data ordine=<%=data%>
-			Indirizzo città:<%=indirizzo.getCitta()%>			
-			Indirizzo strada:<%=indirizzo.getNome_strada()%>
-			Indirizzo civico:<%=indirizzo.getCivico()%>
-			Indirizzo CAP:<%=indirizzo.getCAP()%>
-			Indirizzo provincia:<%=indirizzo.getProvincia()%>
-			</h3>
-						
-		<%
-			ArrayList<ProdottoAcquistato> prodotti= (ArrayList<ProdottoAcquistato>) request.getAttribute("prodotti");
-			int i;
-			for(i=0;i<prodotti.size();i++)
-			{
-		%>
-		
-				<h2><%=prodotti.get(i).getQuantita()%></h2>
-				<h2><%=prodotti.get(i).getNome()%></h2>
-				<h2><%=prodotti.get(i).getFoto()%></h2>
-				<h2><%=prodotti.get(i).getPrezzo()%></h2>
-				<h2><%=prodotti.get(i).getIva()%></h2>
-		<% 
-			}
-		%>
+
+		<div id="box-fattura">
+			<div id="intestazione">
+				<img src="./static/images/website-logo-icon.svg" alt="Logo PetsWorld">
+				<div id="info-venditore">
+					<p>Via Sansone 54</p>
+					<p>84084 Fisciano (SA)</p>
+					<p>CF: MRCRSS70C21F839A</p>
+					<p>P.IVA: 03398567403</p>
+					<p>Tekefono: +39 327 362 9020</p>
+				</div>
+			</div>
+			<hr>
+			<div id="info-fattura">
+				<div class="dati-utente">
+					<h3>DESTINATARIO</h3>
+					<p><%=user.getNome()%> <%=user.getCognome()%></p>
+					<p><%=indirizzo.getNome_strada()%>, <%=indirizzo.getCivico()%></p>
+					<p><%=indirizzo.getCAP()%> <%=indirizzo.getCitta()%> (<%=indirizzo.getProvincia()%>)</p>
+				</div>
+				<div class="dati-fattura">
+					<div class="row">
+						<h3>FATTURA #</h3>
+						<p><%=id %></p>
+					</div>
+					<div class="row">
+						<h3>DATA</h3>
+						<p><%=data%></p>
+					</div>
+				</div>
+			</div>
+			<div id="info-prodotti">
+				<%
+					ArrayList<ProdottoAcquistato> prodotti= (ArrayList<ProdottoAcquistato>) request.getAttribute("prodotti");
+					double subtotale = 0.0;
+					double spedizione = 0.0;
+					double totaleprodotto = 0.0;
+					int i;
+					for(i=0;i<prodotti.size();i++)
+					{
+						totaleprodotto = prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita();
+						subtotale += totaleprodotto;
+				%>
+				<div class="riga-prodotto">
+					<p><%=prodotti.get(i).getNome()%></p>
+					<p><%=prodotti.get(i).getQuantita()%></p>
+					<p><%=String.format("%,.2f", (prodotti.get(i).getPrezzo()))%></p>
+					<p><%=prodotti.get(i).getIva()%></p>
+					<p><%=String.format("%,.2f", (totaleprodotto))%></p>
+				</div>
+					
+				<% 
+					}
+					if(subtotale < 50) {
+						spedizione = 15.0;
+					}
+				%>
+			</div>
+			<div id="info-totale">
+				<div id="parametri-costo">
+					<div class="row">
+						<h4>SUBTOTALE</h4>
+						<p><%=String.format("%,.2f", (subtotale))%></p>
+					</div>
+					<div class="row">
+						<h4>SPEDIZIONE</h4>
+						<p><%=String.format("%,.2f", (spedizione))%></p>
+					</div>
+					<div class="row">
+						<h3>TOTALE</h3>
+						<p><%=String.format("%,.2f", (totale))%></p>
+					</div>
+				</div>
+				String.format("%,.2f", (costoTotale))
+			</div>
+		</div>
+	</div>
 </body>
 </html>

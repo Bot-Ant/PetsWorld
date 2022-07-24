@@ -5,15 +5,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>PetsWorld</title>
-	<link rel="stylesheet" href="./static/styles/light.css">
-	<link rel="stylesheet" href="./static/styles/page.css">
-    <link rel="stylesheet" href="./static/styles/header.css">
-    <link rel="stylesheet" href="./static/styles/footer.css">
-    <link rel="stylesheet" href="./static/styles/user.css">
-	<link rel="stylesheet" href="./static/styles/catalog.css">
-	<link rel="stylesheet" href="./static/styles/order.css">
-	<link rel="stylesheet" href="./static/styles/banner.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
 </head>
 <body>	
 	<header>

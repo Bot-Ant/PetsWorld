@@ -84,36 +84,25 @@ function phoneNumberValidity() {
 
 function submitRegistration() {
     var status = 1;
-    console.log(status);	
     if (!nameValidity()) {
         status = 0;
     }
-    console.log(status);	
     if (!surnameValidity()) {
         status = 0;
-    }
-    console.log(status);	
+    }	
     if (!emailValidity()) {
         status = 0;
-    }
-    console.log(status);	
+    }	
     if (!passwordValidity()) {
         status = 0;
-    }
-    console.log(status);	
+    }	
     if (!taxCodeValidity()) {
         status = 0;
     }
-    console.log(status);			
-
     if (!phoneNumberValidity()) {
         status = 0;
     }
-    console.log("cao");			
-
-    if (status) {
-		
-		console.log("ciao");			
+    if (status) {			
 		var name = document.getElementById("nome");
 	    
 	    var surname = document.getElementById("cognome");
@@ -132,13 +121,10 @@ function submitRegistration() {
 		xhr.onreadystatechange = //alla risposta della servlet
 		function () 
 		{
-            let url2 = "index.jsp";
+            let url2 = "login.jsp";
             window.location.href = url2;
 		}
 		xhr.open("GET",url,true);
 		xhr.send(null);   
 	}
-    if (status) {
-         
-    }
 }

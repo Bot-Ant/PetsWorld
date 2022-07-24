@@ -18,26 +18,16 @@ function funzionePiu(id)
 			var stringa2=response.riferimento2;
 			if(response.esaurimento==1)
 			{
-				document.getElementById(stringa2).innerHTML = "Esaurimento scorte nel magazzino";
+				$(stringa2).html("Esaurimento scorte nel magazzino"); //corrisponde a document.getElementById().innerHTML
 			}
 			else
 			{
-				document.getElementById(stringa2).innerHTML = "";
+				$(stringa2).html("");
 			}
-			document.getElementById(stringa).innerHTML=response.quantita;
+			$(stringa).html(response.quantita);
 			updateCartBadgeValue(response.totale);
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
-			document.getElementById("subtotale").innerHTML = " &euro;" + prezzo;
-			if (prezzo < 50)
-			{
-				document.getElementById("spedizione").innerHTML= "&euro;"+"15.00 ";
-				document.getElementById("totale").innerHTML= " &euro;"+ (prezzo +15);
-			}
-			else
-			{
-				document.getElementById("spedizione").innerHTML= "&euro;"+"0.00 ";
-				document.getElementById("totale").innerHTML= " &euro;" + prezzo;
-			}
+			updatePrices(prezzo);
 		}
 	}
 	xhr.open("GET",url,true);
@@ -57,21 +47,11 @@ function funzioneMeno(id)
 			var response = JSON.parse(xhr.responseText);
 			var stringa=response.riferimento;
 			var stringa2=response.riferimento2;
-			document.getElementById(stringa2).innerHTML = "";
-			document.getElementById(stringa).innerHTML=response.quantita;
+			$(stringa2).html("");
+			$(stringa).html(response.quantita);
 			updateCartBadgeValue(response.totale);
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
-			document.getElementById("subtotale").innerHTML = " &euro;"+prezzo;
-			if (prezzo < 50)						
-			{
-				document.getElementById("spedizione").innerHTML= "&euro;"+"15.00 ";
-				document.getElementById("totale").innerHTML= " &euro;"+ (prezzo+15);
-			}
-			else
-			{
-				document.getElementById("spedizione").innerHTML= " &euro;"+"0.00";
-				document.getElementById("totale").innerHTML= " &euro;"+ prezzo;
-			}
+			updatePrices(prezzo);
 		}
 	}
 	xhr.open("GET",url,true);
@@ -93,17 +73,7 @@ function funzioneDel(id)
 			document.getElementById(stringa).remove();
 			updateCartBadgeValue(response.totale);
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
-			document.getElementById("subtotale").innerHTML = " &euro;"+prezzo;
-			if (prezzo < 50)
-			{	
-				document.getElementById("spedizione").innerHTML= "&euro;"+"15.00";
-				document.getElementById("totale").innerHTML= (prezzo+15);
-			}
-			else
-			{
-				document.getElementById("spedizione").innerHTML= "&euro;"+"0.00";
-				document.getElementById("totale").innerHTML= prezzo;
-			}
+			updatePrices(prezzo);
 			var totaleElementi = response.totale;
 			if(totaleElementi == 0)
 			{
@@ -142,7 +112,7 @@ function aggiungiAlCarrello(id)
 			var stringa=response.riferimento;
 			if(response.esaurimento==1)
 			{
-				document.getElementById(stringa).innerHTML = "Esaurimento scorte nel magazzino";
+				$(stringa).html("Esaurimento scorte nel magazzino");
 			}
 		}
 	}
@@ -152,5 +122,16 @@ function aggiungiAlCarrello(id)
 	
 function DeviLoggartiPrima()
 {
-	document.getElementById("demo").innerHTML="Devi loggarti prima di poter effettuare l'ordine";
+		document.getElementById("login-error-message").innerHTML = "Devi accedere prima di poter effettuare l'ordine";
+}
+
+function updatePrices(prezzo) {
+	$("#subtotale").html(" &euro;" + prezzo);
+	if (prezzo < 50) {
+		$("spedizione").html("&euro;"+"15.00");
+		$("totale").html("&euro;"+ (prezzo + 15));
+	} else {
+		$("spedizione").html("&euro;"+"0.00");
+		$("totale").html("&euro;" + prezzo);
+	}
 }

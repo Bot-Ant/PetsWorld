@@ -28,23 +28,16 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 	}
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/plain");
-		out.write("Error: GET method is used but POST method is required");
-		out.close();
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.encodeURL("ServletAggiuntaProdotto");
 		Prodotto prodotto = new Prodotto();
 		ProdottoDao<SQLException> prodottoImp= new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
-
+    
 		prodotto.setNome(request.getParameter("product-name"));
 		prodotto.setAnimale(request.getParameter("animale"));
 		prodotto.setTipo(request.getParameter("tipo"));
 		Double prezzo= Double.parseDouble(request.getParameter("product-price"));
 		prodotto.setPrezzo(prezzo);
-		Double iva= Double.parseDouble(request.getParameter("product-price"));
+		Double iva= Double.parseDouble(request.getParameter("product-tax"));
 		prodotto.setIva(iva);
 		int quantita= Integer.parseInt(request.getParameter("product-quantity"));
 		prodotto.setQuantita(quantita);
@@ -53,7 +46,12 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 		prodotto.setColore(request.getParameter("product-color"));
 		prodotto.setDataScadenza(request.getParameter("product-expiry-date"));
 		prodotto.setDescrizione(request.getParameter("product-description"));
-		prodotto.setFoto(request.getParameter("product-picture"));
+		String foto = request.getParameter("product-picture");
+		foto = foto.substring(12);
+		if (foto != null && foto.length() > 0 && foto.charAt(foto.length() - 4) == '.') {
+	        foto = foto.substring(0, foto.length() - 4);
+	    }
+		prodotto.setFoto(foto);
 
 		try {
 			prodottoImp.doSave(prodotto);
@@ -67,4 +65,9 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 		return;
 	}
 
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
 }
