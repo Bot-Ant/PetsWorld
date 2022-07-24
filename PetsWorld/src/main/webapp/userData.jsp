@@ -36,7 +36,7 @@
 			<div id="data-box" class="box">
 				<div id="user-info" class="column">
 					<div id="user-info-top" class="row">
-						<h2 class="section-name">Dati</h2>
+						<h2 class="section-name">Credenziali</h2>
 						<input type="button" id="user-info-edit-button" class="active-edit-button" value="Modifica" onclick="editUserData('user-info-edit-button','user-info-top')">
 					</div>
 					<div class="row">
@@ -62,12 +62,6 @@
 							<input type="text" id="cellulare" class="input-field inactive" name="cellulare" value="<%=utente.getTelefono()%>">
 							<p id="number-validity" class="invalid"></p>
 						</div>			
-					</div>
-				</div>
-				<div id="user-contacts" class="column">
-					<div id="user-credentials-top" class="row">
-						<h2 class="section-name">Credenziali</h2>
-						<input type="button" id="user-credentials-edit-button" class="active-edit-button" value="Modifica" onclick="editUserCredentials('user-credentials-edit-button','user-credentials-top')">
 					</div>
 					<div class="row">
 						<div class="element-left">

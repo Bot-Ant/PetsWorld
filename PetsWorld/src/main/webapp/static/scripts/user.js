@@ -37,10 +37,6 @@ function editUserData(id,parentid) {
     document.getElementById("cognome").className = "input-field";
     document.getElementById("codiceFiscale").className = "input-field";
     document.getElementById("cellulare").className = "input-field";
-}
-
-function editUserCredentials(id,parentid) {
-    editToSaveButton("",id,parentid,"submitUpdatedUserCredentials");
     document.getElementById("email").className = "input-field";
     document.getElementById("password").className = "input-field";
 }
