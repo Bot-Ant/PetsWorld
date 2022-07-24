@@ -1,34 +1,62 @@
 
 
 #intestazione {
-    display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
 #intestazione img {
+    margin-left: 40px;
     margin-right: auto;
 }
 
 #info-venditore {
+    margin-top: 20px;
     margin-left: auto;
-    display: flex;
-    flex-direction: column;
+    margin-right: 40px;
+    width: 300px;
+    align-items: center;
+}
+#info-venditore p {
+    margin: 2px 0;
 }
 
-#dati-utente,
-#dati-fattura,
+#dati-utente {
+    margin-left: 40px;
+    margin-right: auto;
+}
+#dati-utente p {
+    margin: 2px 0;
+}
+
+#dati-fattura {
+    margin-left: auto;
+    margin-right: 40px;
+    width: 200px;
+}
+#dati-fattura .row {
+    align-items: center;
+}
+#dati-fattura .row h3 {
+    margin-right: auto;
+}
+
+
+
+#info-prodotti {
+    align-items: center;
+}
+
+#riga-prodotto p {
+    margin: 15px;
+}
+
+
 #parametri-costo {
-    display: flex;
-    flex-direction: column;
+    margin-left: auto;
+    margin-right: 40px;
+    width: 200px;
 }
-
-.riga-prodotto {
-    display: flex;
-    flex-direction: row;
-}
-
-#info-totale {
-    display: flex;
-    flex-direction: row;
+#parametri-costo .row h3,
+#parametri-costo .row h4 {
+    margin-right: auto;
 }
