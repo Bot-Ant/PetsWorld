@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 function funzionePiu(id)
 {
 	var url = "AumentoProdottoCarrello" + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
@@ -18,13 +17,13 @@ function funzionePiu(id)
 			var stringa2=response.riferimento2;
 			if(response.esaurimento==1)
 			{
-				$(stringa2).html("Esaurimento scorte nel magazzino"); //corrisponde a document.getElementById().innerHTML
+				$("#"+stringa2).html("Esaurimento scorte nel magazzino"); //corrisponde a document.getElementById().innerHTML
 			}
 			else
 			{
-				$(stringa2).html("");
+				$("#"+stringa2).html("");
 			}
-			$(stringa).html(response.quantita);
+			$("#"+stringa).html(response.quantita);//corrisponde al numero della quantita del prodotto
 			updateCartBadgeValue(response.totale);
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
 			updatePrices(prezzo);
@@ -47,8 +46,8 @@ function funzioneMeno(id)
 			var response = JSON.parse(xhr.responseText);
 			var stringa=response.riferimento;
 			var stringa2=response.riferimento2;
-			$(stringa2).html("");
-			$(stringa).html(response.quantita);
+			$("#"+stringa2).html("");
+			$("#"+stringa).html(response.quantita);
 			updateCartBadgeValue(response.totale);
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
 			updatePrices(prezzo);
@@ -112,7 +111,7 @@ function aggiungiAlCarrello(id)
 			var stringa=response.riferimento;
 			if(response.esaurimento==1)
 			{
-				$(stringa).html("Esaurimento scorte nel magazzino");
+				$("#"+stringa).html("Esaurimento scorte nel magazzino");
 			}
 		}
 	}
@@ -128,10 +127,10 @@ function DeviLoggartiPrima()
 function updatePrices(prezzo) {
 	$("#subtotale").html(" &euro;" + prezzo);
 	if (prezzo < 50) {
-		$("spedizione").html("&euro;"+"15.00");
-		$("totale").html("&euro;"+ (prezzo + 15));
+		$("#spedizione").html("&euro;"+"15.00");
+		$("#totale").html("&euro;"+ (prezzo + 15));
 	} else {
-		$("spedizione").html("&euro;"+"0.00");
-		$("totale").html("&euro;" + prezzo);
+		$("#spedizione").html("&euro;"+"0.00");
+		$("#totale").html("&euro;" + prezzo);
 	}
 }

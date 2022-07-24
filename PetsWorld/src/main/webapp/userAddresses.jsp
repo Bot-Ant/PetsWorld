@@ -39,15 +39,11 @@
 					
 					Utente utente = (Utente) sessione.getAttribute("utente");
 					
-					if (utente == null) {
+					if (utente != null) {
 				%>
-				<script>
-					window.onload = redirectToPage("error401.jsp");
-				</script>
-				<%
-					}
-				%>
-						<input type="hidden" id="idutente" value="<%=utente.getIdUtente() %>">
+				
+					<input type="hidden" id="idutente" value="<%=utente.getIdUtente() %>">
+					
 			        <%  
 					for(Indirizzo u : utente.getIndirizziSpedizione()){
 					%>
@@ -56,7 +52,7 @@
 							<div class="user-element-data">
 								<div class="row">
 									<div class="column">
-										<input type="text" id="address-name-<%=u.getIdindirizzo()%>" class="input-field inactive user-element-name" name="address-name" value=" <%=u.getNome_strada()%>" required>
+										<input type="text" id="address-name-<%=u.getIdindirizzo()%>" class="input-field inactive user-element-name" name="address-name" value="<%=u.getNome_strada()%>" required>
 										<p id="address-name-<%=u.getIdindirizzo()%>-validity" class="invalid"></p>
 									</div>
 									<div class="column">
@@ -84,10 +80,10 @@
 								<input type="hidden" id="indirizzo" name="elimina"  value="<%=u.getIdindirizzo()%>">
 							</form>
 					</div>
-					<% }
-			               } 
-			               
-			               %>
+					<% 
+						}
+					%>
+
 				</div>
 				
 				<!-- always in the page -->
@@ -126,6 +122,21 @@
 			</div>
 		</div>
 	</div>
+	
+			<%
+					}
+					else
+					{
+			%>
+				
+						<script>
+							window.onload = redirectToPage("error401.jsp");
+						</script>
+				
+			<%
+					}
+				}
+			%>
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>

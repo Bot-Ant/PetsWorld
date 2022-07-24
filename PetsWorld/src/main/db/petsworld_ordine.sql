@@ -24,18 +24,12 @@ DROP TABLE IF EXISTS `ordine`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ordine` (
   `idordine` int NOT NULL,
-  `totale` double NOT NULL,
+  `totale` double(10,2) NOT NULL,
   `Pagamento` int NOT NULL,
   `indirizzo` int NOT NULL,
   `IDUtente_fk` int DEFAULT NULL,
   `dataOrdine` varchar(55) NOT NULL,
-  PRIMARY KEY (`idordine`),
-  KEY `prodotto_acquistato_idx` (`IDUtente_fk`),
-  KEY `pagamento_idx` (`Pagamento`),
-  KEY `indirizoo_idx` (`indirizzo`),
-  CONSTRAINT `indirizzo_fk` FOREIGN KEY (`indirizzo`) REFERENCES `indirizzo` (`idIndirizzo`),
-  CONSTRAINT `pagamento_fk` FOREIGN KEY (`Pagamento`) REFERENCES `metodo_pagamento` (`idMetodoPagamento`),
-  CONSTRAINT `prodotto_acquistato` FOREIGN KEY (`IDUtente_fk`) REFERENCES `utente` (`idUtente`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`idordine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -45,7 +39,7 @@ CREATE TABLE `ordine` (
 
 LOCK TABLES `ordine` WRITE;
 /*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
-INSERT INTO `ordine` VALUES (7,362.5,1,1,10,'2022-05-05'),(14,145,1,1,10,'2022-07-23');
+INSERT INTO `ordine` VALUES (7,362.50,1,1,10,'2022-05-05'),(14,145.00,1,1,10,'2022-07-23'),(15,56.59,1,1,10,'2022-07-23'),(16,158.00,13,1,10,'2022-07-24'),(17,290.00,5,1,10,'2022-07-24'),(18,294.10,1,11,10,'2022-07-24'),(19,6.90,5,12,10,'2022-07-24'),(20,71.60,1,12,10,'2022-07-24'),(21,26.88,5,12,10,'2022-07-24'),(22,116.59,5,13,10,'2022-07-25'),(23,154.97,17,15,13,'2022-07-25');
 /*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-23 20:53:13
+-- Dump completed on 2022-07-25  1:47:12

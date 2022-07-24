@@ -30,10 +30,8 @@ CREATE TABLE `metodo_pagamento` (
   `annoScadenza` varchar(45) DEFAULT NULL,
   `cvv` varchar(45) DEFAULT NULL,
   `idMetodoPagamento` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idMetodoPagamento`),
-  KEY `pagamento_idx` (`IDutente`),
-  CONSTRAINT `pagamento` FOREIGN KEY (`IDutente`) REFERENCES `utente` (`idUtente`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`idMetodoPagamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +40,7 @@ CREATE TABLE `metodo_pagamento` (
 
 LOCK TABLES `metodo_pagamento` WRITE;
 /*!40000 ALTER TABLE `metodo_pagamento` DISABLE KEYS */;
-INSERT INTO `metodo_pagamento` VALUES (10,'1234567891234567','Mario Rossi','06','2050','123',1),(10,'2039482828384838','peppe','04','2030','111',2);
+INSERT INTO `metodo_pagamento` VALUES (10,'1111111111111125','Mario Rossini','07','2050','123',1),(10,'3794827384928173','peppone','05','2022','2001',16),(13,'3877277273889283','giuseppe','03','2022','202',17);
 /*!40000 ALTER TABLE `metodo_pagamento` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-23 20:53:14
+-- Dump completed on 2022-07-25  1:47:13
