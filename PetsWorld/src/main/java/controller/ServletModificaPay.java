@@ -101,7 +101,7 @@ public class ServletModificaPay extends HttpServlet {
         account.setMetodiPagamento(metodiPagamento);
 		sessione.setAttribute("utente", account);
 
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userAccount.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userPayMethods.jsp");
 		requestDispatcher.forward(request, response);
 	}
 
