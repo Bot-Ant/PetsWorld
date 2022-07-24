@@ -19,3 +19,7 @@ function updateCartBadgeUniversal(newvalue, id, parentid) {
 	const oldcart = document.getElementById(id);
 	parent.replaceChild(newcart, oldcart);
 }
+
+function redirectToPage(newpage) {
+    window.location.href = newpage;
+}

@@ -11,7 +11,7 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div id="user-content">
-		<jsp:include page="./userNav.jsp"/>
+		<jsp:include page="./static/templates/userNav.html"/>
 		<div id="data-panel">
 			<div id="user-page-header">
 				<h1>Indirizzi</h1>
@@ -38,12 +38,19 @@
 				{
 					
 					Utente utente = (Utente) sessione.getAttribute("utente");
-					%>
+					
+					if (utente == null) {
+				%>
+				<script>
+					window.onload = redirectToPage("error401.jsp");
+				</script>
+				<%
+					}
+				%>
 						<input type="hidden" id="idutente" value="<%=utente.getIdUtente() %>">
-			              <%  for(Indirizzo u : utente.getIndirizziSpedizione()){
-           			 
-						
-						%>
+			        <%  
+					for(Indirizzo u : utente.getIndirizziSpedizione()){
+					%>
 				
 					<div id="user-element-<%=u.getIdindirizzo()%>" class="user-element-line row">
 							<div class="user-element-data">

@@ -16,9 +16,79 @@ function editProductData(id) {
     parent.replaceChild(newbutton, oldbutton);
 }
 
+function findSelectedAnimal(){
+    var animale;
+    if(document.getElementById('cane').checked) {
+        animale = document.getElementById('cane');
+    }
+    else if(document.getElementById('gatto').checked) {
+        animale = document.getElementById('gatto');
+    }
+    else if(document.getElementById('pesci').checked) {
+        animale = document.getElementById('pesci');
+    }
+    else if(document.getElementById('volatili').checked) {
+        animale = document.getElementById('volatili');
+    }
+    else if(document.getElementById('piccolianimali').checked) {
+        animale = document.getElementById('piccolianimali');
+    }
+    else {
+        animale = false;
+    }
+    return animale;
+}
+
 function submitNewProduct() {
     if (checkNewProductFields()) {
-        //submit del form
+        console.log("entrato");
+        var nome = document.getElementById("product-name");
+        console.log(nome.value);
+
+        var animale = findSelectedAnimal();
+        console.log(animale.value);
+
+        var tipo = document.getElementById("alimenti");
+        console.log(tipo.value);
+
+        var prezzo = document.getElementById("product-price");
+        console.log(prezzo.value);
+
+        var iva = document.getElementById("product-tax");
+        console.log(iva.value);
+
+        var quantita = document.getElementById("product-quantity");
+        console.log(quantita.value);
+
+        var peso = document.getElementById("product-weight");
+        console.log(peso.value);
+
+        var dimensione = document.getElementById("product-size");
+        console.log(dimensione.value);
+
+        var colore = document.getElementById("product-color");
+        console.log(colore.value);
+
+        var dataScadenza = document.getElementById("product-expiry-date");
+        console.log(dataScadenza.value);
+
+        var descrizione = document.getElementById("product-description");
+        console.log(descrizione.value);
+
+        var foto = document.getElementById("product-picture");
+        console.log(foto.value);
+
+        var url = "ServletAggiuntaProdotto" + "?product-name=" + encodeURIComponent(nome.value) + "&animale=" + encodeURIComponent(animale.value) + "&tipo=" + encodeURIComponent(tipo.value) + "&product-price=" + encodeURIComponent(prezzo.value) + "&product-tax=" + encodeURIComponent(iva.value) + "&product-quantity=" + encodeURIComponent(quantita.value)+ "&product-weight=" + encodeURIComponent(peso.value)+  "&product-description=" + encodeURIComponent(descrizione.value)+ "&product-picture=" + encodeURIComponent(foto.value); 
+        console.log(url);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = //alla risposta della servlet
+        function () 
+        {
+            let url2 = "adminProducts.jsp";
+            window.location.href = url2;
+        }
+        xhr.open("GET",url,true);
+        xhr.send(null);    
     }
 }
 

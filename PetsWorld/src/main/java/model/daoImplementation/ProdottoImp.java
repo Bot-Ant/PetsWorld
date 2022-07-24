@@ -154,8 +154,13 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 	}
 	
 	public void doSave(Prodotto prd) throws SQLException{
-		
-	}
+        try (Connection connection = createConnection()) {
+            String query = "insert into prodotto (nome, tipo, foto, prezzo, quantita, descrizione, iva, animale, peso, dataScadenza, dimensione, colore) values ('"+ prd.getNome() +"', '"+ prd.getTipo() +"','"+prd.getFoto()+"',"+prd.getPrezzo()+","+prd.getQuantita()+",'"+prd.getDescrizione()+"',"+prd.getIva()+",'"+prd.getAnimale()+"','"+prd.getPeso()+"','"+prd.getDataScadenza()+"','"+prd.getDimensione()+"','"+prd.getColore()+"');";
+                try(PreparedStatement ps = connection.prepareStatement(query)){
+                    ps.executeUpdate();
+                }
+        }
+    }
 
 
 	@Override

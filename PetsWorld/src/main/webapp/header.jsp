@@ -10,12 +10,14 @@
 	<link rel="stylesheet" href="./static/styles/page.css">
     <link rel="stylesheet" href="./static/styles/header.css">
 	<link rel="stylesheet" href="./static/styles/searchbar.css">
-    <link rel="stylesheet" href="./static/styles/footer.css">
+	<link rel="stylesheet" href="./static/styles/footer.css">
 	<link rel="stylesheet" href="./static/styles/form.css">
     <link rel="stylesheet" href="./static/styles/user.css">
 	<link rel="stylesheet" href="./static/styles/catalog.css">
+	<link rel="stylesheet" href="./static/styles/banner.css">
 	<link rel="stylesheet" href="./static/styles/order.css">
 	<script src="https://kit.fontawesome.com/d2fb96c0f6.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
 </head>
 <body>
 	<!-- Extended version of the header, visible when the window is large -->
@@ -83,6 +85,12 @@
 								}
 							}
 						}
+					} else {
+						%> 
+						<script>
+							window.onload = redirectToPage("ServletInit");
+						</script>
+						<%
 					}
 				%>
 				

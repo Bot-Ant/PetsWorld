@@ -5,13 +5,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Pagina Prodotto</title>
-	<link rel="stylesheet" href="./static/styles/light.css">
-	<link rel="stylesheet" href="./static/styles/page.css">
-    <link rel="stylesheet" href="./static/styles/header.css">
-    <link rel="stylesheet" href="./static/styles/footer.css">
-    <link rel="stylesheet" href="./static/styles/user.css">
-	<link rel="stylesheet" href="./static/styles/catalog.css">
-	<link rel="stylesheet" href="./static/styles/order.css">
 </head>
 <body>
 	<header>
@@ -35,25 +28,25 @@
 				<div id="product-distinct-info" class="row">
 					
 					<%
-						if(prodotto.getPeso()!=null)
+						if(prodotto.getPeso()!=null && !(prodotto.getPeso().equals("null")))
 						{
 					%>
 					<div id="prod-weight" class="product-data-box"><%=prodotto.getPeso()%></div>
 					<%
 						}
-						if(prodotto.getDimensione()!=null)
+						if(prodotto.getDimensione()!=null && !(prodotto.getDimensione().equals("null")))
 						{
 					%>
 					<div id="prod-size" class="product-data-box"><%=prodotto.getDimensione()%></div>
 					<%
 						}
-						if(prodotto.getColore()!=null)
+						if(prodotto.getColore()!=null && !(prodotto.getColore().equals("null")))
 						{
 					%>
 					<div id="prod-color" class="product-data-box"><%=prodotto.getColore()%></div>
 					<%
 						}
-						if(prodotto.getDataScadenza()!=null)
+						if(prodotto.getDataScadenza()!=null && !(prodotto.getDataScadenza().equals("null")))
 						{
 					%>
 					<div id="prod-expiry-date" class="product-data-box">Scadenza:<%=prodotto.getDataScadenza()%></div>

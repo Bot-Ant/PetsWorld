@@ -52,7 +52,7 @@ public class ServletRimozioneProdotto extends HttpServlet {
 	        throwables.printStackTrace();
 	    }
 	    
-		request.setAttribute("errore1","Rimozione con successo");
+		request.setAttribute("errore1","Rimozione avvenuta con successo");
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminProducts.jsp");
 		requestDispatcher.forward(request, response);
 		return;

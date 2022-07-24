@@ -25,5 +25,6 @@
 			</a>
 		</div>
 	</div>
+	<script type="text/javascript" src="./static/scripts/header.js"></script>
 </body>
 </html>
