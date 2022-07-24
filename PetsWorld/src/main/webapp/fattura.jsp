@@ -3,8 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Insert title here</title>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
+	<link rel="stylesheet" href="./static/styles/fattura.css">
+	<link rel="stylesheet" href="./static/styles/page.css">
 </head>
 <body>
 	<div id="container-fattura">
@@ -18,25 +22,25 @@
 		%>
 
 		<div id="box-fattura">
-			<div id="intestazione">
-				<img src="./static/images/website-logo-icon.svg" alt="Logo PetsWorld">
-				<div id="info-venditore">
-					<p>Via Sansone 54</p>
+			<div id="intestazione" class="row">
+				<img src="./static/images/petsworld-logo.svg" alt="Logo PetsWorld">
+				<div id="info-venditore" class="column">
+					<p>Via Sansone, 54</p>
 					<p>84084 Fisciano (SA)</p>
 					<p>CF: MRCRSS70C21F839A</p>
 					<p>P.IVA: 03398567403</p>
-					<p>Tekefono: +39 327 362 9020</p>
+					<p>Telefono: +39 327 362 9020</p>
 				</div>
 			</div>
 			<hr>
-			<div id="info-fattura">
-				<div class="dati-utente">
+			<div id="info-fattura" class="row">
+				<div id="dati-utente">
 					<h3>DESTINATARIO</h3>
 					<p><%=user.getNome()%> <%=user.getCognome()%></p>
 					<p><%=indirizzo.getNome_strada()%>, <%=indirizzo.getCivico()%></p>
 					<p><%=indirizzo.getCAP()%> <%=indirizzo.getCitta()%> (<%=indirizzo.getProvincia()%>)</p>
 				</div>
-				<div class="dati-fattura">
+				<div id="dati-fattura">
 					<div class="row">
 						<h3>FATTURA #</h3>
 						<p><%=id %></p>
@@ -47,7 +51,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="info-prodotti">
+			<div id="info-prodotti" class="column">
 				<%
 					ArrayList<ProdottoAcquistato> prodotti= (ArrayList<ProdottoAcquistato>) request.getAttribute("prodotti");
 					double subtotale = 0.0;
@@ -59,12 +63,12 @@
 						totaleprodotto = prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita();
 						subtotale += totaleprodotto;
 				%>
-				<div class="riga-prodotto">
-					<p><%=prodotti.get(i).getNome()%></p>
-					<p><%=prodotti.get(i).getQuantita()%></p>
-					<p><%=String.format("%,.2f", (prodotti.get(i).getPrezzo()))%></p>
-					<p><%=prodotti.get(i).getIva()%></p>
-					<p><%=String.format("%,.2f", (totaleprodotto))%></p>
+				<div id="riga-prodotto" class="row">
+					<p class="nome-prodotto"><%=prodotti.get(i).getNome()%></p>
+					<p class="quantita-prodotto"><%=prodotti.get(i).getQuantita()%></p>
+					<p class="prezzo-prodotto"><%=String.format("%,.2f", (prodotti.get(i).getPrezzo()))%></p>
+					<p class="iva-prodotto"><%=prodotti.get(i).getIva()%></p>
+					<p class="tot-prodotto"><%=String.format("%,.2f", (totaleprodotto))%></p>
 				</div>
 					
 				<% 
@@ -74,8 +78,8 @@
 					}
 				%>
 			</div>
-			<div id="info-totale">
-				<div id="parametri-costo">
+			<div id="info-totale" class="row">
+				<div id="parametri-costo" class="column">
 					<div class="row">
 						<h4>SUBTOTALE</h4>
 						<p><%=String.format("%,.2f", (subtotale))%></p>
@@ -89,7 +93,6 @@
 						<p><%=String.format("%,.2f", (totale))%></p>
 					</div>
 				</div>
-				String.format("%,.2f", (costoTotale))
 			</div>
 		</div>
 	</div>
