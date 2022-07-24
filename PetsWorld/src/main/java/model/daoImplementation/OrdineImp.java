@@ -18,6 +18,7 @@ import model.beans.ProdottoAcquistato;
 import model.Manager;
 import model.daoInterface.OrdineDao;
 import model.daoInterface.ProdottoDao;
+import model.query.OrdineQuery;
 import model.query.ProdottoQuery;
 import model.search.Condition;
 import model.search.Operatore;
@@ -111,4 +112,22 @@ public class OrdineImp extends Manager implements OrdineDao <SQLException> {
 			}
 		}
 	}
+
+	public List<Ordine> listaOrdin() throws SQLException {
+		try (Connection connection = createConnection()) {
+			String query = OrdineQuery.lista();
+			 
+				try(PreparedStatement ps = connection.prepareStatement(query)){
+			
+                ResultSet rs = ps.executeQuery();
+                List<Ordine> lista = new ArrayList<>();
+                
+                while (rs.next()) {
+                	Ordine ordine = new OrdineExtractor().extract(rs);
+                	lista.add(ordine);
+                }
+                return lista;
+            }
+	}
+}
 }

@@ -14,6 +14,7 @@ import org.apache.tomcat.jdbc.pool.DataSource;
 
 import model.beans.*;
 import model.daoImplementation.BannerImp;
+import model.daoImplementation.OrdineImp;
 import model.daoImplementation.ProdottoImp;
 /**
  * Servlet implementation class ServletInit
@@ -45,6 +46,8 @@ public class ServletInit extends HttpServlet {
         List<Prodotto> novita = new ArrayList<>();
         ProdottoImp novito = new ProdottoImp(source);
         
+        List<Ordine> ordine = new ArrayList<>();
+        OrdineImp ord = new OrdineImp(source);
         
         try {
             list = slider.SliderProdotto();
@@ -57,6 +60,9 @@ public class ServletInit extends HttpServlet {
             this.getServletContext().setAttribute("consigliato", consigliati);
             novita = novito.Prodottocaos();
             this.getServletContext().setAttribute("novito", novita);
+            ordine = ord.listaOrdin();
+            this.getServletContext().setAttribute("ord", ordine);
+            System.out.println(ordine);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -115,9 +115,24 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 	}
 
 	@Override
-	public boolean UpdateAccount(Utente modifica) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean UpdateAccount(Utente account) throws SQLException {
+		try(Connection connection = createConnection()){
+			String query = UtenteQuery.modifica();
+			try(PreparedStatement pst = connection.prepareStatement(query)){
+                /**------Mapping-------*/
+            	
+            	pst.setString(1, account.getNome());
+                pst.setString(2, account.getCognome());
+                pst.setString(3, account.getEmail());
+                pst.setString(4, account.getPassword());
+                pst.setString(5, account.getTelefono());
+                pst.setString(6, account.getCodiceFiscale());
+                pst.setInt(7, account.getIdUtente());
+           
+               int rows= pst.executeUpdate();
+               return rows==1;
+            }
+        }
 	}
 
 	public Utente doRetrieveByKey(String email) throws SQLException {

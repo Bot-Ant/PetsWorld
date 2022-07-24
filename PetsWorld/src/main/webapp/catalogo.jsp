@@ -16,61 +16,144 @@
 	</header>
 	<div class="catalog-content">
 		<div class="filters-panel">
+		
+		<form class="nav-links" action="ServletSearch" method="post">
 			<div class="wrapper">
 				<h2>Prezzo</h2>
 				<div class="price-input">
 				  <div class="field">
 					<span>Min</span>
-					<input type="number" id="price-filter-min" class="input-min input-field" value="0">
+					<input type="number" id="price-filter-min" name="prezMin" class="input-min input-field" value="0">
 				  </div>
 				  <div class="separator">-</div>
 				  <div class="field">
 					<span>Max</span>
-					<input type="number" id="price-filter-max" class="input-max input-field" value="2000">
+					<input type="number" id="price-filter-max" name="prezMax" class="input-max input-field" value="2000">
 				  </div>
 				</div>
 				<div class="slider">
 				  <div class="progress"></div>
 				</div>
 				<div class="range-input">
-				  <input type="range" class="range-min" min="0" max="2000" value="0" step="100">
-				  <input type="range" class="range-max" min="0" max="2000" value="2000" step="100">
+				  <input type="range" class="range-min"  min="0" max="2000" value="0" step="100">
+				  <input type="range" class="range-max"  min="0" max="2000" value="2000" step="100">
 				</div>
 			  </div>
 			<div id="filter-categories">
 				<h2 class="category-name">Categorie</h2>
-				<select class="category-animal input-field" id="category-animal">
-					<option value="cane">Cane</option>
-					<option value="gatto">Gatto</option>
-					<option value="pesci">Pesci</option>
-					<option value="volatili">Volatili</option>
-					<option value="piccolianimali">Piccoli animali</option>
-				</select>
-				<select class="category-voice input-field" name="category-animal" id="category-animal">
-					<option value="alimenti">Alimenti</option>
-					<option value="igiene">Igiene</option>
-					<option value="accessori">Accessori</option>
-					<option value="abbigliamento">Abbigliamento</option>
-					<option value="giochi">Giochi</option>
-					<option value="acquari">Acquari</option>
-					<option value="decorazioni">Decorazioni</option>
-					<option value="gabbiette">Gabbiette</option>
-				</select>
+
+							<legend><b>Animale</b></legend>
+							<div class="row">
+								<input type="radio" id="cane" name="animale" value="cane">
+								<label for="cane">Cane</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="gatto" name="animale" value="gatto">
+								<label for="gatto">Gatto</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="pesci" name="animale" value="pesci">
+								<label for="pesci">Pesci</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="volatili" name="animale" value="volatili">
+								<label for="volatili">Volatili</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="piccolianimali" name="animale" value="piccolianimali">
+								<label for="piccolianimali">Piccoli animali</label>
+							</div>
+					
+							<legend><b>Tipo</b></legend>
+							<div class="row">
+								<input type="radio" id="alimenti" name="categoria" value="alimenti">
+								<label for="alimenti">Alimenti</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="cibo-umido" name="categoria" value="cibo umido">
+								<label for="cibo-umido">Cibo umido</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="crocchette" name="categoria" value="crocchette">
+								<label for="crocchette">Crocchette</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="salute" name="categoria" value="salute">
+								<label for="salute">Salute</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="tappetini" name="categoria" value="tappetini assorbenti">
+								<label for="tappetini">Tappetini assorbenti</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="antiparassitario-spot-on" name="categoria" value="antiparassitario spot-on">
+								<label for="antiparassitario-spot-on">Antiparassitario spot-on</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="antiparassitario-collare" name="categoria" value="antiparassitario collare">
+								<label for="antiparassitario-collare">Antiparassitario collare</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="accessori" name="categoria" value="accessori">
+								<label for="accessori">Accessori</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="guinzagli" name="categoria" value="guinzagli">
+								<label for="guinzagli">Guinzagli</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="cucce" name="categoria" value="cucce">
+								<label for="cucce">Cucce</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="ciotole" name="categoria" value="ciotole">
+								<label for="ciotole">Ciotole</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="giochi" name="categoria" value="giochi">
+								<label for="giochi">Giochi</label>
+							</div>
+							<div class="row">
+								<input type="radio" id="intrattenimento" name="categoria" value="intrattenimento">
+								<label for="intrattenimento">Intrattenimento</label>
+							</div>
 			</div>
 			<button class="active-basic-button">Filtra risultati</button>
+			</form>
 		</div>
 		<div class="catalog-main-panel">
 			<div class="catalog-top">
-			<%
-				if(request.getParameter("animale")==null)
+			<% 
+			if(request.getParameter("animale")!=null && request.getParameter("categoria")!=null )
+				{
+					String nome = request.getParameter("animale");
+					String prodotto = request.getParameter("categoria");
+					%>
+					<h1>Risultati per: <%=nome%> <%=prodotto %></h1>
+					<% 
+				}
+				else if(request.getParameter("animale")==null && request.getParameter("search")!= null)
 				{
 					String nome= request.getParameter("search");
-
-			%>
-			
-			<h1>Risultati per: <%=nome%></h1>
-			
-			<% 
+					%>
+					
+					<h1>Risultati per: <%=nome%></h1>
+					
+					<% 
+				}
+				else if(request.getParameter("categoria")!=null){
+						
+					String nome= request.getParameter("categoria");
+					%>
+					
+					<h1>Risultati per: <%=nome%></h1>
+					
+					<% 
+				}else if(request.getParameter("animale")==null && request.getParameter("categoria")==null && request.getParameter("search")== null){
+					%>
+					<h1> Risultati Per Prezzo </h1>
+					 <%	
+					
 				} else
 				{
 				String animale=request.getParameter("animale");

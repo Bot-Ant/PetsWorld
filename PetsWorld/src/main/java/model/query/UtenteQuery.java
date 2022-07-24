@@ -36,7 +36,7 @@ public class UtenteQuery {
 	
 	public static String modifica() {
 		QueryBuilder builder = new QueryBuilder (UTENTE_QUERY, UTENTE_ALIAS);
-		builder.update(null);
+		builder.update2("nome","cognome","codiceFiscale","email","password","telefono").where("idUtente=?");	
 		return builder.GeneratedQuery();
 	}
 	

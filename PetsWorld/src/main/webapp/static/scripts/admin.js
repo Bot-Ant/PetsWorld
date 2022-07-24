@@ -84,8 +84,10 @@ function submitNewProduct() {
         xhr.onreadystatechange = //alla risposta della servlet
         function () 
         {
-            let url2 = "adminProducts.jsp";
-            window.location.href = url2;
+			if(xhr.readyState == 4 && xhr.status == 200){
+        
+            redirectToPage("adminAccount.jsp");
+            }
         }
         xhr.open("GET",url,true);
         xhr.send(null);    

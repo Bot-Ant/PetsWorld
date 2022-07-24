@@ -72,13 +72,33 @@ function activateNewUserElementForm() {
 
 function submitUpdatedUserData(id) {
     if (checkUserDataFields()) {
-        //submit del form
-    }
+   var email =  document.getElementById("email");
+   var password = document.getElementById("password");
+   var nome =  document.getElementById("nome");
+   var cognome = document.getElementById("cognome");
+   var cod = document.getElementById("codiceFiscale");
+   var cell = document.getElementById("cellulare");
+   
+     var url = "ServletModificaUtente"   + "?email=" + encodeURIComponent(email.value) + "&password=" + encodeURIComponent(password.value)  + "&nome=" + encodeURIComponent(nome.value) + "&cognome=" + encodeURIComponent(cognome.value) + "&cod=" + encodeURIComponent(cod.value) + "&cell=" + encodeURIComponent(cell.value);
+	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = //alla risposta della servlet
+	function () 
+	{
+		if(xhr.readyState == 4 && xhr.status == 200){
+        redirectToPage("userData.jsp");
+        }
+	}
+	xhr.open("GET",url,true);
+	xhr.send(null);
+	}
 }
+
 
 function submitUpdatedUserCredentials(id) {
     if (checkUserCredentialsFields()) {
-        //submit del form
+        
     }
 }
 
@@ -101,7 +121,9 @@ function submitUpdatedAddress(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
+		if(xhr.readyState == 4 && xhr.status == 200){
         redirectToPage("userAddresses.jsp");
+        }
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);
@@ -129,10 +151,13 @@ function submitNewAddress(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
+		if(xhr.readyState == 4 && xhr.status == 200){
         redirectToPage("userAddresses.jsp");
+        }
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);
+	
 }
 
 }
@@ -157,7 +182,9 @@ function submitUpdatedPayMethod(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
+		if(xhr.readyState == 4 && xhr.status == 200){
         redirectToPage("userPayMethods.jsp");
+        }
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);
@@ -188,7 +215,9 @@ function submitNewPayMethod(id) {
 	xhr.onreadystatechange = //alla risposta della servlet
 	function () 
 	{
+		if(xhr.readyState == 4 && xhr.status == 200){
         redirectToPage("userPayMethods.jsp");
+        }
 	}
 	xhr.open("GET",url,true);
 	xhr.send(null);

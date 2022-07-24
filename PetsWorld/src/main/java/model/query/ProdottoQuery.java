@@ -30,7 +30,6 @@ public class ProdottoQuery {
 		if(!conditionList.isEmpty()) {
 			builder.where().search(conditionList);
 		}
-		
 		return builder.GeneratedQuery();
 	}
 	

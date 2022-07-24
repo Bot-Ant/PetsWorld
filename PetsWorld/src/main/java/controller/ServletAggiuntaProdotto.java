@@ -3,7 +3,9 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.IllegalFormatException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,7 +33,10 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 		response.encodeURL("ServletAggiuntaProdotto");
 		Prodotto prodotto = new Prodotto();
 		ProdottoDao<SQLException> prodottoImp= new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
-    
+		
+		List<Prodotto> list = new ArrayList<>();
+        ProdottoImp slider = new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
+        
 		prodotto.setNome(request.getParameter("product-name"));
 		prodotto.setAnimale(request.getParameter("animale"));
 		prodotto.setTipo(request.getParameter("tipo"));
@@ -59,9 +64,13 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 			System.out.println("Eccezione modifica prodotto");
 		}
 
+        try {
+            list = slider.SliderProdotto();
+            this.getServletContext().setAttribute("list", list);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 		request.setAttribute("errore2","Modifica avvenuta con successo");
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminProducts.jsp");
-		requestDispatcher.forward(request, response);
 		return;
 	}
 

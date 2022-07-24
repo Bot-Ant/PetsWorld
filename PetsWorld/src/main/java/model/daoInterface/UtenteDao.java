@@ -18,7 +18,7 @@ public interface UtenteDao <s extends Exception> {
 
 	boolean DeleteAccount(Utente elimina) throws SQLException;
 	
-	boolean UpdateAccount(Utente modifica) throws SQLException;
+	boolean UpdateAccount(Utente account) throws SQLException;
 	
 	Utente doRetrieveByKey(String email) throws SQLException;
 

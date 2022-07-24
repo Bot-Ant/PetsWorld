@@ -18,4 +18,6 @@ public interface OrdineDao<S extends Exception> {
 	ArrayList<ProdottoAcquistato> cerca_prodotti_ordine(int id) throws SQLException;
 	
 	Indirizzo cerca_indirizzo_ordine(int id_ordine, int id_utente) throws SQLException;
+	
+	 List<Ordine> listaOrdin() throws SQLException;
 }

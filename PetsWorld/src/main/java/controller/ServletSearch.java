@@ -46,7 +46,7 @@ public class ServletSearch extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nome = request.getParameter("search");
+		
 		
 		
 		ProdottoDao<SQLException> dao = new ProdottoImp(source);
@@ -56,7 +56,7 @@ public class ServletSearch extends HttpServlet {
 		try {
 			List<Prodotto> search = dao.ListaProdotti(conditions);
 			this.getServletContext().setAttribute("prodotto",search);
-			request.setAttribute("nome", nome);
+		
 	        request.getRequestDispatcher("./catalogo.jsp").forward(request,response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
