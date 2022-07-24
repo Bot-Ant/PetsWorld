@@ -27,7 +27,7 @@
 						{
 				%>
 				
-				<div id="no-orders">
+				<div id="no-orders" class="box">
 				
 					<h1>Non ci sono ordini</h1>
 					<p>

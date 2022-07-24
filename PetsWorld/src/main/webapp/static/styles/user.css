@@ -131,6 +131,16 @@
 	margin-right: 20px;
 }
 
+#orders-box #no-orders {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#orders-box #no-orders h1 {
+	margin-bottom: 0;
+}
+
 #orders-box .order-box {
 	margin: 20px 0;
 }

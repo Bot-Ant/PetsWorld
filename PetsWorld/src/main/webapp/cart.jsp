@@ -182,7 +182,7 @@
 							{	
 						%>
 						
-						<p id="demo"></p>
+						<p id="login-error-message"></p>
 						<button type="submit" class="active-accent-button" onclick="DeviLoggartiPrima()">Procedi all'ordine</button>
 						
 						<%
