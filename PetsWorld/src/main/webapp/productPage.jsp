@@ -90,11 +90,7 @@
 				</p>
 			</div>
 		</div>
-		<div id="product-reviews" class="box">
-			<div class="content">
-				<h2 class="section-title">Recensioni</h2>
-			</div>
-		</div>
+		
 	</div>
 	<footer>
 		<!-- Page footer-->

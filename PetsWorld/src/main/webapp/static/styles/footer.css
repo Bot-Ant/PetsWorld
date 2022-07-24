@@ -74,10 +74,12 @@ footer a:hover {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .pay-methods {
     width: auto;
+    margin-left: auto;
     margin-right: auto;
     display: flex;
 }

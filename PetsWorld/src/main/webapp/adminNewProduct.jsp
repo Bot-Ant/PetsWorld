@@ -53,7 +53,7 @@
 						</fieldset>
 					</div>
 					<div id="product-type-section" class="selection-box right">
-						<fieldset>
+						<fieldset required>
 							<legend><b>Tipo</b></legend>
 							<div class="row">
 								<input type="checkbox" id="alimenti" name="tipo" value="alimenti">
@@ -108,6 +108,7 @@
 								<label for="intrattenimento">Intrattenimento</label>
 							</div>
 						</fieldset>
+						<p id="product-type-validity" class="invalid"></p>
 					</div>
 				</div>
 				<div id="product-warehouse-section" class="row">
@@ -121,7 +122,7 @@
 						<select name="product-tax" id="product-tax" class="input-field" required>
 							<option value="4">4%</option>
 							<option value="10">10%</option>
-							<option value="22">22%</option>
+							<option value="22" selected>22%</option>
 						</select>
 					</div>
 					<div id="product-quantity-section" class="column right">
