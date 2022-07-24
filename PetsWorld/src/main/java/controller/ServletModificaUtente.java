@@ -44,22 +44,19 @@ public class ServletModificaUtente extends HttpServlet {
 		
 		HttpSession sessione = request.getSession(true);
 		
-		
 		String Nome = request.getParameter("nome");
         String Cognome = request.getParameter("cognome");
         String CodiceFiscale= request.getParameter("cod");
         String Cell = request.getParameter("cell");
         String Email = request.getParameter("email");
         String Pass = request.getParameter("password");
-       
-        
-       
+      
         Utente account = new Utente();
         UtenteDao<SQLException> ut= new UtenteImp(source);
      
         account = (Utente) sessione.getAttribute("utente");
-          
-        account.setIdUtente(account.getIdUtente());
+        int id=account.getIdUtente();
+        
         account.setNome(Nome);
         account.setCognome(Cognome);
         account.setCodiceFiscale(CodiceFiscale);
@@ -69,18 +66,11 @@ public class ServletModificaUtente extends HttpServlet {
         
         
         try {
-           ut.UpdateAccount(account);
+           ut.UpdateAccount(account, id);
         }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        try {
-			account=ut.doRetrieveByKey(account.getEmail());
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		sessione.setAttribute("utente", account);
 
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userData.jsp");
 		requestDispatcher.forward(request, response);

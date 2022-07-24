@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.beans.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -12,6 +12,13 @@
 		<header>
 			<jsp:include page="./adminHeader.jsp"/>
 		</header>
+		<%
+			HttpSession sessione=request.getSession(true);
+			if (sessione != null)
+			{
+				Utente admin = (Utente) sessione.getAttribute("Admin");
+				if (admin != null) {
+		%>
 		<div id="admin-page-content" class="column">
 			<h1>Ordini</h1>
 			<div id="orders-list" class="column">		
@@ -43,6 +50,18 @@
 			</div>
 		</div>
 	</div>
+		<%
+									}
+									else
+									{
+		%>
+					<script>
+					window.onload = redirectToPage("error401.jsp");
+					</script>
+		<%
+									}
+				}
+		%>	
 	<script type="text/javascript" src="./static/scripts/regex.js"></script>
 	<script type="text/javascript" src="./static/scripts/admin.js"></script>
 	<script>

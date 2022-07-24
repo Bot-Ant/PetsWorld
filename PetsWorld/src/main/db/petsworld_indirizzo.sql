@@ -30,10 +30,8 @@ CREATE TABLE `indirizzo` (
   `CAP` varchar(5) DEFAULT NULL,
   `provincia` varchar(45) DEFAULT NULL,
   `idIndirizzo` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idIndirizzo`),
-  KEY `indirizzo_idx` (`IDutente_fk`),
-  CONSTRAINT `indirizzo` FOREIGN KEY (`IDutente_fk`) REFERENCES `utente` (`idUtente`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`idIndirizzo`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +40,7 @@ CREATE TABLE `indirizzo` (
 
 LOCK TABLES `indirizzo` WRITE;
 /*!40000 ALTER TABLE `indirizzo` DISABLE KEYS */;
-INSERT INTO `indirizzo` VALUES (10,'Roma','via unisa','12','08564','SA',1),(10,'Napoli','via fassoli','1','84444','NA',2);
+INSERT INTO `indirizzo` VALUES (10,'napoli','via fassolini','2','83020','SA',12),(10,'napoli','via scafati','2','83833','NA',14),(13,'napoli','via manzoni','33','929','PE',15);
 /*!40000 ALTER TABLE `indirizzo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-23 20:53:15
+-- Dump completed on 2022-07-25  1:47:11

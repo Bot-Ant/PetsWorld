@@ -46,10 +46,50 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 		prodotto.setIva(iva);
 		int quantita= Integer.parseInt(request.getParameter("product-quantity"));
 		prodotto.setQuantita(quantita);
-		prodotto.setPeso(request.getParameter("product-weight"));
-		prodotto.setDimensione(request.getParameter("product-size"));
-		prodotto.setColore(request.getParameter("product-color"));
-		prodotto.setDataScadenza(request.getParameter("product-expiry-date"));
+		
+		String peso=request.getParameter("product-weight");
+		if(peso=="")
+		{
+			prodotto.setPeso("null");
+		}
+		else
+		{
+			prodotto.setPeso(peso);
+		}
+		
+		String dimensione=request.getParameter("product-size");
+
+		if(dimensione=="")
+		{
+			prodotto.setDimensione("null");
+		}
+		else
+		{
+			prodotto.setDimensione(dimensione);
+		}
+		
+		String colore=request.getParameter("product-color");
+
+		if(colore=="")
+		{
+			prodotto.setColore("null");
+		}
+		else
+		{
+			prodotto.setColore(colore);
+		}
+		
+		String scadenza=request.getParameter("product-expiry-date");
+		
+		if(scadenza=="")
+		{
+			prodotto.setDataScadenza("null");
+		}
+		else
+		{
+			prodotto.setDataScadenza(scadenza);
+		}
+
 		prodotto.setDescrizione(request.getParameter("product-description"));
 		String foto = request.getParameter("product-picture");
 		foto = foto.substring(12);
