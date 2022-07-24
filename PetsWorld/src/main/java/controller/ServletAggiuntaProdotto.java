@@ -31,8 +31,7 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 		response.encodeURL("ServletAggiuntaProdotto");
 		Prodotto prodotto = new Prodotto();
 		ProdottoDao<SQLException> prodottoImp= new ProdottoImp((org.apache.tomcat.jdbc.pool.DataSource) source);
-		
-		
+    
 		prodotto.setNome(request.getParameter("product-name"));
 		prodotto.setAnimale(request.getParameter("animale"));
 		prodotto.setTipo(request.getParameter("tipo"));
@@ -53,7 +52,7 @@ public class ServletAggiuntaProdotto extends HttpServlet {
 	        foto = foto.substring(0, foto.length() - 4);
 	    }
 		prodotto.setFoto(foto);
-		
+
 		try {
 			prodottoImp.doSave(prodotto);
 		} catch (SQLException e) {

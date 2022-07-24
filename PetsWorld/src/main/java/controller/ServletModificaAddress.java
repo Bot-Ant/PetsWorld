@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,25 +21,22 @@ import model.daoInterface.UtenteDao;
 /**
  * Servlet implementation class ServletUtente
  */
-@WebServlet("/ServletUtente")
-public class ServletUtente extends HttpServlet {
+@WebServlet("/ServletModificaAddress")
+public class ServletModificaAddress extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected DataSource source;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ServletUtente() {
+    public ServletModificaAddress() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		HttpSession sessione = request.getSession(true);
+		Utente account = new Utente();
+        ArrayList<Indirizzo> indirizzi= new ArrayList<Indirizzo>();
+        ArrayList<MetodoPagamento> metodiPagamento= new ArrayList<MetodoPagamento>();
+        UtenteDao<SQLException> ut= new UtenteImp(source);
 		
 		String id = request.getParameter("id");
 		String Nome = request.getParameter("name");
@@ -69,17 +67,36 @@ public class ServletUtente extends HttpServlet {
             throwables.printStackTrace();
         }
         
-       
+        account = (Utente) sessione.getAttribute("utente");
+	       
+        try {
+			account=ut.doRetrieveByKey(account.getEmail());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+        try {
+			indirizzi=ut.setIndirizzi(account.getIdUtente());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        
+        try {
+			metodiPagamento=ut.setMetodiPagamento(account.getIdUtente());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+        
+        account.setIndirizziSpedizione(indirizzi);
+        account.setMetodiPagamento(metodiPagamento);
+		sessione.setAttribute("utente", account);
+   
      
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userAccount.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("userAddresses.jsp");
 		requestDispatcher.forward(request, response);
    
 	   }
    
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 	}

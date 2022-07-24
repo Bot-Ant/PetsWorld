@@ -98,7 +98,7 @@ function submitUpdatedAddress(id) {
     
     var cap = document.getElementById("address-cap-" + id);
    
-        var url = "ServletUtente" + "?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(name.value) + "&number=" + encodeURIComponent(number.value) + "&city=" + encodeURIComponent(city.value) + "&prov=" + encodeURIComponent(prov.value) + "&cap=" + encodeURIComponent(cap.value); //metto url passando come parametro id del prodotto
+        var url = "ServletModificaAddress" + "?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(name.value) + "&number=" + encodeURIComponent(number.value) + "&city=" + encodeURIComponent(city.value) + "&prov=" + encodeURIComponent(prov.value) + "&cap=" + encodeURIComponent(cap.value); //metto url passando come parametro id del prodotto
 	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
 	
 	var xhr = new XMLHttpRequest();

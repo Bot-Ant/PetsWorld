@@ -82,9 +82,7 @@
 							<form action="ServletElimina" method="post" id="user-element-<%=u.getIdindirizzo()%>-buttons" class="user-element-buttons column">
 								<input type="button" id="user-element-<%=u.getIdindirizzo()%>-edit-button" class="active-edit-button" value="Modifica" onclick="editUserAddress('<%=u.getIdindirizzo()%>')">
 								<input type="hidden" id="indirizzo" name="elimina"  value="<%=u.getIdindirizzo()%>">
-							
 							</form>
-								
 					</div>
 					<% }
 			               } 

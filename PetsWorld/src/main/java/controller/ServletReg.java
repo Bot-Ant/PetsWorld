@@ -58,7 +58,6 @@ public class ServletReg extends HttpServlet {
             throwables.printStackTrace();
         }
         request.getRequestDispatcher("./login.jsp").forward(request,response);
-        System.out.print("prova di reindirizzamento");
 	}
 
 	/**
