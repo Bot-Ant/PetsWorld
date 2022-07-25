@@ -16,28 +16,6 @@ function editProductData(id) {
     parent.replaceChild(newbutton, oldbutton);
 }
 
-function findSelectedAnimal(){
-    var animale;
-    if(document.getElementById('cane').checked) {
-        animale = document.getElementById('cane');
-    }
-    else if(document.getElementById('gatto').checked) {
-        animale = document.getElementById('gatto');
-    }
-    else if(document.getElementById('pesci').checked) {
-        animale = document.getElementById('pesci');
-    }
-    else if(document.getElementById('volatili').checked) {
-        animale = document.getElementById('volatili');
-    }
-    else if(document.getElementById('piccolianimali').checked) {
-        animale = document.getElementById('piccolianimali');
-    }
-    else {
-        animale = false;
-    }
-    return animale;
-}
 
 function submitNewProduct() {
     if (checkNewProductFields()) {
@@ -49,8 +27,8 @@ function submitNewProduct() {
         var animale = findSelectedAnimal();
         console.log(animale.value);
 
-        var tipo = document.getElementById("alimenti");
-        console.log(tipo.value);
+        var tipo = findSelectedType();
+        console.log(tipo);
 
         var prezzo = document.getElementById("product-price");
         console.log(prezzo.value);
@@ -79,7 +57,8 @@ function submitNewProduct() {
         var foto = document.getElementById("product-picture");
         console.log(foto.value);
 
-        var url = "ServletAggiuntaProdotto" + "?product-name=" + encodeURIComponent(nome.value) + "&animale=" + encodeURIComponent(animale.value) + "&tipo=" + encodeURIComponent(tipo.value) + "&product-price=" + encodeURIComponent(prezzo.value) + "&product-tax=" + encodeURIComponent(iva.value) + "&product-quantity=" + encodeURIComponent(quantita.value)+ "&product-weight=" + encodeURIComponent(peso.value)+  "&product-description=" + encodeURIComponent(descrizione.value)+ "&product-picture=" + encodeURIComponent(foto.value)+ "&product-size=" + encodeURIComponent(dimensione.value)+ "&product-color=" + encodeURIComponent(colore.value)+ "&product-expiry-date=" + encodeURIComponent(dataScadenza.value); 
+        var url = "ServletAggiuntaProdotto" + "?product-name=" + encodeURIComponent(nome.value) + "&animale=" + encodeURIComponent(animale.value) + "&tipo=" + encodeURIComponent(tipo) + "&product-price=" + encodeURIComponent(prezzo.value) + "&product-tax=" + encodeURIComponent(iva.value) + "&product-quantity=" + encodeURIComponent(quantita.value)+ "&product-weight=" + encodeURIComponent(peso.value)+  "&product-description=" + encodeURIComponent(descrizione.value)+ "&product-picture=" + encodeURIComponent(foto.value)+ "&product-size=" + encodeURIComponent(dimensione.value)+ "&product-color=" + encodeURIComponent(colore.value)+ "&product-expiry-date=" + encodeURIComponent(dataScadenza.value); 
+
         console.log(url);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = //alla risposta della servlet
@@ -105,6 +84,9 @@ function checkNewProductFields() {
     if (!productNameValidity()) {
         status = 0;
     }
+    if (!productTypeValidity()) {
+        status = 0;
+    }
     if (!productPriceValidity()) {
         status = 0;
     }
@@ -114,6 +96,116 @@ function checkNewProductFields() {
     return status;
 }
 
+function findSelectedAnimal(){
+    var animale;
+    if(document.getElementById('cane').checked) {
+        animale = document.getElementById('cane');
+    }
+    else if(document.getElementById('gatto').checked) {
+        animale = document.getElementById('gatto');
+    }
+    else if(document.getElementById('pesci').checked) {
+        animale = document.getElementById('pesci');
+    }
+    else if(document.getElementById('volatili').checked) {
+        animale = document.getElementById('volatili');
+    }
+    else if(document.getElementById('piccolianimali').checked) {
+        animale = document.getElementById('piccolianimali');
+    }
+    else {
+        animale = false;
+    }
+    return animale;
+}
+
+function findSelectedType(){
+    var tipo = "";
+    if(document.getElementById('alimenti').checked) {
+        tipo = tipo + document.getElementById('alimenti').value + " ";
+    }
+    if(document.getElementById('cibo-umido').checked) {
+        tipo = tipo + document.getElementById('cibo-umido').value + " ";
+    }
+    if(document.getElementById('crocchette').checked) {
+        tipo = tipo + document.getElementById('crocchette').value + " ";
+    }
+    if(document.getElementById('salute').checked) {
+        tipo = tipo + document.getElementById('salute').value + " ";
+    }
+    if(document.getElementById('tappetini').checked) {
+        tipo = tipo + document.getElementById('tappetini').value + " ";
+    }
+    if(document.getElementById('antiparassitario-spot-on').checked) {
+        tipo = tipo + document.getElementById('antiparassitario-spot-on').value + " ";
+    }
+    if(document.getElementById('antiparassitario-collare').checked) {
+        tipo = tipo + document.getElementById('antiparassitario-collare').value + " ";
+    }
+    if(document.getElementById('accessori').checked) {
+        tipo = tipo + document.getElementById('accessori').value + " ";
+    }
+    if(document.getElementById('guinzagli').checked) {
+        tipo = tipo + document.getElementById('guinzagli').value + " ";
+    }
+    if(document.getElementById('cucce').checked) {
+        tipo = tipo + document.getElementById('cucce').value + " ";
+    }
+    if(document.getElementById('ciotole').checked) {
+        tipo = tipo + document.getElementById('ciotole').value + " ";
+    }
+    if(document.getElementById('giochi').checked) {
+        tipo = tipo + document.getElementById('giochi').value + " ";
+    }
+    if(document.getElementById('intrattenimento').checked) {
+        tipo = tipo + document.getElementById('intrattenimento').value + " ";
+    }
+    return tipo;
+}
+
+function checkSelectedType(){
+    if(document.getElementById('alimenti').checked) {
+        return true;
+    }
+    else if(document.getElementById('cibo-umido').checked) {
+        return true;
+    }
+    else if(document.getElementById('crocchette').checked) {
+        return true;
+    }
+    else if(document.getElementById('salute').checked) {
+        return true;
+    }
+    else if(document.getElementById('tappetini').checked) {
+        return true;
+    }
+    else if(document.getElementById('antiparassitario-spot-on').checked) {
+        return true;
+    }
+    else if(document.getElementById('antiparassitario-collare').checked) {
+        return true;
+    }
+    else if(document.getElementById('accessori').checked) {
+        return true;
+    }
+    else if(document.getElementById('guinzagli').checked) {
+        return true;
+    }
+    else if(document.getElementById('cucce').checked) {
+        return true;
+    }
+    else if(document.getElementById('ciotole').checked) {
+        return true;
+    }
+    else if(document.getElementById('giochi').checked) {
+        return true;
+    }
+    else if(document.getElementById('intrattenimento').checked) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function productNameValidity() {
     var name = document.getElementById("product-name");
@@ -122,6 +214,16 @@ function productNameValidity() {
         return 0;
     } else {
         document.getElementById("product-name-validity").innerHTML = "";
+        return 1;
+    }
+}
+
+function productTypeValidity() {
+    if (!checkSelectedType()) {
+        document.getElementById("product-type-validity").innerHTML = "Seleziona almeno un tipo";
+        return 0;
+    } else {
+        document.getElementById("product-type-validity").innerHTML = "";
         return 1;
     }
 }

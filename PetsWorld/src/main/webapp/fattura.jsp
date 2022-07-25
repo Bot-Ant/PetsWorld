@@ -4,9 +4,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Insert title here</title>
+	<title>Fattura PetsWorld</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="./static/images/website-logo-icon.png">
+	<link rel="stylesheet" href="./static/styles/light.css">
 	<link rel="stylesheet" href="./static/styles/fattura.css">
 	<link rel="stylesheet" href="./static/styles/page.css">
 </head>
@@ -34,12 +35,6 @@
 			</div>
 			<hr>
 			<div id="info-fattura" class="row">
-				<div id="dati-utente">
-					<h3>DESTINATARIO</h3>
-					<p><%=user.getNome()%> <%=user.getCognome()%></p>
-					<p><%=indirizzo.getNome_strada()%>, <%=indirizzo.getCivico()%></p>
-					<p><%=indirizzo.getCAP()%> <%=indirizzo.getCitta()%> (<%=indirizzo.getProvincia()%>)</p>
-				</div>
 				<div id="dati-fattura">
 					<div class="row">
 						<h3>FATTURA #</h3>
@@ -52,6 +47,15 @@
 				</div>
 			</div>
 			<div id="info-prodotti" class="column">
+				<div id="intestazione-tabella" class="row titolo-sezione">
+					<p class="nome-prodotto">NOME PRODOTTO</p>
+					<div class="row">
+						<p class="quantita-prodotto">QUANTITÀ</p>
+						<p class="prezzo-prodotto">PREZZO SINGOLO</p>
+						<p class="iva-prodotto">IVA</p>
+						<p class="tot-prodotto">IMPORTO</p>
+					</div>
+				</div>
 				<%
 					ArrayList<ProdottoAcquistato> prodotti= (ArrayList<ProdottoAcquistato>) request.getAttribute("prodotti");
 					double subtotale = 0.0;
@@ -63,12 +67,14 @@
 						totaleprodotto = prodotti.get(i).getPrezzo() * prodotti.get(i).getQuantita();
 						subtotale += totaleprodotto;
 				%>
-				<div id="riga-prodotto" class="row">
+				<div class="riga-prodotto row">
 					<p class="nome-prodotto"><%=prodotti.get(i).getNome()%></p>
-					<p class="quantita-prodotto"><%=prodotti.get(i).getQuantita()%></p>
-					<p class="prezzo-prodotto"><%=String.format("%,.2f", (prodotti.get(i).getPrezzo()))%></p>
-					<p class="iva-prodotto"><%=prodotti.get(i).getIva()%></p>
-					<p class="tot-prodotto"><%=String.format("%,.2f", (totaleprodotto))%></p>
+					<div class="row">
+						<p class="quantita-prodotto"><%=prodotti.get(i).getQuantita()%></p>
+						<p class="prezzo-prodotto"><%=String.format("€%,.2f", (prodotti.get(i).getPrezzo()))%></p>
+						<p class="iva-prodotto"><%=String.format("%.0f", (prodotti.get(i).getIva()))%>%</p>
+						<p class="tot-prodotto"><%=String.format("€%,.2f", (totaleprodotto))%></p>
+					</div>
 				</div>
 					
 				<% 
@@ -82,15 +88,15 @@
 				<div id="parametri-costo" class="column">
 					<div class="row">
 						<h4>SUBTOTALE</h4>
-						<p><%=String.format("%,.2f", (subtotale))%></p>
+						<p class="numero"><%=String.format("%,.2f", (subtotale))%></p>
 					</div>
 					<div class="row">
 						<h4>SPEDIZIONE</h4>
-						<p><%=String.format("%,.2f", (spedizione))%></p>
+						<p class="numero"><%=String.format("%,.2f", (spedizione))%></p>
 					</div>
 					<div class="row">
 						<h3>TOTALE</h3>
-						<p><%=String.format("%,.2f", (totale))%></p>
+						<h4 class="numero"><%=String.format("%,.2f", (totale))%></h4>
 					</div>
 				</div>
 			</div>

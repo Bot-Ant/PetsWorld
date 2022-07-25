@@ -20,13 +20,6 @@
 				</p>
 			</div>
 			<div id="addresses-box" class="user-list box">
-				<!-- if there is no saved address -->
-				<div id="no-user-elements" class="row" style="display: none;">
-					<h2 class="message">Non hai indirizzi salvati</h2>
-					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewUserElementForm()">
-				</div>
-				<hr id="top-separator" class="not-displayed">
-				<!-- if there is at least one saved address -->
 				<div id="add-address" class="row">
 					<input type="button" class="active-basic-button" value="Aggiungi indirizzo" onclick="activateNewUserElementForm()">
 				</div>

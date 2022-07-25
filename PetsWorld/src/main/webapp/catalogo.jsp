@@ -15,9 +15,10 @@
 		<jsp:include page="./header.jsp"/>
 	</header>
 	<div class="catalog-content">
-		<div class="filters-panel">
-		
-		<form class="nav-links" action="ServletSearch" method="post">
+		<div id="filters-panel" class="filters-panel">
+			<button id="filter-section-title" class="filter-section-title active-basic-button" onclick="showFilters()">Filtri ricerca</button>
+			<button id="filter-section-title-dummy" class="filter-section-title">Filtri ricerca</button>
+		<form id="form-filtri" class="nav-links" action="ServletSearch" method="post">
 			<div class="wrapper">
 				<h2>Prezzo</h2>
 				<div class="price-input">
@@ -118,7 +119,7 @@
 								<label for="intrattenimento">Intrattenimento</label>
 							</div>
 			</div>
-			<button class="active-basic-button">Filtra risultati</button>
+			<button class="active-accent-button">Filtra risultati</button>
 			</form>
 		</div>
 		<div class="catalog-main-panel">
@@ -237,5 +238,6 @@
 		<jsp:include page="./footer.jsp"/>
 	</footer>
 	<script type="text/javascript" src="./static/scripts/slider.js"></script>
+	<script type="text/javascript" src="./static/scripts/catalog.js"></script>
 </body>
 </html>

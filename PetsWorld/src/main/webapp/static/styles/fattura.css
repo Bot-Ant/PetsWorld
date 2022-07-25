@@ -1,4 +1,21 @@
 
+#box-fattura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#intestazione,
+#info-fattura,
+#info-prodotti {
+    width: 90%;
+}
+#info-totale {
+    width: 90%;
+}
+.riga-prodotto {
+    width: 100%;
+}
 
 #intestazione {
     align-items: center;
@@ -37,26 +54,49 @@
     align-items: center;
 }
 #dati-fattura .row h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
     margin-right: auto;
 }
 
 
+.titolo-sezione{
+    width: 100%;
+    color: var(--light);
+    background-color: var(--main-color);
+}
 
 #info-prodotti {
+    margin-top: 30px;
     align-items: center;
 }
 
-#riga-prodotto p {
+#info-prodotti p {
     margin: 15px;
+    text-align: center;
+}
+#info-prodotti .nome-prodotto {
+    margin-right: auto;
+    text-align: left;
+}
+#info-prodotti .quantita-prodotto,
+#info-prodotti .iva-prodotto {
+    width: 77px;
+}
+#info-prodotti .prezzo-prodotto,
+#info-prodotti .tot-prodotto {
+    width: 70px;
 }
 
-
+#info-totale {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
 #parametri-costo {
     margin-left: auto;
     margin-right: 40px;
     width: 200px;
 }
-#parametri-costo .row h3,
-#parametri-costo .row h4 {
-    margin-right: auto;
+#parametri-costo .row .numero {
+    margin-left: auto;
 }

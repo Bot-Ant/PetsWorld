@@ -103,18 +103,6 @@
 						}
 					%>
 				</div>
-				<div id="donation-box" class="box">
-					<div class="row">
-						<div class="info">
-							<h2>Dona per gli animali in difficoltà</h2>
-							<p>Puoi scegliere un importo da aggiungere all'ordine che verrà donato ad associazioni che si prendono cura degli animali. <a href="#">Dimmi di più.</a></p>
-						</div>
-						<div id="donation-data-box" class="column">
-							<input class="input-field" type="text" placeholder="€0.00">
-							<button class="active-basic-button">Seleziona</button>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="price-panel">
 				<div id="price-box" class="box">
@@ -136,14 +124,6 @@
 						</p>
 						<p class="price" id="spedizione">
 							€<%=String.format("%,.2f", (costoSpedizione))%>
-						</p>
-					</div>
-					<div class="single-voice">
-						<p>
-							Donazione
-						</p>
-						<p class="price" id="donazione">
-							€<%=String.format("%,.2f", (prezzoDonazione))%>
 						</p>
 					</div>
 					<% costoTotale = subtotale + costoSpedizione + prezzoDonazione;%>
