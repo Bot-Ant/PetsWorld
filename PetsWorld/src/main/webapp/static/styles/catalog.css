@@ -185,6 +185,24 @@
     box-shadow: 0 4px 8px 0 var(--shadow-color), 0 6px 20px 0 var(--shadow-color);
 }
 
+#filter-section-title {
+    width: 100%;
+}
+#filter-section-title-dummy {
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: xx-large;
+    border: 1 solid var(--transparent);
+    color: var(--contrast-color-1);
+    background-color: var(--transparent);
+}
+
+#form-filtri {
+    display: flex;
+    flex-direction: column;
+}
+
 .catalog-main-panel {
     margin-right: 0;
     width: 100%;
@@ -227,18 +245,18 @@
     font-size: 24px;
     font-weight: 600;
 }
-.price-input{
+.wrapper .price-input{
     width: 100%;
     display: flex;
     margin: 30px 0 35px;
 }
-.price-input .field{
+.wrapper .price-input .field{
     display: flex;
     width: 100%;
     height: 45px;
     align-items: center;
 }
-.field input{
+.wrapper .field input{
     width: 100%;
     height: 100%;
     outline: none;
@@ -248,28 +266,25 @@
     text-align: center;
     -moz-appearance: textfield;
 }
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-.price-input .separator{
+
+.wrapper .price-input .separator{
     width: 130px;
     display: flex;
     font-size: 19px;
     align-items: center;
     justify-content: center;
 }
-.slider{
+.wrapper .slider{
     height: 5px;
     position: relative;
     background: var(--neutral-color-3);
     border-radius: 5px;
 }
-.slider::before {
+.wrapper .slider::before {
     background-color: var(--transparent);
 }
 
-.slider .progress{
+.wrapper .slider .progress{
     height: 100%;
     left: 0%;   /*white space from left*/
     right: 0%;  /*white space from right*/
@@ -277,10 +292,10 @@ input[type="number"]::-webkit-inner-spin-button {
     border-radius: 5px;
     background: var(--main-color);
 }
-.range-input{
+.wrapper .range-input{
     position: relative;
 }
-.range-input input{
+.wrapper .range-input input{
     position: absolute;
     width: 100%;
     height: 5px;
@@ -290,7 +305,7 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
-input[type="range"]::-webkit-slider-thumb{
+.wrapper input[type="range"]::-webkit-slider-thumb{
     height: 17px;
     width: 17px;
     border-radius: 50%;
@@ -299,7 +314,7 @@ input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
     box-shadow: 0 0 6px rgba(0,0,0,0.05);
 }
-input[type="range"]::-moz-range-thumb{
+.wrapper input[type="range"]::-moz-range-thumb{
     height: 17px;
     width: 17px;
     border: none;
@@ -312,9 +327,31 @@ input[type="range"]::-moz-range-thumb{
 
 
 
+#filter-categories .row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--transparent);
+}
+
+#filter-categories .row:hover {
+    color: var(--main-color);
+    box-shadow: 0 12px 35px var(--shadow-color);
+}
+
+
 #filter-categories {
     display: flex;
     flex-direction: column;
+}
+
+#filter-categories legend {
+    margin-top: 10px;
+}
+#filter-categories label {
+    margin-left: 5px;
 }
 
 #filter-categories .category-name {
@@ -504,21 +541,48 @@ input[type="range"]::-moz-range-thumb{
 
 /* Responsive style for the large window */
 @media only screen and (min-width: 900px) {
+    /* modifica necessaria per la pagina prodotto */
     #product-top {
         flex-direction: row;
+    }
+    /* modifica necessaria per la pagina catalogo */
+    #filter-section-title {
+        display: none;
     }
 }
 
 
 /* Responsive style for the small window */
 @media only screen and (max-width: 900px) {
+    /* modifica necessaria per la pagina prodotto */
     #product-top {
         flex-direction: column;
         align-items: center;
     }
-    #product-page-content #product-image,
+    #product-page-content #product-image {
+        margin: 20px 0;
+        width: 97%;
+    }
     #product-page-content #product-info {
         margin: 20px 0;
-        width: 100%;
+        width: 90%;
+    }
+    /* modifica necessaria per la pagina catalogo */
+    .catalog-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    #filter-section-title {
+        display: block;
+        
+    }
+    #filter-section-title-dummy {
+        display: none;
+    }
+    #form-filtri {
+        display: none;
+    }
+    #filters-panel {
+        width: 85%;
     }
 }
