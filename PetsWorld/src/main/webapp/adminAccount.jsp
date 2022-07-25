@@ -22,7 +22,7 @@
 			<h1>Benvenuto nella tua sezione da admin</h1>
 			<div id="admin-info" class="box">
 				<div class="row">
-					<h1>mypetsworld 0000000001</h1>
+					<h1>mypetsworld admin:<%=admin.getIdUtente()%></h1>
 				</div>
 				<p><%=admin.getNome()%></p>
 				<p><%=admin.getCognome()%></p>

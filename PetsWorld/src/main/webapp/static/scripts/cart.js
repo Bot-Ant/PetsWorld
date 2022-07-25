@@ -8,7 +8,7 @@ function funzionePiu(id)
 	//var url = 'AumentoProdottoCarrello?id=' + encodeURIComponent(id); 
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = //alla risposta della servlet
-	function() //aumenta di 1 unità nel carrello
+	function() 
 	{
 		if(xhr.readyState == 4 && xhr.status == 200)
 		{
@@ -24,9 +24,9 @@ function funzionePiu(id)
 				$("#"+stringa2).html("");
 			}
 			$("#"+stringa).html(response.quantita);//corrisponde al numero della quantita del prodotto
-			updateCartBadgeValue(response.totale);
+			updateCartBadgeValue(response.totale); //modifica l'icona del carrello aggiornando il valore 
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
-			updatePrices(prezzo);
+			updatePrices(prezzo); //modifica prezzi del carrello
 		}
 	}
 	xhr.open("GET",url,true);
@@ -36,10 +36,11 @@ function funzionePiu(id)
 function funzioneMeno(id)
 {
 	var url = "DiminuizioneProdottoCarrello" + "?id=" + encodeURIComponent(id); //metto url passando come parametro id del prodotto
+	
 	//var url = 'DiminuizioneProdottoCarrello?id=' + encodeURIComponent(id); 
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = //alla risposta della servlet
-	function() //diminuisce di 1 unità nel carrello
+	function()
 	{
 		if(xhr.readyState == 4 && xhr.status == 200)
 		{
@@ -48,9 +49,9 @@ function funzioneMeno(id)
 			var stringa2=response.riferimento2;
 			$("#"+stringa2).html("");
 			$("#"+stringa).html(response.quantita);
-			updateCartBadgeValue(response.totale);
+			updateCartBadgeValue(response.totale); //modifica l'icona del carrello aggiornando il valore 
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
-			updatePrices(prezzo);
+			updatePrices(prezzo);  //modifica prezzi del carrello
 		}
 	}
 	xhr.open("GET",url,true);
@@ -63,16 +64,16 @@ function funzioneDel(id)
 	//var url = 'RimozioneDaCarrello?id=' + encodeURIComponent(id); 
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = //alla risposta della servlet
-	function() //rimuovi il prodotto dal carrello
+	function()
 	{
 		if(xhr.readyState == 4 && xhr.status == 200)
 		{
 			var response = JSON.parse(xhr.responseText);
 			var stringa= response.riferimento;
 			document.getElementById(stringa).remove();
-			updateCartBadgeValue(response.totale);
+			updateCartBadgeValue(response.totale); //modifica l'icona del carrello aggiornando il valore 
 			var prezzo = parseFloat(response.prezzoTot.replace(/,/, '.'));
-			updatePrices(prezzo);
+			updatePrices(prezzo);  //modifica prezzi del carrello
 			var totaleElementi = response.totale;
 			if(totaleElementi == 0)
 			{
@@ -102,16 +103,16 @@ function aggiungiAlCarrello(id)
 	//var url = 'ServletCarrello?id=' + encodeURIComponent(id);
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = //alla risposta della servlet
-	function() //aumenta di 1 unità il carrello
+	function() 
 	{
 		if(xhr.readyState == 4 && xhr.status == 200)
 		{
 			var response = JSON.parse(xhr.responseText); //stringa che contiene la risposta da parte del server
-			updateCartBadgeValue(response.number);
+			updateCartBadgeValue(response.number); //modifica l'icona del carrello aggiornando il valore 
 			var stringa=response.riferimento;
 			if(response.esaurimento==1)
 			{
-				$("#"+stringa).html("Esaurimento scorte nel magazzino");
+				$("#"+stringa).html("Esaurimento scorte nel magazzino"); //NEL CASO IN CUI LA QUANTITA DEL PRODOTTO SIA TERMINATA
 			}
 		}
 	}

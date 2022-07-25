@@ -86,10 +86,13 @@
 							<div class="product-modifiers">
 								<div class="product-quantities">
                   					<button class="trash" onclick="funzioneDel('<%=prodotti.get(i).getIdProdotto()%>')"><i class="fa-solid fa-trash fa-2x"></i></button>
+									<!-- FUNZIONE JAVASCRIPT PER DIMINUZIONE QUANTITA -->
 									<button class="active-basic-button left" onclick="funzioneMeno('<%=prodotti.get(i).getIdProdotto()%>')">-</button>
 									<div class="quantities">
+									<!-- QUI VIENE VISUALIZZATA LA QUANTITA DEL PRODOTTO-->
 										<p id="<%=prodotti.get(i).getIdProdotto()%>_quantita"><%=prodotti.get(i).getQuantita()%></p>
 									</div>
+									<!-- FUNZIONE JAVASCRIPT PER AUMENTO QUANTITA -->
 									<button class="active-basic-button right" onclick="funzionePiu('<%=prodotti.get(i).getIdProdotto()%>')">+</button>
 								</div>
 							</div>
@@ -140,7 +143,9 @@
 						</div>
 					</div>
 					
+						<!-- DETERMINO SE L'UTENTE è LOGGATO, NEL CASO PROCEDO ALL'ORDINE SENO ESCE AVVISO -->
 						<%
+						
 							if(utente!=null)
 							{
 						%>
