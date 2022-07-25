@@ -7,7 +7,7 @@ function aggiungiAlCarrelloDaIndex(id, sezione)
 	//var url = 'ServletCarrello?id=' + encodeURIComponent(id);
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = //alla risposta della servlet
-	function() //aumenta di 1 unità il carrello
+	function() 
 	{
 		if(xhr.readyState == 4 && xhr.status == 200)
 		{
@@ -18,15 +18,15 @@ function aggiungiAlCarrelloDaIndex(id, sezione)
 			{
 				if(sezione==1)
 				{
-					document.getElementById(stringa+"_1").style.visibility = "visible";
+					document.getElementById(stringa+"_1").style.visibility = "visible"; //COSI ESCE TERMINATO AFFIANCO AL PRODOTTO QUANDO SI ARRIVA ALLA FINE DELLA QUANTITA
 				}
 				if(sezione==2)
 				{
-					document.getElementById(stringa+"_2").style.visibility = "visible";
+					document.getElementById(stringa+"_2").style.visibility = "visible"; //COSI ESCE TERMINATO AFFIANCO AL PRODOTTO QUANDO SI ARRIVA ALLA FINE DELLA QUANTITA
 				}
 				if(sezione==3)
 				{
-					document.getElementById(stringa+"_3").style.visibility = "visible";
+					document.getElementById(stringa+"_3").style.visibility = "visible"; //COSI ESCE TERMINATO AFFIANCO AL PRODOTTO QUANDO SI ARRIVA ALLA FINE DELLA QUANTITA
 				}
 			}
 		}

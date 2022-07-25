@@ -2,6 +2,7 @@ package model.search;
 
 public enum Operatore {
 
+	//simboli che codificano l'operatore 
 	
 	GT, LT, EQ, NE, GE, LE, MATCH;
 	

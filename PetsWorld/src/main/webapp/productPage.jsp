@@ -62,14 +62,17 @@
             
 							<%
 							HttpSession sessione = request.getSession(false);
+							// SETTO UN ATTRIBUTO DELLA SESSIONE PER FARE IN MODO DI MANTENERE LA QUANTITA SALVATA. LO SETTO AD UNO AD OGNI RICARICAMENTO DELLA PAGINA
 							sessione.setAttribute("quantita_product_page", new Integer(1));
 							int quantita = ((Integer)session.getAttribute("quantita_product_page")).intValue();
 							%>
-															
+							<!--FUNZIONE JAVASCRIPT PER LA DIMINUZIONE DELLA QUANTITA --> 
 							<button class="active-basic-button left" onclick="DiminuzioneQuantita('<%=prodotto.getIdProdotto()%>', 'diminuzione')">-</button>
-							<div class="quantities">								
+							<div class="quantities">	
+							<!--QUI SI TIENE CONTO DELLA QUANTITA DEL PRODOTTO --> 							
 								<p id="quantita"><%=quantita%></p>
 							</div>
+							<!--FUNZIONE JAVASCRIPT PER L'AUMENTO DELLA QUANTITA --> 
 							<button class="active-basic-button right" onclick="AumentoQuantita('<%=prodotto.getIdProdotto()%>', 'aumento')">+</button>
 						</div>
 						<p id="demo"></p>
@@ -78,6 +81,7 @@
 				</div>
 				<p id="product-availability">Disponibile</p>
 				<div class="add-to-cart">
+						<!--FUNZIONE JAVASCRIPT PER L'AGGIUNTA DEL PRODOTTO AL CARRELLO DALLA PRODUCT PAGE --> 
 					<button type="submit" name="id" value="<%=prodotto.getIdProdotto()%>" onclick="AggiungiAlCarrello('<%=prodotto.getIdProdotto()%>', 'acquisto')">Aggiungi al carrello</button>
 				</div>
 			</div>

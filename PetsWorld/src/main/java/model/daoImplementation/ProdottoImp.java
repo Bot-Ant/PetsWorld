@@ -53,15 +53,15 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 	
 	public List<Prodotto> ListaProdotti(List<Condition> conditions) throws SQLException {
 			try (Connection connection = createConnection()) {
-				String query = ProdottoQuery.cerca(conditions);
+				String query = ProdottoQuery.cerca(conditions);// genero query dove passo le condizioni
 				
 				try (PreparedStatement ps = connection.prepareStatement(query)) {
 				
 					
-					for(int i=0; i < conditions.size(); i++) {
+					for(int i=0; i < conditions.size(); i++) { // ciclo che fa il controllo delle varie condizioni
 						
 							if(conditions.get(i).getOperator() == Operatore.MATCH) {
-								
+	
 								ps.setObject(i+1, "%" + conditions.get(i).getValue() + "%");
 								
 							}else {
@@ -69,16 +69,14 @@ public class ProdottoImp extends Manager implements ProdottoDao <SQLException> {
 								ps.setObject(i+1,  conditions.get(i).getValue() );
 								
 							}
-							
-							
+	
 					}
 	                ResultSet rs = ps.executeQuery();
 	                List<Prodotto> listaProdotti = new ArrayList<>();
 	                
 	                while (rs.next()) {
 	                	Prodotto prodotto = new ProdottoExtractor().extract(rs);
-	                	listaProdotti.add(prodotto);
-	                    
+	                	listaProdotti.add(prodotto); 
 	                }
 	               
 	                return listaProdotti;

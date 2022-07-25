@@ -27,8 +27,8 @@ public class ProdottoQuery {
 	public static String cerca(List<Condition> conditionList) {
 		QueryBuilder builder = new QueryBuilder (PRODOTTO_QUERY,PRODOTTO_ALIAS);
 		builder.select();
-		if(!conditionList.isEmpty()) {
-			builder.where().search(conditionList);
+		if(!conditionList.isEmpty()) { //se l'array di condizione non e vuoto generami queste serie di and tramite il metodo searh
+			builder.where().search(conditionList); // del querybuilder
 		}
 		return builder.GeneratedQuery();
 	}

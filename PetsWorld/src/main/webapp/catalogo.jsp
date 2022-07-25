@@ -225,6 +225,7 @@
 								</button>
 							</form>
 							<div class="add-to-cart">
+							<!-- FUNZIONE JAVASCRIPT PER AGGIUNGERE AL CARRELLO PRODOTTI DAL CATALOGO-->
 								<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrello(${prd.idProdotto})"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 							</div>
 						</div>

@@ -56,6 +56,7 @@
 									</button>
 								</form>
 								<div class="add-to-cart">
+									<!-- FUNZIONE JAVASCRIPT PER AGGIUNGERE AL CARRELLO PRODOTTI DALL'INDEX-->
 									<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>
@@ -82,6 +83,7 @@
 									</button>
 								</form>
 								<div class="add-to-cart">
+								<!-- FUNZIONE JAVASCRIPT PER AGGIUNGERE AL CARRELLO PRODOTTI DALL'INDEX-->
 									<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>
@@ -108,6 +110,7 @@
 									</button>
 								</form>
 								<div class="add-to-cart">
+								<!-- FUNZIONE JAVASCRIPT PER AGGIUNGERE AL CARRELLO PRODOTTI DALL'INDEX-->
 									<button type="submit" name="id" value="${prd.idProdotto}" onclick="aggiungiAlCarrelloDaIndex(${prd.idProdotto}, 1)"><i class="fa-solid fa-circle-plus fa-3x"></i></button>
 								</div>
 							</div>

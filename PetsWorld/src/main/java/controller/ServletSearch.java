@@ -52,7 +52,8 @@ public class ServletSearch extends HttpServlet {
 		ProdottoDao<SQLException> dao = new ProdottoImp(source);
 
 		List<Condition> conditions = new ProductSearch().buildSearch(request);
-		  
+		// dalla request costruisce questa lista di condizioni
+		
 		try {
 			List<Prodotto> search = dao.ListaProdotti(conditions);
 			this.getServletContext().setAttribute("prodotto",search);
