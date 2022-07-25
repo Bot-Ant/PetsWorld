@@ -115,21 +115,12 @@ public class UtenteImp extends Manager implements UtenteDao <SQLException> {
 	}
 
 	@Override
-	public boolean UpdateAccount(Utente account) throws SQLException {
+	public boolean UpdateAccount(Utente account, int id) throws SQLException {
 		try(Connection connection = createConnection()){
-			String query = UtenteQuery.modifica();
+			String query = "update utente set nome='"+account.getNome()+"', cognome='"+account.getCognome()+"', email='"+account.getEmail()+"', password='"+account.getPassword()+"', telefono='"+account.getTelefono()+"', codiceFiscale='"+account.getCodiceFiscale()+"' where idUtente="+id+";"; 
 			try(PreparedStatement pst = connection.prepareStatement(query)){
-                /**------Mapping-------*/
-            	
-            	pst.setString(1, account.getNome());
-                pst.setString(2, account.getCognome());
-                pst.setString(3, account.getEmail());
-                pst.setString(4, account.getPassword());
-                pst.setString(5, account.getTelefono());
-                pst.setString(6, account.getCodiceFiscale());
-                pst.setInt(7, account.getIdUtente());
-           
-               int rows= pst.executeUpdate();
+
+				int rows= pst.executeUpdate();
                return rows==1;
             }
         }

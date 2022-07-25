@@ -34,23 +34,17 @@
 				<div class="loop">
 				<%
 					HttpSession sessione=request.getSession(true);
-				if (sessione != null)
-				{
-					Utente utente = (Utente) sessione.getAttribute("utente");
+					if (sessione != null)
+					{
+						Utente utente = (Utente) sessione.getAttribute("utente");
 					
-					if (utente == null) {
-						%>
-						<script>
-							window.onload = redirectToPage("error401.jsp");
-						</script>
-						<%
-							}
-						%>
+						if (utente != null) {
+						
+				%>
 					<input type="hidden" id="idutente" value="<%=utente.getIdUtente() %>">
 		              <% 
-			               for(MetodoPagamento u : utente.getMetodiPagamento()){ 
-
-            
+			               for(MetodoPagamento u : utente.getMetodiPagamento())
+			               { 
 						%>
 					<div id="user-element-<%=u.getIdpaga()%>" class="user-element-line row">
 						<div class="user-element-data">
@@ -87,10 +81,8 @@
 						</form>	
 					</div>
 						<%
-								}
-			               		} 
-			               
-			               %>
+								} 
+			            %>
 				</div>
 				
 				<!-- always in the page -->
@@ -131,6 +123,18 @@
 			</div>
 		</div>
 	</div>
+				<%
+						}
+						else
+						{
+				%>	
+						<script>
+							window.onload = redirectToPage("error401.jsp");
+						</script>
+				<%
+						}
+					}
+				%>
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>

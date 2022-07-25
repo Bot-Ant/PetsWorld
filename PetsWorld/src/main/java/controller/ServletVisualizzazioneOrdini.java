@@ -32,36 +32,39 @@ public class ServletVisualizzazioneOrdini extends HttpServlet {
 		super();
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DataSource ds = (DataSource)getServletContext().getAttribute("DataSource"); 
 
 		Utente user = new Utente();
 		OrdineDao<SQLException> dao= new OrdineImp((org.apache.tomcat.jdbc.pool.DataSource) source);
 		HttpSession sessione = request.getSession(false);
-		if(sessione!=null)
+		user=(Utente) sessione.getAttribute("utente");
+		
+		if(user!=null)
 		{
-			user = (Utente) sessione.getAttribute("utente");
-		}
 		
-		Collection<Ordine> ordini = new LinkedList<Ordine>();
-		try {
-			ordini=dao.cerca_ordini_utente(user.getIdUtente());
-		} catch (SQLException e) {
-			System.out.println("Errore ricerca ordini dell'utente");
-			e.printStackTrace();
-		}
-		
-		
-		if(ordini.size() > 0)
-		{
-			request.setAttribute("ordini", ordini);
-			getServletContext().getRequestDispatcher(response.encodeURL("/userOrders.jsp")).forward(request, response);
+			Collection<Ordine> ordini = new LinkedList<Ordine>();
+			try {
+				ordini=dao.cerca_ordini_utente(user.getIdUtente());
+			} catch (SQLException e) {
+				System.out.println("Errore ricerca ordini dell'utente");
+				e.printStackTrace();
+			}
+			
+			
+			if(ordini.size() > 0)
+			{
+				request.setAttribute("ordini", ordini);
+				getServletContext().getRequestDispatcher(response.encodeURL("/userOrders.jsp")).forward(request, response);
+			}
+			else
+			{
+				request.setAttribute("errore", "errore");
+				getServletContext().getRequestDispatcher(response.encodeURL("/userOrders.jsp")).forward(request, response);
+			}
 		}
 		else
 		{
-			request.setAttribute("errore", "errore");
-			getServletContext().getRequestDispatcher(response.encodeURL("/userOrders.jsp")).forward(request, response);
+			getServletContext().getRequestDispatcher(response.encodeURL("/error401.jsp")).forward(request, response);
 		}
-		
 	}
 	
 	

@@ -86,6 +86,8 @@ public class DiminuizioneProdottoCarrello extends HttpServlet {
 					json.put("totale", carrello.getQuantita());
 					DecimalFormat df= new DecimalFormat(".00");
 					json.put("prezzoTot", df.format(carrello.getPrezzoTotale()));
+					System.out.print(df.format(carrello.getPrezzoTotale()));
+
 					
 				} catch (JSONException e) {
 					System.out.println("Eccezione numero elementi carrello");

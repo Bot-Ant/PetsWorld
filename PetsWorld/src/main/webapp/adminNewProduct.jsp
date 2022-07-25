@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.beans.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +14,17 @@
 			<div id="catalog-new-product" class="box">
 				<h1>Nuovo prodotto</h1>
 					<%
-						String error2 = (String)request.getAttribute("errore2"); 
-						if(error2 != null){ 
+						HttpSession sessione=request.getSession(true);
+						if (sessione != null)
+						{
+							Utente admin = (Utente) sessione.getAttribute("Admin");
+							if (admin != null)
+							{
+								String error2 = (String)request.getAttribute("errore2"); 
+								if(error2 != null)
+								{ 
 					%>
-				<div class="changes-result-message"><%=error2 %></div>
+					<div class="changes-result-message"><%=error2 %></div>
 					<% 
 						}
 					%>
@@ -31,7 +38,7 @@
 						<fieldset required>
 							<legend><b>Animale</b></legend>
 							<div class="row">
-								<input type="radio" id="cane" name="animale" value="cane">
+								<input type="radio" id="cane" name="animale" value="cane" checked>
 								<label for="cane">Cane</label>
 							</div>
 							<div class="row">
@@ -165,6 +172,19 @@
 			</div>
 		</form>
 	</div>
+	<%
+							}
+							else
+							{
+	%>
+							<script>
+								window.onload = redirectToPage("error401.jsp");
+							</script>
+	<%						
+							}
+						}
+	%>
+	
 	<script type="text/javascript" src="./static/scripts/regex.js"></script>
 	<script type="text/javascript" src="./static/scripts/admin.js"></script>
 	<script>

@@ -19,6 +19,7 @@ function editProductData(id) {
 
 function submitNewProduct() {
     if (checkNewProductFields()) {
+	
         console.log("entrato");
         var nome = document.getElementById("product-name");
         console.log(nome.value);
@@ -56,7 +57,8 @@ function submitNewProduct() {
         var foto = document.getElementById("product-picture");
         console.log(foto.value);
 
-        var url = "ServletAggiuntaProdotto" + "?product-name=" + encodeURIComponent(nome.value) + "&animale=" + encodeURIComponent(animale.value) + "&tipo=" + encodeURIComponent(tipo) + "&product-price=" + encodeURIComponent(prezzo.value) + "&product-tax=" + encodeURIComponent(iva.value) + "&product-quantity=" + encodeURIComponent(quantita.value)+ "&product-weight=" + encodeURIComponent(peso.value)+  "&product-description=" + encodeURIComponent(descrizione.value)+ "&product-picture=" + encodeURIComponent(foto.value); 
+        var url = "ServletAggiuntaProdotto" + "?product-name=" + encodeURIComponent(nome.value) + "&animale=" + encodeURIComponent(animale.value) + "&tipo=" + encodeURIComponent(tipo) + "&product-price=" + encodeURIComponent(prezzo.value) + "&product-tax=" + encodeURIComponent(iva.value) + "&product-quantity=" + encodeURIComponent(quantita.value)+ "&product-weight=" + encodeURIComponent(peso.value)+  "&product-description=" + encodeURIComponent(descrizione.value)+ "&product-picture=" + encodeURIComponent(foto.value)+ "&product-size=" + encodeURIComponent(dimensione.value)+ "&product-color=" + encodeURIComponent(colore.value)+ "&product-expiry-date=" + encodeURIComponent(dataScadenza.value); 
+
         console.log(url);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = //alla risposta della servlet

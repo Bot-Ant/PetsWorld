@@ -25,13 +25,7 @@
 						{
 							Utente utente = (Utente) sessione.getAttribute("utente");
 					
-							if (utente == null) {
-			%>
-								<script>
-									window.onload = redirectToPage("error401.jsp");
-								</script>
-			<%
-							}
+							if (utente != null) {
 			%>
 			<div id="data-box" class="box">
 				<div id="user-info" class="column">
@@ -79,7 +73,18 @@
 			</div>
 		</div>
 	</div>
-	<% } %>
+	<% 				
+							}
+							else
+							{
+	%>
+								<script>
+									window.onload = redirectToPage("error401.jsp");
+								</script>
+	<%
+							}
+						}
+	%>
 	<footer>
 		<!-- Page footer-->
 		<jsp:include page="./footer.jsp"/>

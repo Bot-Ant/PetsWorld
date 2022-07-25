@@ -32,7 +32,7 @@ CREATE TABLE `utente` (
   `codiceFiscale` varchar(16) NOT NULL,
   `ruolo` tinyint NOT NULL DEFAULT '0',
   PRIMARY KEY (`idUtente`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES (10,'Mario','Rossi','mrossi@rossi.com','rossirossi','333-1231232','MRARSS12F431A',0),(11,'John','Doe','johndoe@test.com','johndoe0','333-0000000','JHNDOE00101F839A',1),(12,'mario','adinolfi','madinolfi@rossi.com','peppe','333-3333333','MRARSS12F431T',0);
+INSERT INTO `utente` VALUES (10,'Mario','Rossi','mrossi@rossi.com','rossi','333-123-0000','MRCNTN00C29F839B',0),(11,'John','Doe','johndoe@test.com','johndoe0','333-0000000','JHNDOE00101F839A',1),(12,'mario','adinolfi','madinolfi@rossi.com','peppe','333-3333333','MRARSS12F431T',0),(13,'Giuseppe','Adinolfi','giuseppe.adi@gmail.com','milanista','327-340-3027','MRCNTN00C29F839B',0);
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-23 20:53:15
+-- Dump completed on 2022-07-25  1:47:12
