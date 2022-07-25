@@ -111,14 +111,16 @@ import model.search.Condition;
 			return this;
 		}
 		
-		public QueryBuilder search(List<Condition> conditions) {
-			StringJoiner searchJoiner = new StringJoiner (" AND ");
+		public QueryBuilder search(List<Condition> conditions) {// prende una lista di condizioni
+			StringJoiner searchJoiner = new StringJoiner (" AND "); // e le concateno con un and 
 			for(Condition cn : conditions) {
-					searchJoiner.add(String.format("%s.%s%s", alias, cn.toString(), QM));
+			searchJoiner.add(String.format("%s.%s%s", alias, cn.toString(), QM));//qui formo alias piu condizione piu campo
 				}
 			query.append(searchJoiner);
 			return this;
 		}
+		
+		
 		public QueryBuilder update2(String...fields){
 		     query.append(" UPDATE ").append(table).append(" SET ");
 		     StringJoiner commaJoiner=new StringJoiner(",");

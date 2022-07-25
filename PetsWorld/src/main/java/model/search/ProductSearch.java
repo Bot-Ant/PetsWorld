@@ -9,16 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 public class ProductSearch implements SearchBuilder {
 
 	@Override
-	public List<Condition> buildSearch(HttpServletRequest request) {
+	public List<Condition> buildSearch(HttpServletRequest request) { // questa e una classe che implements questa searchbuilder
+		//che partendo da una richiesta mi deve costruire questa lista di condizioni
+		//istanzio l'array prendo tutti i parametri e i loro nomi
+		// con il while prende sempre il prossimo elemento se c'e 
 		List<Condition> conditions = new ArrayList<>();
 		Enumeration<String> parametersName = request.getParameterNames();
 		while(parametersName.hasMoreElements()) {
 			String param = parametersName.nextElement();
 			String value = request.getParameter(param);
 			
-			if(value != null && !value.isBlank()) {
+			if(value != null && !value.isBlank()) {// toglie tutti i valori che non servono che non vengono passati 
 				switch(param) {
-				
+				// i vari criteri di ricerca che vengono usati 
 				case "search" :{
 					conditions.add(new Condition ("nome", Operatore.MATCH, value));
 					
